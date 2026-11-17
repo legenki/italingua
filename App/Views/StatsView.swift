@@ -1,3 +1,4 @@
+import CloudKit
 import SwiftData
 import SwiftUI
 
@@ -6,6 +7,7 @@ struct StatsView: View {
     @Query private var progress: [WordProgress]
     @Query(sort: \Mistake.date, order: .reverse) private var mistakes: [Mistake]
     @Query private var vocab: [VocabItem]
+    @State private var iCloudStatus = "проверяю…"
 
     var body: some View {
         List {
@@ -36,6 +38,9 @@ struct StatsView: View {
                     }
                 }
             }
+            Section("Синхронизация") {
+                LabeledContent("iCloud", value: iCloudStatus)
+            }
             Section("Модель на устройстве") {
                 let status = ModelStatus.current()
                 LabeledContent("Генерация упражнений",
@@ -47,11 +52,30 @@ struct StatsView: View {
                                value: ModelStatus.supportsRussian() ? "поддерживается" : "нет")
             }
         }
+        .task { iCloudStatus = await Self.checkICloud() }
         .navigationTitle("Статистика")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Готово") { dismiss() }
             }
+        }
+    }
+
+    /// Asks CloudKit directly, so sync problems are visible without Console.
+    static func checkICloud() async -> String {
+        guard let id = Bundle.main.object(forInfoDictionaryKey: "ItalinguaCloudKitContainer") as? String,
+              !id.isEmpty else { return "контейнер не настроен" }
+        do {
+            switch try await CKContainer(identifier: id).accountStatus() {
+            case .available: return "подключён"
+            case .noAccount: return "нет входа в iCloud"
+            case .restricted: return "ограничен"
+            case .temporarilyUnavailable: return "временно недоступен"
+            case .couldNotDetermine: return "не удалось определить"
+            @unknown default: return "неизвестно"
+            }
+        } catch {
+            return "ошибка: \(error.localizedDescription)"
         }
     }
 
