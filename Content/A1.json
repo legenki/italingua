@@ -1,0 +1,5146 @@
+{
+  "level": "A1",
+  "lessons": [
+    {
+      "id": "a1-01",
+      "source": {
+        "part": "intro",
+        "lesson": 1,
+        "pages": [
+          7,
+          13
+        ]
+      },
+      "title": "Alfabeto, pronuncia e articolo indeterminativo",
+      "grammar": [
+        {
+          "topic": "Итальянский алфавит",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Правила произношения гласных и согласных. Правила ударения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Род существительных",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неопределенный артикль: формы и основные случаи употребления",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "madre",
+          "ru": "мать",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "padre",
+          "ru": "отец",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "tempo",
+          "ru": "время",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "monumento",
+          "ru": "памятник, монумент",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "abitare",
+          "ru": "жить",
+          "pos": "verb"
+        },
+        {
+          "it": "per",
+          "ru": "для",
+          "pos": "prep"
+        },
+        {
+          "it": "bravo",
+          "ru": "молодец, хороший",
+          "pos": "adj"
+        },
+        {
+          "it": "brava",
+          "ru": "молодец, хорошая",
+          "pos": "adj"
+        },
+        {
+          "it": "dopo",
+          "ru": "после",
+          "pos": "prep"
+        },
+        {
+          "it": "in",
+          "ru": "в",
+          "pos": "prep"
+        },
+        {
+          "it": "bene",
+          "ru": "хорошо",
+          "pos": "adv"
+        },
+        {
+          "it": "male",
+          "ru": "плохо",
+          "pos": "adv"
+        },
+        {
+          "it": "verbo",
+          "ru": "глагол",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "mia",
+          "ru": "моя",
+          "pos": "pron"
+        },
+        {
+          "it": "mio",
+          "ru": "мой",
+          "pos": "pron"
+        },
+        {
+          "it": "ma",
+          "ru": "но",
+          "pos": "conj"
+        },
+        {
+          "it": "domani",
+          "ru": "завтра",
+          "pos": "adv"
+        },
+        {
+          "it": "partire",
+          "ru": "уезжать",
+          "pos": "verb"
+        },
+        {
+          "it": "tornare",
+          "ru": "возвращаться",
+          "pos": "verb"
+        },
+        {
+          "it": "nuovo",
+          "ru": "новый",
+          "pos": "adj"
+        },
+        {
+          "it": "di nuovo",
+          "ru": "снова",
+          "pos": "phrase"
+        },
+        {
+          "it": "paura",
+          "ru": "страх",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "bambino",
+          "ru": "ребенок",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "uno",
+          "ru": "один",
+          "pos": "art"
+        },
+        {
+          "it": "due",
+          "ru": "два",
+          "pos": "num"
+        },
+        {
+          "it": "tre",
+          "ru": "три",
+          "pos": "num"
+        },
+        {
+          "it": "nove",
+          "ru": "девять",
+          "pos": "num"
+        },
+        {
+          "it": "novembre",
+          "ru": "ноябрь",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "vero",
+          "ru": "настоящий, правда",
+          "pos": "adj"
+        },
+        {
+          "it": "forma",
+          "ru": "форма",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "avere",
+          "ru": "иметь",
+          "pos": "verb"
+        },
+        {
+          "it": "dove",
+          "ru": "где",
+          "pos": "adv"
+        },
+        {
+          "it": "bere",
+          "ru": "пить",
+          "pos": "verb"
+        },
+        {
+          "it": "domandare",
+          "ru": "спрашивать",
+          "pos": "verb"
+        },
+        {
+          "it": "fare",
+          "ru": "делать",
+          "pos": "verb"
+        },
+        {
+          "it": "Roma",
+          "ru": "г. Рим",
+          "pos": "proper"
+        },
+        {
+          "it": "caro",
+          "ru": "дорогой",
+          "pos": "adj"
+        },
+        {
+          "it": "cara",
+          "ru": "дорогая",
+          "pos": "adj"
+        },
+        {
+          "it": "poco",
+          "ru": "мало",
+          "pos": "adv"
+        },
+        {
+          "it": "con",
+          "ru": "с",
+          "pos": "prep"
+        },
+        {
+          "it": "caffè",
+          "ru": "кофе",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "come",
+          "ru": "как",
+          "pos": "conj"
+        },
+        {
+          "it": "coperta",
+          "ru": "одеяло, покрывало",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "domanda",
+          "ru": "вопрос",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "amico",
+          "ru": "друг",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "amica",
+          "ru": "подруга",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "stanco",
+          "ru": "уставший",
+          "pos": "adj"
+        },
+        {
+          "it": "conosco",
+          "ru": "я знаю",
+          "pos": "verb"
+        },
+        {
+          "it": "Mosca",
+          "ru": "Москва",
+          "pos": "proper"
+        },
+        {
+          "it": "grande",
+          "ru": "большой",
+          "pos": "adj"
+        },
+        {
+          "it": "agosto",
+          "ru": "август",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "leggo",
+          "ru": "я читаю",
+          "pos": "verb"
+        },
+        {
+          "it": "albergo",
+          "ru": "гостиница",
+          "pos": "noun",
+          "gender": "m"
+        }
+      ],
+      "patterns": [
+        "È un …",
+        "È una …",
+        "Un caffè, per favore"
+      ]
+    },
+    {
+      "id": "a1-02",
+      "source": {
+        "part": "intro",
+        "lesson": 2,
+        "pages": [
+          14,
+          21
+        ]
+      },
+      "title": "Il plurale dei nomi e l'aggettivo",
+      "grammar": [
+        {
+          "topic": "Правила чтения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Множественное число существительных",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Понятие смешанного рода",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Прилагательное: формы и место в предложении",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "museo",
+          "ru": "музей",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "usare",
+          "ru": "использовать",
+          "pos": "verb"
+        },
+        {
+          "it": "casa",
+          "ru": "дом",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "frase",
+          "ru": "фраза, предложение",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "inglese",
+          "ru": "англичанин, английский",
+          "pos": "adj"
+        },
+        {
+          "it": "visitare",
+          "ru": "посещать",
+          "pos": "verb"
+        },
+        {
+          "it": "sposato",
+          "ru": "женатый",
+          "pos": "adj"
+        },
+        {
+          "it": "sposata",
+          "ru": "замужем",
+          "pos": "adj"
+        },
+        {
+          "it": "riposare",
+          "ru": "отдыхать",
+          "pos": "verb"
+        },
+        {
+          "it": "disoccupato",
+          "ru": "безработный",
+          "pos": "adj"
+        },
+        {
+          "it": "cosa",
+          "ru": "вещь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "interessante",
+          "ru": "интересный",
+          "pos": "adj"
+        },
+        {
+          "it": "adesso",
+          "ru": "сейчас",
+          "pos": "adv"
+        },
+        {
+          "it": "basso",
+          "ru": "низкий",
+          "pos": "adj"
+        },
+        {
+          "it": "bassa",
+          "ru": "низкая",
+          "pos": "adj"
+        },
+        {
+          "it": "spesso",
+          "ru": "часто",
+          "pos": "adv"
+        },
+        {
+          "it": "russo",
+          "ru": "русский",
+          "pos": "adj"
+        },
+        {
+          "it": "russa",
+          "ru": "русская",
+          "pos": "adj"
+        },
+        {
+          "it": "grasso",
+          "ru": "толстый",
+          "pos": "adj"
+        },
+        {
+          "it": "grassa",
+          "ru": "толстая",
+          "pos": "adj"
+        },
+        {
+          "it": "slavo",
+          "ru": "славянин",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "slava",
+          "ru": "славянка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "svendita",
+          "ru": "распродажа",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "svèndita"
+        },
+        {
+          "it": "sono",
+          "ru": "я есть",
+          "pos": "verb"
+        },
+        {
+          "it": "ristorante",
+          "ru": "ресторан",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "persona",
+          "ru": "человек",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "festa",
+          "ru": "праздник",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "finestra",
+          "ru": "окно",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "pasta",
+          "ru": "блюдо из макарон",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "testo",
+          "ru": "текст",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "solo",
+          "ru": "только",
+          "pos": "adv"
+        },
+        {
+          "it": "studente",
+          "ru": "студент",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "studentessa",
+          "ru": "студентка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "lavoro",
+          "ru": "работа",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "per lavoro",
+          "ru": "по работе",
+          "pos": "phrase"
+        },
+        {
+          "it": "parlare",
+          "ru": "говорить",
+          "pos": "verb"
+        },
+        {
+          "it": "parlo",
+          "ru": "я говорю",
+          "pos": "verb"
+        },
+        {
+          "it": "scuola",
+          "ru": "школа",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "parola",
+          "ru": "слово",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "regolare",
+          "ru": "регулировать",
+          "pos": "verb"
+        },
+        {
+          "it": "limone",
+          "ru": "лимон",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "parli",
+          "ru": "ты говоришь",
+          "pos": "verb"
+        },
+        {
+          "it": "molto",
+          "ru": "много",
+          "pos": "adv"
+        },
+        {
+          "it": "caldo",
+          "ru": "тепло, жарко",
+          "pos": "adj"
+        },
+        {
+          "it": "falso",
+          "ru": "неправильно",
+          "pos": "adj"
+        },
+        {
+          "it": "letto",
+          "ru": "кровать",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "a letto",
+          "ru": "в постели",
+          "pos": "phrase"
+        },
+        {
+          "it": "intelligente",
+          "ru": "умный",
+          "pos": "adj"
+        },
+        {
+          "it": "camera",
+          "ru": "комната",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "càmera"
+        },
+        {
+          "it": "libero",
+          "ru": "свободный",
+          "pos": "adj",
+          "stress": "lìbero"
+        },
+        {
+          "it": "abito",
+          "ru": "я живу",
+          "pos": "verb",
+          "stress": "àbito"
+        },
+        {
+          "it": "abiti",
+          "ru": "ты живешь",
+          "pos": "verb",
+          "stress": "àbiti"
+        },
+        {
+          "it": "visito",
+          "ru": "я посещаю",
+          "pos": "verb",
+          "stress": "vìsito"
+        },
+        {
+          "it": "visiti",
+          "ru": "ты посещаешь",
+          "pos": "verb",
+          "stress": "vìsiti"
+        },
+        {
+          "it": "vocabolario",
+          "ru": "словарь",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "vocabolàrio"
+        },
+        {
+          "it": "sabato",
+          "ru": "суббота",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "sàbato"
+        },
+        {
+          "it": "domenica",
+          "ru": "воскресенье",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "domènica"
+        },
+        {
+          "it": "essere",
+          "ru": "быть",
+          "pos": "verb",
+          "stress": "èssere"
+        },
+        {
+          "it": "piccolo",
+          "ru": "маленький",
+          "pos": "adj",
+          "stress": "pìccolo"
+        },
+        {
+          "it": "solito",
+          "ru": "обычный",
+          "pos": "adj",
+          "stress": "sòlito"
+        },
+        {
+          "it": "di solito",
+          "ru": "обычно",
+          "pos": "phrase",
+          "stress": "di sòlito"
+        },
+        {
+          "it": "aereo",
+          "ru": "самолет",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "aèreo"
+        },
+        {
+          "it": "in aereo",
+          "ru": "в самолете",
+          "pos": "phrase",
+          "stress": "in aèreo"
+        },
+        {
+          "it": "rispondere",
+          "ru": "отвечать",
+          "pos": "verb",
+          "stress": "rispòndere"
+        },
+        {
+          "it": "mettere",
+          "ru": "ставить, класть",
+          "pos": "verb",
+          "stress": "mèttere"
+        }
+      ],
+      "patterns": [
+        "Sono russo / russa",
+        "Di solito …",
+        "Per lavoro"
+      ]
+    },
+    {
+      "id": "a1-03",
+      "source": {
+        "part": "intro",
+        "lesson": 3,
+        "pages": [
+          22,
+          28
+        ]
+      },
+      "title": "L'articolo determinativo",
+      "grammar": [
+        {
+          "topic": "Правила чтения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Множественное число прилагательного",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Определенный артикль: формы и основные случаи употребления",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "fratello",
+          "ru": "брат",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "sorella",
+          "ru": "сестра",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "occupato",
+          "ru": "занятый",
+          "pos": "adj"
+        },
+        {
+          "it": "anno",
+          "ru": "год",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "freddo",
+          "ru": "холодный",
+          "pos": "adj"
+        },
+        {
+          "it": "fredda",
+          "ru": "холодная",
+          "pos": "adj"
+        },
+        {
+          "it": "sette",
+          "ru": "7",
+          "pos": "num"
+        },
+        {
+          "it": "otto",
+          "ru": "8",
+          "pos": "num"
+        },
+        {
+          "it": "settembre",
+          "ru": "сентябрь",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ottobre",
+          "ru": "октябрь",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "mamma",
+          "ru": "мама",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "babbo",
+          "ru": "папа",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "appartamento",
+          "ru": "квартира",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "arrivare",
+          "ru": "приезжать, приходить",
+          "pos": "verb"
+        },
+        {
+          "it": "dottore",
+          "ru": "доктор, почетное обращение к человеку с высшим образованием",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "sonno",
+          "ru": "сонливость",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ditta",
+          "ru": "фирма",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "nonno",
+          "ru": "дедушка",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "nonna",
+          "ru": "бабушка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "sete",
+          "ru": "жажда",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "tutta",
+          "ru": "вся",
+          "pos": "pron"
+        },
+        {
+          "it": "tuta",
+          "ru": "спортивный костюм",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "così",
+          "ru": "так, таким образом",
+          "pos": "adv"
+        },
+        {
+          "it": "però",
+          "ru": "однако",
+          "pos": "conj"
+        },
+        {
+          "it": "lunedì",
+          "ru": "понедельник",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "martedì",
+          "ru": "вторник",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "mercoledì",
+          "ru": "среда",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "giovedì",
+          "ru": "четверг",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "venerdì",
+          "ru": "пятница",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ci",
+          "ru": "там",
+          "pos": "pron"
+        },
+        {
+          "it": "ci sono",
+          "ru": "там есть (много предметов)",
+          "pos": "phrase"
+        },
+        {
+          "it": "c’è",
+          "ru": "там есть (один предмет)",
+          "pos": "phrase"
+        },
+        {
+          "it": "cucina",
+          "ru": "кухня",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "dice",
+          "ru": "он (она) говорит",
+          "pos": "verb"
+        },
+        {
+          "it": "dici",
+          "ru": "ты говоришь",
+          "pos": "verb"
+        },
+        {
+          "it": "dicembre",
+          "ru": "декабрь",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "dicèmbre"
+        },
+        {
+          "it": "necessario",
+          "ru": "необходимо",
+          "pos": "adj",
+          "stress": "necessàrio"
+        },
+        {
+          "it": "amici",
+          "ru": "друзья",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "dieci",
+          "ru": "десять",
+          "pos": "num"
+        },
+        {
+          "it": "undici",
+          "ru": "11",
+          "pos": "num",
+          "stress": "ùndici"
+        },
+        {
+          "it": "dodici",
+          "ru": "12",
+          "pos": "num",
+          "stress": "dòdici"
+        },
+        {
+          "it": "tredici",
+          "ru": "13",
+          "pos": "num",
+          "stress": "trèdici"
+        },
+        {
+          "it": "sedici",
+          "ru": "16",
+          "pos": "num",
+          "stress": "sèdici"
+        },
+        {
+          "it": "cellulare",
+          "ru": "сотовый телефон",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "città",
+          "ru": "город",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "civiltà",
+          "ru": "культура, цивилизация",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "cugino",
+          "ru": "двоюродный брат",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "cugina",
+          "ru": "двоюродная сестра",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "leggere",
+          "ru": "читать",
+          "pos": "verb",
+          "stress": "lèggere"
+        },
+        {
+          "it": "leggi",
+          "ru": "ты читаешь",
+          "pos": "verb"
+        },
+        {
+          "it": "gennaio",
+          "ru": "январь",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "gennàio"
+        },
+        {
+          "it": "mangi",
+          "ru": "ты ешь",
+          "pos": "verb"
+        },
+        {
+          "it": "Genova",
+          "ru": "Генуя",
+          "pos": "proper",
+          "stress": "Gènova"
+        },
+        {
+          "it": "Parigi",
+          "ru": "Париж",
+          "pos": "proper"
+        },
+        {
+          "it": "già",
+          "ru": "уже",
+          "pos": "adv"
+        },
+        {
+          "it": "mangiare",
+          "ru": "есть (кушать)",
+          "pos": "verb"
+        },
+        {
+          "it": "mangio",
+          "ru": "я ем",
+          "pos": "verb"
+        },
+        {
+          "it": "mangia",
+          "ru": "он (она) ест",
+          "pos": "verb"
+        },
+        {
+          "it": "mangiamo",
+          "ru": "мы едим",
+          "pos": "verb"
+        },
+        {
+          "it": "leggiamo",
+          "ru": "мы читаем",
+          "pos": "verb"
+        },
+        {
+          "it": "giovane",
+          "ru": "молодой",
+          "pos": "adj",
+          "stress": "giòvane"
+        },
+        {
+          "it": "giorno",
+          "ru": "день (календарный)",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "giornata",
+          "ru": "день, денек",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "viaggio",
+          "ru": "путешествие",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "viaggiare",
+          "ru": "путешествовать",
+          "pos": "verb"
+        },
+        {
+          "it": "maggio",
+          "ru": "май",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ciao!",
+          "ru": "привет! пока!",
+          "pos": "interj"
+        },
+        {
+          "it": "faccio",
+          "ru": "я делаю",
+          "pos": "verb"
+        },
+        {
+          "it": "facciamo",
+          "ru": "мы делаем",
+          "pos": "verb"
+        },
+        {
+          "it": "giacca",
+          "ru": "пиджак",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "diciassette",
+          "ru": "17",
+          "pos": "num"
+        },
+        {
+          "it": "diciotto",
+          "ru": "18",
+          "pos": "num"
+        },
+        {
+          "it": "diciannove",
+          "ru": "19",
+          "pos": "num"
+        },
+        {
+          "it": "ufficio",
+          "ru": "офис",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "uffìcio"
+        }
+      ],
+      "patterns": [
+        "C'è …",
+        "Ci sono …",
+        "Ciao!"
+      ]
+    },
+    {
+      "id": "a1-04",
+      "source": {
+        "part": "intro",
+        "lesson": 4,
+        "pages": [
+          29,
+          38
+        ]
+      },
+      "title": "I pronomi personali e il verbo essere",
+      "grammar": [
+        {
+          "topic": "Правила чтения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Личные местоимения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагол essere",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Формы определенного артикля множественного числа",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "Italia",
+          "ru": "Италия",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "Itàlia"
+        },
+        {
+          "it": "italiano",
+          "ru": "итальянский, итальянец",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "italiana",
+          "ru": "итальянская, итальянка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "parliamo",
+          "ru": "мы говорим",
+          "pos": "verb"
+        },
+        {
+          "it": "arriviamo",
+          "ru": "мы приезжаем, приходим",
+          "pos": "verb"
+        },
+        {
+          "it": "partiamo",
+          "ru": "мы уезжаем",
+          "pos": "verb"
+        },
+        {
+          "it": "Russia",
+          "ru": "Россия",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "Rùssia"
+        },
+        {
+          "it": "sei",
+          "ru": "ты есть",
+          "pos": "verb"
+        },
+        {
+          "it": "siamo",
+          "ru": "мы есть",
+          "pos": "verb"
+        },
+        {
+          "it": "siete",
+          "ru": "вы есть",
+          "pos": "verb"
+        },
+        {
+          "it": "febbraio",
+          "ru": "февраль",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "febbràio"
+        },
+        {
+          "it": "buio",
+          "ru": "темный",
+          "pos": "adj",
+          "stress": "bùio"
+        },
+        {
+          "it": "abbiamo",
+          "ru": "у нас есть (мы имеем)",
+          "pos": "verb"
+        },
+        {
+          "it": "beviamo",
+          "ru": "мы пьем",
+          "pos": "verb"
+        },
+        {
+          "it": "torniamo",
+          "ru": "мы возвращаемся",
+          "pos": "verb"
+        },
+        {
+          "it": "fai",
+          "ru": "ты делаешь",
+          "pos": "verb"
+        },
+        {
+          "it": "ho",
+          "ru": "у меня есть (я имею)",
+          "pos": "verb"
+        },
+        {
+          "it": "hai",
+          "ru": "у тебя есть (ты имеешь)",
+          "pos": "verb"
+        },
+        {
+          "it": "ha",
+          "ru": "у него есть (он имеет)",
+          "pos": "verb"
+        },
+        {
+          "it": "hanno",
+          "ru": "у них есть (они имеют)",
+          "pos": "verb"
+        },
+        {
+          "it": "hotel",
+          "ru": "отель",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "hotèl"
+        },
+        {
+          "it": "hobby",
+          "ru": "хобби",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "chiamare",
+          "ru": "звать",
+          "pos": "verb"
+        },
+        {
+          "it": "chiamo",
+          "ru": "я зову",
+          "pos": "verb"
+        },
+        {
+          "it": "chiami",
+          "ru": "ты зовешь",
+          "pos": "verb"
+        },
+        {
+          "it": "chiamarsi",
+          "ru": "зваться",
+          "pos": "verb"
+        },
+        {
+          "it": "mi chiamo",
+          "ru": "меня зовут",
+          "pos": "phrase"
+        },
+        {
+          "it": "ti chiami",
+          "ru": "тебя зовут",
+          "pos": "phrase"
+        },
+        {
+          "it": "bicchiere",
+          "ru": "стакан",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "che",
+          "ru": "какой? который",
+          "pos": "pron"
+        },
+        {
+          "it": "che cosa",
+          "ru": "что?",
+          "pos": "phrase"
+        },
+        {
+          "it": "chiudere",
+          "ru": "закрывать",
+          "pos": "verb",
+          "stress": "chiùdere"
+        },
+        {
+          "it": "chiuso",
+          "ru": "закрыто",
+          "pos": "adj"
+        },
+        {
+          "it": "macchina",
+          "ru": "машина",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "màcchina"
+        },
+        {
+          "it": "chiave",
+          "ru": "ключ",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "perché",
+          "ru": "почему? потому что",
+          "pos": "conj"
+        },
+        {
+          "it": "chi",
+          "ru": "кто?",
+          "pos": "pron"
+        },
+        {
+          "it": "chiedere",
+          "ru": "спрашивать",
+          "pos": "verb",
+          "stress": "chièdere"
+        },
+        {
+          "it": "ingorgo",
+          "ru": "пробка (дорожная)",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "fungo",
+          "ru": "гриб",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ghiaccio",
+          "ru": "лед",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "ghiàccio"
+        },
+        {
+          "it": "signore",
+          "ru": "мужчина",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "signora",
+          "ru": "женщина",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "compagno",
+          "ru": "товарищ",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "insegnare",
+          "ru": "преподавать",
+          "pos": "verb"
+        },
+        {
+          "it": "insegno",
+          "ru": "я преподаю",
+          "pos": "verb"
+        },
+        {
+          "it": "insegni",
+          "ru": "ты преподаешь",
+          "pos": "verb"
+        },
+        {
+          "it": "insegna",
+          "ru": "он (она) преподает",
+          "pos": "verb"
+        },
+        {
+          "it": "insegnante",
+          "ru": "преподаватель",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "lasagne",
+          "ru": "лазанья (блюдо)",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "bagno",
+          "ru": "ванная комната",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "gli",
+          "ru": "опред. артикль м.р., мн.ч.",
+          "pos": "art"
+        },
+        {
+          "it": "figlio",
+          "ru": "сын",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "figlia",
+          "ru": "дочь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "famiglia",
+          "ru": "семья",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "moglie",
+          "ru": "жена",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "bottiglia",
+          "ru": "бутылка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "meglio",
+          "ru": "лучше",
+          "pos": "adv"
+        },
+        {
+          "it": "luglio",
+          "ru": "июль",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "foglio",
+          "ru": "лист (бумаги)",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "portafoglio",
+          "ru": "кошелек",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "biglietto",
+          "ru": "билет",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "tagliatelle",
+          "ru": "широкая лапша",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "accogliente",
+          "ru": "уютный",
+          "pos": "adj"
+        },
+        {
+          "it": "questo",
+          "ru": "этот",
+          "pos": "pron"
+        },
+        {
+          "it": "questa",
+          "ru": "эта",
+          "pos": "pron"
+        },
+        {
+          "it": "quello",
+          "ru": "тот",
+          "pos": "pron"
+        },
+        {
+          "it": "quella",
+          "ru": "та",
+          "pos": "pron"
+        },
+        {
+          "it": "qui, qua",
+          "ru": "здесь",
+          "pos": "phrase"
+        },
+        {
+          "it": "quando",
+          "ru": "когда",
+          "pos": "conj"
+        },
+        {
+          "it": "quattro",
+          "ru": "4",
+          "pos": "num"
+        },
+        {
+          "it": "cinque",
+          "ru": "5",
+          "pos": "num"
+        },
+        {
+          "it": "quattordici",
+          "ru": "14",
+          "pos": "num",
+          "stress": "quattòrdici"
+        },
+        {
+          "it": "quindici",
+          "ru": "15",
+          "pos": "num",
+          "stress": "quìndici"
+        },
+        {
+          "it": "quanto",
+          "ru": "сколько",
+          "pos": "adv"
+        },
+        {
+          "it": "acqua",
+          "ru": "вода",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "àcqua"
+        },
+        {
+          "it": "quasi",
+          "ru": "почти",
+          "pos": "adv"
+        },
+        {
+          "it": "qualcosa",
+          "ru": "что-то, что-нибудь",
+          "pos": "pron"
+        },
+        {
+          "it": "qualcuno",
+          "ru": "кто-то, кто-нибудь",
+          "pos": "pron"
+        },
+        {
+          "it": "guardare",
+          "ru": "смотреть",
+          "pos": "verb"
+        },
+        {
+          "it": "lingua",
+          "ru": "язык",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "lìngua"
+        },
+        {
+          "it": "guida",
+          "ru": "гид",
+          "pos": "noun",
+          "gender": "f"
+        }
+      ],
+      "patterns": [
+        "Mi chiamo …",
+        "Come ti chiami?",
+        "Sono italiano / italiana",
+        "Che cosa è?"
+      ]
+    },
+    {
+      "id": "a1-05",
+      "source": {
+        "part": "intro",
+        "lesson": 5,
+        "pages": [
+          39,
+          46
+        ]
+      },
+      "title": "Il verbo avere, sì e no, le preposizioni",
+      "grammar": [
+        {
+          "topic": "Правила чтения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагoл avere",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Утверждение и отрицание",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Предлоги итальянского языка",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "prezzo",
+          "ru": "цена",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "negozio",
+          "ru": "магазин",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "negòzio"
+        },
+        {
+          "it": "pranzo",
+          "ru": "обед",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "colazione",
+          "ru": "завтрак",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "lezione",
+          "ru": "урок, лекция",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "piazza",
+          "ru": "площадь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "palazzo",
+          "ru": "здание, дворец",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "esercizio",
+          "ru": "упражнение",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "esercìzio"
+        },
+        {
+          "it": "terzo",
+          "ru": "третий",
+          "pos": "num"
+        },
+        {
+          "it": "burocrazia",
+          "ru": "бюрократия",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "burocrazìa"
+        },
+        {
+          "it": "magazzino",
+          "ru": "склад, стокмагазин",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "mezzo",
+          "ru": "половина",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "mezzogiorno",
+          "ru": "полдень",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "zio",
+          "ru": "дядя",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "zia",
+          "ru": "тетя",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "zii",
+          "ru": "дядя с тетей",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "zucchero",
+          "ru": "сахар",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "zùcchero"
+        },
+        {
+          "it": "zucchini",
+          "ru": "кабачки цуккини",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "zero",
+          "ru": "ноль",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "zona",
+          "ru": "район",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "realizzare",
+          "ru": "осуществлять",
+          "pos": "verb"
+        },
+        {
+          "it": "organizzare",
+          "ru": "организовывать",
+          "pos": "verb"
+        },
+        {
+          "it": "pesce",
+          "ru": "рыба",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ascensore",
+          "ru": "лифт",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "prosciutto",
+          "ru": "ветчина",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "capisco",
+          "ru": "я понимаю",
+          "pos": "verb"
+        },
+        {
+          "it": "capisci",
+          "ru": "ты понимаешь",
+          "pos": "verb"
+        },
+        {
+          "it": "capisce",
+          "ru": "он (она) понимает",
+          "pos": "verb"
+        },
+        {
+          "it": "asciugare",
+          "ru": "сушить, вытирать",
+          "pos": "verb"
+        },
+        {
+          "it": "asciugamani",
+          "ru": "полотенце",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "crescere",
+          "ru": "расти",
+          "pos": "verb",
+          "stress": "crèscere"
+        },
+        {
+          "it": "cresci",
+          "ru": "ты растешь",
+          "pos": "verb"
+        },
+        {
+          "it": "cresce",
+          "ru": "он растет",
+          "pos": "verb"
+        },
+        {
+          "it": "preferisco",
+          "ru": "я предпочитаю",
+          "pos": "verb"
+        },
+        {
+          "it": "preferisci",
+          "ru": "ты предпочитаешь",
+          "pos": "verb"
+        },
+        {
+          "it": "preferisce",
+          "ru": "он (она) предпочитает",
+          "pos": "verb"
+        },
+        {
+          "it": "maschera",
+          "ru": "маска",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "màschera"
+        },
+        {
+          "it": "scherzo",
+          "ru": "шутка",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "scherzare",
+          "ru": "шутить",
+          "pos": "verb"
+        },
+        {
+          "it": "sciopero",
+          "ru": "забастовка",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "sciòpero"
+        },
+        {
+          "it": "scioperare",
+          "ru": "бастовать",
+          "pos": "verb"
+        },
+        {
+          "it": "scala",
+          "ru": "лестница",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "scuro",
+          "ru": "темный",
+          "pos": "adj"
+        }
+      ],
+      "patterns": [
+        "Ho …",
+        "Non ho …",
+        "Sì, …",
+        "No, non …"
+      ]
+    },
+    {
+      "id": "a1-06",
+      "source": {
+        "part": "main",
+        "lesson": 1,
+        "pages": [
+          48,
+          57
+        ]
+      },
+      "title": "Il presente dei verbi in -are",
+      "grammar": [
+        {
+          "topic": "Спряжение глаголов",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Глаголы I спряжения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "I спряжение. Нюансы",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "essere di Mosca",
+          "ru": "быть (родом) из Москвы",
+          "pos": "phrase"
+        },
+        {
+          "it": "molte",
+          "ru": "многие",
+          "pos": "adj"
+        },
+        {
+          "it": "in albergo",
+          "ru": "в гостинице",
+          "pos": "phrase"
+        },
+        {
+          "it": "e",
+          "ru": "и",
+          "pos": "conj"
+        },
+        {
+          "it": "al ristorante",
+          "ru": "в ресторане",
+          "pos": "phrase"
+        },
+        {
+          "it": "bello",
+          "ru": "красивый",
+          "pos": "adj"
+        },
+        {
+          "it": "pieno di",
+          "ru": "полный чего-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "bar",
+          "ru": "кафе",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "un po’",
+          "ru": "немного",
+          "pos": "phrase"
+        },
+        {
+          "it": "vetrina",
+          "ru": "витрина",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "a",
+          "ru": "в",
+          "pos": "prep"
+        },
+        {
+          "it": "più",
+          "ru": "более",
+          "pos": "adv"
+        },
+        {
+          "it": "ancora",
+          "ru": "еще",
+          "pos": "adv"
+        },
+        {
+          "it": "non",
+          "ru": "не",
+          "pos": "adv"
+        },
+        {
+          "it": "parlare italiano",
+          "ru": "говорить по-итальянски",
+          "pos": "phrase"
+        },
+        {
+          "it": "oppure",
+          "ru": "или же",
+          "pos": "conj"
+        },
+        {
+          "it": "parlare inglese",
+          "ru": "говорить по-английски",
+          "pos": "phrase"
+        },
+        {
+          "it": "fra",
+          "ru": "через",
+          "pos": "prep"
+        },
+        {
+          "it": "settimana",
+          "ru": "неделя",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "parto",
+          "ru": "я уезжаю",
+          "pos": "verb"
+        },
+        {
+          "it": "avere tante cose da fare",
+          "ru": "иметь так много дел",
+          "pos": "phrase"
+        },
+        {
+          "it": "tanto",
+          "ru": "так много",
+          "pos": "adv"
+        },
+        {
+          "it": "da",
+          "ru": "зд. чтобы",
+          "pos": "prep"
+        }
+      ],
+      "patterns": [
+        "Mi chiamo …",
+        "Di dove sei?",
+        "Sono di …",
+        "Abito a …",
+        "Parlo italiano"
+      ]
+    },
+    {
+      "id": "a1-07",
+      "source": {
+        "part": "main",
+        "lesson": 2,
+        "pages": [
+          58,
+          66
+        ]
+      },
+      "title": "Il presente dei verbi in -ere; dire e bere",
+      "grammar": [
+        {
+          "topic": "Глаголы II cпряжения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильные глаголы dire, bere",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Интонация",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "ragazzo",
+          "ru": "мальчик",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "donna",
+          "ru": "женщина",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "suo",
+          "ru": "ее",
+          "pos": "pron"
+        },
+        {
+          "it": "in camera",
+          "ru": "в комнате",
+          "pos": "phrase",
+          "stress": "in càmera"
+        },
+        {
+          "it": "in cucina",
+          "ru": "на кухне",
+          "pos": "phrase"
+        },
+        {
+          "it": "ho sete",
+          "ru": "я хочу пить",
+          "pos": "phrase"
+        },
+        {
+          "it": "avere sete",
+          "ru": "хотеть пить",
+          "pos": "phrase"
+        },
+        {
+          "it": "allora",
+          "ru": "тогда",
+          "pos": "conj"
+        },
+        {
+          "it": "portare",
+          "ru": "приносить",
+          "pos": "verb"
+        },
+        {
+          "it": "beve",
+          "ru": "он пьет",
+          "pos": "verb",
+          "form_of": "bere"
+        },
+        {
+          "it": "ho fame",
+          "ru": "я голоден",
+          "pos": "phrase"
+        },
+        {
+          "it": "avere fame",
+          "ru": "быть голодным",
+          "pos": "phrase"
+        },
+        {
+          "it": "piatto",
+          "ru": "тарелка",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ho freddo",
+          "ru": "мне холодно",
+          "pos": "phrase"
+        },
+        {
+          "it": "avere freddo",
+          "ru": "мерзнуть",
+          "pos": "phrase"
+        },
+        {
+          "it": "ho sonno",
+          "ru": "я хочу спать хотеть спать",
+          "pos": "verb",
+          "form_of": "avere sonno"
+        },
+        {
+          "it": "dorme",
+          "ru": "спать",
+          "pos": "verb",
+          "form_of": "dormire"
+        },
+        {
+          "it": "poi",
+          "ru": "потом",
+          "pos": "conj"
+        },
+        {
+          "it": "ho paura di",
+          "ru": "я боюсь чего-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "avere paura di",
+          "ru": "бояться чего-л.",
+          "pos": "phrase",
+          "stress": "avere paùra di"
+        },
+        {
+          "it": "del",
+          "ru": "di+il, род. падеж",
+          "pos": "prep"
+        },
+        {
+          "it": "trentacinque",
+          "ru": "тридцать пять",
+          "pos": "num"
+        }
+      ],
+      "patterns": [
+        "Ho fame",
+        "Ho sete",
+        "Ho freddo",
+        "Ho sonno",
+        "Ho paura di …"
+      ]
+    },
+    {
+      "id": "a1-08",
+      "source": {
+        "part": "main",
+        "lesson": 3,
+        "pages": [
+          67,
+          74
+        ]
+      },
+      "title": "Il presente dei verbi in -ire; il verbo fare",
+      "grammar": [
+        {
+          "topic": "Глаголы III cпряжения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагол fare",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "fare la segretaria",
+          "ru": "работать секретарем",
+          "pos": "phrase",
+          "stress": "fare la segretària"
+        },
+        {
+          "it": "lavorare",
+          "ru": "работать",
+          "pos": "verb"
+        },
+        {
+          "it": "malato",
+          "ru": "больной",
+          "pos": "adj"
+        },
+        {
+          "it": "marito",
+          "ru": "муж",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "lavori",
+          "ru": "ремонт, технические работы",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "ponte",
+          "ru": "мост, зд. перенос выходного дня на будний",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "finalmente",
+          "ru": "наконец",
+          "pos": "adv"
+        }
+      ],
+      "patterns": [
+        "Che lavoro fai?",
+        "Faccio il / la …",
+        "Lavoro come …"
+      ]
+    },
+    {
+      "id": "a1-09",
+      "source": {
+        "part": "main",
+        "lesson": 4,
+        "pages": [
+          75,
+          84
+        ]
+      },
+      "title": "Le preposizioni articolate: a; molto e poco",
+      "grammar": [
+        {
+          "topic": "Сочлененные предлоги",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Предлог А: значение, сочленение с определенным артиклем",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Согласование molto, poco",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "ex",
+          "ru": "бывший, бывшая",
+          "pos": "adj"
+        },
+        {
+          "it": "diverso",
+          "ru": "разный",
+          "pos": "adj"
+        },
+        {
+          "it": "avvocato",
+          "ru": "адвокат",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "invece",
+          "ru": "напротив, же",
+          "pos": "conj"
+        },
+        {
+          "it": "alto",
+          "ru": "высокий",
+          "pos": "adj"
+        },
+        {
+          "it": "magro",
+          "ru": "худой",
+          "pos": "adj"
+        },
+        {
+          "it": "sua",
+          "ru": "его, своя",
+          "pos": "pron"
+        },
+        {
+          "it": "da solo",
+          "ru": "один",
+          "pos": "phrase"
+        },
+        {
+          "it": "in centro",
+          "ru": "в центре",
+          "pos": "phrase"
+        },
+        {
+          "it": "lontano da",
+          "ru": "далеко от",
+          "pos": "phrase"
+        },
+        {
+          "it": "dal",
+          "ru": "da+il, от",
+          "pos": "prep"
+        },
+        {
+          "it": "in periferia",
+          "ru": "на окраине",
+          "pos": "phrase",
+          "stress": "in periferìa"
+        },
+        {
+          "it": "tutto il giorno",
+          "ru": "весь день",
+          "pos": "phrase"
+        },
+        {
+          "it": "la sera",
+          "ru": "вечерами",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "a casa",
+          "ru": "домой",
+          "pos": "phrase"
+        },
+        {
+          "it": "tardi",
+          "ru": "поздно",
+          "pos": "adv"
+        },
+        {
+          "it": "sempre",
+          "ru": "всегда",
+          "pos": "adv"
+        },
+        {
+          "it": "in casa",
+          "ru": "в доме",
+          "pos": "phrase"
+        },
+        {
+          "it": "dormire",
+          "ru": "спать",
+          "pos": "verb"
+        },
+        {
+          "it": "il sabato",
+          "ru": "по субботам",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "il sàbato"
+        },
+        {
+          "it": "i due",
+          "ru": "оба",
+          "pos": "phrase"
+        },
+        {
+          "it": "insieme",
+          "ru": "вместе",
+          "pos": "adv"
+        },
+        {
+          "it": "mentre",
+          "ru": "в то время как",
+          "pos": "conj"
+        },
+        {
+          "it": "parlare di",
+          "ru": "говорить о чем-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "alla fine di",
+          "ru": "в конце чего-л. (о времени)",
+          "pos": "phrase"
+        },
+        {
+          "it": "della",
+          "ru": "di+la, род. падеж",
+          "pos": "prep"
+        },
+        {
+          "it": "cena",
+          "ru": "ужин",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "pagare",
+          "ru": "платить",
+          "pos": "verb"
+        },
+        {
+          "it": "conto",
+          "ru": "счет",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "anche",
+          "ru": "также",
+          "pos": "conj"
+        },
+        {
+          "it": "soldi",
+          "ru": "деньги",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        }
+      ],
+      "patterns": [
+        "Torno a casa",
+        "Abito lontano da …",
+        "Parliamo di …",
+        "Alla fine di …"
+      ]
+    },
+    {
+      "id": "a1-10",
+      "source": {
+        "part": "main",
+        "lesson": 5,
+        "pages": [
+          85,
+          93
+        ]
+      },
+      "title": "La preposizione da; stare e dare",
+      "grammar": [
+        {
+          "topic": "Предлог DА: значение, сочленение с определенным артиклем",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Порядок слов в предложении",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильные глаголы stare, dare",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "vita",
+          "ru": "жизнь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "scrittore",
+          "ru": "писатель",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "essere depresso",
+          "ru": "быть в депрессии",
+          "pos": "phrase",
+          "stress": "èssere depresso"
+        },
+        {
+          "it": "la mattina",
+          "ru": "утром, по утрам",
+          "pos": "phrase"
+        },
+        {
+          "it": "fino a",
+          "ru": "до",
+          "pos": "phrase"
+        },
+        {
+          "it": "aprire",
+          "ru": "открывать",
+          "pos": "verb"
+        },
+        {
+          "it": "guardare fuori",
+          "ru": "выглядывать на улицу",
+          "pos": "phrase"
+        },
+        {
+          "it": "fuori",
+          "ru": "вне (границ чего-л.)",
+          "pos": "prep"
+        },
+        {
+          "it": "a volte",
+          "ru": "иногда",
+          "pos": "phrase"
+        },
+        {
+          "it": "piove",
+          "ru": "идет дождь",
+          "pos": "verb",
+          "form_of": "piovere"
+        },
+        {
+          "it": "c’è il sole",
+          "ru": "светит солнце",
+          "pos": "phrase"
+        },
+        {
+          "it": "il pomeriggio",
+          "ru": "днем (с 12.00 до 16.00)",
+          "pos": "phrase"
+        },
+        {
+          "it": "restare",
+          "ru": "оставаться",
+          "pos": "verb"
+        },
+        {
+          "it": "niente",
+          "ru": "ничего",
+          "pos": "pron"
+        },
+        {
+          "it": "stare a letto",
+          "ru": "лежать в постели",
+          "pos": "phrase"
+        },
+        {
+          "it": "sul",
+          "ru": "на (su+il)",
+          "pos": "prep"
+        },
+        {
+          "it": "sul divano",
+          "ru": "на диване",
+          "pos": "phrase"
+        },
+        {
+          "it": "camminare",
+          "ru": "гулять",
+          "pos": "verb"
+        },
+        {
+          "it": "telefonare",
+          "ru": "звонить по телефону",
+          "pos": "verb"
+        },
+        {
+          "it": "nessuno",
+          "ru": "никто",
+          "pos": "pron"
+        },
+        {
+          "it": "troppo",
+          "ru": "слишком",
+          "pos": "adv"
+        },
+        {
+          "it": "cenare",
+          "ru": "ужинать",
+          "pos": "verb"
+        },
+        {
+          "it": "preparare",
+          "ru": "готовить",
+          "pos": "verb"
+        },
+        {
+          "it": "mai",
+          "ru": "никогда",
+          "pos": "adv"
+        },
+        {
+          "it": "la televisione",
+          "ru": "смотреть телевизор",
+          "pos": "phrase"
+        },
+        {
+          "it": "televisione",
+          "ru": "телевидение",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "prendere",
+          "ru": "пить",
+          "pos": "verb",
+          "stress": "prèndere"
+        },
+        {
+          "it": "un aperitivo",
+          "ru": "аперитив",
+          "pos": "phrase"
+        },
+        {
+          "it": "finire",
+          "ru": "заканчивать",
+          "pos": "verb"
+        },
+        {
+          "it": "sto bene",
+          "ru": "мне хорошо!",
+          "pos": "verb",
+          "form_of": "stare bene"
+        },
+        {
+          "it": "depressione",
+          "ru": "депрессия",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "non c’è più",
+          "ru": "больше нет",
+          "pos": "phrase"
+        }
+      ],
+      "patterns": [
+        "Come stai?",
+        "Sto bene / male",
+        "Fino a …",
+        "A volte …"
+      ]
+    },
+    {
+      "id": "a1-11",
+      "source": {
+        "part": "main",
+        "lesson": 6,
+        "pages": [
+          94,
+          102
+        ]
+      },
+      "title": "C'è e ci sono; il verbo andare",
+      "grammar": [
+        {
+          "topic": "Предлог su",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Оборот c’è (ci sono)",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагол andare",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "compleanno",
+          "ru": "день рождения",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "oggi",
+          "ru": "сегодня",
+          "pos": "adv"
+        },
+        {
+          "it": "andiamo",
+          "ru": "мы идем",
+          "pos": "verb",
+          "form_of": "andare"
+        },
+        {
+          "it": "regalo",
+          "ru": "подарок",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "spumante",
+          "ru": "шампанское",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "stanza",
+          "ru": "комната",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "vicino a",
+          "ru": "рядом с",
+          "pos": "phrase"
+        },
+        {
+          "it": "stazione",
+          "ru": "вокзал",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "porta",
+          "ru": "дверь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "essere contento di",
+          "ru": "быть довольным чем-л.",
+          "pos": "phrase",
+          "stress": "èssere contento di"
+        },
+        {
+          "it": "entrare",
+          "ru": "входить",
+          "pos": "verb"
+        },
+        {
+          "it": "rumoroso",
+          "ru": "шумный",
+          "pos": "adj"
+        },
+        {
+          "it": "dare su",
+          "ru": "выходить на (об окнах)",
+          "pos": "phrase"
+        },
+        {
+          "it": "strada",
+          "ru": "дорога",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "salotto",
+          "ru": "гостиная",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "poltrona",
+          "ru": "кресло",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "comodino",
+          "ru": "тумбочка",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "armadio",
+          "ru": "шкаф для одежды",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "armàdio"
+        },
+        {
+          "it": "tavolo",
+          "ru": "стол",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "tàvolo"
+        },
+        {
+          "it": "sedia",
+          "ru": "стул",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "sèdia"
+        },
+        {
+          "it": "frigorifero",
+          "ru": "холодильник",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "frigorìfero"
+        },
+        {
+          "it": "diciamo",
+          "ru": "мы говорим",
+          "pos": "verb",
+          "form_of": "dire"
+        },
+        {
+          "it": "tanti auguri!",
+          "ru": "поздравляем!",
+          "pos": "phrase"
+        },
+        {
+          "it": "tuo",
+          "ru": "твой",
+          "pos": "pron"
+        },
+        {
+          "it": "ricordare",
+          "ru": "помнить",
+          "pos": "verb"
+        },
+        {
+          "it": "mese",
+          "ru": "месяц",
+          "pos": "noun",
+          "gender": "m"
+        }
+      ],
+      "patterns": [
+        "C'è …",
+        "Ci sono …",
+        "Vado a / in …",
+        "Tanti auguri!"
+      ]
+    },
+    {
+      "id": "a1-12",
+      "source": {
+        "part": "main",
+        "lesson": 7,
+        "pages": [
+          103,
+          112
+        ]
+      },
+      "title": "Le preposizioni articolate: di e in",
+      "grammar": [
+        {
+          "topic": "Сочлененный предлог di",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Сочлененный предлог in",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "tedesco",
+          "ru": "немецкий",
+          "pos": "adj"
+        },
+        {
+          "it": "abbastanza",
+          "ru": "достаточно",
+          "pos": "adv"
+        },
+        {
+          "it": "nero",
+          "ru": "черный",
+          "pos": "adj"
+        },
+        {
+          "it": "amare",
+          "ru": "любить",
+          "pos": "verb"
+        },
+        {
+          "it": "naturalmente",
+          "ru": "естественно",
+          "pos": "adv"
+        },
+        {
+          "it": "ladro",
+          "ru": "вор",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "tutti i giorni",
+          "ru": "каждый день",
+          "pos": "phrase"
+        },
+        {
+          "it": "va",
+          "ru": "он едет",
+          "pos": "verb",
+          "form_of": "andare"
+        },
+        {
+          "it": "fare la spesa",
+          "ru": "ходить (ездить) в магазин за продуктами",
+          "pos": "phrase"
+        },
+        {
+          "it": "andare a trovare",
+          "ru": "ходить в гости",
+          "pos": "phrase"
+        },
+        {
+          "it": "la domenica",
+          "ru": "по воскресеньям",
+          "pos": "phrase",
+          "stress": "la domènica"
+        },
+        {
+          "it": "andare da",
+          "ru": "идти к кому-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "genitori",
+          "ru": "родители",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "fuori città",
+          "ru": "за городом",
+          "pos": "phrase"
+        },
+        {
+          "it": "volta",
+          "ru": "раз",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "all’anno",
+          "ru": "в год",
+          "pos": "phrase"
+        },
+        {
+          "it": "fare un viaggio",
+          "ru": "совершать путешествие",
+          "pos": "phrase",
+          "stress": "fare un viàggio"
+        },
+        {
+          "it": "lasciare",
+          "ru": "оставлять",
+          "pos": "verb"
+        },
+        {
+          "it": "parcheggio",
+          "ru": "парковка",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "parchèggio"
+        },
+        {
+          "it": "custodito",
+          "ru": "охраняемый",
+          "pos": "adj"
+        },
+        {
+          "it": "garage",
+          "ru": "гараж",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "lavare",
+          "ru": "мыть, помыть",
+          "pos": "verb"
+        },
+        {
+          "it": "controllare",
+          "ru": "проверять",
+          "pos": "verb"
+        },
+        {
+          "it": "gomma",
+          "ru": "шина",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "vivere",
+          "ru": "жить",
+          "pos": "verb",
+          "stress": "vìvere"
+        },
+        {
+          "it": "traffico",
+          "ru": "дорожное движение",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "tràffico"
+        },
+        {
+          "it": "stretto",
+          "ru": "узкий",
+          "pos": "adj"
+        },
+        {
+          "it": "per questo",
+          "ru": "поэтому",
+          "pos": "phrase"
+        },
+        {
+          "it": "essere fermo",
+          "ru": "стоять неподвижно",
+          "pos": "phrase",
+          "stress": "èssere fermo"
+        },
+        {
+          "it": "passare",
+          "ru": "провести",
+          "pos": "verb"
+        },
+        {
+          "it": "ascoltare",
+          "ru": "слушать",
+          "pos": "verb"
+        },
+        {
+          "it": "la radio",
+          "ru": "радио",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "la ràdio"
+        },
+        {
+          "it": "segretaria",
+          "ru": "секретарша",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "segretària"
+        },
+        {
+          "it": "scrivere",
+          "ru": "написать",
+          "pos": "verb",
+          "stress": "scrìvere"
+        },
+        {
+          "it": "lettera",
+          "ru": "письмо",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "lèttera"
+        },
+        {
+          "it": "cercare",
+          "ru": "поискать",
+          "pos": "verb"
+        },
+        {
+          "it": "anche se",
+          "ru": "даже если",
+          "pos": "phrase"
+        },
+        {
+          "it": "finisce",
+          "ru": "(пробка) заканчивается",
+          "pos": "verb",
+          "form_of": "finire"
+        },
+        {
+          "it": "presto",
+          "ru": "быстро",
+          "pos": "adv"
+        },
+        {
+          "it": "essere contento",
+          "ru": "быть довольным",
+          "pos": "phrase",
+          "stress": "èssere contento"
+        },
+        {
+          "it": "lo stesso",
+          "ru": "все равно",
+          "pos": "phrase"
+        },
+        {
+          "it": "sta bene",
+          "ru": "ему хорошо",
+          "pos": "verb",
+          "form_of": "stare"
+        },
+        {
+          "it": "comodo",
+          "ru": "удобный",
+          "pos": "adj",
+          "stress": "còmodo"
+        }
+      ],
+      "patterns": [
+        "Vado da …",
+        "Vado a trovare …",
+        "Faccio la spesa",
+        "Tutti i giorni"
+      ]
+    },
+    {
+      "id": "a1-13",
+      "source": {
+        "part": "main",
+        "lesson": 8,
+        "pages": [
+          113,
+          121
+        ]
+      },
+      "title": "I verbi modali e i numeri da 0 a 20",
+      "grammar": [
+        {
+          "topic": "Модальные глаголы",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Количественные числительные от 0 до 20",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Числительные с 11 до 20",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "cinema",
+          "ru": "кино",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "cìnema"
+        },
+        {
+          "it": "al cinema",
+          "ru": "в кино",
+          "pos": "phrase",
+          "stress": "al cìnema"
+        },
+        {
+          "it": "lui",
+          "ru": "он",
+          "pos": "pron"
+        },
+        {
+          "it": "suo/a",
+          "ru": "его",
+          "pos": "pron"
+        },
+        {
+          "it": "loro",
+          "ru": "они",
+          "pos": "pron"
+        },
+        {
+          "it": "essere stanco",
+          "ru": "быть усталым",
+          "pos": "phrase",
+          "stress": "èssere stanco"
+        },
+        {
+          "it": "tutta la sera",
+          "ru": "весь вечер",
+          "pos": "phrase"
+        },
+        {
+          "it": "se",
+          "ru": "если",
+          "pos": "conj"
+        },
+        {
+          "it": "vanno",
+          "ru": "они идут",
+          "pos": "verb",
+          "form_of": "andare"
+        },
+        {
+          "it": "a piedi",
+          "ru": "пешком",
+          "pos": "phrase"
+        },
+        {
+          "it": "brutto",
+          "ru": "плохой (о погоде)",
+          "pos": "adj"
+        },
+        {
+          "it": "autobus",
+          "ru": "автобус",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "àutobus"
+        },
+        {
+          "it": "il sabato sera",
+          "ru": "каждую субботу вечером",
+          "pos": "phrase",
+          "stress": "il sàbato sera"
+        },
+        {
+          "it": "essere pieno di",
+          "ru": "быть полным чем-л.",
+          "pos": "phrase",
+          "stress": "èssere pieno di"
+        },
+        {
+          "it": "gente",
+          "ru": "народ, люди",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "fare la fila",
+          "ru": "стоять в очереди",
+          "pos": "phrase"
+        },
+        {
+          "it": "comprare",
+          "ru": "купить",
+          "pos": "verb"
+        },
+        {
+          "it": "negli altri",
+          "ru": "во все остальные",
+          "pos": "phrase"
+        },
+        {
+          "it": "giorni",
+          "ru": "дни",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "non c’è",
+          "ru": "там нет",
+          "pos": "phrase"
+        },
+        {
+          "it": "film",
+          "ru": "фильм",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "avere voglia di",
+          "ru": "хотеться чего-нибудь",
+          "pos": "phrase"
+        },
+        {
+          "it": "al bar",
+          "ru": "в кафе",
+          "pos": "phrase"
+        },
+        {
+          "it": "di fronte a",
+          "ru": "напротив",
+          "pos": "phrase"
+        },
+        {
+          "it": "panino",
+          "ru": "сэндвич",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "trovare",
+          "ru": "обнаруживать",
+          "pos": "verb"
+        },
+        {
+          "it": "il loro",
+          "ru": "их",
+          "pos": "phrase"
+        },
+        {
+          "it": "ragazza",
+          "ru": "девушка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "vicina di casa",
+          "ru": "соседка",
+          "pos": "phrase"
+        },
+        {
+          "it": "in realtà",
+          "ru": "на самом деле",
+          "pos": "phrase"
+        },
+        {
+          "it": "passare il tempo",
+          "ru": "проводить время",
+          "pos": "phrase"
+        },
+        {
+          "it": "in un altro modo",
+          "ru": "по-другому",
+          "pos": "phrase"
+        },
+        {
+          "it": "altro",
+          "ru": "другой",
+          "pos": "adj"
+        },
+        {
+          "it": "modo",
+          "ru": "способ",
+          "pos": "noun",
+          "gender": "m"
+        }
+      ],
+      "patterns": [
+        "Posso …?",
+        "Voglio …",
+        "Devo …",
+        "Ho voglia di …"
+      ]
+    },
+    {
+      "id": "a1-14",
+      "source": {
+        "part": "main",
+        "lesson": 9,
+        "pages": [
+          122,
+          129
+        ]
+      },
+      "title": "Gli aggettivi possessivi",
+      "grammar": [
+        {
+          "topic": "Притяжательные местоимения",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Особенности употребления местоимения suo (его, ее)",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "distratto",
+          "ru": "рассеянный",
+          "pos": "adj"
+        },
+        {
+          "it": "un giorno",
+          "ru": "однажды",
+          "pos": "phrase"
+        },
+        {
+          "it": "vedere",
+          "ru": "видеть",
+          "pos": "verb",
+          "stress": "vedère"
+        },
+        {
+          "it": "in terra",
+          "ru": "на полу",
+          "pos": "phrase"
+        },
+        {
+          "it": "dentro",
+          "ru": "внутри",
+          "pos": "prep"
+        },
+        {
+          "it": "vuole",
+          "ru": "он хочет",
+          "pos": "verb",
+          "form_of": "volere"
+        },
+        {
+          "it": "proprietario",
+          "ru": "хозяин",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "proprietàrio"
+        },
+        {
+          "it": "restituire",
+          "ru": "возвращать",
+          "pos": "verb"
+        },
+        {
+          "it": "onesto",
+          "ru": "честный",
+          "pos": "adj"
+        },
+        {
+          "it": "passeggero",
+          "ru": "пассажир",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "accanto a",
+          "ru": "рядом с",
+          "pos": "phrase"
+        },
+        {
+          "it": "vecchio",
+          "ru": "старый",
+          "pos": "adj",
+          "stress": "vècchio"
+        },
+        {
+          "it": "cane",
+          "ru": "собака",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "chiedere a",
+          "ru": "спрашивать у",
+          "pos": "phrase",
+          "stress": "chièdere a"
+        },
+        {
+          "it": "scusi",
+          "ru": "извините (на «Вы»)",
+          "pos": "interj"
+        },
+        {
+          "it": "per caso",
+          "ru": "случайно",
+          "pos": "phrase"
+        },
+        {
+          "it": "dietro",
+          "ru": "сзади",
+          "pos": "prep"
+        },
+        {
+          "it": "uomo",
+          "ru": "мужчина",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "giornale",
+          "ru": "газета",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "davanti a",
+          "ru": "перед, впереди",
+          "pos": "phrase"
+        },
+        {
+          "it": "gelato",
+          "ru": "мороженое",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "scusa",
+          "ru": "извини (на «ты»)",
+          "pos": "interj"
+        },
+        {
+          "it": "gruppo",
+          "ru": "группа",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "turista",
+          "ru": "турист",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "straniero",
+          "ru": "иностранный",
+          "pos": "adj"
+        },
+        {
+          "it": "scusate",
+          "ru": "извините (на «вы» — voi)",
+          "pos": "interj"
+        },
+        {
+          "it": "vostro",
+          "ru": "ваш",
+          "pos": "pron"
+        },
+        {
+          "it": "all’inizio",
+          "ru": "в начале",
+          "pos": "phrase",
+          "stress": "all’inìzio"
+        },
+        {
+          "it": "capiscono",
+          "ru": "они понимают",
+          "pos": "verb",
+          "stress": "capìscono",
+          "form_of": "capire"
+        },
+        {
+          "it": "nostro",
+          "ru": "наш",
+          "pos": "pron"
+        },
+        {
+          "it": "altri",
+          "ru": "другие",
+          "pos": "adj"
+        },
+        {
+          "it": "autista",
+          "ru": "водитель",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "dall’autista",
+          "ru": "к водителю",
+          "pos": "phrase"
+        },
+        {
+          "it": "forse",
+          "ru": "может быть",
+          "pos": "adv"
+        },
+        {
+          "it": "pensare",
+          "ru": "думать",
+          "pos": "verb"
+        },
+        {
+          "it": "è una buona idea",
+          "ru": "это хорошая мысль",
+          "pos": "phrase"
+        },
+        {
+          "it": "rimettere",
+          "ru": "вновь класть",
+          "pos": "verb",
+          "stress": "rimèttere"
+        },
+        {
+          "it": "tasca",
+          "ru": "карман",
+          "pos": "noun",
+          "gender": "f"
+        }
+      ],
+      "patterns": [
+        "Scusi, …",
+        "È il mio / la mia …",
+        "Di chi è …?"
+      ]
+    },
+    {
+      "id": "a1-15",
+      "source": {
+        "part": "main",
+        "lesson": 10,
+        "pages": [
+          130,
+          139
+        ]
+      },
+      "title": "I pronomi diretti; il verbo uscire",
+      "grammar": [
+        {
+          "topic": "Безударные личные местоимения (прямой падеж)",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагол uscire",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "negozio di abbigliamento",
+          "ru": "магазин одежды",
+          "pos": "phrase",
+          "stress": "negòzio di abbigliamento"
+        },
+        {
+          "it": "cominciare a fare",
+          "ru": "начинать делать",
+          "pos": "phrase"
+        },
+        {
+          "it": "vestito",
+          "ru": "платье, одежда",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "commessa",
+          "ru": "продавщица",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "si avvicina",
+          "ru": "она приближается",
+          "pos": "verb",
+          "stress": "si avvicìna",
+          "form_of": "avvicinarsi"
+        },
+        {
+          "it": "posso",
+          "ru": "я могу",
+          "pos": "verb",
+          "form_of": "potere"
+        },
+        {
+          "it": "aiutare",
+          "ru": "помочь",
+          "pos": "verb"
+        },
+        {
+          "it": "grazie",
+          "ru": "спасибо",
+          "pos": "interj",
+          "stress": "gràzie"
+        },
+        {
+          "it": "facciamo da sole",
+          "ru": "мы (сделаем) сами",
+          "pos": "phrase"
+        },
+        {
+          "it": "una",
+          "ru": "одна (из них)",
+          "pos": "pron"
+        },
+        {
+          "it": "quanto costa?",
+          "ru": "сколько стоит?",
+          "pos": "phrase"
+        },
+        {
+          "it": "euro",
+          "ru": "евро",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "lo",
+          "ru": "его (платье)",
+          "pos": "pron"
+        },
+        {
+          "it": "provare",
+          "ru": "примерить",
+          "pos": "verb"
+        },
+        {
+          "it": "camerino",
+          "ru": "примерочная",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "sala",
+          "ru": "зал",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "nel",
+          "ru": "in+il, в",
+          "pos": "prep"
+        },
+        {
+          "it": "secondo te",
+          "ru": "по-твоему",
+          "pos": "phrase"
+        },
+        {
+          "it": "secondo me",
+          "ru": "по-моему",
+          "pos": "phrase"
+        },
+        {
+          "it": "come mi sta?",
+          "ru": "как оно (платье) мне?",
+          "pos": "phrase"
+        },
+        {
+          "it": "ti sta bene",
+          "ru": "оно (платье) тебе идет",
+          "pos": "phrase"
+        },
+        {
+          "it": "alla cassa",
+          "ru": "в кассу",
+          "pos": "phrase"
+        },
+        {
+          "it": "mi",
+          "ru": "мне",
+          "pos": "pron"
+        },
+        {
+          "it": "può",
+          "ru": "Вы можете",
+          "pos": "verb",
+          "form_of": "potere"
+        },
+        {
+          "it": "fare lo sconto",
+          "ru": "сделать скидку",
+          "pos": "phrase"
+        },
+        {
+          "it": "cassiera",
+          "ru": "кассир",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "mi dispiace",
+          "ru": "мне очень жаль",
+          "pos": "phrase"
+        },
+        {
+          "it": "purtroppo",
+          "ru": "к сожалению",
+          "pos": "adv"
+        },
+        {
+          "it": "prezzi fissi",
+          "ru": "фиксированные цены",
+          "pos": "phrase"
+        },
+        {
+          "it": "esce",
+          "ru": "она выходит",
+          "pos": "verb",
+          "form_of": "uscire"
+        },
+        {
+          "it": "lei",
+          "ru": "она",
+          "pos": "pron"
+        },
+        {
+          "it": "veramente",
+          "ru": "действительно",
+          "pos": "adv"
+        },
+        {
+          "it": "la prossima volta",
+          "ru": "в следующий раз",
+          "pos": "phrase",
+          "stress": "la pròssima volta"
+        }
+      ],
+      "patterns": [
+        "Quanto costa?",
+        "Posso provarlo?",
+        "Come mi sta?",
+        "Mi dispiace"
+      ]
+    },
+    {
+      "id": "a1-16",
+      "source": {
+        "part": "main",
+        "lesson": 11,
+        "pages": [
+          140,
+          148
+        ]
+      },
+      "title": "I numeri da 21 in poi; il verbo sapere",
+      "grammar": [
+        {
+          "topic": "Существительные, меняющие род",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Количественные числительные от 21 до 1 000 000 000",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильный глагoл sapere",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "le uova",
+          "ru": "яйца",
+          "pos": "phrase"
+        },
+        {
+          "it": "abitano",
+          "ru": "они живут",
+          "pos": "verb",
+          "stress": "àbitano",
+          "form_of": "abitare"
+        },
+        {
+          "it": "casa dello studente",
+          "ru": "общежитие",
+          "pos": "phrase"
+        },
+        {
+          "it": "la loro",
+          "ru": "их",
+          "pos": "phrase"
+        },
+        {
+          "it": "nessuno di loro",
+          "ru": "никто из них",
+          "pos": "phrase"
+        },
+        {
+          "it": "sa",
+          "ru": "(он) знает",
+          "pos": "verb",
+          "form_of": "sapere"
+        },
+        {
+          "it": "cucinare",
+          "ru": "готовить",
+          "pos": "verb"
+        },
+        {
+          "it": "vuoto",
+          "ru": "пустой",
+          "pos": "adj"
+        },
+        {
+          "it": "vicino",
+          "ru": "рядом",
+          "pos": "prep"
+        },
+        {
+          "it": "supermercato",
+          "ru": "супермаркет",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "una sera",
+          "ru": "однажды вечером",
+          "pos": "phrase"
+        },
+        {
+          "it": "prima di",
+          "ru": "перед тем, как",
+          "pos": "phrase"
+        },
+        {
+          "it": "siccome",
+          "ru": "так как",
+          "pos": "conj"
+        },
+        {
+          "it": "facile",
+          "ru": "легко",
+          "pos": "adj",
+          "stress": "fàcile"
+        },
+        {
+          "it": "la stessa",
+          "ru": "та же самая",
+          "pos": "phrase"
+        },
+        {
+          "it": "idea",
+          "ru": "идея",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "subito",
+          "ru": "сразу же",
+          "pos": "adv",
+          "stress": "sùbito"
+        },
+        {
+          "it": "venti",
+          "ru": "20",
+          "pos": "num"
+        },
+        {
+          "it": "al supermercato",
+          "ru": "в супермаркет",
+          "pos": "phrase"
+        },
+        {
+          "it": "trenta",
+          "ru": "30",
+          "pos": "num"
+        },
+        {
+          "it": "improvvisamente",
+          "ru": "внезапно",
+          "pos": "adv"
+        },
+        {
+          "it": "dunque",
+          "ru": "итак, следовательно",
+          "pos": "conj",
+          "stress": "dùnque"
+        },
+        {
+          "it": "sessanta",
+          "ru": "60",
+          "pos": "num"
+        },
+        {
+          "it": "a testa",
+          "ru": "на человека",
+          "pos": "phrase"
+        },
+        {
+          "it": "per molti giorni",
+          "ru": "в течение многих дней",
+          "pos": "phrase"
+        },
+        {
+          "it": "i tre",
+          "ru": "все трое",
+          "pos": "phrase"
+        },
+        {
+          "it": "soltanto",
+          "ru": "только",
+          "pos": "adv"
+        },
+        {
+          "it": "basta!",
+          "ru": "хватит!",
+          "pos": "interj"
+        },
+        {
+          "it": "non ne posso più",
+          "ru": "я больше не могу",
+          "pos": "phrase"
+        },
+        {
+          "it": "andare a mangiare",
+          "ru": "пойти поесть",
+          "pos": "phrase"
+        },
+        {
+          "it": "alla mensa",
+          "ru": "в столовую",
+          "pos": "phrase"
+        },
+        {
+          "it": "universitario",
+          "ru": "университетский",
+          "pos": "adj",
+          "stress": "universitàrio"
+        },
+        {
+          "it": "sul tavolo",
+          "ru": "на столе",
+          "pos": "phrase"
+        },
+        {
+          "it": "lista",
+          "ru": "меню, список",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "piatto del giorno",
+          "ru": "блюдо дня",
+          "pos": "phrase"
+        },
+        {
+          "it": "leggono",
+          "ru": "(они) читают",
+          "pos": "verb",
+          "stress": "lèggono",
+          "form_of": "leggere"
+        },
+        {
+          "it": "uova agli asparagi",
+          "ru": "яйца со спаржей",
+          "pos": "phrase",
+          "stress": "uova agli aspàragi"
+        },
+        {
+          "it": "uova al bacon",
+          "ru": "яичница c беконом",
+          "pos": "phrase"
+        },
+        {
+          "it": "frittata",
+          "ru": "яичница",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "di zucchine",
+          "ru": "с цуккини",
+          "pos": "phrase"
+        },
+        {
+          "it": "uova sode",
+          "ru": "яйца вкрутую",
+          "pos": "phrase"
+        },
+        {
+          "it": "maionese",
+          "ru": "майонез",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "maionèse"
+        }
+      ],
+      "patterns": [
+        "Lo so / Non lo so",
+        "Basta!",
+        "Non ne posso più"
+      ]
+    },
+    {
+      "id": "a1-17",
+      "source": {
+        "part": "main",
+        "lesson": 12,
+        "pages": [
+          149,
+          156
+        ]
+      },
+      "title": "I numeri ordinali; tutto",
+      "grammar": [
+        {
+          "topic": "Порядковые числительные",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Местоимение tutto",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "per turismo",
+          "ru": "в туристических целях",
+          "pos": "phrase"
+        },
+        {
+          "it": "visitano",
+          "ru": "они посещают",
+          "pos": "verb",
+          "stress": "vìsitano",
+          "form_of": "visitare"
+        },
+        {
+          "it": "per la prima volta",
+          "ru": "в первый раз",
+          "pos": "phrase"
+        },
+        {
+          "it": "vogliono",
+          "ru": "они хотят",
+          "pos": "verb",
+          "stress": "vògliono",
+          "form_of": "volere"
+        },
+        {
+          "it": "molti",
+          "ru": "много",
+          "pos": "adj"
+        },
+        {
+          "it": "la cucina italiana",
+          "ru": "итальянская кухня",
+          "pos": "phrase"
+        },
+        {
+          "it": "in un ristorante",
+          "ru": "внутрь одного ресторана",
+          "pos": "phrase"
+        },
+        {
+          "it": "piatto tipico",
+          "ru": "характерное блюдо национальной кухни",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "piatto tìpico"
+        },
+        {
+          "it": "menu",
+          "ru": "меню",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "antipasto",
+          "ru": "закуска",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "insalata di mare",
+          "ru": "салат из морепродуктов",
+          "pos": "phrase"
+        },
+        {
+          "it": "insalata mista",
+          "ru": "микс из листового салата",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "carpaccio",
+          "ru": "карпаччо",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "carpàccio"
+        },
+        {
+          "it": "crostini",
+          "ru": "гренки",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "primo piatto",
+          "ru": "первое блюдо",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "pasta al pesto",
+          "ru": "макароны с песто (соус из базилика, чеснока, сыра, орешков пиний)",
+          "pos": "phrase"
+        },
+        {
+          "it": "gli spaghetti alla carbonara",
+          "ru": "спагетти карбонара (с яйцом, беконом и сыром)",
+          "pos": "phrase"
+        },
+        {
+          "it": "le tagliatelle",
+          "ru": "тальятелле",
+          "pos": "phrase"
+        },
+        {
+          "it": "ai funghi",
+          "ru": "с грибами",
+          "pos": "phrase"
+        },
+        {
+          "it": "tortellini",
+          "ru": "тортеллини (колечки из теста с мясом)",
+          "pos": "noun",
+          "gender": "m",
+          "number": "pl"
+        },
+        {
+          "it": "secondo piatto",
+          "ru": "второе блюдо",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "cotoletta alla milanese",
+          "ru": "шницель по-милански",
+          "pos": "phrase"
+        },
+        {
+          "it": "bistecca alla fiorentina",
+          "ru": "стейк по-флорентийски",
+          "pos": "phrase"
+        },
+        {
+          "it": "fegato alla veneziana",
+          "ru": "печень по-венециански",
+          "pos": "phrase"
+        },
+        {
+          "it": "cameriere",
+          "ru": "официант",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "vogliamo",
+          "ru": "мы хотим",
+          "pos": "verb",
+          "form_of": "volere"
+        },
+        {
+          "it": "ordinare",
+          "ru": "заказывать",
+          "pos": "verb"
+        },
+        {
+          "it": "assaggiare",
+          "ru": "продегустировать",
+          "pos": "verb"
+        },
+        {
+          "it": "tutto",
+          "ru": "все",
+          "pos": "pron"
+        },
+        {
+          "it": "sul menu",
+          "ru": "в меню",
+          "pos": "phrase"
+        },
+        {
+          "it": "com’è possibile",
+          "ru": "как такое возможно",
+          "pos": "phrase",
+          "stress": "com’è possìbile"
+        },
+        {
+          "it": "da bere",
+          "ru": "(чтобы) попить",
+          "pos": "phrase"
+        },
+        {
+          "it": "bianco",
+          "ru": "белый",
+          "pos": "adj"
+        },
+        {
+          "it": "dolce",
+          "ru": "сладость",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "frutta",
+          "ru": "фрукты",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "alla fine",
+          "ru": "в конце",
+          "pos": "phrase"
+        },
+        {
+          "it": "dicono",
+          "ru": "они говорят",
+          "pos": "verb",
+          "stress": "dìcono",
+          "form_of": "dire"
+        },
+        {
+          "it": "per favore",
+          "ru": "пожалуйста",
+          "pos": "phrase"
+        },
+        {
+          "it": "escono",
+          "ru": "они выходят",
+          "pos": "verb",
+          "stress": "èscono",
+          "form_of": "uscire"
+        },
+        {
+          "it": "per la strada",
+          "ru": "по улице",
+          "pos": "phrase"
+        },
+        {
+          "it": "andiamo in un altro ristorante",
+          "ru": "пойдём в какой-нибудь другой ресторан",
+          "pos": "phrase",
+          "form_of": "andare"
+        }
+      ],
+      "patterns": [
+        "Per favore",
+        "Vogliamo ordinare",
+        "Da bere …",
+        "Per la prima volta"
+      ]
+    },
+    {
+      "id": "a1-18",
+      "source": {
+        "part": "main",
+        "lesson": 13,
+        "pages": [
+          157,
+          165
+        ]
+      },
+      "title": "Che ora è? I nomi in -ma, -ta, -ca",
+      "grammar": [
+        {
+          "topic": "Род существительных на -ma, -ta, -ca",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Che ora è? Che ore sono? — Который час?",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "panorama",
+          "ru": "панорама",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "sbagliato",
+          "ru": "неправильный",
+          "pos": "adj"
+        },
+        {
+          "it": "parlare con",
+          "ru": "говорить с",
+          "pos": "phrase"
+        },
+        {
+          "it": "portiere",
+          "ru": "портье",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "buongiorno",
+          "ru": "добрый день! здравствуйте!",
+          "pos": "interj"
+        },
+        {
+          "it": "vorrei",
+          "ru": "я хотел бы",
+          "pos": "verb"
+        },
+        {
+          "it": "prenotazione",
+          "ru": "бронь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "non c’è problema",
+          "ru": "нет проблем",
+          "pos": "phrase"
+        },
+        {
+          "it": "una camera doppia",
+          "ru": "двухместный номер",
+          "pos": "phrase",
+          "stress": "una càmera dòppia"
+        },
+        {
+          "it": "una camera singola",
+          "ru": "одноместный номер",
+          "pos": "phrase",
+          "stress": "una càmera sìngola"
+        },
+        {
+          "it": "per quante notti",
+          "ru": "на сколько ночей",
+          "pos": "phrase"
+        },
+        {
+          "it": "notte",
+          "ru": "ночь",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "la carta di credito",
+          "ru": "кредитная карта",
+          "pos": "phrase",
+          "stress": "la carta di crèdito"
+        },
+        {
+          "it": "certo",
+          "ru": "конечно",
+          "pos": "adv"
+        },
+        {
+          "it": "passaporto",
+          "ru": "паспорт",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "cliente",
+          "ru": "клиент",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "a che piano?",
+          "ru": "на каком этаже?",
+          "pos": "phrase"
+        },
+        {
+          "it": "a che ora?",
+          "ru": "во сколько?",
+          "pos": "phrase"
+        },
+        {
+          "it": "dalle ... alle",
+          "ru": "с … по",
+          "pos": "phrase"
+        },
+        {
+          "it": "le sette",
+          "ru": "семь часов",
+          "pos": "phrase"
+        },
+        {
+          "it": "le nove",
+          "ru": "девять часов",
+          "pos": "phrase"
+        },
+        {
+          "it": "mi scusi",
+          "ru": "извините (на «Вы»)",
+          "pos": "phrase"
+        },
+        {
+          "it": "in fondo a",
+          "ru": "в конце",
+          "pos": "phrase"
+        },
+        {
+          "it": "corridoio",
+          "ru": "коридор",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "corridòio"
+        },
+        {
+          "it": "a destra",
+          "ru": "направо",
+          "pos": "phrase"
+        },
+        {
+          "it": "salire",
+          "ru": "подниматься",
+          "pos": "verb"
+        },
+        {
+          "it": "pulito",
+          "ru": "чистый",
+          "pos": "adj"
+        },
+        {
+          "it": "televisore",
+          "ru": "телевизор",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "telefono",
+          "ru": "телефон",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "telèfono"
+        },
+        {
+          "it": "condizionatore",
+          "ru": "кондиционер",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "in bagno",
+          "ru": "в ванной комнате",
+          "pos": "phrase"
+        },
+        {
+          "it": "doccia",
+          "ru": "душ",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "dòccia"
+        },
+        {
+          "it": "funzionare",
+          "ru": "работать (о приборах)",
+          "pos": "verb"
+        },
+        {
+          "it": "dalla",
+          "ru": "из",
+          "pos": "prep"
+        },
+        {
+          "it": "si vede",
+          "ru": "виднеется",
+          "pos": "phrase"
+        },
+        {
+          "it": "cupola",
+          "ru": "купол",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "cùpola"
+        },
+        {
+          "it": "San Pietro",
+          "ru": "Собор Св. Петра",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "bellissimo",
+          "ru": "очень красивый, красивейший",
+          "pos": "adj"
+        },
+        {
+          "it": "c’è qualcosa che non va",
+          "ru": "что-то не так",
+          "pos": "phrase"
+        },
+        {
+          "it": "telefonare a",
+          "ru": "звонить кому-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "a Venezia",
+          "ru": "в Венеции",
+          "pos": "phrase",
+          "stress": "a Venèzia"
+        }
+      ],
+      "patterns": [
+        "Che ora è?",
+        "Che ore sono?",
+        "Sono le …",
+        "A che ora …?",
+        "Vorrei una camera …"
+      ]
+    },
+    {
+      "id": "a1-19",
+      "source": {
+        "part": "main",
+        "lesson": 14,
+        "pages": [
+          166,
+          174
+        ]
+      },
+      "title": "Il si impersonale; il tempo e le stagioni",
+      "grammar": [
+        {
+          "topic": "Согласование слов troppo, tanto",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Безличные конструкции с si",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Погода и времена года, il tempo e le stagioni",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "paese",
+          "ru": "страна",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "clima",
+          "ru": "климат",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "buono",
+          "ru": "хороший",
+          "pos": "adj"
+        },
+        {
+          "it": "in inverno",
+          "ru": "зимой",
+          "pos": "phrase"
+        },
+        {
+          "it": "fa freddo",
+          "ru": "холодно",
+          "pos": "phrase"
+        },
+        {
+          "it": "in estate",
+          "ru": "летом",
+          "pos": "phrase"
+        },
+        {
+          "it": "fa caldo",
+          "ru": "жарко",
+          "pos": "phrase"
+        },
+        {
+          "it": "temperatura",
+          "ru": "температура",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "normale",
+          "ru": "нормальный/-ая",
+          "pos": "adj"
+        },
+        {
+          "it": "si può",
+          "ru": "можно",
+          "pos": "phrase"
+        },
+        {
+          "it": "non sa come",
+          "ru": "не знают",
+          "pos": "phrase"
+        },
+        {
+          "it": "non si può",
+          "ru": "нельзя",
+          "pos": "phrase"
+        },
+        {
+          "it": "crescono",
+          "ru": "расти",
+          "pos": "verb",
+          "stress": "crèscono",
+          "form_of": "crescere"
+        },
+        {
+          "it": "ogni",
+          "ru": "каждый",
+          "pos": "adj"
+        },
+        {
+          "it": "stipendio",
+          "ru": "зарплата",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "stipèndio"
+        },
+        {
+          "it": "bastare",
+          "ru": "хватать",
+          "pos": "verb"
+        },
+        {
+          "it": "neppure",
+          "ru": "даже не",
+          "pos": "adv"
+        },
+        {
+          "it": "bisogna",
+          "ru": "нужно",
+          "pos": "verb",
+          "form_of": "bisognare"
+        },
+        {
+          "it": "fare i documenti",
+          "ru": "оформлять документы",
+          "pos": "phrase"
+        },
+        {
+          "it": "ogni volta",
+          "ru": "каждый раз",
+          "pos": "phrase"
+        },
+        {
+          "it": "stare in fila",
+          "ru": "стоять в очереди",
+          "pos": "phrase"
+        },
+        {
+          "it": "motivo",
+          "ru": "причина",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "per molte ore",
+          "ru": "на много часов",
+          "pos": "phrase"
+        },
+        {
+          "it": "perdere",
+          "ru": "терять",
+          "pos": "verb",
+          "stress": "pèrdere"
+        },
+        {
+          "it": "un sacco di",
+          "ru": "куча",
+          "pos": "phrase"
+        },
+        {
+          "it": "terribile",
+          "ru": "ужасный",
+          "pos": "adj",
+          "stress": "terrìbile"
+        },
+        {
+          "it": "semaforo",
+          "ru": "светофор",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "semàforo"
+        },
+        {
+          "it": "si formano",
+          "ru": "формируются",
+          "pos": "phrase",
+          "stress": "si fòrmano"
+        },
+        {
+          "it": "specie",
+          "ru": "особенно",
+          "pos": "adv"
+        },
+        {
+          "it": "ora di punta",
+          "ru": "час пик",
+          "pos": "phrase"
+        },
+        {
+          "it": "problema",
+          "ru": "проблема",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "altissimo",
+          "ru": "очень высокий",
+          "pos": "adj",
+          "stress": "altìssimo"
+        },
+        {
+          "it": "sotto",
+          "ru": "под",
+          "pos": "prep"
+        },
+        {
+          "it": "insomma",
+          "ru": "в общем",
+          "pos": "adv"
+        },
+        {
+          "it": "impossibile",
+          "ru": "невозможно",
+          "pos": "adj",
+          "stress": "impossìbile"
+        },
+        {
+          "it": "prima o poi",
+          "ru": "рано или поздно",
+          "pos": "phrase"
+        },
+        {
+          "it": "andrà a vivere",
+          "ru": "поедет жить",
+          "pos": "phrase",
+          "stress": "andrà a vìvere"
+        },
+        {
+          "it": "meno",
+          "ru": "меньше",
+          "pos": "adv"
+        }
+      ],
+      "patterns": [
+        "Fa caldo / freddo",
+        "Si può …?",
+        "Non si può …",
+        "Bisogna …"
+      ]
+    },
+    {
+      "id": "a1-20",
+      "source": {
+        "part": "main",
+        "lesson": 15,
+        "pages": [
+          175,
+          183
+        ]
+      },
+      "title": "Gli avverbi in -mente; qualche e alcuni",
+      "grammar": [
+        {
+          "topic": "Образование наречий",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Местоимения qualche, alcuni",
+          "rule_ru": ""
+        },
+        {
+          "topic": "Неправильные глаголы spegnere, togliere",
+          "rule_ru": ""
+        }
+      ],
+      "vocab": [
+        {
+          "it": "direttore",
+          "ru": "директор",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "ho trovato",
+          "ru": "я нашел",
+          "pos": "phrase"
+        },
+        {
+          "it": "orario",
+          "ru": "расписание, распорядок",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "oràrio"
+        },
+        {
+          "it": "piuttosto",
+          "ru": "достаточно",
+          "pos": "adv"
+        },
+        {
+          "it": "pesante",
+          "ru": "тяжелый",
+          "pos": "adj"
+        },
+        {
+          "it": "anzi",
+          "ru": "более того",
+          "pos": "conj"
+        },
+        {
+          "it": "proprio",
+          "ru": "прямо-таки",
+          "pos": "adv",
+          "stress": "pròprio"
+        },
+        {
+          "it": "filantropo",
+          "ru": "человеколюбец",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "filàntropo"
+        },
+        {
+          "it": "nostra",
+          "ru": "наша",
+          "pos": "pron"
+        },
+        {
+          "it": "impiegato",
+          "ru": "служащий",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "suoi",
+          "ru": "его",
+          "pos": "pron"
+        },
+        {
+          "it": "vestito di nero",
+          "ru": "одетый в черное",
+          "pos": "phrase"
+        },
+        {
+          "it": "occhiali da sole",
+          "ru": "солнцезащитные очки",
+          "pos": "phrase"
+        },
+        {
+          "it": "guardia del corpo",
+          "ru": "телохранитель",
+          "pos": "phrase",
+          "stress": "guàrdia del corpo"
+        },
+        {
+          "it": "dappertutto",
+          "ru": "везде",
+          "pos": "adv"
+        },
+        {
+          "it": "a mezzogiorno",
+          "ru": "в полдень",
+          "pos": "phrase"
+        },
+        {
+          "it": "per il pranzo",
+          "ru": "на обед",
+          "pos": "phrase"
+        },
+        {
+          "it": "pezzo",
+          "ru": "кусок",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "pane",
+          "ru": "хлеб",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "dobbiamo",
+          "ru": "мы должны",
+          "pos": "verb",
+          "form_of": "dovere"
+        },
+        {
+          "it": "spendere",
+          "ru": "тратить",
+          "pos": "verb",
+          "stress": "spèndere"
+        },
+        {
+          "it": "in cinque minuti",
+          "ru": "за пять минут",
+          "pos": "phrase"
+        },
+        {
+          "it": "ricominciare (a fare)",
+          "ru": "вновь начинать",
+          "pos": "phrase"
+        },
+        {
+          "it": "finire (di fare)",
+          "ru": "заканчивать делать что-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "restare a fare",
+          "ru": "оставаться, чтобы сделать что-л.",
+          "pos": "phrase"
+        },
+        {
+          "it": "a chiave",
+          "ru": "на ключ",
+          "pos": "phrase"
+        },
+        {
+          "it": "sulla",
+          "ru": "на",
+          "pos": "prep"
+        },
+        {
+          "it": "scrivania",
+          "ru": "письменный стол",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "scrivanìa"
+        },
+        {
+          "it": "va via",
+          "ru": "он уходит",
+          "pos": "verb",
+          "stress": "va vìa",
+          "form_of": "andare via"
+        },
+        {
+          "it": "spegnere",
+          "ru": "выключать",
+          "pos": "verb",
+          "stress": "spègnere"
+        },
+        {
+          "it": "luce",
+          "ru": "свет",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "riscaldamento",
+          "ru": "отопление",
+          "pos": "noun",
+          "gender": "m"
+        },
+        {
+          "it": "possiamo",
+          "ru": "мы можем",
+          "pos": "verb",
+          "form_of": "potere"
+        },
+        {
+          "it": "arrivederci",
+          "ru": "до свидания",
+          "pos": "interj"
+        },
+        {
+          "it": "a lunedì",
+          "ru": "до понедельника",
+          "pos": "phrase"
+        },
+        {
+          "it": "all’uscita",
+          "ru": "на выходе",
+          "pos": "phrase"
+        },
+        {
+          "it": "tutti",
+          "ru": "все",
+          "pos": "pron"
+        },
+        {
+          "it": "in tasca",
+          "ru": "в кармане",
+          "pos": "phrase"
+        },
+        {
+          "it": "qualche",
+          "ru": "какой-нибудь, несколько",
+          "pos": "pron"
+        },
+        {
+          "it": "penna",
+          "ru": "ручка",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "matita",
+          "ru": "карандаш",
+          "pos": "noun",
+          "gender": "f"
+        },
+        {
+          "it": "oggetto",
+          "ru": "предмет",
+          "pos": "noun",
+          "gender": "m"
+        }
+      ],
+      "patterns": [
+        "Qualche volta",
+        "A lunedì!",
+        "Arrivederci",
+        "Spegni la luce!"
+      ]
+    }
+  ]
+}
