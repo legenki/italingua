@@ -28,3 +28,13 @@
 - `source/` — PDF (игнорируется git).
 - `tools/` — скрипты извлечения и валидации.
 - `Content/<LEVEL>.json` — контент по уровням (`A1.json`, …).
+
+## Извлечение контента
+```bash
+python3 -m venv tools/.venv && tools/.venv/bin/pip install -r tools/requirements.txt
+tools/.venv/bin/python tools/extract_structure.py --level A1   # -> Content/A1.json
+python3 tools/validate_content.py --warnings                   # без зависимостей
+```
+- Уровни: A1 = вводный курс 1–5 + основной 1–15; A2 = основной 16–35.
+- Названия уроков, шаблоны и ручные правки лексики — `tools/curation/<LEVEL>.json`.
+- Генерированный `Content/*.json` руками не правим: правки идут в curation и перегенерацию.
