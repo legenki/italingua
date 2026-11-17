@@ -39,10 +39,7 @@ final class FillBlankSession {
     /// some shuffling so repeated runs are not identical.
     static func pickWords(from lesson: Lesson, progress: [String: WordProgress],
                           count: Int = 5, now: Date = .now) -> [TargetWord] {
-        let eligible = lesson.sortedVocab.filter { item in
-            item.pos != .proper && !item.italian.contains(where: { "…/()".contains($0) })
-                && !item.italian.contains("...")
-        }
+        let eligible = lesson.sortedVocab.filter(isPracticable)
         let ranked = eligible
             .map { ($0, progress[$0.wordID]?.dueDate ?? .distantPast) }
             .sorted { $0.1 < $1.1 }
@@ -52,6 +49,12 @@ final class FillBlankSession {
             TargetWord(wordID: item.wordID, lessonID: lesson.id, italian: item.italian,
                        russian: item.russian, pos: item.pos, gender: item.gender)
         }
+    }
+
+    /// Words the exercise can ask: no proper names, no entries with gaps or variants.
+    static func isPracticable(_ item: VocabItem) -> Bool {
+        item.pos != .proper && !item.italian.contains(where: { "…/()".contains($0) })
+            && !item.italian.contains("...")
     }
 
     func start() async {

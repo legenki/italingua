@@ -16,15 +16,21 @@ struct RootView: View {
         NavigationSplitView {
             List(selection: $selection) {
                 ForEach(levels, id: \.self) { level in
-                    Section(level) {
-                        ForEach(lessons.filter { $0.level == level }) { lesson in
-                            LessonRow(lesson: lesson, learned: learnedCount(in: lesson))
+                    ForEach(["intro", "main"], id: \.self) { part in
+                      let items = lessons.filter { $0.level == level && $0.sourcePart == part }
+                      if !items.isEmpty {
+                      Section("\(level) · \(part == "intro" ? "Вводный курс" : "Основной курс")") {
+                        ForEach(items) { lesson in
+                            LessonRow(lesson: lesson, progress: progress(of: lesson, boxes: boxes))
                                 .tag(lesson.id)
                         }
+                      }
+                      }
                     }
                 }
             }
             .navigationTitle("Italingua")
+            .navigationSplitViewColumnWidth(min: 280, ideal: 320, max: 420)
             .toolbar {
                 #if os(macOS)
                 SettingsLink { Label("Настройки", systemImage: "gearshape") }
@@ -66,33 +72,90 @@ struct RootView: View {
         Array(Set(lessons.map(\.level))).sorted()
     }
 
-    private var learnedIDs: Set<String> {
-        Set(progress.filter(\.isLearned).map(\.wordID))
+    private var boxes: [String: Int] {
+        Dictionary(progress.map { ($0.wordID, $0.box) }, uniquingKeysWith: max)
     }
 
-    private func learnedCount(in lesson: Lesson) -> Int {
-        let ids = learnedIDs
-        return lesson.vocab.filter { ids.contains($0.wordID) }.count
+    private func progress(of lesson: Lesson, boxes: [String: Int]) -> LessonProgress {
+        LessonProgress(boxes: lesson.vocab.filter(FillBlankSession.isPracticable).map { boxes[$0.wordID] })
     }
 }
 
+/// A lesson in the sidebar, laid out like a chat row: status badge, title
+/// and how many of its words are known.
 private struct LessonRow: View {
     let lesson: Lesson
-    let learned: Int
+    let progress: LessonProgress
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Text(lesson.title.isEmpty ? lesson.id : lesson.title)
-                .font(.headline)
-            HStack {
-                Text(lesson.sourceLabel)
-                Spacer()
-                Text("\(learned)/\(lesson.vocab.count) слов")
+        HStack(spacing: 12) {
+            LessonBadge(number: lesson.sourceLesson, progress: progress)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(lesson.title.isEmpty ? lesson.id : lesson.title)
+                    .font(.body.weight(.semibold))
+                    .lineLimit(2)
+                Text(statusText)
+                    .font(.subheadline)
                     .monospacedDigit()
+                    .foregroundStyle(progress.state == .done ? Theme.accent : .secondary)
             }
-            .font(.caption)
-            .foregroundStyle(.secondary)
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 6)
+        .accessibilityElement(children: .combine)
+    }
+
+    private var statusText: String {
+        switch progress.state {
+        case .notStarted: "Не начат · \(progress.total) слов"
+        case .inProgress: "Знакомо \(progress.known) из \(progress.total) слов"
+        case .done: "Пройден · \(progress.total) слов"
+        }
+    }
+}
+
+/// Round badge in place of a chat avatar: the lesson number in a grey circle
+/// (not started), a progress ring around it (in progress), or a green check (done).
+struct LessonBadge: View {
+    let number: Int
+    let progress: LessonProgress
+    var size: CGFloat = 44
+
+    var body: some View {
+        ZStack {
+            switch progress.state {
+            case .done:
+                Circle().fill(Theme.accent)
+                Image(systemName: "checkmark")
+                    .font(.system(size: size * 0.4, weight: .bold))
+                    .foregroundStyle(.white)
+            case .inProgress:
+                Circle().fill(Theme.accentSoft)
+                Circle().stroke(Theme.separator, lineWidth: 3).padding(1.5)
+                Circle()
+                    .trim(from: 0, to: max(progress.fraction, 0.04))
+                    .stroke(Theme.accent, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
+                    .padding(1.5)
+                label.foregroundStyle(Theme.accent)
+            case .notStarted:
+                Circle().fill(Theme.tile)
+                Circle().stroke(Theme.separator, lineWidth: 1)
+                label.foregroundStyle(Theme.secondaryText)
+            }
+        }
+        .frame(width: size, height: size)
+        .accessibilityLabel(accessibility)
+    }
+
+    private var label: some View {
+        Text("\(number)").font(.system(size: size * 0.4, weight: .bold, design: .rounded))
+    }
+
+    private var accessibility: String {
+        switch progress.state {
+        case .notStarted: "Не начат"
+        case .inProgress: "В процессе, \(Int(progress.fraction * 100))%"
+        case .done: "Пройден"
+        }
     }
 }

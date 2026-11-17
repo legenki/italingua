@@ -262,3 +262,14 @@ struct SpokenAnswerTests {
         #expect(SpeechInput.answer(from: transcript, expected: expected) == result)
     }
 }
+
+struct LessonProgressTests {
+    @Test func states() {
+        #expect(LessonProgress(boxes: [nil, nil]).state == .notStarted)
+        #expect(LessonProgress(boxes: [1, nil]).state == .inProgress)   // practised, last answer wrong
+        #expect(LessonProgress(boxes: [2, 1]).state == .inProgress)
+        #expect(LessonProgress(boxes: [2, 5]).state == .done)
+        #expect(LessonProgress(boxes: []).state == .notStarted)
+        #expect(LessonProgress(boxes: [2, nil, 3, 1]).fraction == 0.5)
+    }
+}
