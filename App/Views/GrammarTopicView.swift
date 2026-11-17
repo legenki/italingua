@@ -1,8 +1,8 @@
 import SwiftData
 import SwiftUI
 
-/// One grammar topic: the rule in the owner's own words, editable in place.
-/// Edits are stored as a synced RuleNote until exported to the curation file.
+/// One grammar topic: the rule as cards, editable in place. Edits are stored
+/// as a synced RuleNote until exported to the curation file.
 struct GrammarTopicView: View {
     let lessonID: String
     let topic: GrammarTopic
@@ -24,31 +24,45 @@ struct GrammarTopicView: View {
     private var currentText: String { note?.text ?? topic.ruleRU }
 
     var body: some View {
-        Form {
-            Section {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text(topic.topic)
+                    .font(.largeTitle.weight(.bold))
+                    .fixedSize(horizontal: false, vertical: true)
+
                 if editing {
-                    TextEditor(text: $draft)
-                        .frame(minHeight: 220)
-                        .font(.body)
+                    Card {
+                        CardLabel(text: "Правило")
+                        TextEditor(text: $draft)
+                            .font(.body.monospaced())
+                            .frame(minHeight: 320)
+                            .scrollContentBackground(.hidden)
+                        Text("Разметка: «• пункт», «! осторожно», «ex: Italiano | Перевод», «conj: verbo | перевод» и шесть строк вида «io parl|o», **жирный**.")
+                            .font(.caption)
+                            .foregroundStyle(Theme.secondaryText)
+                    }
                 } else if currentText.isEmpty {
-                    Text("Правило ещё не написано. Нажмите «Изменить», чтобы записать его своими словами.")
-                        .foregroundStyle(.secondary)
+                    Card {
+                        Text("Правило ещё не написано. Нажмите «Изменить», чтобы записать его своими словами.")
+                            .foregroundStyle(Theme.secondaryText)
+                    }
                 } else {
-                    Text(currentText)
-                        .textSelection(.enabled)
+                    RuleBlocksView(text: currentText)
                 }
-            } header: {
-                Text("Правило")
-            } footer: {
-                if note != nil {
-                    Text("Изменено в приложении. Попадёт в файлы курса после экспорта правил.")
-                } else if !topic.ruleRU.isEmpty {
-                    Text("Из файлов курса.")
+
+                if !editing, note != nil {
+                    Label("Изменено в приложении. Попадёт в файлы курса после экспорта правил.",
+                          systemImage: "pencil.circle")
+                        .font(.footnote)
+                        .foregroundStyle(Theme.secondaryText)
                 }
             }
+            .padding(16)
+            .frame(maxWidth: 640, alignment: .leading)
+            .frame(maxWidth: .infinity)
         }
-        .formStyle(.grouped)
-        .navigationTitle(topic.topic)
+        .background(Theme.background)
+        .navigationTitle("")
         .toolbar {
             if editing {
                 ToolbarItem(placement: .cancellationAction) {
@@ -74,7 +88,6 @@ struct GrammarTopicView: View {
         do {
             let existing = try context.ruleNote(lessonID: lessonID, topic: topic.topic)
             if text == bundled {
-                // Same as the course file: nothing to keep in the app.
                 if let existing { context.delete(existing) }
             } else if let existing {
                 existing.text = text

@@ -68,10 +68,12 @@ final class VocabItem {
     var number: String?
     var stress: String?
     var formOf: String?
+    /// Marked as new in this lesson by the textbook.
+    var isNew: Bool = false
     var lesson: Lesson?
 
     init(wordID: String, order: Int, italian: String, russian: String, posRaw: String,
-         gender: String?, number: String?, stress: String?, formOf: String?) {
+         gender: String?, number: String?, stress: String?, formOf: String?, isNew: Bool = false) {
         self.wordID = wordID
         self.order = order
         self.italian = italian
@@ -81,12 +83,27 @@ final class VocabItem {
         self.number = number
         self.stress = stress
         self.formOf = formOf
+        self.isNew = isNew
     }
 
     var pos: PartOfSpeech { PartOfSpeech(rawValue: posRaw) ?? .other }
 
     /// Shown in lists: the stressed form if the book marks it.
     var displayItalian: String { stress ?? italian }
+
+    var isPlural: Bool { number == "pl" }
+
+    /// "il lavoro" for nouns, the word itself otherwise. Also what is spoken.
+    var withArticle: String {
+        guard pos == .noun else { return italian }
+        return Articles.withArticle(italian, gender: gender, plural: isPlural) ?? italian
+    }
+
+    var displayWithArticle: String {
+        guard pos == .noun, let full = Articles.withArticle(displayItalian, gender: gender, plural: isPlural)
+        else { return displayItalian }
+        return full
+    }
 }
 
 nonisolated enum PartOfSpeech: String, CaseIterable, Sendable {

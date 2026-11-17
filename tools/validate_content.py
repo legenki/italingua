@@ -41,7 +41,7 @@ LESSON_KEYS = {"id": str, "title": str, "grammar": list, "vocab": list, "pattern
 LESSON_OPTIONAL = {"source": dict}
 GRAMMAR_KEYS = {"topic": str, "rule_ru": str}
 VOCAB_KEYS = {"it": str, "ru": str, "pos": str}
-VOCAB_OPTIONAL = {"gender": str, "number": str, "stress": str, "form_of": str}
+VOCAB_OPTIONAL = {"gender": str, "number": str, "stress": str, "form_of": str, "new": bool}
 
 CYR = re.compile("[а-яёА-ЯЁ]")
 # Well-known nouns whose gender does not follow the -o/-a ending rule.
@@ -56,6 +56,36 @@ LAT = re.compile("[A-Za-z]")
 def fold(s: str) -> str:
     s = unicodedata.normalize("NFD", s.lower().replace("’", "'"))
     return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
+
+
+def check_rule_markup(text: str) -> list[str]:
+    """Rule markup (see CLAUDE.md): `conj: verb | gloss` + 6 rows until a
+    blank line, `ex: Italian | Russian`, `! callout`, `• bullet`, paragraphs."""
+    problems = []
+    lines = text.split("\n")
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith("conj:"):
+            if line.count("|") != 1:
+                problems.append(f"conj header needs 'verb | gloss': {line!r}")
+            rows = []
+            i += 1
+            while i < len(lines) and lines[i].strip():
+                rows.append(lines[i].strip())
+                i += 1
+            if len(rows) != 6:
+                problems.append(f"conj {line[5:].split('|')[0].strip()!r} has {len(rows)} rows, expected 6")
+            for r in rows:
+                if len(r.split()) < 2 or r.count("|") > 1:
+                    problems.append(f"bad conj row {r!r}")
+            continue
+        if line.startswith("ex:") and line.count("|") != 1:
+            problems.append(f"example needs 'Italian | Russian': {line!r}")
+        if line.count("**") % 2:
+            problems.append(f"unbalanced ** in {line!r}")
+        i += 1
+    return problems
 
 
 class Report:
@@ -128,6 +158,8 @@ def validate(path: Path) -> Report:
             gw = f"{where}.grammar[{gi}]"
             if check_keys(rep, gw, g, GRAMMAR_KEYS) and not g.get("topic", "").strip():
                 rep.err(gw, "empty topic")
+            for msg in check_rule_markup(g.get("rule_ru", "")):
+                rep.err(f"{where} «{g.get('topic', '')}»", msg)
 
         for pi, p in enumerate(les.get("patterns", [])):
             if not isinstance(p, str) or not p.strip():

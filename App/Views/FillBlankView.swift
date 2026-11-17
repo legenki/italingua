@@ -10,85 +10,123 @@ struct FillBlankView: View {
     @FocusState private var focused: Bool
 
     var body: some View {
-        Group {
-            if let session {
-                content(session)
-            } else {
-                ProgressView()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Вставь слово").font(.largeTitle.weight(.bold))
+                if let session {
+                    content(session)
+                } else {
+                    ProgressView()
+                }
             }
+            .padding(16)
+            .frame(maxWidth: 640, alignment: .leading)
+            .frame(maxWidth: .infinity)
         }
-        .padding()
-        .frame(maxWidth: 560)
-        .navigationTitle("Вставь слово")
+        .background(Theme.background)
+        .navigationTitle("")
         .task { await startIfNeeded() }
     }
 
     @ViewBuilder
     private func content(_ s: FillBlankSession) -> some View {
-        VStack(alignment: .leading, spacing: 20) {
-            if case .unavailable(let reason) = s.status {
-                Label(reason + " Задания без контекста.", systemImage: "exclamationmark.triangle")
-                    .font(.callout)
-                    .foregroundStyle(.orange)
-            } else if let notice = s.modelNotice {
-                Label(notice, systemImage: "info.circle")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
+        if case .unavailable(let reason) = s.status {
+            Card(fill: Theme.warningFill) {
+                CardLabel(text: "Без модели", color: Theme.warningText)
+                Text(reason + " Задания без контекста: вспомните слово по переводу.")
             }
+        } else if let notice = s.modelNotice {
+            Card(fill: Theme.warningFill) {
+                Text(notice).font(.subheadline)
+            }
+        }
 
-            switch s.phase {
-            case .loading:
-                HStack { ProgressView(); Text("Составляю задание…") }
-            case .finished:
-                finished(s)
-            case .answering, .checked:
-                if let ex = s.current { task(ex, session: s) }
+        switch s.phase {
+        case .loading:
+            Card {
+                HStack(spacing: 12) {
+                    ProgressView()
+                    Text("Составляю задание…").foregroundStyle(Theme.secondaryText)
+                }
             }
-            Spacer()
+        case .finished:
+            Card {
+                CardLabel(text: "Готово")
+                Text("\(s.correctCount) из \(s.total) верно").font(.title.weight(.bold))
+                Button {
+                    Task { await restart() }
+                } label: {
+                    Text("Ещё раз")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .buttonStyle(.plain)
+            }
+        case .answering, .checked:
+            if let ex = s.current { task(ex, session: s) }
         }
     }
 
     @ViewBuilder
     private func task(_ ex: FillBlankExercise, session s: FillBlankSession) -> some View {
-        Text("Задание \(s.index + 1) из \(s.total)")
-            .font(.caption)
-            .foregroundStyle(.secondary)
-        if ex.source == .model {
-            Text(ex.sentence).font(.title2)
-        } else {
-            Text("Как по-итальянски?").font(.title3)
-        }
-        Text("Подсказка: \(ex.hintRU)")
-            .foregroundStyle(.secondary)
+        Card {
+            HStack {
+                CardLabel(text: ex.source == .model ? "Предложение" : "Как по-итальянски?")
+                Spacer()
+                Text("\(s.index + 1) из \(s.total)").font(.subheadline).foregroundStyle(Theme.secondaryText)
+            }
+            if ex.source == .model {
+                Text(ex.sentence).font(.title2)
+            }
+            Text(ex.hintRU).font(.title3.weight(ex.source == .model ? .regular : .semibold))
+                .foregroundStyle(ex.source == .model ? Theme.secondaryText : .primary)
 
-        TextField("Пропущенное слово", text: $answer)
-            .textFieldStyle(.roundedBorder)
-            .autocorrectionDisabled()
-            #if os(iOS)
-            .textInputAutocapitalization(.never)
-            #endif
-            .focused($focused)
-            .disabled(s.phase != .answering)
-            .onSubmit { primaryAction(s) }
+            TextField("Пропущенное слово", text: $answer)
+                .textFieldStyle(.plain)
+                .font(.title3)
+                .autocorrectionDisabled()
+                #if os(iOS)
+                .textInputAutocapitalization(.never)
+                #endif
+                .focused($focused)
+                .disabled(s.phase != .answering)
+                .onSubmit { primaryAction(s) }
+                .padding(.horizontal, 12)
+                .frame(minHeight: 48)
+                .background(Theme.tile, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-        if case .checked(let result) = s.phase {
-            Label(result.feedbackRU, systemImage: result.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
-                .foregroundStyle(result.isCorrect ? .green : .red)
-        }
+            if case .checked(let result) = s.phase {
+                HStack(spacing: 12) {
+                    Image(systemName: result.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(result.isCorrect ? Theme.accent : Theme.feminine)
+                    Text(result.feedbackRU)
+                    Spacer(minLength: 0)
+                    SpeakButton(text: spokenAnswer(ex), label: "Прослушать ответ", size: 40)
+                }
+            }
 
-        Button(s.phase == .answering ? "Проверить" : "Дальше") { primaryAction(s) }
-            .buttonStyle(.borderedProminent)
+            Button {
+                primaryAction(s)
+            } label: {
+                Text(s.phase == .answering ? "Проверить" : "Дальше")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            .buttonStyle(.plain)
             .keyboardShortcut(.defaultAction)
+        }
     }
 
-    @ViewBuilder
-    private func finished(_ s: FillBlankSession) -> some View {
-        ContentUnavailableView {
-            Label("Готово: \(s.correctCount) из \(s.total)", systemImage: "flag.checkered")
-        } actions: {
-            Button("Ещё раз") { Task { await restart() } }
-                .buttonStyle(.borderedProminent)
-        }
+    /// The whole sentence with the answer filled in, or the word alone.
+    private func spokenAnswer(_ ex: FillBlankExercise) -> String {
+        ex.source == .model
+            ? ex.sentence.replacingOccurrences(of: FillBlankExercise.blank, with: ex.answer)
+            : ex.answer
     }
 
     private func primaryAction(_ s: FillBlankSession) {

@@ -154,3 +154,77 @@ struct ModelSmokeTests {
         #expect(produced >= 3)
     }
 }
+
+struct RuleMarkupTests {
+    @Test func parsesAllBlockKinds() {
+        let text = """
+        Intro with **bold**.
+        • one
+        • two
+        ! careful
+        ! still careful
+        conj: parlare | говорить
+        io parl|o
+        tu parl|i
+        lui/lei parl|a
+        noi parl|iamo
+        voi parl|ate
+        loro pàrl|ano
+
+        ex: Abito a Mosca. | Я живу в Москве.
+        """
+        let blocks = RuleMarkup.parse(text)
+        #expect(blocks.count == 5)
+        #expect(blocks[0] == .paragraph("Intro with **bold**."))
+        #expect(blocks[1] == .bullets(["one", "two"]))
+        #expect(blocks[2] == .callout(["careful", "still careful"]))
+        guard case .conjugation(let c) = blocks[3] else { Issue.record("no table"); return }
+        #expect(c.verb == "parlare" && c.gloss == "говорить" && c.rows.count == 6)
+        #expect(c.rows[2] == .init(person: "lui/lei", stem: "parl", ending: "a"))
+        #expect(c.spoken.hasPrefix("io parlo, tu parli"))
+        #expect(blocks[4] == .example(italian: "Abito a Mosca.", russian: "Я живу в Москве."))
+    }
+
+    @Test func irregularRowsHaveNoEnding() {
+        let blocks = RuleMarkup.parse("conj: essere | быть\nio sono\ntu sei")
+        guard case .conjugation(let c) = blocks.first else { Issue.record("no table"); return }
+        #expect(c.rows[0] == .init(person: "io", stem: "sono", ending: ""))
+    }
+
+    @Test func bundledRulesAllParse() throws {
+        let url = Bundle.allBundles.first { $0.bundleURL.pathExtension == "app" }!
+            .url(forResource: "A1", withExtension: "json", subdirectory: "Content")!
+        let file = try JSONDecoder().decode(ContentFileDTO.self, from: Data(contentsOf: url))
+        for lesson in file.lessons {
+            for g in lesson.grammar {
+                let blocks = RuleMarkup.parse(g.rule_ru)
+                #expect(!blocks.isEmpty, "\(lesson.id) \(g.topic)")
+                for case .conjugation(let c) in blocks {
+                    #expect(c.rows.count == 6, "\(lesson.id) \(c.verb)")
+                }
+            }
+        }
+    }
+}
+
+struct ArticleTests {
+    @Test(arguments: [
+        ("lavoro", "m", false, "il lavoro"),
+        ("studente", "m", false, "lo studente"),
+        ("zio", "m", false, "lo zio"),
+        ("amico", "m", false, "l'amico"),
+        ("amica", "f", false, "l'amica"),
+        ("casa", "f", false, "la casa"),
+        ("amici", "m", true, "gli amici"),
+        ("libri", "m", true, "i libri"),
+        ("case", "f", true, "le case"),
+    ])
+    func definite(word: String, gender: String, plural: Bool, expected: String) {
+        #expect(Articles.withArticle(word, gender: gender, plural: plural) == expected)
+    }
+
+    @Test func skipsPhrasesAndExistingArticles() {
+        #expect(Articles.withArticle("la sera", gender: "f", plural: false) == nil)
+        #expect(Articles.withArticle("Italia", gender: "f", plural: false) == nil)
+    }
+}

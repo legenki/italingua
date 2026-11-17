@@ -365,6 +365,8 @@ def build_level(level: str) -> dict:
             form_of = ov.get("form_of", item["_form_of"])
             if form_of:
                 out["form_of"] = strip_inner_stress(form_of)
+            if item["_new"]:
+                out["new"] = True          # marked with * in the book: new in this lesson
             if "stress" in out and fold(out["stress"]) != fold(out["it"]):
                 del out["stress"]
             vocab.append(out)

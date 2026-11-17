@@ -27,6 +27,7 @@ nonisolated struct ContentFileDTO: Decodable, Sendable {
         let number: String?
         let stress: String?
         let form_of: String?
+        let new: Bool?
     }
     struct SourceDTO: Decodable, Sendable {
         let part: String
@@ -86,7 +87,7 @@ enum ContentImporter {
                 if existing.contains(id) { continue }   // defensive: validator forbids dups
                 let item = VocabItem(wordID: id, order: vi, italian: v.it, russian: v.ru,
                                      posRaw: v.pos, gender: v.gender, number: v.number,
-                                     stress: v.stress, formOf: v.form_of)
+                                     stress: v.stress, formOf: v.form_of, isNew: v.new ?? false)
                 item.lesson = lesson
             }
         }
