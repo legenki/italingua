@@ -1,0 +1,13 @@
+# Copyrighted textbook — never commit
+source/
+
+# Python
+tools/.venv/
+__pycache__/
+*.pyc
+
+# macOS / Xcode
+.DS_Store
+xcuserdata/
+DerivedData/
+*.xcuserstate
