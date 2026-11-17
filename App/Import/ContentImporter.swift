@@ -90,7 +90,28 @@ enum ContentImporter {
                 item.lesson = lesson
             }
         }
+        try dropMergedRuleNotes(file: file, in: context)
         try context.save()
+    }
+
+    /// Rules written in the app are exported to the curation file and come
+    /// back with the bundled JSON; once the bundled text equals the note,
+    /// the note is no longer needed.
+    static func dropMergedRuleNotes(file: ContentFileDTO, in context: ModelContext) throws {
+        var bundled: [String: String] = [:]
+        for lesson in file.lessons {
+            for g in lesson.grammar where !g.rule_ru.isEmpty {
+                bundled[RuleNote.key(lessonID: lesson.id, topic: g.topic)] = g.rule_ru
+            }
+        }
+        for note in try context.fetch(FetchDescriptor<RuleNote>())
+        where bundled[note.key].map(normalizedRule) == normalizedRule(note.text) {
+            context.delete(note)
+        }
+    }
+
+    nonisolated static func normalizedRule(_ s: String) -> String {
+        s.replacingOccurrences(of: "\r\n", with: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     /// Same folding as the Python validator: lowercase, ’→', no diacritics.

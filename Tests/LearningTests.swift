@@ -41,6 +41,33 @@ struct ImporterTests {
         #expect(try context.progress(for: "a1/caffe").box == 1)
     }
 
+    @Test func ruleNoteDroppedOnceBundledTextMatches() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let context = container.mainContext
+        func json(_ rule: String) -> Data {
+            """
+            {"level":"A1","lessons":[{"id":"a1-01","title":"T","grammar":[{"topic":"Род","rule_ru":"\(rule)"}],
+             "vocab":[{"it":"casa","ru":"дом","pos":"noun","gender":"f"}],"patterns":[]}]}
+            """.data(using: .utf8)!
+        }
+        try ContentImporter.importLevel(data: json(""), into: context)
+        context.insert(RuleNote(key: RuleNote.key(lessonID: "a1-01", topic: "Род"), text: "Мой текст\n"))
+        try context.save()
+
+        try ContentImporter.importLevel(data: json("Другой"), into: context)
+        #expect(try context.fetchCount(FetchDescriptor<RuleNote>()) == 1)   // differs: keep
+        try ContentImporter.importLevel(data: json("Мой текст"), into: context)
+        #expect(try context.fetchCount(FetchDescriptor<RuleNote>()) == 0)   // merged: drop
+    }
+
+    @Test func ruleExportShape() throws {
+        let doc = try RuleExportDocument(notes: [("a1-01", "Род", "Текст")],
+                                         now: Date(timeIntervalSince1970: 0))
+        let obj = try JSONSerialization.jsonObject(with: doc.data) as! [String: Any]
+        let rules = obj["rules"] as! [String: [String: String]]
+        #expect(rules["a1-01"]?["Род"] == "Текст")
+    }
+
     @Test func wordIDFoldsAccentsAndApostrophes() {
         #expect(ContentImporter.wordID(level: "A1", italian: "C’è") == "a1/c'e")
         #expect(ContentImporter.wordID(level: "A1", italian: "città") == "a1/citta")

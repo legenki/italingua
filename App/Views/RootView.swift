@@ -7,6 +7,9 @@ struct RootView: View {
     @Query private var progress: [WordProgress]
     @State private var selection: Lesson.ID?
     @State private var showStats = false
+    @Query private var ruleNotes: [RuleNote]
+    @State private var exportDoc: RuleExportDocument?
+    @State private var exporting = false
 
     var body: some View {
         NavigationSplitView {
@@ -23,9 +26,21 @@ struct RootView: View {
             .navigationTitle("Italingua")
             .toolbar {
                 Button("Статистика", systemImage: "chart.bar") { showStats = true }
+                Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
+                    exportDoc = try? RuleExportDocument(
+                        notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
+                    exporting = exportDoc != nil
+                }
+                .disabled(ruleNotes.isEmpty)
+                .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
             }
+            .fileExporter(isPresented: $exporting, document: exportDoc,
+                          contentType: .json, defaultFilename: "italingua-rules.json") { _ in }
             .sheet(isPresented: $showStats) {
                 NavigationStack { StatsView() }
+                    #if os(macOS)
+                    .frame(minWidth: 460, idealWidth: 520, minHeight: 560, idealHeight: 640)
+                    #endif
             }
         } detail: {
             NavigationStack {

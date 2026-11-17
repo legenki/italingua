@@ -83,3 +83,34 @@ extension ModelContext {
         return keep
     }
 }
+
+/// A grammar rule written by the owner in the app. Synced via iCloud, and
+/// exported to tools/curation so it ends up in git and in the bundled JSON.
+/// Shown instead of the bundled `ruleRU` while it exists.
+@Model
+final class RuleNote {
+    /// "<lessonID>|<topic>", e.g. "a1-01|Род существительных".
+    var key: String = ""
+    var text: String = ""
+    var updatedAt: Date = Date.now
+
+    init(key: String, text: String) {
+        self.key = key
+        self.text = text
+    }
+
+    static func key(lessonID: String, topic: String) -> String { "\(lessonID)|\(topic)" }
+
+    var lessonID: String { String(key.split(separator: "|", maxSplits: 1).first ?? "") }
+    var topic: String { String(key.split(separator: "|", maxSplits: 1).dropFirst().first ?? "") }
+}
+
+extension ModelContext {
+    func ruleNote(lessonID: String, topic: String) throws -> RuleNote? {
+        let key = RuleNote.key(lessonID: lessonID, topic: topic)
+        let rows = try fetch(FetchDescriptor<RuleNote>(predicate: #Predicate { $0.key == key },
+                                                       sortBy: [SortDescriptor(\.updatedAt, order: .reverse)]))
+        for dup in rows.dropFirst() { delete(dup) }   // CloudKit may create duplicates
+        return rows.first
+    }
+}

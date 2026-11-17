@@ -11,7 +11,8 @@ What is extracted (structure only):
   * lesson titles and speech patterns come from tools/curation/<LEVEL>.json,
     which is written by hand in our own words.
 
-`rule_ru` is always left empty: the owner fills it in.
+`rule_ru` comes only from tools/curation/<LEVEL>.json (lessons.<id>.rules),
+written by the owner (by hand or exported from the app with import_rules.py).
 """
 
 from __future__ import annotations
@@ -328,11 +329,16 @@ def build_level(level: str) -> dict:
         pages = ranges[key]
         lid = f"{level.lower()}-{idx:02d}"
         cur = lessons_cur.get(lid, {})
+        # Owner-written rules: curation lessons.<id>.rules = {"<topic>": "text"}
+        rules = cur.get("rules", {})
 
         if key[0] == "intro":
             topics = pv.intro_headings(doc, pages)
         else:
             topics = toc_les.topics
+
+        for unknown in set(rules) - set(topics):
+            print(f"warning: {lid}: rule for unknown topic {unknown!r}", file=sys.stderr)
 
         items = [parse_entry(r) for r in pv.vocab_blocks(doc, pages, toc_les.text_title)]
         items = apply_merges([i for i in items if i], merges)
@@ -368,7 +374,7 @@ def build_level(level: str) -> dict:
             "source": {"part": key[0], "lesson": key[1],
                        "pages": [pages.start, pages.stop - 1]},
             "title": cur.get("title", ""),
-            "grammar": [{"topic": t, "rule_ru": ""} for t in topics],
+            "grammar": [{"topic": t, "rule_ru": rules.get(t, "")} for t in topics],
             "vocab": vocab,
             "patterns": cur.get("patterns", []),
         })
