@@ -16,10 +16,10 @@
         "Un caffè, per favore"
       ],
       "rules": {
-        "Итальянский алфавит": "В алфавите **21 буква**: a b c d e f g h i l m n o p q r s t u v z.\n• j, k, w, x, y встречаются только в заимствованиях: jeans, kiwi, web, taxi, yogurt.\n• Названия букв: a, bi, ci, di, e, effe, gi, acca, i, elle, emme, enne, o, pi, cu, erre, esse, ti, u, vu, zeta.\n! Буква **h** сама по себе не читается: ho, hotel. Она нужна в сочетаниях ch и gh.",
+        "Итальянский алфавит": "В алфавите **21 буква**. Нажми на строку, чтобы услышать название буквы.\ntable: Буква | Название* | Звук\nA a | a | [а]\nB b | bi | [б]\nC c | ci | [к] / [ч]\nD d | di | [д]\nE e | e | [э] / [е]\nF f | effe | [ф]\nG g | gi | [г] / [дж]\nH h | acca | не читается\nI i | i | [и] / [й]\nL l | elle | [л]\nM m | emme | [м]\nN n | enne | [н]\nO o | o | [о]\nP p | pi | [п]\nQ q | cu | [к], всегда qu\nR r | erre | [р]\nS s | esse | [с] / [з]\nT t | ti | [т]\nU u | u | [у]\nV v | vu | [в]\nZ z | zeta | [ц] / [дз]\n\nЕщё пять букв встречаются только в заимствованиях:\ntable: Буква | Название* | Пример\nJ j | i lunga | jeans\nK k | cappa | kiwi\nW w | doppia vu | web\nX x | ics | taxi\nY y | ipsilon | yogurt\n\n! Буква **h** сама по себе не читается: ho, hotel. Она нужна в сочетаниях ch и gh.",
         "Правила произношения гласных и согласных. Правила ударения": "Гласные звучат чётко, безударные не «проглатываются»: pomodoro — [помодоро], а не [памадора].\n• c и g перед a, o, u — [к], [г]: caro, gatto.\n• Ударение обычно на предпоследнем слоге: amico, parlare.\n• Ударный последний слог отмечается на письме: città, caffè, perché.\n! В части слов ударение на третьем слоге от конца — camera, tavolo, abito. На письме его не видно, такие слова запоминаем.\nex: Il caffè è caldo. | Кофе горячий.\nex: La città è bella. | Город красивый.",
         "Род существительных": "Два рода: мужской (**maschile**) и женский (**femminile**). Род итальянского слова часто не совпадает с русским.\n• **-o** — обычно мужской: il libro, il tempo.\n• **-a** — обычно женский: la casa, la forma.\n• **-e** — любой род, проверяем по словарю: il padre, la madre, la chiave.\n• **-zione, -sione** — всегда женский: la lezione, la televisione.\n! Исключения: la mano, la foto, la radio — женский на -o; il problema, il cinema — мужской на -a.",
-        "Неопределенный артикль: формы и основные случаи употребления": "• **un** — м. р. перед согласной и гласной: un libro, un amico.\n• **uno** — м. р. перед s + согласная, z, gn, ps, y: uno studente, uno zio.\n• **una** — ж. р. перед согласной: una casa.\n• **un'** — ж. р. перед гласной: un'amica.\nНужен, когда предмет упоминается впервые или он «какой-то, один из», а также при описании.\n! Во множественном числе неопределённого артикля обычно нет: Ci sono bar.\nex: C'è un bar qui. | Здесь есть бар.\nex: È un ragazzo simpatico. | Это симпатичный парень."
+        "Неопределенный артикль: формы и основные случаи употребления": "table: Артикль | Когда | Пример*\n**un** | м. р. перед согласной и гласной | un libro, un amico\n**uno** | м. р. перед s + согласная, z, gn, ps, y | uno studente, uno zio\n**una** | ж. р. перед согласной | una casa\n**un'** | ж. р. перед гласной | un'amica\n\nНужен, когда предмет упоминается впервые или он «какой-то, один из», а также при описании.\n! Во множественном числе неопределённого артикля обычно нет: Ci sono bar.\nex: C'è un bar qui. | Здесь есть бар.\nex: È un ragazzo simpatico. | Это симпатичный парень."
       }
     },
     "a1-02": {
@@ -30,10 +30,10 @@
         "Per lavoro"
       ],
       "rules": {
-        "Правила чтения": "Буква **s**:\n• между гласными — [з]: casa [каза], rosa;\n• перед звонкими b, d, g, l, m, n, r, v — тоже [з]: slavo [злаво];\n• в остальных случаях — [с]: sole, studente;\n• **ss** — всегда долгое глухое [сс]: rosso, spesso.\nex: La casa è rossa. | Дом красный.",
-        "Множественное число существительных": "• **-o → -i**: libro → libri.\n• **-a → -e**: casa → case.\n• **-e → -i** (оба рода): padre → padri, chiave → chiavi.\n! Не меняются: слова с ударным последним слогом (la città → le città), иностранные (il bar → i bar), сокращения (la foto → le foto).\nex: Ho due fratelli e tre sorelle. | У меня два брата и три сестры.",
+        "Правила чтения": "Буква **s** звучит по-разному:\ntable: Где | Звук | Пример*\nмежду гласными | [з] | casa, rosa\nперед b, d, g, l, m, n, r, v | [з] | slavo\nв остальных случаях | [с] | sole, studente\n**ss** | долгое [сс] | rosso, spesso\n\nex: La casa è rossa. | Дом красный.",
+        "Множественное число существительных": "table: Ед. ч. | Мн. ч. | Пример*\n**-o** | **-i** | libro → libri\n**-a** | **-e** | casa → case\n**-e** (оба рода) | **-i** | padre → padri, chiave → chiavi\n\n! Не меняются: слова с ударным последним слогом (la città → le città), иностранные (il bar → i bar), сокращения (la foto → le foto).\nex: Ho due fratelli e tre sorelle. | У меня два брата и три сестры.",
         "Понятие смешанного рода": "Если в группе и мужчины, и женщины, используется **мужской род множественного числа**.\n• ragazzi — и «мальчики», и «ребята» вообще.\n• amici — друзья и подруги вместе; amiche — только подруги.\n! Прилагательное к словам разного рода — тоже в м. р. мн. ч.: Marco e Anna sono stanchi.\nex: Marco e Anna sono amici. | Марко и Анна — друзья.",
-        "Прилагательное: формы и место в предложении": "Прилагательное согласуется с существительным в роде и числе.\n• Тип на **-o** — четыре формы: alto, alta, alti, alte.\n• Тип на **-e** — две формы: grande, grandi.\n• Обычно после существительного: una casa grande.\n! Короткие частые прилагательные часто стоят перед: bello, buono, piccolo, nuovo, vecchio — una bella città.\nex: Ho una macchina nuova. | У меня новая машина.\nex: Roma è una bella città. | Рим — красивый город."
+        "Прилагательное: формы и место в предложении": "Прилагательное согласуется с существительным в роде и числе.\ntable: Тип | м. р. ед.* | ж. р. ед.* | м. р. мн.* | ж. р. мн.*\nна -o | alto | alta | alti | alte\nна -e | grande | grande | grandi | grandi\n\n• Обычно после существительного: una casa grande.\n! Короткие частые прилагательные часто стоят перед: bello, buono, piccolo, nuovo, vecchio — una bella città.\nex: Ho una macchina nuova. | У меня новая машина.\nex: Roma è una bella città. | Рим — красивый город."
       }
     },
     "a1-03": {
@@ -44,9 +44,9 @@
         "Ciao!"
       ],
       "rules": {
-        "Правила чтения": "**Двойные согласные** произносятся долго: mamma, bello, anno.\n! От этого зависит смысл: nono (девятый) ≠ nonno (дедушка).\n• c, g перед e, i — [ч], [дж]: cena, cinema, gelato, giro.\n• c, g перед a, o, u — [к], [г]: casa, gatto.\n• ci, gi перед a, o, u: i не читается, только смягчает — ciao [чао], giorno [джорно].\nex: Ciao, mamma! | Привет, мама!",
+        "Правила чтения": "**Двойные согласные** произносятся долго: mamma, bello, anno.\n! От этого зависит смысл: nono (девятый) ≠ nonno (дедушка).\ntable: Буквы | Звук | Пример*\nca, co, cu | [к] | casa, cosa\nce, ci | [ч] | cena, cinema\ncia, cio, ciu | [ч], i не читается | ciao\nga, go, gu | [г] | gatto, gusto\nge, gi | [дж] | gelato, giro\ngia, gio, giu | [дж], i не читается | giorno, giugno\n\nex: Ciao, mamma! | Привет, мама!",
         "Множественное число прилагательного": "Прилагательное меняется так же, как существительное:\n• **-o → -i, -a → -e**: libero → liberi, libera → libere.\n• **-e → -i** (оба рода): intelligente → intelligenti.\nex: Le camere sono libere. | Номера свободны.\nex: Gli studenti sono intelligenti. | Студенты умные.",
-        "Определенный артикль: формы и основные случаи употребления": "• **il** — м. р. перед согласной: il libro.\n• **lo** — м. р. перед s + согласная, z, gn, ps, y: lo studente, lo zaino.\n• **l'** — оба рода перед гласной: l'amico, l'acqua.\n• **la** — ж. р. перед согласной: la casa.\nНужен, когда предмет известен или единственный, и при общих понятиях.\n! С днями недели артикль значит «каждый»: il sabato — по субботам.\nex: Amo il caffè. | Я люблю кофе.\nex: Il libro è sul tavolo. | Книга на столе."
+        "Определенный артикль: формы и основные случаи употребления": "table: Артикль | Когда | Пример*\n**il** | м. р. перед согласной | il libro\n**lo** | м. р. перед s + согласная, z, gn, ps, y | lo studente, lo zaino\n**l'** | оба рода перед гласной | l'amico, l'acqua\n**la** | ж. р. перед согласной | la casa\n\nНужен, когда предмет известен или единственный, и при общих понятиях.\n! С днями недели артикль значит «каждый»: il sabato — по субботам.\nex: Amo il caffè. | Я люблю кофе.\nex: Il libro è sul tavolo. | Книга на столе."
       }
     },
     "a1-04": {
@@ -58,10 +58,10 @@
         "Che cosa è?"
       ],
       "rules": {
-        "Правила чтения": "• **h** не читается: ho [о], hotel.\n• **ch, gh** перед e, i — твёрдые [к], [г]: chiave, funghi.\n• **i** перед гласной — [й]: piano [пьяно], italiano.\n• **gli** — мягкое [ль]: figlio, famiglia.\n• **gn** — мягкое [нь]: bagno, signora.\n• **qu** — [кв]: questo, acqua; **gu** — [гв]: guardare, lingua.\nex: Mia figlia ha una chiave. | У моей дочери есть ключ.",
-        "Личные местоимения": "io — я, tu — ты, lui — он, lei — она, noi — мы, voi — вы, loro — они.\n• Обычно местоимение опускают — форма глагола уже показывает лицо.\n• Ставят для выделения: Io lavoro, tu dormi.\n! Вежливое «Вы» одному человеку — **Lei**, глагол в 3-м лице ед. ч.: Lei è italiano?\nex: Sono russo. | Я русский.\nex: Lei parla inglese? | Вы говорите по-английски?",
+        "Правила чтения": "table: Буквы | Звук | Пример*\n**h** | не читается | ho, hotel\n**ch**, **gh** перед e, i | [к], [г] | chiave, funghi\n**i** перед гласной | [й] | piano, italiano\n**gli** | [ль] | figlio, famiglia\n**gn** | [нь] | bagno, signora\n**qu** | [кв] | questo, acqua\n**gu** перед гласной | [гв] | guardare, lingua\n\nex: Mia figlia ha una chiave. | У моей дочери есть ключ.",
+        "Личные местоимения": "table: Лицо | Ед. ч.* | | Мн. ч.* |\n1-е | io | я | noi | мы\n2-е | tu | ты | voi | вы\n3-е | lui / lei | он / она | loro | они\n\n• Обычно местоимение опускают — форма глагола уже показывает лицо.\n• Ставят для выделения: Io lavoro, tu dormi.\n! Вежливое «Вы» одному человеку — **Lei**, глагол в 3-м лице ед. ч.: Lei è italiano?\nex: Sono russo. | Я русский.\nex: Lei parla inglese? | Вы говорите по-английски?",
         "Неправильный глагол essere": "conj: essere | быть\nio sono\ntu sei\nlui/lei è\nnoi siamo\nvoi siete\nloro sono\n\n! «Быть» в итальянском не пропускается: Sono stanco — Я устал. И не путайте **è** (есть) с **e** (и).\nex: Sono di Mosca. | Я из Москвы.\nex: Marco è a casa. | Марко дома.",
-        "Формы определенного артикля множественного числа": "• **il → i**: il libro → i libri.\n• **lo, l'** (м. р.) → **gli**: lo studente → gli studenti, l'amico → gli amici.\n• **la, l'** (ж. р.) → **le**: la casa → le case, l'amica → le amiche.\nex: Gli amici sono qui. | Друзья здесь."
+        "Формы определенного артикля множественного числа": "table: Ед. ч. | Мн. ч. | Пример*\nil | **i** | il libro → i libri\nlo, l' (м. р.) | **gli** | lo studente → gli studenti, l'amico → gli amici\nla, l' (ж. р.) | **le** | la casa → le case, l'amica → le amiche\n\nex: Gli amici sono qui. | Друзья здесь."
       }
     },
     "a1-05": {
@@ -73,7 +73,7 @@
         "No, non …"
       ],
       "rules": {
-        "Правила чтения": "Буква **z**: [ц] — piazza, lezione (все слова на -zione); [дз] — zona, zero.\n• **sce, sci** — [ш]: scena, ascensore.\n• **scia, scio, sciu** — тоже [ш], i не читается: prosciutto, asciugare.\n• **sca, sco, scu, sch** — [ск]: scala, scuola, scherzo.\nex: La lezione è in piazza. | Урок на площади.",
+        "Правила чтения": "table: Буквы | Звук | Пример*\n**z** | [ц] | piazza, lezione\n**z** | [дз] | zona, zero\nsce, sci | [ш] | scena, ascensore\nscia, scio, sciu | [ш], i не читается | prosciutto, asciugare\nsca, sco, scu, sch | [ск] | scala, scuola, scherzo\n\n! Все слова на **-zione** читаются с [ц]: lezione, stazione.\nex: La lezione è in piazza. | Урок на площади.",
         "Неправильный глагoл avere": "conj: avere | иметь\nio ho\ntu hai\nlui/lei ha\nnoi abbiamo\nvoi avete\nloro hanno\n\n• «У меня есть» = ho: Ho una macchina.\n• Состояния: avere fame, sete, freddo, caldo, sonno, paura.\n! Возраст — тоже с avere: Ho trent'anni — Мне тридцать лет.\nex: Ho fame. | Я голоден.\nex: Abbiamo un cane. | У нас есть собака.",
         "Утверждение и отрицание": "• **sì** — да, **no** — нет.\n• **non** — всегда прямо перед глаголом: Non parlo inglese.\n! Двойное отрицание — норма: Non ho niente. Non vado mai al cinema.\nex: No, non ho tempo. | Нет, у меня нет времени.",
         "Предлоги итальянского языка": "• **di** — чей, откуда родом: il libro di Marco, sono di Roma.\n• **a** — куда/где (город), кому: vado a Roma, scrivo a Anna.\n• **da** — откуда, к кому: vengo da Napoli, vado da Luca.\n• **in** — в стране, помещении, на транспорте: in Italia, in cucina, in macchina.\n• **con** — с; **su** — на, о; **per** — для, по.\n• **tra / fra** — между, через (о времени): tra due giorni.\nex: Vado in Italia con gli amici. | Я еду в Италию с друзьями."
@@ -130,8 +130,8 @@
         "Alla fine di …"
       ],
       "rules": {
-        "Сочлененные предлоги": "Предлоги **di, a, da, in, su** сливаются с определённым артиклем:\n• di: del, dello, dell', della, dei, degli, delle;\n• a: al, allo, all', alla, ai, agli, alle;\n• da: dal, dallo, dall', dalla, dai, dagli, dalle;\n• in: nel, nello, nell', nella, nei, negli, nelle;\n• su: sul, sullo, sull', sulla, sui, sugli, sulle.\n! con и per не сливаются: con il, per la.\nex: Vado al cinema. | Я иду в кино.",
-        "Предлог А: значение, сочленение с определенным артиклем": "• Город — и куда, и где: vado a Roma, abito a Milano.\n• Кому: do il libro a Marco.\n• Время: alle otto — в восемь.\n• Устойчивые: a casa, a piedi, a letto.\nС артиклем: al, allo, all', alla, ai, agli, alle.\nex: Torno a casa alle sei. | Я возвращаюсь домой в шесть.",
+        "Сочлененные предлоги": "Предлоги **di, a, da, in, su** сливаются с определённым артиклем:\ntable: Артикль | di* | a* | da* | in* | su*\nil | del | al | dal | nel | sul\nlo | dello | allo | dallo | nello | sullo\nl' | dell' | all' | dall' | nell' | sull'\nla | della | alla | dalla | nella | sulla\ni | dei | ai | dai | nei | sui\ngli | degli | agli | dagli | negli | sugli\nle | delle | alle | dalle | nelle | sulle\n\n! con и per не сливаются: con il, per la.\nex: Vado al cinema. | Я иду в кино.",
+        "Предлог А: значение, сочленение с определенным артиклем": "• Город — и куда, и где: vado a Roma, abito a Milano.\n• Кому: do il libro a Marco.\n• Время: alle otto — в восемь.\n• Устойчивые: a casa, a piedi, a letto.\na + артикль:\ntable: il* | lo* | l'* | la* | i* | gli* | le*\nal | allo | all' | alla | ai | agli | alle\n\nex: Torno a casa alle sei. | Я возвращаюсь домой в шесть.",
         "Согласование molto, poco": "• Перед существительным — согласуются: molta acqua, molti amici, poca acqua, pochi soldi.\n• С глаголом или прилагательным — не меняются: è molto bella, lavora molto.\n! Во множественном числе у poco появляется h: pochi, poche.\nex: Ho molti amici. | У меня много друзей.\nex: Luca lavora molto. | Лука много работает."
       }
     },
@@ -144,7 +144,7 @@
         "A volte …"
       ],
       "rules": {
-        "Предлог DА: значение, сочленение с определенным артиклем": "• Откуда: vengo da Roma.\n• К кому, у кого: vado da Marco, sono dal medico.\n• Сколько времени уже: studio italiano da un anno.\n• Назначение: occhiali da sole, cose da fare.\nС артиклем: dal, dallo, dall', dalla, dai, dagli, dalle.\nex: Vado dal medico. | Я иду к врачу.\nex: Studio italiano da un anno. | Я учу итальянский уже год.",
+        "Предлог DА: значение, сочленение с определенным артиклем": "• Откуда: vengo da Roma.\n• К кому, у кого: vado da Marco, sono dal medico.\n• Сколько времени уже: studio italiano da un anno.\n• Назначение: occhiali da sole, cose da fare.\nda + артикль:\ntable: il* | lo* | l'* | la* | i* | gli* | le*\ndal | dallo | dall' | dalla | dai | dagli | dalle\n\nex: Vado dal medico. | Я иду к врачу.\nex: Studio italiano da un anno. | Я учу итальянский уже год.",
         "Порядок слов в предложении": "• Обычный порядок: подлежащее — сказуемое — дополнение.\n• Прилагательное чаще после существительного.\n• **non** — сразу перед глаголом.\n• В вопросе порядок тот же, работает интонация.\nex: Marco legge un libro interessante. | Марко читает интересную книгу.",
         "Неправильные глаголы stare, dare": "conj: stare | находиться, быть\nio sto\ntu stai\nlui/lei sta\nnoi stiamo\nvoi state\nloro stanno\n\nconj: dare | давать\nio do\ntu dai\nlui/lei dà\nnoi diamo\nvoi date\nloro danno\n\n! **dà** (даёт) с ударением ≠ предлог **da**.\nex: Come stai? — Sto bene. | Как дела? — Хорошо."
       }
@@ -158,7 +158,7 @@
         "Tanti auguri!"
       ],
       "rules": {
-        "Предлог su": "• На (поверхности): Il libro è sul tavolo.\n• О (теме): un film su Roma.\n• С артиклем: sul, sullo, sull', sulla, sui, sugli, sulle.\n! dare su — выходить на (об окнах): La finestra dà sulla strada.\nex: Il gatto dorme sulla sedia. | Кот спит на стуле.",
+        "Предлог su": "• На (поверхности): Il libro è sul tavolo.\n• О (теме): un film su Roma.\nsu + артикль:\ntable: il* | lo* | l'* | la* | i* | gli* | le*\nsul | sullo | sull' | sulla | sui | sugli | sulle\n\n! dare su — выходить на (об окнах): La finestra dà sulla strada.\nex: Il gatto dorme sulla sedia. | Кот спит на стуле.",
         "Оборот c’è (ci sono)": "• **c'è** — есть, имеется (одно): C'è un bar.\n• **ci sono** — есть (много): Ci sono due camere.\n• Отрицание: Non c'è il latte.\n! Если речь о месте известного предмета — essere: Il bar è qui.\nex: C'è un supermercato qui vicino? | Здесь рядом есть супермаркет?\nex: Ci sono molti turisti. | Здесь много туристов.",
         "Неправильный глагол andare": "conj: andare | идти, ехать\nio vado\ntu vai\nlui/lei va\nnoi andiamo\nvoi andate\nloro vanno\n\n• andare **a** + город или инфинитив: vado a Roma, vado a mangiare.\n• andare **in** + страна, многие места: in Italia, in banca, in ufficio.\n• andare **da** + человек: vado da Luca.\nex: Andiamo al cinema stasera. | Пойдём сегодня вечером в кино."
       }
@@ -172,8 +172,8 @@
         "Tutti i giorni"
       ],
       "rules": {
-        "Сочлененный предлог di": "di + артикль: del, dello, dell', della, dei, degli, delle.\n• Принадлежность: la macchina del padre.\n• «Немного» (часть): Compro del pane.\n! Происхождение — без артикля: sono di Napoli.\nex: Ecco la casa dei nonni. | Вот дом бабушки и дедушки.",
-        "Сочлененный предлог in": "in + артикль: nel, nello, nell', nella, nei, negli, nelle.\n• Без артикля: страны, комнаты, транспорт — in Italia, in cucina, in macchina.\n• С артиклем, если есть уточнение: nella cucina nuova.\nex: Le chiavi sono nella borsa. | Ключи в сумке."
+        "Сочлененный предлог di": "di + артикль:\ntable: il* | lo* | l'* | la* | i* | gli* | le*\ndel | dello | dell' | della | dei | degli | delle\n\n• Принадлежность: la macchina del padre.\n• «Немного» (часть): Compro del pane.\n! Происхождение — без артикля: sono di Napoli.\nex: Ecco la casa dei nonni. | Вот дом бабушки и дедушки.",
+        "Сочлененный предлог in": "in + артикль:\ntable: il* | lo* | l'* | la* | i* | gli* | le*\nnel | nello | nell' | nella | nei | negli | nelle\n\n• Без артикля: страны, комнаты, транспорт — in Italia, in cucina, in macchina.\n• С артиклем, если есть уточнение: nella cucina nuova.\nex: Le chiavi sono nella borsa. | Ключи в сумке."
       }
     },
     "a1-13": {
@@ -186,8 +186,8 @@
       ],
       "rules": {
         "Модальные глаголы": "После них — инфинитив.\nconj: potere | мочь\nio posso\ntu puoi\nlui/lei può\nnoi possiamo\nvoi potete\nloro possono\n\nconj: volere | хотеть\nio voglio\ntu vuoi\nlui/lei vuole\nnoi vogliamo\nvoi volete\nloro vogliono\n\nconj: dovere | быть должным\nio devo\ntu devi\nlui/lei deve\nnoi dobbiamo\nvoi dovete\nloro devono\n\n! Вежливая просьба: **Vorrei** un caffè — Я бы хотел кофе.\nex: Posso entrare? | Можно войти?\nex: Devo lavorare. | Мне нужно работать.",
-        "Количественные числительные от 0 до 20": "0 zero, 1 uno, 2 due, 3 tre, 4 quattro, 5 cinque, 6 sei, 7 sette, 8 otto, 9 nove, 10 dieci.\n! uno перед существительным ведёт себя как артикль: un libro, una casa, uno studente.\nex: Ho due fratelli. | У меня два брата.",
-        "Числительные с 11 до 20": "11 undici, 12 dodici, 13 tredici, 14 quattordici, 15 quindici, 16 sedici, 17 diciassette, 18 diciotto, 19 diciannove, 20 venti.\n! 11–16: число + -dici; 17–19 наоборот: dici- + число.\nex: Ho diciotto anni. | Мне восемнадцать лет."
+        "Количественные числительные от 0 до 20": "table: Число | По-итальянски*\n0 | zero\n1 | uno\n2 | due\n3 | tre\n4 | quattro\n5 | cinque\n6 | sei\n7 | sette\n8 | otto\n9 | nove\n10 | dieci\n\n! uno перед существительным ведёт себя как артикль: un libro, una casa, uno studente.\nex: Ho due fratelli. | У меня два брата.",
+        "Числительные с 11 до 20": "table: Число | По-итальянски*\n11 | undici\n12 | dodici\n13 | tredici\n14 | quattordici\n15 | quindici\n16 | sedici\n17 | diciassette\n18 | diciotto\n19 | diciannove\n20 | venti\n\n! 11–16: число + -dici; 17–19 наоборот: dici- + число.\nex: Ho diciotto anni. | Мне восемнадцать лет."
       }
     },
     "a1-14": {
@@ -198,7 +198,7 @@
         "Di chi è …?"
       ],
       "rules": {
-        "Притяжательные местоимения": "• мой — **mio, mia, miei, mie**; твой — **tuo, tua, tuoi, tue**.\n• его/её — **suo, sua, suoi, sue**.\n• наш — **nostro…**, ваш — **vostro…**, их — **loro** (не меняется).\n• Согласуются с тем, что принадлежит: la mia casa, i miei amici.\n! С родственниками в ед. ч. артикля нет: mia madre, tuo fratello. Но: i miei genitori, la loro madre.\nex: Questa è la mia macchina. | Это моя машина.",
+        "Притяжательные местоимения": "table: Чей | м. р. ед.* | ж. р. ед.* | м. р. мн.* | ж. р. мн.*\nмой | mio | mia | miei | mie\nтвой | tuo | tua | tuoi | tue\nего, её, Ваш | suo | sua | suoi | sue\nнаш | nostro | nostra | nostri | nostre\nваш | vostro | vostra | vostri | vostre\nих | loro | loro | loro | loro\n\n• Согласуются с тем, что принадлежит: la mia casa, i miei amici.\n! С родственниками в ед. ч. артикля нет: mia madre, tuo fratello. Но: i miei genitori, la loro madre.\nex: Questa è la mia macchina. | Это моя машина.",
         "Особенности употребления местоимения suo (его, ее)": "• **suo** значит и «его», и «её». Род зависит от предмета: Anna e il suo libro, Marco e la sua casa.\n• Вежливое «Ваш» — **Suo**: È il Suo passaporto?\n! Русское «свой» переводится по лицу: prendo il mio, prendi il tuo, prende il suo.\nex: Marco cerca la sua chiave. | Марко ищет свой ключ."
       }
     },
@@ -211,7 +211,7 @@
         "Mi dispiace"
       ],
       "rules": {
-        "Безударные личные местоимения (прямой падеж)": "Кого? что?\n• **mi** — меня, **ti** — тебя, **lo** — его, **la** — её, **La** — Вас;\n• **ci** — нас, **vi** — вас, **li** — их (м.), **le** — их (ж.).\n• Стоят перед глаголом: Lo vedo. Non la conosco.\n• С инфинитивом присоединяются: Voglio vederlo.\n! lo, la перед гласной → l': L'aspetto qui. А «Lo so» — «Я это знаю».\nex: Ti chiamo domani. | Я позвоню тебе завтра.",
+        "Безударные личные местоимения (прямой падеж)": "Кого? что?\ntable: Лицо | Ед. ч.* | | Мн. ч.* |\n1-е | mi | меня | ci | нас\n2-е | ti | тебя | vi | вас\n3-е м. р. | lo | его | li | их\n3-е ж. р. | la | её | le | их\nвежливое | La | Вас | |\n\n• Стоят перед глаголом: Lo vedo. Non la conosco.\n• С инфинитивом присоединяются: Voglio vederlo.\n! lo, la перед гласной → l': L'aspetto qui. А «Lo so» — «Я это знаю».\nex: Ti chiamo domani. | Я позвоню тебе завтра.",
         "Неправильный глагол uscire": "conj: uscire | выходить\nio esco\ntu esci\nlui/lei esce\nnoi usciamo\nvoi uscite\nloro escono\n\n! Под ударением корень **esc-**, без ударения **usc-**.\nex: Esco con gli amici. | Я иду гулять с друзьями."
       }
     },
@@ -224,7 +224,7 @@
       ],
       "rules": {
         "Существительные, меняющие род": "Несколько слов м. р. во множественном числе становятся ж. р. на **-a**:\n• l'uovo → le uova; il dito → le dita; il braccio → le braccia;\n• il paio → le paia; il lenzuolo → le lenzuola.\n! Прилагательные к ним — в женском роде: le uova sode.\nex: Compro sei uova. | Я покупаю шесть яиц.",
-        "Количественные числительные от 21 до 1 000 000 000": "• Десятки: trenta, quaranta, cinquanta, sessanta, settanta, ottanta, novanta.\n• Составные — слитно: venticinque, trentasei.\n• Перед uno и otto гласная выпадает: ventuno, ventotto.\n• С tre на конце — ударение: ventitré.\n• 100 cento, 1000 mille, 2000 duemila.\n! С существительным milione и miliardo — через di: un milione di euro.\nex: Costa cinquanta euro. | Стоит пятьдесят евро.",
+        "Количественные числительные от 21 до 1 000 000 000": "table: Число | По-итальянски*\n20 | venti\n30 | trenta\n40 | quaranta\n50 | cinquanta\n60 | sessanta\n70 | settanta\n80 | ottanta\n90 | novanta\n100 | cento\n1000 | mille\n2000 | duemila\n1 000 000 | un milione\n1 000 000 000 | un miliardo\n\n• Составные — слитно: venticinque, trentasei.\n• Перед uno и otto гласная выпадает: ventuno, ventotto.\n• С tre на конце — ударение: ventitré.\n! С существительным milione и miliardo — через di: un milione di euro.\nex: Costa cinquanta euro. | Стоит пятьдесят евро.",
         "Неправильный глагoл sapere": "conj: sapere | знать\nio so\ntu sai\nlui/lei sa\nnoi sappiamo\nvoi sapete\nloro sanno\n\n• sapere + инфинитив — уметь: So nuotare.\n! Человека или место «знают» через **conoscere**: Conosco Roma.\nex: Non lo so. | Я не знаю."
       }
     },
@@ -237,7 +237,7 @@
         "Per la prima volta"
       ],
       "rules": {
-        "Порядковые числительные": "primo, secondo, terzo, quarto, quinto, sesto, settimo, ottavo, nono, decimo.\n• Дальше — число без последней гласной + **-esimo**: undicesimo, ventesimo.\n• Согласуются как прилагательные: la prima volta.\n! В датах — количественные, кроме первого числа: il due maggio, но il primo maggio.\nex: È la prima volta a Roma. | Это первый раз в Риме.",
+        "Порядковые числительные": "table: Число | Порядковое*\n1 | primo\n2 | secondo\n3 | terzo\n4 | quarto\n5 | quinto\n6 | sesto\n7 | settimo\n8 | ottavo\n9 | nono\n10 | decimo\n11 | undicesimo\n20 | ventesimo\n\n• После десяти — число без последней гласной + **-esimo**: undici → undicesimo.\n• Согласуются как прилагательные: la prima volta.\n! В датах — количественные, кроме первого числа: il due maggio, но il primo maggio.\nex: È la prima volta a Roma. | Это первый раз в Риме.",
         "Местоимение tutto": "• tutto + артикль — весь: tutto il giorno, tutta la sera.\n• tutti i giorni — каждый день.\n• tutto — всё; tutti — все (люди).\n! tutto согласуется: tutto, tutta, tutti, tutte.\nex: Lavoro tutto il giorno. | Я работаю весь день.\nex: Ciao a tutti! | Всем привет!"
       }
     },

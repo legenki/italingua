@@ -60,7 +60,7 @@ def fold(s: str) -> str:
 
 def check_rule_markup(text: str) -> list[str]:
     """Rule markup (see CLAUDE.md): `conj: verb | gloss` + 6 rows until a
-    blank line, `ex: Italian | Russian`, `! callout`, `• bullet`, paragraphs."""
+    blank line, `table: a | b*` + rows of the same width until a blank line, `ex: Italian | Russian`, `! callout`, `• bullet`, paragraphs."""
     problems = []
     lines = text.split("\n")
     i = 0
@@ -79,6 +79,23 @@ def check_rule_markup(text: str) -> list[str]:
             for r in rows:
                 if len(r.split()) < 2 or r.count("|") > 1:
                     problems.append(f"bad conj row {r!r}")
+            continue
+        if line.startswith("table:"):
+            width = line[6:].count("|") + 1
+            if width < 2:
+                problems.append(f"table needs at least two columns: {line!r}")
+            i += 1
+            n = 0
+            while i < len(lines) and lines[i].strip():
+                row = lines[i].strip()
+                if row.count("|") + 1 != width:
+                    problems.append(f"table row has {row.count('|') + 1} cells, expected {width}: {row!r}")
+                if row.count("**") % 2:
+                    problems.append(f"unbalanced ** in {row!r}")
+                n += 1
+                i += 1
+            if n == 0:
+                problems.append(f"table without rows: {line!r}")
             continue
         if line.startswith("ex:") and line.count("|") != 1:
             problems.append(f"example needs 'Italian | Russian': {line!r}")

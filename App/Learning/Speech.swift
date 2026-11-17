@@ -54,6 +54,7 @@ final class Speech {
         text.replacingOccurrences(of: "|", with: "")
             .replacingOccurrences(of: "**", with: "")
             .replacingOccurrences(of: "___", with: "…")
+            .replacingOccurrences(of: "→", with: ",")
     }
 }
 

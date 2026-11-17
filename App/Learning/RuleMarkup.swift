@@ -9,12 +9,28 @@ import Foundation
 ///     conj: parlare | говорить
 ///     io parl|o              ← six rows, "|" splits stem and ending
 ///     ...                    ← a blank line ends the table
+///     table: Буква | Название* | Звук   ← header; "*" marks columns to speak
+///     A | a | [а]            ← rows until a blank line
 nonisolated enum RuleBlock: Equatable, Sendable {
     case paragraph(String)
     case bullets([String])
     case callout([String])
     case example(italian: String, russian: String)
     case conjugation(Conjugation)
+    case table(RuleTable)
+}
+
+nonisolated struct RuleTable: Equatable, Sendable {
+    let header: [String]
+    let rows: [[String]]
+    /// Columns marked with "*" in the header; their cells are read aloud.
+    let spokenColumns: [Int]
+
+    /// Text for speech for one row, or nil when the table has nothing to speak.
+    func spoken(_ row: [String]) -> String? {
+        let parts = spokenColumns.compactMap { $0 < row.count ? row[$0] : nil }.filter { !$0.isEmpty }
+        return parts.isEmpty ? nil : parts.joined(separator: ", ")
+    }
 }
 
 nonisolated struct Conjugation: Equatable, Sendable {
@@ -65,6 +81,19 @@ nonisolated enum RuleMarkup {
                     i += 1
                 }
                 blocks.append(.conjugation(Conjugation(verb: verb, gloss: gloss, rows: rows)))
+            } else if line.hasPrefix("table:") {
+                let raw = cells(String(line.dropFirst(6)))
+                var rows: [[String]] = []
+                while i + 1 < lines.count {
+                    let row = lines[i + 1].trimmingCharacters(in: .whitespaces)
+                    if row.isEmpty { break }
+                    rows.append(cells(row))
+                    i += 1
+                }
+                let marked = { (h: String) in h.hasSuffix("*") && !h.hasSuffix("**") }
+                let spoken = raw.indices.filter { marked(raw[$0]) }
+                let header = raw.map { marked($0) ? String($0.dropLast()).trimmingCharacters(in: .whitespaces) : $0 }
+                blocks.append(.table(RuleTable(header: header, rows: rows, spokenColumns: spoken)))
             } else if line.hasPrefix("ex:") {
                 let (it, ru) = split(String(line.dropFirst(3)))
                 blocks.append(.example(italian: it, russian: ru))
@@ -91,6 +120,7 @@ nonisolated enum RuleMarkup {
             case .bullets(let items), .callout(let items): items.first
             case .example(let it, _): it
             case .conjugation(let c): "\(c.verb) — \(c.gloss)"
+            case .table(let t): t.rows.first?.joined(separator: " ")
             }
         }
         .joined(separator: " ")
@@ -104,6 +134,10 @@ nonisolated enum RuleMarkup {
     private static func split(_ s: String) -> (String, String) {
         let parts = s.split(separator: "|", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
         return (parts.first ?? "", parts.count > 1 ? parts[1] : "")
+    }
+
+    private static func cells(_ s: String) -> [String] {
+        s.split(separator: "|", omittingEmptySubsequences: false).map { $0.trimmingCharacters(in: .whitespaces) }
     }
 
     private static func parseRow(_ row: String) -> Conjugation.Row {

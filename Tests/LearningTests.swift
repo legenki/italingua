@@ -191,6 +191,17 @@ struct RuleMarkupTests {
         #expect(c.rows[0] == .init(person: "io", stem: "sono", ending: ""))
     }
 
+    @Test func parsesTables() {
+        let blocks = RuleMarkup.parse("table: Буква | Название* | Звук\nA a | a | [а]\nB b | bi | [б]\n\nex: Ciao. | Привет.")
+        #expect(blocks.count == 2)
+        guard case .table(let t) = blocks.first else { Issue.record("no table"); return }
+        #expect(t.header == ["Буква", "Название", "Звук"])
+        #expect(t.spokenColumns == [1])
+        #expect(t.rows == [["A a", "a", "[а]"], ["B b", "bi", "[б]"]])
+        #expect(t.spoken(t.rows[1]) == "bi")
+        #expect(Speech.spokenForm("libro → libri") == "libro , libri")
+    }
+
     @Test func bundledRulesAllParse() throws {
         let url = Bundle.allBundles.first { $0.bundleURL.pathExtension == "app" }!
             .url(forResource: "A1", withExtension: "json", subdirectory: "Content")!
@@ -201,6 +212,10 @@ struct RuleMarkupTests {
                 #expect(!blocks.isEmpty, "\(lesson.id) \(g.topic)")
                 for case .conjugation(let c) in blocks {
                     #expect(c.rows.count == 6, "\(lesson.id) \(c.verb)")
+                }
+                for case .table(let t) in blocks {
+                    #expect(!t.rows.isEmpty && t.rows.allSatisfy { $0.count == t.header.count },
+                            "\(lesson.id) \(g.topic)")
                 }
             }
         }

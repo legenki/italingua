@@ -12,6 +12,7 @@ struct RuleBlocksView: View {
                 case .callout(let lines): CalloutCard(lines: lines)
                 case .conjugation(let c): ConjugationCard(conjugation: c)
                 case .examples(let items): ExamplesCard(items: items)
+                case .table(let t): TableCard(table: t)
                 }
             }
         }
@@ -22,6 +23,7 @@ struct RuleBlocksView: View {
         case callout([String])
         case conjugation(Conjugation)
         case examples([(String, String)])
+        case table(RuleTable)
     }
 
     /// Paragraphs and bullets that follow each other share one card; so do examples.
@@ -39,6 +41,8 @@ struct RuleBlocksView: View {
                 out.append(.callout(lines))
             case .conjugation(let c):
                 out.append(.conjugation(c))
+            case .table(let t):
+                out.append(.table(t))
             case .example(let it, let ru):
                 if case .examples(let prev) = out.last {
                     out[out.count - 1] = .examples(prev + [(it, ru)])
@@ -156,5 +160,60 @@ private struct ExamplesCard: View {
             }
             .padding(.bottom, 6)
         }
+    }
+}
+
+private struct TableCard: View {
+    let table: RuleTable
+
+    var body: some View {
+        Card(padding: 0) {
+            // Wide tables scroll sideways on a narrow screen instead of squeezing.
+            ViewThatFits(in: .horizontal) {
+                grid
+                ScrollView(.horizontal, showsIndicators: false) { grid }
+            }
+            .padding(.vertical, 6)
+        }
+    }
+
+    private var speaks: Bool { !table.spokenColumns.isEmpty }
+
+    private var grid: some View {
+        Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 14, verticalSpacing: 0) {
+            GridRow {
+                if speaks { Color.clear.frame(width: 1, height: 1) }
+                ForEach(Array(table.header.enumerated()), id: \.offset) { _, title in
+                    Text(title)
+                        .font(.caption.weight(.semibold))
+                        .textCase(.uppercase)
+                        .foregroundStyle(Theme.secondaryText)
+                        .fixedSize()
+                }
+            }
+            .padding(.vertical, 8)
+
+            ForEach(Array(table.rows.enumerated()), id: \.offset) { _, row in
+                Rectangle().fill(Theme.separator).frame(height: 1)
+                GridRow(alignment: .center) {
+                    if speaks {
+                        if let text = table.spoken(row) {
+                            SpeakButton(text: text, label: "Прослушать", size: 32)
+                        } else {
+                            Color.clear.frame(width: 32, height: 32)
+                        }
+                    }
+                    ForEach(Array(table.header.indices), id: \.self) { col in
+                        let cell = col < row.count ? row[col] : ""
+                        Text(markup: cell)
+                            .font(table.spokenColumns.contains(col) ? .body.weight(.semibold) : .body)
+                            .foregroundStyle(col == 0 || table.spokenColumns.contains(col) ? .primary : Theme.secondaryText)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .padding(.vertical, speaks ? 6 : 10)
+            }
+        }
+        .padding(.horizontal, 16)
     }
 }
