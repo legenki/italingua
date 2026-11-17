@@ -32,6 +32,10 @@ targets:
         UILaunchScreen: {}
         UIBackgroundModes: [remote-notification]
         LSApplicationCategoryType: public.app-category.education
+        UISupportedInterfaceOrientations:
+          [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad:
+          [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
