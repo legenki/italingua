@@ -14,7 +14,13 @@
         "È un …",
         "È una …",
         "Un caffè, per favore"
-      ]
+      ],
+      "rules": {
+        "Итальянский алфавит": "В итальянском алфавите 21 буква: a b c d e f g h i l m n o p q r s t u v z.\n• Буквы j, k, w, x, y встречаются только в заимствованиях: jeans, kiwi, web, taxi, yogurt.\n• Буква h сама по себе не читается (ho, hotel) — она нужна в сочетаниях ch, gh.\n• Названия букв: a, bi, ci, di, e, effe, gi, acca, i, elle, emme, enne, o, pi, cu, erre, esse, ti, u, vu, zeta.",
+        "Правила произношения гласных и согласных. Правила ударения": "Гласные всегда звучат чётко, безударные не «проглатываются»: pomodoro — [помодоро], а не [памадора].\n• e и o бывают открытыми и закрытыми, но для понимания это почти не важно.\n• c и g перед a, o, u читаются как [к], [г]: caro, gatto.\nУдарение:\n• обычно на предпоследний слог: amico, parlare;\n• если ударный последний слог, на письме ставится знак: città, caffè, perché;\n• в части слов ударение на третьем слоге от конца (camera, tavolo, abito) — на письме его не видно, такие слова запоминаем.",
+        "Род существительных": "Два рода: мужской (maschile) и женский (femminile). Род итальянского слова часто не совпадает с русским.\n• -o — обычно мужской: il libro, il tempo.\n• -a — обычно женский: la casa, la forma.\n• -e — бывает любого рода, проверяем по словарю: il padre, la madre, il ristorante, la chiave.\n• -zione, -sione — всегда женский: la lezione, la televisione.\n• Исключения: la mano, la foto, la radio (женский на -o); il problema, il cinema (мужской на -a).",
+        "Неопределенный артикль: формы и основные случаи употребления": "Формы:\n• un — мужской род перед согласной и гласной: un libro, un amico;\n• uno — мужской род перед s + согласная, z, gn, ps, y: uno studente, uno zio;\n• una — женский род перед согласной: una casa;\n• un' — женский род перед гласной: un'amica.\nКогда нужен:\n• предмет упоминается впервые или он «какой-то, один из»: C'è un bar qui.\n• при описании, кто или что это: È un ragazzo simpatico.\nВо множественном числе неопределённого артикля обычно нет: Ci sono bar."
+      }
     },
     "a1-02": {
       "title": "Il plurale dei nomi e l'aggettivo",
@@ -22,7 +28,13 @@
         "Sono russo / russa",
         "Di solito …",
         "Per lavoro"
-      ]
+      ],
+      "rules": {
+        "Правила чтения": "Буква s:\n• между гласными звучит как [з]: casa [каза], rosa;\n• перед звонкими согласными b, d, g, l, m, n, r, v тоже [з]: slavo [злаво], sbaglio;\n• в остальных случаях [с]: sole, studente, spesso;\n• ss всегда глухое долгое [сс]: rosso, spesso.",
+        "Множественное число существительных": "Как меняется окончание:\n• -o → -i: libro → libri (мужской);\n• -a → -e: casa → case (женский);\n• -e → -i: padre → padri, chiave → chiavi (оба рода).\nНе меняются во множественном числе:\n• слова с ударным последним слогом: la città → le città, il caffè → i caffè;\n• иностранные слова: il bar → i bar, il film → i film;\n• сокращения: la foto → le foto, il cinema → i cinema.",
+        "Понятие смешанного рода": "Если в группе есть и мужчины, и женщины (или слова обоих родов), используется мужской род множественного числа.\n• ragazzi — это и «мальчики», и «ребята» (мальчики + девочки).\n• amici — друзья и подруги вместе; amiche — только подруги.\n• Прилагательное к словам разного рода тоже ставится в мужской род мн. ч.: Marco e Anna sono stanchi.",
+        "Прилагательное: формы и место в предложении": "Прилагательное согласуется с существительным в роде и числе.\n• Тип на -o: alto, alta, alti, alte (4 формы).\n• Тип на -e: grande, grandi — одна форма для обоих родов (2 формы).\nМесто:\n• обычно после существительного: una casa grande, uno studente intelligente;\n• короткие частые прилагательные часто ставятся перед: bello, buono, piccolo, nuovo, vecchio, brutto — una bella città, un piccolo problema."
+      }
     },
     "a1-03": {
       "title": "L'articolo determinativo",
@@ -30,7 +42,12 @@
         "C'è …",
         "Ci sono …",
         "Ciao!"
-      ]
+      ],
+      "rules": {
+        "Правила чтения": "Двойные согласные произносятся долго и отчётливо: mamma, bello, anno. От этого зависит смысл: nono (девятый) ≠ nonno (дедушка).\nБуквы c и g:\n• перед e, i — [ч], [дж]: cena, cinema, gelato, giro;\n• перед a, o, u и согласными — [к], [г]: casa, cuore, gatto, grande.\nСочетания ci, gi перед a, o, u: i не читается, а только смягчает: ciao [чао], giorno [джорно], giacca [джакка].",
+        "Множественное число прилагательного": "Прилагательное меняется по тем же правилам, что и существительное:\n• -o → -i, -a → -e: libero → liberi, libera → libere;\n• -e → -i (оба рода): intelligente → intelligenti.\nПримеры: un appartamento libero → appartamenti liberi; una frase stupida → frasi stupide; uno studente basso → studenti bassi.",
+        "Определенный артикль: формы и основные случаи употребления": "Формы единственного числа:\n• il — мужской род перед согласной: il libro;\n• lo — мужской род перед s + согласная, z, gn, ps, y: lo studente, lo zaino;\n• l' — оба рода перед гласной: l'amico, l'acqua;\n• la — женский род перед согласной: la casa.\nКогда нужен:\n• предмет известен или единственный: Il libro è sul tavolo. La luna.\n• при общих понятиях: Amo il caffè. La musica è bella.\n• с днями недели в значении «каждый»: il sabato — по субботам."
+      }
     },
     "a1-04": {
       "title": "I pronomi personali e il verbo essere",
@@ -39,7 +56,13 @@
         "Come ti chiami?",
         "Sono italiano / italiana",
         "Che cosa è?"
-      ]
+      ],
+      "rules": {
+        "Правила чтения": "• h не читается: ho [о], hotel [отель].\n• ch, gh перед e, i — твёрдые [к], [г]: chiave [кьяве], spaghetti, funghi.\n• i перед гласной в одном слоге звучит как [й]: piano [пьяно], italiano.\n• gli — мягкое [ль]: figlio [фильо], famiglia, moglie.\n• gn — мягкое [нь]: bagno [баньо], signora, compagno.\n• qu — [кв]: questo, quando, acqua; gu перед гласной — [гв]: guardare, lingua.",
+        "Личные местоимения": "io — я, tu — ты, lui — он, lei — она, noi — мы, voi — вы (несколько человек), loro — они.\n• Вежливое «Вы» одному человеку — Lei (с большой буквы), глагол в 3-м лице ед. ч.: Lei è italiano?\n• Обычно местоимение опускают: форма глагола уже показывает лицо — Sono russo. Parli italiano?\n• Местоимение ставят для выделения или противопоставления: Io lavoro, tu dormi.",
+        "Неправильный глагол essere": "essere — быть\nio sono, tu sei, lui/lei è, noi siamo, voi siete, loro sono.\n• В итальянском «быть» не пропускается, как в русском: Sono stanco — Я устал. Marco è a casa.\n• è (есть) с ударением ≠ e (союз «и»).\n• essere di + город — быть родом из: Sono di Mosca.",
+        "Формы определенного артикля множественного числа": "• il → i: il libro → i libri.\n• lo и l' (мужской род) → gli: lo studente → gli studenti, l'amico → gli amici.\n• la и l' (женский род) → le: la casa → le case, l'amica → le amiche.\nСводка: мужской род — il/lo/l' → i/gli; женский — la/l' → le."
+      }
     },
     "a1-05": {
       "title": "Il verbo avere, sì e no, le preposizioni",
@@ -48,7 +71,13 @@
         "Non ho …",
         "Sì, …",
         "No, non …"
-      ]
+      ],
+      "rules": {
+        "Правила чтения": "Буква z:\n• [ц]: piazza, lezione, colazione (все слова на -zione);\n• [дз]: zona, zero, mezzo; в начале слова допустимы оба варианта.\nСочетания с sc:\n• sce, sci — [ш]: scena, sciopero, ascensore, capisce;\n• scia, scio, sciu — тоже [ш], i не читается: asciugare, prosciutto;\n• sca, sco, scu и sch — [ск]: scala, scuola, scherzo, maschera.",
+        "Неправильный глагoл avere": "avere — иметь\nio ho, tu hai, lui/lei ha, noi abbiamo, voi avete, loro hanno (h не читается).\n• «У меня есть» = ho: Ho una macchina.\n• Состояния с avere: avere fame (быть голодным), sete (хотеть пить), freddo (мёрзнуть), caldo (страдать от жары), sonno (хотеть спать), paura (бояться).\n• Возраст тоже с avere: Ho trent'anni — Мне тридцать лет.",
+        "Утверждение и отрицание": "• sì — да, no — нет.\n• Отрицание non всегда стоит прямо перед глаголом: Non parlo inglese.\n• В ответе часто оба: No, non ho tempo.\n• Двойное отрицание нормально: Non ho niente. Non vedo nessuno. Non vado mai al cinema.",
+        "Предлоги итальянского языка": "Главные простые предлоги:\n• di — принадлежность, происхождение: il libro di Marco, sono di Roma;\n• a — направление и место в городе, кому: vado a Roma, abito a Milano, scrivo a Anna;\n• da — откуда, у кого/к кому: vengo da Napoli, vado da Luca;\n• in — в стране, регионе, помещении, на транспорте: in Italia, in cucina, in macchina;\n• con — с: con gli amici;\n• su — на, о: sul tavolo, un libro su Roma;\n• per — для, через, по: per te, per lavoro;\n• tra / fra — между, через (о времени): tra due giorni."
+      }
     },
     "a1-06": {
       "title": "Il presente dei verbi in -are",
@@ -58,7 +87,12 @@
         "Sono di …",
         "Abito a …",
         "Parlo italiano"
-      ]
+      ],
+      "rules": {
+        "Спряжение глаголов": "Глаголы делятся на три спряжения по окончанию инфинитива:\n• I — -are: parlare, abitare;\n• II — -ere: leggere, scrivere;\n• III — -ire: dormire, partire.\nЧтобы проспрягать, отбрасываем окончание инфинитива и добавляем личные окончания: parl-are → parl-o, parl-i, parl-a…",
+        "Глаголы I спряжения": "parlare — говорить\nio parlo, tu parli, lui/lei parla, noi parliamo, voi parlate, loro parlano.\n• В форме loro ударение падает так же, как в io: parlo — parlano, abito — abitano.\n• Так же спрягаются abitare, lavorare, guardare, tornare, visitare, viaggiare и большинство глаголов на -are.",
+        "I спряжение. Нюансы": "• -care, -gare: перед i вставляется h, чтобы сохранить звук [к], [г]: cercare → cerchi, cerchiamo; pagare → paghi, paghiamo.\n• -iare: двойного i не бывает: mangiare → mangi, mangiamo; studiare → studi, studiamo.\n• Ударение в 3-м лице мн. ч. остаётся на корне: àbitano, lavòrano, telèfonano."
+      }
     },
     "a1-07": {
       "title": "Il presente dei verbi in -ere; dire e bere",
@@ -68,7 +102,12 @@
         "Ho freddo",
         "Ho sonno",
         "Ho paura di …"
-      ]
+      ],
+      "rules": {
+        "Глаголы II cпряжения": "leggere — читать\nio leggo, tu leggi, lui/lei legge, noi leggiamo, voi leggete, loro leggono.\n• Окончания: -o, -i, -e, -iamo, -ete, -ono.\n• Звук корня может меняться: leggo [г] — leggi [дж], conosco [ск] — conosci [ш]. Пишется так же, читается по правилам.\n• Так же: scrivere, vedere, prendere, chiudere, rispondere, vivere.",
+        "Неправильные глаголы dire, bere": "dire — говорить, сказать: dico, dici, dice, diciamo, dite, dicono.\nbere — пить: bevo, bevi, beve, beviamo, bevete, bevono.\n• Обе формы строятся от старых основ dic- и bev-, поэтому их проще запомнить целиком.\n• dire qualcosa a qualcuno — сказать что-то кому-то.",
+        "Интонация": "• Вопрос без вопросительного слова отличается от утверждения только интонацией — голос повышается в конце: Parli italiano? / Parli italiano.\n• Порядок слов при этом не меняется.\n• С вопросительным словом оно стоит в начале: Dove abiti? Come ti chiami? Che cosa fai?"
+      }
     },
     "a1-08": {
       "title": "Il presente dei verbi in -ire; il verbo fare",
@@ -76,7 +115,11 @@
         "Che lavoro fai?",
         "Faccio il / la …",
         "Lavoro come …"
-      ]
+      ],
+      "rules": {
+        "Глаголы III cпряжения": "dormire — спать\nio dormo, tu dormi, lui/lei dorme, noi dormiamo, voi dormite, loro dormono.\nЧасть глаголов на -ire добавляет -isc- в формах io, tu, lui, loro:\ncapire — capisco, capisci, capisce, capiamo, capite, capiscono.\n• Так же: finire, preferire, pulire, spedire.\n• Без -isc-: dormire, partire, aprire, sentire. Какой тип у глагола — проверяем по словарю.",
+        "Неправильный глагол fare": "fare — делать\nio faccio, tu fai, lui/lei fa, noi facciamo, voi fate, loro fanno.\nЧастые выражения:\n• fare colazione — завтракать, fare la spesa — ходить за продуктами;\n• fare + профессия: Faccio l'insegnante — Я работаю учителем;\n• погода: fa caldo, fa freddo, fa bel tempo."
+      }
     },
     "a1-09": {
       "title": "Le preposizioni articolate: a; molto e poco",
@@ -85,7 +128,12 @@
         "Abito lontano da …",
         "Parliamo di …",
         "Alla fine di …"
-      ]
+      ],
+      "rules": {
+        "Сочлененные предлоги": "Предлоги di, a, da, in, su сливаются с определённым артиклем в одно слово:\n• di + il = del, a + il = al, da + il = dal, in + il = nel, su + il = sul.\nПолная схема (артикль: il, lo, l', la, i, gli, le):\n• di: del, dello, dell', della, dei, degli, delle;\n• a: al, allo, all', alla, ai, agli, alle;\n• da: dal, dallo, dall', dalla, dai, dagli, dalle;\n• in: nel, nello, nell', nella, nei, negli, nelle;\n• su: sul, sullo, sull', sulla, sui, sugli, sulle.\ncon и per с артиклем не сливаются: con il, per la.",
+        "Предлог А: значение, сочленение с определенным артиклем": "Значения a:\n• направление и место с городом: vado a Roma, abito a Milano;\n• кому: do il libro a Marco;\n• время: alle otto — в восемь;\n• устойчивые: a casa, a piedi, a letto.\nС артиклем: al, allo, all', alla, ai, agli, alle — vado al cinema, al bar, alla stazione.",
+        "Согласование molto, poco": "molto (много, очень) и poco (мало) работают двумя способами.\n• Перед существительным — как прилагательное, согласуются: molto tempo, molta acqua, molti amici, molte persone; poco tempo, poca acqua, pochi soldi, poche persone.\n• С глаголом, прилагательным или наречием — как наречие, не меняются: è molto bella, lavora molto, mangia poco.\n• Обратите внимание на h во множественном числе: pochi, poche."
+      }
     },
     "a1-10": {
       "title": "La preposizione da; stare e dare",
@@ -94,7 +142,12 @@
         "Sto bene / male",
         "Fino a …",
         "A volte …"
-      ]
+      ],
+      "rules": {
+        "Предлог DА: значение, сочленение с определенным артиклем": "Значения da:\n• откуда: vengo da Roma, esco dall'ufficio;\n• к кому или у кого: vado da Marco, sono dal medico;\n• с какого времени (длительность до сих пор): studio italiano da un anno — учу уже год;\n• назначение: occhiali da sole, cose da fare.\nС артиклем: dal, dallo, dall', dalla, dai, dagli, dalle.",
+        "Порядок слов в предложении": "• Обычный порядок: подлежащее — сказуемое — дополнение: Marco legge un libro.\n• Прилагательное чаще после существительного: un libro interessante.\n• non — сразу перед глаголом: Marco non legge.\n• В вопросе порядок не меняется, работает интонация; подлежащее можно поставить в конец: Legge Marco?\n• Наречие обычно после глагола: Parla bene italiano.",
+        "Неправильные глаголы stare, dare": "stare — находиться, быть (в состоянии): sto, stai, sta, stiamo, state, stanno.\ndare — давать: do, dai, dà, diamo, date, danno (dà с ударением ≠ предлог da).\n• Come stai? — Sto bene / male. Как дела? — Хорошо / плохо.\n• stare a casa — сидеть дома, stare a letto — лежать в постели.\n• dare qualcosa a qualcuno — давать что-то кому-то."
+      }
     },
     "a1-11": {
       "title": "C'è e ci sono; il verbo andare",
@@ -103,7 +156,12 @@
         "Ci sono …",
         "Vado a / in …",
         "Tanti auguri!"
-      ]
+      ],
+      "rules": {
+        "Предлог su": "su — на (поверхности), о (теме):\n• Il libro è sul tavolo. Il gatto dorme sulla sedia.\n• un film su Roma — фильм о Риме.\n• С артиклем: sul, sullo, sull', sulla, sui, sugli, sulle.\n• dare su — выходить на (об окнах): La finestra dà sulla strada.",
+        "Оборот c’è (ci sono)": "c'è — есть, имеется (один предмет); ci sono — есть (много).\n• C'è un bar qui vicino. Ci sono due camere.\n• Отрицание: Non c'è il latte. Non ci sono problemi.\n• Вопрос: C'è un supermercato?\n• Если речь о месте известного предмета, используем essere: Il bar è qui. (Бар — вот здесь.)\n• c'è il sole — светит солнце.",
+        "Неправильный глагол andare": "andare — идти, ехать: vado, vai, va, andiamo, andate, vanno.\n• andare a + город или инфинитив: vado a Roma, vado a mangiare;\n• andare in + страна, регион, многие места: in Italia, in banca, in ufficio, in vacanza;\n• andare da + человек: vado da Luca;\n• andare a piedi / in macchina / in treno — пешком / на машине / на поезде."
+      }
     },
     "a1-12": {
       "title": "Le preposizioni articolate: di e in",
@@ -112,7 +170,11 @@
         "Vado a trovare …",
         "Faccio la spesa",
         "Tutti i giorni"
-      ]
+      ],
+      "rules": {
+        "Сочлененный предлог di": "di + артикль: del, dello, dell', della, dei, degli, delle.\n• принадлежность: la macchina del padre;\n• «немного, некоторое количество» (часть): Compro del pane, dei pomodori;\n• происхождение без артикля: sono di Napoli.",
+        "Сочлененный предлог in": "in + артикль: nel, nello, nell', nella, nei, negli, nelle.\n• Без артикля: страны, регионы, комнаты, транспорт — in Italia, in cucina, in macchina.\n• С артиклем, если у слова есть уточнение: nella cucina nuova, nell'Italia del nord.\n• С артиклем перед многими существительными: nel parcheggio, nella borsa, nel 2026."
+      }
     },
     "a1-13": {
       "title": "I verbi modali e i numeri da 0 a 20",
@@ -121,7 +183,12 @@
         "Voglio …",
         "Devo …",
         "Ho voglia di …"
-      ]
+      ],
+      "rules": {
+        "Модальные глаголы": "После них идёт инфинитив.\n• potere — мочь: posso, puoi, può, possiamo, potete, possono.\n• volere — хотеть: voglio, vuoi, vuole, vogliamo, volete, vogliono.\n• dovere — быть должным: devo, devi, deve, dobbiamo, dovete, devono.\nПримеры: Posso entrare? Voglio dormire. Devo lavorare.\n• Вежливая просьба: Vorrei un caffè — Я бы хотел кофе.",
+        "Количественные числительные от 0 до 20": "0 zero, 1 uno, 2 due, 3 tre, 4 quattro, 5 cinque, 6 sei, 7 sette, 8 otto, 9 nove, 10 dieci.\n• uno перед существительным ведёт себя как неопределённый артикль: un libro, una casa, uno studente.\n• Остальные числительные не меняются: due amici, tre case.",
+        "Числительные с 11 до 20": "11 undici, 12 dodici, 13 tredici, 14 quattordici, 15 quindici, 16 sedici, 17 diciassette, 18 diciotto, 19 diciannove, 20 venti.\n• 11–16 строятся по схеме «число + -dici», 17–19 — наоборот: dici- + число."
+      }
     },
     "a1-14": {
       "title": "Gli aggettivi possessivi",
@@ -129,7 +196,11 @@
         "Scusi, …",
         "È il mio / la mia …",
         "Di chi è …?"
-      ]
+      ],
+      "rules": {
+        "Притяжательные местоимения": "мой — mio/mia/miei/mie, твой — tuo/tua/tuoi/tue, его/её — suo/sua/suoi/sue,\nнаш — nostro/nostra/nostri/nostre, ваш — vostro/vostra/vostri/vostre, их — loro (не меняется).\n• Согласуются с тем, что принадлежит, а не с владельцем: la mia casa, i miei amici.\n• Обычно с артиклем: il mio libro, la tua macchina, il loro appartamento.\n• Без артикля — с родственниками в ед. ч. (кроме loro): mia madre, tuo fratello; но i miei genitori, la loro madre.",
+        "Особенности употребления местоимения suo (его, ее)": "• suo значит и «его», и «её»: la sua macchina — его или её машина. Род suo/sua зависит от предмета, а не от владельца: Marco e la sua casa, Anna e il suo libro.\n• Вежливое «Ваш» — тоже Suo: Signora, questo è il Suo passaporto?\n• Русское «свой» переводится по лицу: Prendo il mio libro, Prendi il tuo libro, Prende il suo libro."
+      }
     },
     "a1-15": {
       "title": "I pronomi diretti; il verbo uscire",
@@ -138,7 +209,11 @@
         "Posso provarlo?",
         "Come mi sta?",
         "Mi dispiace"
-      ]
+      ],
+      "rules": {
+        "Безударные личные местоимения (прямой падеж)": "Отвечают на вопрос «кого? что?»:\nmi — меня, ti — тебя, lo — его (м.р.), la — её (ж.р.), La — Вас (вежл.), ci — нас, vi — вас, li — их (м.р.), le — их (ж.р.).\n• Стоят перед глаголом: Lo vedo. Ti chiamo domani. Non la conosco.\n• lo, la перед гласной и h → l': L'aspetto qui.\n• С инфинитивом присоединяются к нему: Voglio vederlo (или: Lo voglio vedere).\n• lo заменяет и мужской род, и целую фразу: Lo so — Я это знаю.",
+        "Неправильный глагол uscire": "uscire — выходить: esco, esci, esce, usciamo, uscite, escono.\n• В формах с ударением на корне — e- (esco), без ударения — u- (usciamo).\n• uscire di casa — выйти из дома; uscire con gli amici — пойти гулять с друзьями."
+      }
     },
     "a1-16": {
       "title": "I numeri da 21 in poi; il verbo sapere",
@@ -146,7 +221,12 @@
         "Lo so / Non lo so",
         "Basta!",
         "Non ne posso più"
-      ]
+      ],
+      "rules": {
+        "Существительные, меняющие род": "Несколько слов мужского рода во множественном числе становятся женского рода и получают окончание -a:\n• l'uovo → le uova (яйцо — яйца);\n• il dito → le dita, il braccio → le braccia, il labbro → le labbra;\n• il paio → le paia (пара), il lenzuolo → le lenzuola;\n• il centinaio → le centinaia, il migliaio → le migliaia.\nПрилагательные к ним — в женском роде: le uova sode.",
+        "Количественные числительные от 21 до 1 000 000 000": "• Десятки: 30 trenta, 40 quaranta, 50 cinquanta, 60 sessanta, 70 settanta, 80 ottanta, 90 novanta.\n• Составные пишутся слитно: 25 venticinque, 36 trentasei.\n• Перед uno и otto десятки теряют гласную: ventuno, ventotto, trentuno.\n• С tre на конце ставится ударение: ventitré, trentatré.\n• 100 cento, 200 duecento, 1000 mille, 2000 duemila (мн. ч. — mila).\n• 1 000 000 un milione, 1 000 000 000 un miliardo — с существительным через di: un milione di euro.",
+        "Неправильный глагoл sapere": "sapere — знать: so, sai, sa, sappiamo, sapete, sanno.\n• sapere — знать факт: So che sei qui. Non lo so.\n• sapere + инфинитив — уметь: So nuotare.\n• conoscere — быть знакомым с человеком, местом: Conosco Roma, conosco Marco."
+      }
     },
     "a1-17": {
       "title": "I numeri ordinali; tutto",
@@ -155,7 +235,11 @@
         "Vogliamo ordinare",
         "Da bere …",
         "Per la prima volta"
-      ]
+      ],
+      "rules": {
+        "Порядковые числительные": "1-й primo, 2-й secondo, 3-й terzo, 4-й quarto, 5-й quinto, 6-й sesto, 7-й settimo, 8-й ottavo, 9-й nono, 10-й decimo.\n• Дальше: число без последней гласной + -esimo: undicesimo, ventesimo; ventitré → ventitreesimo.\n• Согласуются как прилагательные: il primo giorno, la prima volta, i primi piatti.\n• В датах — количественные: il due maggio; только первое число порядковое: il primo maggio.",
+        "Местоимение tutto": "• tutto + артикль + существительное — весь: tutto il giorno, tutta la sera, tutti i giorni (каждый день), tutte le volte.\n• tutto — всё: Tutto va bene. Ho capito tutto.\n• tutti — все (люди): Tutti sono qui. Ciao a tutti!\n• tutto согласуется в роде и числе: tutto, tutta, tutti, tutte."
+      }
     },
     "a1-18": {
       "title": "Che ora è? I nomi in -ma, -ta, -ca",
@@ -165,7 +249,11 @@
         "Sono le …",
         "A che ora …?",
         "Vorrei una camera …"
-      ]
+      ],
+      "rules": {
+        "Род существительных на -ma, -ta, -ca": "• Многие слова греческого происхождения на -ma — мужского рода: il problema, il programma, il sistema, il tema, il clima, il panorama. Мн. ч. на -i: i problemi.\n• Слова на -ista, -ta, -ca, обозначающие людей, бывают обоих родов: il turista / la turista, il collega / la collega. Мн. ч.: i turisti (м.), le turiste (ж.).\n• Напоминание: la mano, la foto, la radio — женский род на -o.",
+        "Che ora è? Che ore sono? — Который час?": "• Вопрос: Che ora è? или Che ore sono?\n• Ответ во мн. ч. с артиклем le (подразумевается ore): Sono le tre. Sono le dieci e venti.\n• Исключения в ед. ч.: È l'una. È mezzogiorno. È mezzanotte.\n• e un quarto — четверть, e mezza — половина, meno un quarto — без четверти: Sono le due meno un quarto.\n• Во сколько? — A che ora? — Alle otto. All'una.\n• С … до …: dalle nove alle cinque."
+      }
     },
     "a1-19": {
       "title": "Il si impersonale; il tempo e le stagioni",
@@ -174,7 +262,12 @@
         "Si può …?",
         "Non si può …",
         "Bisogna …"
-      ]
+      ],
+      "rules": {
+        "Согласование слов troppo, tanto": "troppo (слишком, слишком много) и tanto (так много, много) ведут себя как molto.\n• С существительным согласуются: troppa gente, troppi turisti, tanto lavoro, tante cose.\n• С глаголом, прилагательным, наречием не меняются: È troppo caro. Lavora tanto. Grazie tante!",
+        "Безличные конструкции с si": "si + глагол в 3-м лице означает «вообще люди», как русские «говорят», «можно», «едят»:\n• Si mangia bene qui. — Здесь хорошо кормят.\n• Si può? — Можно? Non si può. — Нельзя.\n• Come si dice…? — Как сказать…?\n• С существительным во мн. ч. глагол тоже во мн. ч.: In Italia si mangiano molte verdure.",
+        "Погода и времена года, il tempo e le stagioni": "• Che tempo fa? — Какая погода?\n• Fa caldo / freddo / bel tempo / brutto tempo.\n• Piove — идёт дождь, nevica — идёт снег, c'è il sole — солнечно, c'è vento — ветрено, è nuvoloso — облачно.\nВремена года: la primavera, l'estate (ж.р.), l'autunno, l'inverno.\n• «Весной, летом…» — in без артикля: in primavera, in estate, in autunno, in inverno."
+      }
     },
     "a1-20": {
       "title": "Gli avverbi in -mente; qualche e alcuni",
@@ -183,7 +276,12 @@
         "A lunedì!",
         "Arrivederci",
         "Spegni la luce!"
-      ]
+      ],
+      "rules": {
+        "Образование наречий": "Наречие = прилагательное в женском роде + -mente:\n• lento → lenta → lentamente, sicuro → sicuramente;\n• на -e: veloce → velocemente;\n• на -le и -re гласная e выпадает: facile → facilmente, normale → normalmente, regolare → regolarmente.\n• Особые: buono → bene, cattivo → male.",
+        "Местоимения qualche, alcuni": "Оба значат «несколько, некоторые».\n• qualche + существительное в ед. ч., хотя смысл множественный; не меняется: qualche giorno, qualche volta (иногда).\n• alcuni / alcune + существительное во мн. ч., согласуется в роде: alcuni giorni, alcune persone.\n• Qualche giorno = alcuni giorni — несколько дней.",
+        "Неправильные глаголы spegnere, togliere": "spegnere — выключать, гасить: spengo, spegni, spegne, spegniamo, spegnete, spengono.\ntogliere — снимать, убирать: tolgo, togli, toglie, togliamo, togliete, tolgono.\n• В io и loro появляется -g- после согласной: spengo, tolgo.\n• spegnere la luce — выключить свет; togliere il cappotto — снять пальто."
+      }
     }
   },
   "vocab_merge": [
