@@ -7,6 +7,7 @@ struct RootView: View {
     @Query private var progress: [WordProgress]
     @State private var selection: Lesson.ID?
     @State private var showStats = false
+    @State private var showSettings = false
     @Query private var ruleNotes: [RuleNote]
     @State private var exportDoc: RuleExportDocument?
     @State private var exporting = false
@@ -25,6 +26,11 @@ struct RootView: View {
             }
             .navigationTitle("Italingua")
             .toolbar {
+                #if os(macOS)
+                SettingsLink { Label("Настройки", systemImage: "gearshape") }
+                #else
+                Button("Настройки", systemImage: "gearshape") { showSettings = true }
+                #endif
                 Button("Статистика", systemImage: "chart.bar") { showStats = true }
                 Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
@@ -41,6 +47,9 @@ struct RootView: View {
                     #if os(macOS)
                     .frame(minWidth: 460, idealWidth: 520, minHeight: 560, idealHeight: 640)
                     #endif
+            }
+            .sheet(isPresented: $showSettings) {
+                NavigationStack { SettingsView() }.appAppearance()
             }
         } detail: {
             NavigationStack {

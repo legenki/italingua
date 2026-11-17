@@ -243,3 +243,17 @@ struct ArticleTests {
         #expect(Articles.withArticle("Italia", gender: "f", plural: false) == nil)
     }
 }
+
+struct SpokenAnswerTests {
+    @Test(arguments: [
+        ("Casa.", "casa", "casa"),
+        ("è la casa", "casa", "casa"),
+        ("Buongiorno, signora!", "buongiorno", "buongiorno"),
+        ("grazie mille", "grazie mille", "grazie mille"),
+        ("Cosa", "casa", "cosa"),
+        ("", "casa", ""),
+    ])
+    func picksExpectedWord(transcript: String, expected: String, result: String) {
+        #expect(SpeechInput.answer(from: transcript, expected: expected) == result)
+    }
+}

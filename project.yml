@@ -27,6 +27,7 @@ targets:
         com.apple.security.app-sandbox: true
         com.apple.security.network.client: true
         com.apple.security.files.user-selected.read-write: true
+        com.apple.security.device.audio-input: true
     info:
       path: Config/Info.plist
       properties:
@@ -36,6 +37,8 @@ targets:
         UILaunchScreen: {}
         UIBackgroundModes: [remote-notification]
         LSApplicationCategoryType: public.app-category.education
+        NSMicrophoneUsageDescription: Микрофон нужен, чтобы отвечать в упражнениях голосом. Речь распознаётся на устройстве.
+        NSSpeechRecognitionUsageDescription: Речь распознаётся на устройстве, чтобы проверить ответ, сказанный вслух.
         UISupportedInterfaceOrientations:
           [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UISupportedInterfaceOrientations~ipad:

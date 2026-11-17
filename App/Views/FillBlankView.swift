@@ -8,6 +8,10 @@ struct FillBlankView: View {
     @State private var session: FillBlankSession?
     @State private var answer = ""
     @FocusState private var focused: Bool
+    @AppStorage(SettingsKey.voiceAnswers) private var voiceAnswers = true
+    @State private var voice = SpeechInput()
+    /// What the recognizer understood for the current answer, shown after checking.
+    @State private var heardText: String?
 
     var body: some View {
         ScrollView {
@@ -26,6 +30,7 @@ struct FillBlankView: View {
         .background(Theme.background)
         .navigationTitle("")
         .task { await startIfNeeded() }
+        .onDisappear { voice.cancel() }
     }
 
     @ViewBuilder
@@ -33,7 +38,8 @@ struct FillBlankView: View {
         if case .unavailable(let reason) = s.status {
             Card(fill: Theme.warningFill) {
                 CardLabel(text: "Без модели", color: Theme.warningText)
-                Text(reason + " Задания без контекста: вспомните слово по переводу.")
+                Text(reason + " Пока задания без предложений: вспомни слово по переводу.")
+                    .font(.subheadline)
             }
         } else if let notice = s.modelNotice {
             Card(fill: Theme.warningFill) {
@@ -83,26 +89,50 @@ struct FillBlankView: View {
             Text(ex.hintRU).font(.title3.weight(ex.source == .model ? .regular : .semibold))
                 .foregroundStyle(ex.source == .model ? Theme.secondaryText : .primary)
 
-            TextField("Пропущенное слово", text: $answer)
-                .textFieldStyle(.plain)
-                .font(.title3)
-                .autocorrectionDisabled()
-                #if os(iOS)
-                .textInputAutocapitalization(.never)
-                #endif
-                .focused($focused)
-                .disabled(s.phase != .answering)
-                .onSubmit { primaryAction(s) }
-                .padding(.horizontal, 12)
-                .frame(minHeight: 48)
-                .background(Theme.tile, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            HStack(spacing: 10) {
+                TextField(voice.isListening ? "Слушаю…" : "Пропущенное слово",
+                          text: voice.isListening ? .constant(voice.heard) : $answer)
+                    .textFieldStyle(.plain)
+                    .font(.title3)
+                    .autocorrectionDisabled()
+                    #if os(iOS)
+                    .textInputAutocapitalization(.never)
+                    #endif
+                    .focused($focused)
+                    .disabled(s.phase != .answering || voice.isListening)
+                    .onSubmit { primaryAction(s) }
+                    .padding(.horizontal, 12)
+                    .frame(minHeight: 48)
+                    .background(Theme.tile, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                if voiceAnswers && s.phase == .answering {
+                    MicButton(state: voice.state) { Task { await toggleVoice(ex, session: s) } }
+                }
+            }
+            switch voice.state {
+            case .downloading(let p):
+                ProgressView("Скачиваю итальянскую речь (один раз)…", value: p)
+                    .font(.footnote)
+            case .failed(let message):
+                Text(message).font(.footnote).foregroundStyle(Theme.feminine)
+            case .listening:
+                Text("Скажи ответ и нажми ещё раз").font(.footnote).foregroundStyle(Theme.secondaryText)
+            default:
+                EmptyView()
+            }
 
             if case .checked(let result) = s.phase {
                 HStack(spacing: 12) {
                     Image(systemName: result.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
                         .font(.title2)
                         .foregroundStyle(result.isCorrect ? Theme.accent : Theme.feminine)
-                    Text(result.feedbackRU)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(result.feedbackRU)
+                        if let heardText {
+                            Text("Услышано: «\(heardText.isEmpty ? "ничего" : heardText)»")
+                                .font(.footnote)
+                                .foregroundStyle(Theme.secondaryText)
+                        }
+                    }
                     Spacer(minLength: 0)
                     SpeakButton(text: spokenAnswer(ex), label: "Прослушать ответ", size: 40)
                 }
@@ -129,11 +159,30 @@ struct FillBlankView: View {
             : ex.answer
     }
 
+    /// First tap starts listening, the second stops and checks what was said.
+    private func toggleVoice(_ ex: FillBlankExercise, session s: FillBlankSession) async {
+        if voice.isListening {
+            let transcript = await voice.stop()
+            heardText = transcript
+            answer = SpeechInput.answer(from: transcript, expected: ex.answer)
+            s.submit(answer, in: context)
+        } else {
+            focused = false
+            await voice.start()
+        }
+    }
+
     private func primaryAction(_ s: FillBlankSession) {
+        if voice.isListening {
+            if let ex = s.current { Task { await toggleVoice(ex, session: s) } }
+            return
+        }
         if s.phase == .answering {
+            heardText = nil
             s.submit(answer, in: context)
         } else {
             answer = ""
+            heardText = nil
             Task {
                 await s.next()
                 focused = true
@@ -155,5 +204,35 @@ struct FillBlankView: View {
         answer = ""
         await s.start()
         focused = true
+    }
+}
+
+private struct MicButton: View {
+    let state: SpeechInput.State
+    let action: () -> Void
+
+    var body: some View {
+        let listening = state == .listening
+        let busy: Bool = switch state {
+        case .downloading, .finishing: true
+        default: false
+        }
+        Button(action: action) {
+            Group {
+                if busy {
+                    ProgressView().controlSize(.small)
+                } else {
+                    Image(systemName: listening ? "stop.fill" : "mic.fill")
+                        .font(.system(size: 18, weight: .semibold))
+                        .symbolEffect(.pulse, isActive: listening)
+                }
+            }
+            .frame(width: 48, height: 48)
+            .foregroundStyle(listening ? .white : Theme.accent)
+            .background(listening ? Theme.feminine : Theme.accentSoft, in: Circle())
+        }
+        .buttonStyle(.plain)
+        .disabled(busy)
+        .accessibilityLabel(listening ? "Остановить и проверить" : "Ответить голосом")
     }
 }

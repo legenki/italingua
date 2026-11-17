@@ -24,6 +24,10 @@
 	<string>$(ITALINGUA_CLOUDKIT_CONTAINER)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Микрофон нужен, чтобы отвечать в упражнениях голосом. Речь распознаётся на устройстве.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Речь распознаётся на устройстве, чтобы проверить ответ, сказанный вслух.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

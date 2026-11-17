@@ -23,11 +23,19 @@ struct ItalinguaApp: App {
             if let container {
                 RootView()
                     .modelContainer(container)
+                    .appAppearance()
             } else {
                 ContentUnavailableView("Не удалось открыть данные",
                                        systemImage: "exclamationmark.triangle",
                                        description: Text(startupError ?? ""))
             }
         }
+        #if os(macOS)
+        Settings {
+            SettingsView()
+                .frame(width: 480)
+                .frame(minHeight: 420)
+        }
+        #endif
     }
 }

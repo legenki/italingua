@@ -114,13 +114,17 @@ nonisolated enum RuleMarkup {
 
     /// Plain text without markup, for previews in lists.
     static func preview(_ text: String) -> String {
-        parse(text).compactMap { block -> String? in
+        let blocks = parse(text)
+        // Tables read badly as one line; they appear in the preview only when
+        // the rule has nothing else.
+        let prose = blocks.filter { if case .table = $0 { false } else { true } }
+        return (prose.isEmpty ? blocks : prose).compactMap { block -> String? in
             switch block {
             case .paragraph(let s): s
             case .bullets(let items), .callout(let items): items.first
             case .example(let it, _): it
             case .conjugation(let c): "\(c.verb) — \(c.gloss)"
-            case .table(let t): t.rows.first?.joined(separator: " ")
+            case .table(let t): t.rows.first?.joined(separator: " · ")
             }
         }
         .joined(separator: " ")

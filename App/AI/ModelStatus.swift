@@ -20,7 +20,7 @@ nonisolated enum ModelStatus: Equatable, Sendable {
         case .unavailable(.appleIntelligenceNotEnabled):
             return .unavailable("Apple Intelligence выключен. Включите его в Настройках.")
         case .unavailable(.modelNotReady):
-            return .unavailable("Модель ещё загружается. Попробуйте позже.")
+            return .unavailable("Модель Apple Intelligence ещё не скачана или не готова.")
         case .unavailable:
             return .unavailable("Модель недоступна.")
         }
