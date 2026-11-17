@@ -55,6 +55,9 @@ xcodebuild -project Italingua.xcodeproj -scheme Italingua -destination 'platform
 - Модели прогресса совместимы с CloudKit: без `unique`, у всех полей значения по умолчанию.
 - FM: промпты на английском — русский язык моделью не поддерживается (проверено: `supportsLocale(ru_RU) == false`).
   Ответ упражнения всегда берётся из статичного контента, модель пишет только контекст.
+  Стандартные guardrails отклоняли ~50% обычных слов (madre, caffè, due) — генерация идёт текстом через
+  `SystemLanguageModel(guardrails: .permissiveContentTransformations)`, с примерами в инструкции и
+  второй проверкой грамматики моделью (`SentenceReview`). Модель ошибается и после проверки — это пример, не эталон.
 
 ## Разметка правил (`rule_ru`)
 ```

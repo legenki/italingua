@@ -132,13 +132,18 @@ struct BlankingTests {
 /// and checks the target word is really blanked out.
 @MainActor
 struct ModelSmokeTests {
-    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(2)))
+    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(3)))
     func generatesSentencesWithTarget() async throws {
         let words = [
             TargetWord(wordID: "a1/caffe", lessonID: "a1-01", italian: "caffè", russian: "кофе", pos: .noun, gender: "m"),
             TargetWord(wordID: "a1/parlo", lessonID: "a1-06", italian: "parlo", russian: "я говорю", pos: .verb, gender: nil),
             TargetWord(wordID: "a1/in albergo", lessonID: "a1-06", italian: "in albergo", russian: "в гостинице", pos: .phrase, gender: nil),
             TargetWord(wordID: "a1/stanco", lessonID: "a1-01", italian: "stanco", russian: "уставший", pos: .adj, gender: nil),
+            // These used to be rejected by the default guardrails.
+            TargetWord(wordID: "a1/madre", lessonID: "a1-01", italian: "madre", russian: "мать", pos: .noun, gender: "f"),
+            TargetWord(wordID: "a1/mio", lessonID: "a1-01", italian: "mio", russian: "мой", pos: .pron, gender: nil),
+            TargetWord(wordID: "a1/due", lessonID: "a1-01", italian: "due", russian: "два", pos: .num, gender: nil),
+            TargetWord(wordID: "a1/con", lessonID: "a1-01", italian: "con", russian: "с", pos: .prep, gender: nil),
         ]
         var produced = 0
         for w in words {
@@ -151,7 +156,7 @@ struct ModelSmokeTests {
                 print("FM[\(w.italian)] failed: \(error.localizedDescription)")
             }
         }
-        #expect(produced >= 3)
+        #expect(produced >= words.count - 1)
     }
 }
 

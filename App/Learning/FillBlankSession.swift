@@ -90,11 +90,12 @@ final class FillBlankSession {
             return
         }
         phase = .loading
+        modelNotice = nil
         let word = words[index]
         do {
             current = try await generator.makeExercise(for: word, lessonTitle: lessonTitle)
         } catch {
-            modelNotice = "Модель не ответила (\(error.localizedDescription)). Задание без контекста."
+            modelNotice = "Модель не справилась с этим словом, поэтому задание без предложения."
             current = try? await fallback.makeExercise(for: word, lessonTitle: lessonTitle)
         }
         phase = .answering

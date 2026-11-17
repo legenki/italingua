@@ -36,61 +36,118 @@ nonisolated protocol FillBlankGenerating: Sendable {
 
 enum FillBlankError: LocalizedError {
     case targetMissing
+    case badGrammar
 
     var errorDescription: String? {
-        "Модель не смогла составить предложение с нужным словом."
+        switch self {
+        case .targetMissing: "Модель не смогла составить предложение с нужным словом."
+        case .badGrammar: "Модель не смогла составить грамотное предложение."
+        }
     }
 }
 
 // MARK: - Foundation Models
 
 @Generable
-nonisolated struct GeneratedSentence {
-    @Guide(description: "One short, natural Italian sentence of 4 to 12 words for a beginner (CEFR A1). It contains the target expression exactly as given, unchanged.")
-    var sentence: String
+nonisolated struct SentenceReview {
+    @Guide(description: "true only if the sentence is grammatically correct and sounds natural to a native Italian speaker")
+    var correct: Bool
 }
 
 nonisolated struct ModelFillBlankGenerator: FillBlankGenerating {
     var attempts = 3
 
-    // Prompts are in English on purpose: Russian is not guaranteed to be a
-    // supported model language, and the Russian hint comes from our content.
+    /// Default guardrails reject about half of plain beginner words (madre,
+    /// caffè, due…) as "unsafe" — measured on lesson vocabulary. The permissive
+    /// setting applies to plain-text responses, so the sentence is generated as
+    /// text; the content is ordinary example sentences, checked below.
+    static let model = SystemLanguageModel(guardrails: .permissiveContentTransformations)
+
+    // Prompts are in English on purpose: Russian is not a supported model
+    // language, and the Russian hint comes from our content. The examples
+    // noticeably improve grammar compared to rules alone.
     static let instructions = """
-        You write example sentences for an Italian course for beginners (CEFR A1).
-        Use the present tense and everyday vocabulary. Keep sentences short and natural.
-        Never change the form of the target expression: no plural, no other ending, \
-        no other tense, no contraction with an article or preposition.
+        You are a careful Italian teacher writing example sentences for adult beginners (CEFR A1).
+        Rules:
+        - Write exactly one short, grammatically correct, natural Italian sentence (4 to 10 words), present tense.
+        - Use only very common words. Conjugate every verb correctly and use correct articles.
+        - The sentence must contain the target exactly as given, letter for letter. Never change its form.
+        - A verb in the infinitive stays in the infinitive, for example after "voglio", "devo", "posso" or "mi piace".
+        - A conjugated verb form stays in that person: "parlo" needs "io", "parliamo" needs "noi", "siete" needs "voi".
+        - Answer with the sentence only.
+        Examples:
+        Target: "libro" (noun) -> Il libro è sul tavolo.
+        Target: "parlare" (verb) -> Voglio parlare con il professore.
+        Target: "lavoro" (verb form) -> Io lavoro in un ufficio.
+        Target: "parliamo" (verb form) -> Noi parliamo italiano a casa.
+        Target: "grande" (adjective) -> Roma è una città grande.
+        Target: "sempre" (adverb) -> Marco arriva sempre in ritardo.
+        Target: "ma" (conjunction) -> Sono stanco, ma sono contento.
+        Target: "dove" (question word) -> Dove abiti?
+        Target: "con" (preposition) -> Vado al cinema con Laura.
+        Target: "avere fame" (fixed expression) -> Dopo il lavoro devo avere fame.
         """
 
+    static let reviewInstructions =
+        "You are a strict native Italian proofreader. Judge grammar, articles, verb forms and naturalness."
+
     func makeExercise(for word: TargetWord, lessonTitle: String) async throws -> FillBlankExercise {
+        let target = word.italian.replacingOccurrences(of: "’", with: "'")
+        var feedback = ""
+        var lastError: Error = FillBlankError.targetMissing
         for _ in 0..<attempts {
-            let session = LanguageModelSession(instructions: Self.instructions)
-            let prompt = """
-                Lesson topic: \(lessonTitle).
-                Target expression: "\(word.italian)" (\(Self.describe(word))).
-                Write one sentence that contains "\(word.italian)" exactly in this form.
-                """
-            let response = try await session.respond(
-                to: prompt,
-                generating: GeneratedSentence.self,
-                options: GenerationOptions(temperature: 0.9))
-            if let blanked = Self.blank(word.italian, in: response.content.sentence) {
+            do {
+                let session = LanguageModelSession(model: Self.model, instructions: Self.instructions)
+                let text = try await session.respond(
+                    to: "Target: \"\(target)\" (\(Self.describe(word)))" + feedback,
+                    options: GenerationOptions(temperature: 0.5, maximumResponseTokens: 60)).content
+                let sentence = Self.clean(text)
+                guard let blanked = Self.blank(word.italian, in: sentence) else {
+                    feedback = "\nYour previous sentence did not contain \"\(target)\" in exactly this form. Use it unchanged."
+                    lastError = FillBlankError.targetMissing
+                    continue
+                }
+                guard try await Self.review(sentence) else {
+                    feedback = "\nWrite a simpler sentence with fully correct grammar."
+                    lastError = FillBlankError.badGrammar
+                    continue
+                }
                 return FillBlankExercise(wordID: word.wordID, lessonID: word.lessonID, pos: word.pos,
                                          sentence: blanked, answer: word.italian,
                                          hintRU: word.russian, source: .model)
+            } catch {
+                lastError = error
             }
         }
-        throw FillBlankError.targetMissing
+        throw lastError
+    }
+
+    /// A second, independent pass: the model proofreads its own sentence.
+    /// It catches part of the mistakes (wrong agreement, odd word use).
+    static func review(_ sentence: String) async throws -> Bool {
+        let session = LanguageModelSession(model: model, instructions: reviewInstructions)
+        return try await session.respond(to: "Sentence: \(sentence)", generating: SentenceReview.self,
+                                         options: GenerationOptions(temperature: 0)).content.correct
+    }
+
+    /// First line of the reply without quotes or an echoed "Target: … ->" prefix.
+    static func clean(_ text: String) -> String {
+        var s = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        s = s.components(separatedBy: .newlines).first ?? s
+        if let arrow = s.range(of: "->") { s = String(s[arrow.upperBound...]) }
+        return s.trimmingCharacters(in: CharacterSet(charactersIn: " \"«»“”"))
     }
 
     static func describe(_ w: TargetWord) -> String {
         switch w.pos {
         case .noun: "noun" + (w.gender.map { ", gender \($0)" } ?? "")
-        case .verb: "verb form"
+        case .verb: w.italian.hasSuffix("re") ? "verb, infinitive" : "verb form"
         case .adj: "adjective"
         case .adv: "adverb"
         case .prep: "preposition"
         case .phrase: "fixed expression"
+        case .conj: "conjunction"
+        case .pron: "pronoun"
         default: w.pos.rawValue
         }
     }
