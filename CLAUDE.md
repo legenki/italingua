@@ -38,3 +38,16 @@ python3 tools/validate_content.py --warnings                   # без зави
 - Уровни: A1 = вводный курс 1–5 + основной 1–15; A2 = основной 16–35.
 - Названия уроков, шаблоны и ручные правки лексики — `tools/curation/<LEVEL>.json`.
 - Генерированный `Content/*.json` руками не правим: правки идут в curation и перегенерацию.
+
+## Приложение
+```bash
+xcodegen generate            # Italingua.xcodeproj генерируется из project.yml, в git не лежит
+xcodebuild -project Italingua.xcodeproj -scheme Italingua -destination 'platform=macOS' \
+  -derivedDataPath build CODE_SIGNING_ALLOWED=NO test
+```
+- Один мультиплатформенный таргет (iOS + macOS 26), настройки подписи — `Config/Base.xcconfig`.
+- SwiftData: хранилище `Content` (локальное, пересоздаётся из JSON при смене хеша) и
+  `Progress` (CloudKit, `.automatic`). Прогресс ссылается на слова по `wordID` = `<level>/<слово без диакритики>`.
+- Модели прогресса совместимы с CloudKit: без `unique`, у всех полей значения по умолчанию.
+- FM: промпты на английском — русский язык моделью не поддерживается (проверено: `supportsLocale(ru_RU) == false`).
+  Ответ упражнения всегда берётся из статичного контента, модель пишет только контекст.
