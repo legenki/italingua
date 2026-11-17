@@ -100,3 +100,30 @@ struct BlankingTests {
         #expect(ModelFillBlankGenerator.blank("caffè", in: "Bevo un caffe.") == nil)
     }
 }
+
+/// Runs only where Apple Intelligence is available. Generates real sentences
+/// and checks the target word is really blanked out.
+@MainActor
+struct ModelSmokeTests {
+    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(2)))
+    func generatesSentencesWithTarget() async throws {
+        let words = [
+            TargetWord(wordID: "a1/caffe", lessonID: "a1-01", italian: "caffè", russian: "кофе", pos: .noun, gender: "m"),
+            TargetWord(wordID: "a1/parlo", lessonID: "a1-06", italian: "parlo", russian: "я говорю", pos: .verb, gender: nil),
+            TargetWord(wordID: "a1/in albergo", lessonID: "a1-06", italian: "in albergo", russian: "в гостинице", pos: .phrase, gender: nil),
+            TargetWord(wordID: "a1/stanco", lessonID: "a1-01", italian: "stanco", russian: "уставший", pos: .adj, gender: nil),
+        ]
+        var produced = 0
+        for w in words {
+            do {
+                let ex = try await ModelFillBlankGenerator().makeExercise(for: w, lessonTitle: "Il presente dei verbi in -are")
+                print("FM[\(w.italian)]: \(ex.sentence)")
+                #expect(ex.sentence.contains(FillBlankExercise.blank))
+                produced += 1
+            } catch {
+                print("FM[\(w.italian)] failed: \(error.localizedDescription)")
+            }
+        }
+        #expect(produced >= 3)
+    }
+}
