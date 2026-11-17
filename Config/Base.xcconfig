@@ -1,0 +1,9 @@
+// Shared build settings. Team is a paid Apple Developer team (CloudKit needs it).
+DEVELOPMENT_TEAM = Y6A9LRQDH7
+CODE_SIGN_STYLE = Automatic
+PRODUCT_BUNDLE_IDENTIFIER = com.y6a9lrqdh7.italingua
+ITALINGUA_CLOUDKIT_CONTAINER = iCloud.com.y6a9lrqdh7.italingua
+SWIFT_VERSION = 6.0
+SWIFT_STRICT_CONCURRENCY = complete
+SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor
+SWIFT_APPROACHABLE_CONCURRENCY = YES

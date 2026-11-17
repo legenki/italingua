@@ -1,0 +1,85 @@
+import Foundation
+import SwiftData
+
+// Learner progress. Lives in the "Progress" store, which syncs through
+// iCloud (CloudKit) when the app is signed with the iCloud entitlement.
+// CloudKit rules: no unique constraints, every property has a default,
+// no relationships to the local content store (we refer to words by wordID).
+
+@Model
+final class WordProgress {
+    var wordID: String = ""
+    /// Leitner box: 0 = never practised, 1…4 = learning, 5 = learned.
+    var box: Int = 0
+    var dueDate: Date = Date.distantPast
+    var correctCount: Int = 0
+    var wrongCount: Int = 0
+    var lastReviewed: Date?
+
+    init(wordID: String) {
+        self.wordID = wordID
+    }
+
+    var isLearned: Bool { box >= Leitner.maxBox }
+
+    func record(correct: Bool, at now: Date = .now) {
+        let next = Leitner.next(LeitnerState(box: box, dueDate: dueDate), correct: correct, now: now)
+        box = next.box
+        dueDate = next.dueDate
+        lastReviewed = now
+        if correct { correctCount += 1 } else { wrongCount += 1 }
+    }
+}
+
+@Model
+final class Mistake {
+    var date: Date = Date.now
+    var lessonID: String = ""
+    var wordID: String?
+    var kindRaw: String = MistakeKind.other.rawValue
+    var exerciseRaw: String = ExerciseType.fillBlank.rawValue
+    /// The task as shown (e.g. the sentence with a blank).
+    var prompt: String = ""
+    var expected: String = ""
+    var given: String = ""
+
+    init(date: Date = .now, lessonID: String, wordID: String?, kind: MistakeKind,
+         exercise: ExerciseType, prompt: String, expected: String, given: String) {
+        self.date = date
+        self.lessonID = lessonID
+        self.wordID = wordID
+        self.kindRaw = kind.rawValue
+        self.exerciseRaw = exercise.rawValue
+        self.prompt = prompt
+        self.expected = expected
+        self.given = given
+    }
+
+    var kind: MistakeKind { MistakeKind(rawValue: kindRaw) ?? .other }
+}
+
+nonisolated enum ExerciseType: String, Sendable {
+    case fillBlank
+}
+
+extension ModelContext {
+    /// Progress for a word, created on first use. Two devices may each create a
+    /// row for the same word before CloudKit syncs; such duplicates are merged.
+    func progress(for wordID: String) throws -> WordProgress {
+        let rows = try fetch(FetchDescriptor<WordProgress>(predicate: #Predicate { $0.wordID == wordID }))
+        guard var keep = rows.first else {
+            let p = WordProgress(wordID: wordID)
+            insert(p)
+            return p
+        }
+        if rows.count > 1 {
+            keep = rows.max { ($0.lastReviewed ?? .distantPast) < ($1.lastReviewed ?? .distantPast) }!
+            for other in rows where other !== keep {
+                keep.correctCount = max(keep.correctCount, other.correctCount)
+                keep.wrongCount = max(keep.wrongCount, other.wrongCount)
+                delete(other)
+            }
+        }
+        return keep
+    }
+}
