@@ -49,7 +49,7 @@ GENDER_EXCEPTIONS = {"cinema", "radio", "foto", "moto", "auto", "mano", "clima",
                      "problema", "panorama", "programma", "sistema", "tema",
                      "telegramma", "pigiama", "pianeta", "papa", "poeta",
                      "turista", "autista", "artista", "collega", "dentista",
-                     "giornalista", "pilota", "eco", "dinamo"}
+                     "giornalista", "pilota", "eco", "dinamo", "gorilla"}
 LAT = re.compile("[A-Za-z]")
 
 
@@ -212,7 +212,11 @@ def validate(path: Path) -> Report:
                 elif gender not in GENDERS:
                     rep.err(vw, f"bad gender '{gender}'")
                 else:
-                    word = fold(it.split()[-1])
+                    # The head noun: first word after an article ("la carta di credito" → carta).
+                    words = [w for w in re.split(r"[\s’']+", it) if w]
+                    while len(words) > 1 and fold(words[0]) in {"il", "lo", "la", "i", "gli", "le", "l", "un", "uno", "una"}:
+                        words = words[1:]
+                    word = fold(words[0])
                     last = word[-1:]
                     if word not in GENDER_EXCEPTIONS and (
                             (last == "o" and gender == "f") or (last == "a" and gender == "m")):

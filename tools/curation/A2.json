@@ -1,0 +1,541 @@
+{
+  "_comment": "Curation for level A2 (main lessons 16–35): titles and speech patterns written for the app, vocabulary fixes for extraction issues and book typos. Rules: own words, see CLAUDE.md.",
+  "lessons": {
+    "a2-01": {
+      "title": "Il futuro semplice; le date",
+      "patterns": [
+        "Domani andrò …",
+        "Che giorno è oggi?",
+        "Oggi è il primo marzo",
+        "Sarà vero?"
+      ],
+      "rules": {}
+    },
+    "a2-02": {
+      "title": "Il discorso indiretto",
+      "patterns": [
+        "Dice che …",
+        "Mi chiede se …",
+        "Che facciamo stasera?"
+      ],
+      "rules": {}
+    },
+    "a2-03": {
+      "title": "I possessivi con i nomi di parentela; i pronomi tonici",
+      "patterns": [
+        "Mia madre, mio padre",
+        "Vieni con me?",
+        "Questo è per te",
+        "Nel tempo libero …"
+      ],
+      "rules": {}
+    },
+    "a2-04": {
+      "title": "Il passato prossimo",
+      "patterns": [
+        "Ieri ho …",
+        "Che cosa hai fatto?",
+        "Siamo andati al mare"
+      ],
+      "rules": {}
+    },
+    "a2-05": {
+      "title": "I participi irregolari",
+      "patterns": [
+        "Ho fatto le pulizie",
+        "Che cosa hai detto?",
+        "Ho messo tutto a posto"
+      ],
+      "rules": {}
+    },
+    "a2-06": {
+      "title": "Il passato prossimo dei verbi modali; piacere; i verbi in -gliere",
+      "patterns": [
+        "Ho dovuto …",
+        "Non ho potuto …",
+        "Mi piace, mi piacciono",
+        "Mi è piaciuto molto"
+      ],
+      "rules": {}
+    },
+    "a2-07": {
+      "title": "L'imperfetto",
+      "patterns": [
+        "Da bambino …",
+        "Ogni estate …",
+        "Faceva bel tempo"
+      ],
+      "rules": {}
+    },
+    "a2-08": {
+      "title": "Imperfetto o passato prossimo?",
+      "patterns": [
+        "Mentre …, …",
+        "Quando sono arrivato, …",
+        "Era alto e simpatico"
+      ],
+      "rules": {}
+    },
+    "a2-09": {
+      "title": "I verbi riflessivi",
+      "patterns": [
+        "Mi alzo alle sette",
+        "Come ti senti?",
+        "Mi devo preparare"
+      ],
+      "rules": {}
+    },
+    "a2-10": {
+      "title": "Il discorso indiretto: la concordanza dei tempi",
+      "patterns": [
+        "Ha detto che …",
+        "Mi ha chiesto se …",
+        "Ho perso il treno"
+      ],
+      "rules": {}
+    },
+    "a2-11": {
+      "title": "I pronomi indiretti",
+      "patterns": [
+        "Ti dispiace se …?",
+        "Gli ho telefonato",
+        "Le posso offrire un caffè?"
+      ],
+      "rules": {}
+    },
+    "a2-12": {
+      "title": "I numeri ordinali; il participio passato",
+      "patterns": [
+        "Abito al terzo piano",
+        "Chi abita accanto?",
+        "È appena arrivato"
+      ],
+      "rules": {}
+    },
+    "a2-13": {
+      "title": "Avere o essere?; prendere e il prefisso ri-",
+      "patterns": [
+        "Ho già cominciato",
+        "Sono già uscito",
+        "Ho un colloquio di lavoro"
+      ],
+      "rules": {}
+    },
+    "a2-14": {
+      "title": "I verbi reciproci",
+      "patterns": [
+        "Ci vediamo domani!",
+        "Ci conosciamo?",
+        "Un biglietto di andata e ritorno"
+      ],
+      "rules": {}
+    },
+    "a2-15": {
+      "title": "Il plurale in -co, -go, -ca, -ga; il verbo servire",
+      "patterns": [
+        "A che serve?",
+        "Mi serve …",
+        "Ci servono due …"
+      ],
+      "rules": {}
+    },
+    "a2-16": {
+      "title": "Il gerundio; stare + gerundio",
+      "patterns": [
+        "Che cosa stai facendo?",
+        "Sto lavorando",
+        "Mi fa male la testa"
+      ],
+      "rules": {}
+    },
+    "a2-17": {
+      "title": "L'imperativo",
+      "patterns": [
+        "Aspetta!",
+        "Venga qui, per favore",
+        "Non ti preoccupare!",
+        "Chiama la polizia!"
+      ],
+      "rules": {}
+    },
+    "a2-18": {
+      "title": "L'imperativo con i pronomi; gli imperativi irregolari",
+      "patterns": [
+        "Dimmi!",
+        "Fammi vedere",
+        "Dammelo!",
+        "Mettiti la crema"
+      ],
+      "rules": {}
+    },
+    "a2-19": {
+      "title": "Il condizionale",
+      "patterns": [
+        "Vorrei …",
+        "Mi piacerebbe …",
+        "Potresti …?",
+        "Che ne dici?"
+      ],
+      "rules": {}
+    },
+    "a2-20": {
+      "title": "Il pronome ne",
+      "patterns": [
+        "Quanti ne vuoi?",
+        "Ne prendo due",
+        "Non ne ho",
+        "Che ne pensi?"
+      ],
+      "rules": {}
+    }
+  },
+  "vocab_merge": [
+    [
+      "andare in",
+      "macchina"
+    ],
+    [
+      "la carta di",
+      "credito"
+    ],
+    [
+      "domenica",
+      "prossima"
+    ],
+    [
+      "forno",
+      "a microonde"
+    ],
+    [
+      "guanti di",
+      "gomma"
+    ],
+    [
+      "anticipo",
+      "sullo"
+    ],
+    [
+      "titolo",
+      "di studio"
+    ],
+    [
+      "computer",
+      "portatile"
+    ],
+    [
+      "non ti",
+      "preoccupare!"
+    ],
+    [
+      "mettersi",
+      "d’accordo (di fare)"
+    ],
+    [
+      "macchina",
+      "scavatrice"
+    ]
+  ],
+  "vocab_drop": [],
+  "vocab_overrides": {
+    "con": {
+      "ru": "с",
+      "_why": "в книге латинская c"
+    },
+    "allontanarsi (mi allontano)": {
+      "ru": "удаляться",
+      "_why": "колонка перевода съехала"
+    },
+    "ombrellone": {
+      "ru": "пляжный зонт",
+      "_why": "колонка перевода съехала"
+    },
+    "anticipo sullo": {
+      "it": "anticipo sullo stipendio",
+      "ru": "аванс к зарплате",
+      "pos": "phrase",
+      "_why": "строка перенесена"
+    },
+    "forno a microonde": {
+      "ru": "микроволновая печь",
+      "pos": "noun",
+      "gender": "m"
+    },
+    "computer portatile": {
+      "ru": "ноутбук",
+      "pos": "noun",
+      "gender": "m"
+    },
+    "guanti di gomma": {
+      "pos": "noun",
+      "gender": "m",
+      "number": "pl"
+    },
+    "la carta di credito": {
+      "pos": "noun",
+      "gender": "f"
+    },
+    "titolo di studio": {
+      "pos": "noun",
+      "gender": "m"
+    },
+    "non ti preoccupare!": {
+      "ru": "не волнуйся!",
+      "pos": "phrase"
+    },
+    "domenica prossima": {
+      "pos": "phrase"
+    },
+    "andare in macchina": {
+      "pos": "phrase"
+    },
+    "mettersi d’accordo (di fare)": {
+      "ru": "договариваться (сделать)",
+      "pos": "verb"
+    },
+    "scuola": {
+      "gender": "f",
+      "_why": "опечатка в книге: m"
+    },
+    "posta": {
+      "gender": "f",
+      "_why": "опечатка в книге: m"
+    },
+    "farmacista": {
+      "gender": "mf",
+      "_why": "il/la farmacista"
+    },
+    "Sig.ra": {
+      "ru": "госпожа (сокр. от Signora)",
+      "_why": "в колонке перевода полная форма"
+    },
+    "piacciono": {
+      "ru": "нравятся",
+      "pos": "verb",
+      "form_of": "piacere",
+      "_why": "служебная пометка в переводе"
+    },
+    "così": {
+      "pos": "adv"
+    },
+    "bisogna": {
+      "pos": "verb"
+    },
+    "polizia": {
+      "pos": "noun",
+      "gender": "f"
+    },
+    "contento": {
+      "pos": "adj"
+    },
+    "però": {
+      "pos": "conj"
+    },
+    "semplice": {
+      "pos": "adj"
+    },
+    "stasera": {
+      "pos": "adv"
+    },
+    "c’è": {
+      "pos": "phrase"
+    },
+    "piove": {
+      "pos": "verb"
+    },
+    "beh": {
+      "pos": "interj"
+    },
+    "ah": {
+      "pos": "interj"
+    },
+    "dimenticavo": {
+      "pos": "verb"
+    },
+    "porta": {
+      "pos": "verb"
+    },
+    "grande": {
+      "pos": "adj"
+    },
+    "piuttosto": {
+      "pos": "adv"
+    },
+    "circa": {
+      "pos": "adv"
+    },
+    "quarant’anni": {
+      "pos": "phrase"
+    },
+    "più": {
+      "pos": "adv"
+    },
+    "spento": {
+      "pos": "adj"
+    },
+    "all’università": {
+      "pos": "phrase"
+    },
+    "vent’anni": {
+      "pos": "phrase"
+    },
+    "appena": {
+      "pos": "adv"
+    },
+    "mezz’ora": {
+      "pos": "phrase"
+    },
+    "almeno": {
+      "pos": "adv"
+    },
+    "tuona": {
+      "pos": "verb"
+    },
+    "grandina": {
+      "pos": "verb"
+    },
+    "diecimila": {
+      "pos": "num"
+    },
+    "senz’altro": {
+      "pos": "adv"
+    },
+    "strano": {
+      "pos": "adj"
+    },
+    "c’erano": {
+      "pos": "phrase"
+    },
+    "possibile": {
+      "pos": "adj"
+    },
+    "ormai": {
+      "pos": "adv"
+    },
+    "già": {
+      "pos": "adv"
+    },
+    "vivo": {
+      "pos": "adj"
+    },
+    "irritato": {
+      "pos": "adj"
+    },
+    "quant’è?": {
+      "pos": "phrase"
+    },
+    "insomma": {
+      "pos": "adv"
+    },
+    "certo": {
+      "pos": "adv"
+    },
+    "banconota": {
+      "pos": "noun",
+      "gender": "f"
+    },
+    "uomo": {
+      "pos": "noun",
+      "gender": "m"
+    },
+    "aiutarci": {
+      "pos": "verb"
+    },
+    "neppure": {
+      "pos": "adv"
+    },
+    "all’antica": {
+      "pos": "phrase"
+    },
+    "inoltre": {
+      "pos": "adv"
+    },
+    "all’ora": {
+      "pos": "phrase"
+    },
+    "uova": {
+      "pos": "noun",
+      "gender": "f",
+      "number": "pl",
+      "form_of": "uovo"
+    },
+    "d’estate": {
+      "pos": "phrase"
+    },
+    "ereditato": {
+      "pos": "adj"
+    },
+    "all’ospedale": {
+      "pos": "phrase"
+    },
+    "gratis": {
+      "pos": "adv"
+    },
+    "mah": {
+      "pos": "interj"
+    },
+    "volta": {
+      "pos": "noun",
+      "gender": "f"
+    },
+    "quale?": {
+      "pos": "pron"
+    },
+    "esperienza": {
+      "pos": "noun",
+      "gender": "f"
+    },
+    "l’orario": {
+      "pos": "noun",
+      "gender": "m",
+      "it": "orario"
+    },
+    "preoccupato": {
+      "pos": "adj"
+    },
+    "paia": {
+      "pos": "noun",
+      "gender": "f",
+      "number": "pl",
+      "form_of": "paio"
+    },
+    "incuriosito": {
+      "pos": "adj"
+    },
+    "evidente": {
+      "pos": "adj"
+    },
+    "sottovoce": {
+      "pos": "adv"
+    },
+    "dappertutto": {
+      "pos": "adv"
+    },
+    "distrarre": {
+      "pos": "verb"
+    },
+    "all’improvviso": {
+      "pos": "phrase"
+    },
+    "all’ombra": {
+      "pos": "phrase"
+    },
+    "indietro": {
+      "pos": "adv"
+    },
+    "indeciso": {
+      "pos": "adj"
+    },
+    "intanto": {
+      "pos": "adv"
+    },
+    "macchina scavatrice": {
+      "pos": "noun",
+      "gender": "f",
+      "_why": "строка перенесена"
+    },
+    "le otto": {
+      "pos": "phrase",
+      "_why": "время, не существительное"
+    }
+  }
+}
