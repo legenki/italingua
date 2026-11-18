@@ -5,7 +5,7 @@ import Testing
 
 @MainActor
 struct ImporterTests {
-    @Test func importsBundledA1AndIsIdempotent() throws {
+    @Test func importsBundledLevelsAndIsIdempotent() throws {
         let container = try AppContainer.make(inMemory: true)
         let context = container.mainContext
         let defaults = UserDefaults(suiteName: "importer-\(UUID())")!
@@ -15,13 +15,14 @@ struct ImporterTests {
         try ContentImporter.importBundledContent(into: context, bundle: appBundle, defaults: defaults)
         let lessons = try context.fetch(FetchDescriptor<Lesson>())
         let words = try context.fetchCount(FetchDescriptor<VocabItem>())
-        #expect(lessons.count == 20)
-        #expect(words > 700)
+        #expect(lessons.count == 40)
+        #expect(Set(lessons.map(\.level)) == ["A1", "A2"])
+        #expect(words > 1800)
         #expect(lessons.allSatisfy { !$0.grammar.isEmpty })
 
         // Second run with the same JSON must not duplicate anything.
         try ContentImporter.importBundledContent(into: context, bundle: appBundle, defaults: defaults)
-        #expect(try context.fetchCount(FetchDescriptor<Lesson>()) == 20)
+        #expect(try context.fetchCount(FetchDescriptor<Lesson>()) == 40)
         #expect(try context.fetchCount(FetchDescriptor<VocabItem>()) == words)
     }
 
@@ -132,7 +133,7 @@ struct BlankingTests {
 /// and checks the target word is really blanked out.
 @MainActor
 struct ModelSmokeTests {
-    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(3)))
+    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(4)))
     func generatesSentencesWithTarget() async throws {
         let words = [
             TargetWord(wordID: "a1/caffe", lessonID: "a1-01", italian: "caffè", russian: "кофе", pos: .noun, gender: "m"),
@@ -144,6 +145,9 @@ struct ModelSmokeTests {
             TargetWord(wordID: "a1/mio", lessonID: "a1-01", italian: "mio", russian: "мой", pos: .pron, gender: nil),
             TargetWord(wordID: "a1/due", lessonID: "a1-01", italian: "due", russian: "два", pos: .num, gender: nil),
             TargetWord(wordID: "a1/con", lessonID: "a1-01", italian: "con", russian: "с", pos: .prep, gender: nil),
+            // A2: past forms must stay as they are.
+            TargetWord(wordID: "a2/dimenticavo", lessonID: "a2-02", italian: "dimenticavo", russian: "я забыл", pos: .verb, gender: nil),
+            TargetWord(wordID: "a2/abbiamo mangiato", lessonID: "a2-04", italian: "abbiamo mangiato", russian: "мы поели", pos: .verb, gender: nil),
         ]
         var produced = 0
         for w in words {
@@ -207,10 +211,12 @@ struct RuleMarkupTests {
         #expect(Speech.spokenForm("libro → libri") == "libro , libri")
     }
 
-    @Test func bundledRulesAllParse() throws {
+    @Test(arguments: ["A1", "A2"])
+    func bundledRulesAllParse(level: String) throws {
         let url = Bundle.allBundles.first { $0.bundleURL.pathExtension == "app" }!
-            .url(forResource: "A1", withExtension: "json", subdirectory: "Content")!
+            .url(forResource: level, withExtension: "json", subdirectory: "Content")!
         let file = try JSONDecoder().decode(ContentFileDTO.self, from: Data(contentsOf: url))
+        #expect(file.lessons.count == 20)
         for lesson in file.lessons {
             for g in lesson.grammar {
                 let blocks = RuleMarkup.parse(g.rule_ru)
@@ -371,5 +377,14 @@ struct FavoriteTests {
         try ctx.save()
         #expect(try ctx.toggleFavorite(wordID: "a1/casa") == false)
         #expect(try ctx.fetchCount(FetchDescriptor<FavoriteWord>()) == 0)
+    }
+}
+
+struct GeneratorLevelTests {
+    @Test func levelFromLessonID() {
+        let w = TargetWord(wordID: "a2/x", lessonID: "a2-05", italian: "x", russian: "x", pos: .noun, gender: "m")
+        #expect(ModelFillBlankGenerator.level(of: w) == "A2")
+        #expect(ModelFillBlankGenerator.instructions(level: "A1").contains("present tense"))
+        #expect(ModelFillBlankGenerator.instructions(level: "A2").contains("imperfetto"))
     }
 }

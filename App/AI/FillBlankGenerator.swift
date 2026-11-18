@@ -66,27 +66,44 @@ nonisolated struct ModelFillBlankGenerator: FillBlankGenerating {
     // Prompts are in English on purpose: Russian is not a supported model
     // language, and the Russian hint comes from our content. The examples
     // noticeably improve grammar compared to rules alone.
-    static let instructions = """
-        You are a careful Italian teacher writing example sentences for adult beginners (CEFR A1).
-        Rules:
-        - Write exactly one short, grammatically correct, natural Italian sentence (4 to 10 words), present tense.
-        - Use only very common words. Conjugate every verb correctly and use correct articles.
-        - The sentence must contain the target exactly as given, letter for letter. Never change its form.
-        - A verb in the infinitive stays in the infinitive, for example after "voglio", "devo", "posso" or "mi piace".
-        - A conjugated verb form stays in that person: "parlo" needs "io", "parliamo" needs "noi", "siete" needs "voi".
-        - Answer with the sentence only.
-        Examples:
-        Target: "libro" (noun) -> Il libro è sul tavolo.
-        Target: "parlare" (verb) -> Voglio parlare con il professore.
-        Target: "lavoro" (verb form) -> Io lavoro in un ufficio.
-        Target: "parliamo" (verb form) -> Noi parliamo italiano a casa.
-        Target: "grande" (adjective) -> Roma è una città grande.
-        Target: "sempre" (adverb) -> Marco arriva sempre in ritardo.
-        Target: "ma" (conjunction) -> Sono stanco, ma sono contento.
-        Target: "dove" (question word) -> Dove abiti?
-        Target: "con" (preposition) -> Vado al cinema con Laura.
-        Target: "avere fame" (fixed expression) -> Dopo il lavoro devo avere fame.
-        """
+    /// Level from the lesson id ("a2-05" → "A2").
+    static func level(of word: TargetWord) -> String {
+        word.lessonID.split(separator: "-").first.map { $0.uppercased() } ?? "A1"
+    }
+
+    static func instructions(level: String) -> String {
+        // A1 practises the present; from A2 the target itself may be a past
+        // or future form, so the tense follows the target.
+        let tense = level == "A1"
+            ? "present tense"
+            : "in the tense the target form needs (passato prossimo, imperfetto, futuro, condizionale…)"
+        let pastExample = level == "A1" ? "" : """
+
+            Target: "dimenticavo" (verb form) -> Scusa, dimenticavo il tuo compleanno.
+            Target: "siamo andati" (verb form) -> Ieri siamo andati al mare.
+            """
+        return """
+            You are a careful Italian teacher writing example sentences for adult learners (CEFR \(level)).
+            Rules:
+            - Write exactly one short, grammatically correct, natural Italian sentence (4 to 10 words), \(tense).
+            - Use only very common words. Conjugate every verb correctly and use correct articles.
+            - The sentence must contain the target exactly as given, letter for letter. Never change its form.
+            - A verb in the infinitive stays in the infinitive, for example after "voglio", "devo", "posso" or "mi piace".
+            - A conjugated verb form stays in that person: "parlo" needs "io", "parliamo" needs "noi", "siete" needs "voi".
+            - Answer with the sentence only.
+            Examples:
+            Target: "libro" (noun) -> Il libro è sul tavolo.
+            Target: "parlare" (verb) -> Voglio parlare con il professore.
+            Target: "lavoro" (verb form) -> Io lavoro in un ufficio.
+            Target: "parliamo" (verb form) -> Noi parliamo italiano a casa.
+            Target: "grande" (adjective) -> Roma è una città grande.
+            Target: "sempre" (adverb) -> Marco arriva sempre in ritardo.
+            Target: "ma" (conjunction) -> Sono stanco, ma sono contento.
+            Target: "dove" (question word) -> Dove abiti?
+            Target: "con" (preposition) -> Vado al cinema con Laura.
+            Target: "avere fame" (fixed expression) -> Dopo il lavoro devo avere fame.\(pastExample)
+            """
+    }
 
     static let reviewInstructions =
         "You are a strict native Italian proofreader. Judge grammar, articles, verb forms and naturalness."
@@ -97,7 +114,7 @@ nonisolated struct ModelFillBlankGenerator: FillBlankGenerating {
         var lastError: Error = FillBlankError.targetMissing
         for _ in 0..<attempts {
             do {
-                let session = LanguageModelSession(model: Self.model, instructions: Self.instructions)
+                let session = LanguageModelSession(model: Self.model, instructions: Self.instructions(level: Self.level(of: word)))
                 let text = try await session.respond(
                     to: "Target: \"\(target)\" (\(Self.describe(word)))" + feedback,
                     options: GenerationOptions(temperature: 0.5, maximumResponseTokens: 60)).content
