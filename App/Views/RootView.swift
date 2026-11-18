@@ -39,6 +39,8 @@ struct RootView: View {
                 Button("Настройки", systemImage: "gearshape") { showSettings = true }
                 #endif
                 Button("Статистика", systemImage: "chart.pie") { showStats = true }
+                    // No keyboard-focus ring around the toolbar button after a click.
+                    .focusable(false)
                 Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
                         notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
@@ -46,6 +48,7 @@ struct RootView: View {
                 }
                 .disabled(ruleNotes.isEmpty)
                 .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
+                .focusable(false)
             }
         } detail: {
             NavigationStack(path: $detailPath) {

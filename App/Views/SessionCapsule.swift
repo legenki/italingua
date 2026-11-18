@@ -68,15 +68,14 @@ struct SessionCapsule: View {
                 }
                 Label("Начать", systemImage: "play.fill")
                     .font(.s(.subheadline).weight(.semibold))
-                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 12)
                     .frame(height: 26)
-                    .glassEffect(.regular.tint(Theme.accent).interactive(), in: Capsule())
+                    .glassEffect(.clear.interactive(), in: Capsule())
             }
             .padding(.leading, 14)
             .padding(.trailing, 6)
             .frame(height: 36)
-            .liquidCapsule(glow: false)
+            .liquidCapsule()
             .opacity(startLesson == nil ? 0.5 : 1)
             .help(startLesson.map { "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут" } ?? "")
         } else {
@@ -89,7 +88,7 @@ struct SessionCapsule: View {
             .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, 14)
             .frame(height: 36)
-            .liquidCapsule(glow: true, tint: Theme.accent)
+            .liquidCapsule(tint: Theme.accent)
         }
     }
 
@@ -144,7 +143,7 @@ struct SessionCapsule: View {
         }
         .padding(.horizontal, 6)
         .frame(height: 36)
-        .liquidCapsule(glow: session.isRunning)
+        .liquidCapsule()
     }
 
     static func clock(_ seconds: TimeInterval) -> String {
@@ -169,14 +168,9 @@ private struct StepChip: View {
         .foregroundStyle(done ? Theme.onAccent : current ? Theme.accent : Theme.secondaryText)
         .padding(.horizontal, 10)
         .frame(height: 24)
-        // Done: accent glass. Current: clear glass with a soft accent glow instead of an outline.
+        // Done: accent glass. Current: glass with a light accent tint.
         .glassEffect(done ? .regular.tint(Theme.accent) : current ? .regular.tint(Theme.accent.opacity(0.12)) : .regular,
                      in: Capsule())
-        .background {
-            if current {
-                Capsule().fill(Theme.accent.opacity(0.22)).blur(radius: 5)
-            }
-        }
     }
 }
 
@@ -289,16 +283,13 @@ private struct SessionPlan: View {
 }
 
 private extension View {
-    /// Liquid Glass capsule with a soft shadow and, when active, a faint accent glow.
-    /// Glow and shadow are blurred shapes behind the glass, so the text stays sharp.
-    func liquidCapsule(glow: Bool, tint: Color? = nil) -> some View {
+    /// Liquid Glass capsule with a soft neutral shadow. The shadow is a blurred
+    /// shape behind the glass, so the text stays sharp.
+    func liquidCapsule(tint: Color? = nil) -> some View {
         self
             .glassEffect(.regular.tint(tint).interactive(), in: Capsule())
             .background {
-                ZStack {
-                    Capsule().fill(Color.black.opacity(0.12)).blur(radius: 6).offset(y: 2)
-                    if glow { Capsule().fill(Theme.accent.opacity(0.16)).blur(radius: 8) }
-                }
+                Capsule().fill(Color.black.opacity(0.12)).blur(radius: 6).offset(y: 2)
             }
     }
 }
