@@ -481,3 +481,30 @@ struct ModelReadingSmokeTests {
         #expect(text.sentences.count >= 3)
     }
 }
+
+struct WordSearchTests {
+    @Test func ranking() {
+        #expect(WordSearch.rank(query: "casa", italian: "casa", russian: "дом") == 0)
+        #expect(WordSearch.rank(query: "cas", italian: "casalinga", russian: "домохозяйка") == 1)
+        #expect(WordSearch.rank(query: "spesa", italian: "fare la spesa", russian: "делать покупки") == 2)
+        #expect(WordSearch.rank(query: "citta", italian: "città", russian: "город") == 0)
+        #expect(WordSearch.rank(query: "дом", italian: "casa", russian: "дом") == 4)
+        #expect(WordSearch.rank(query: "xyz", italian: "casa", russian: "дом") == nil)
+        #expect(WordSearch.rank(query: "  ", italian: "casa", russian: "дом") == nil)
+    }
+}
+
+@MainActor
+struct TextScaleTests {
+    @Test func stepsStayInRange() {
+        let scale = TextScale.shared
+        let saved = scale.step
+        defer { scale.step = saved }
+        scale.step = 0
+        #expect(scale.factor == 1)
+        for _ in 0..<20 { scale.grow() }
+        #expect(scale.step == TextScale.range.upperBound && !scale.canGrow)
+        for _ in 0..<20 { scale.shrink() }
+        #expect(scale.step == TextScale.range.lowerBound && abs(scale.factor - 0.8) < 0.001)
+    }
+}

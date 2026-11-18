@@ -65,7 +65,7 @@ private struct TextCard: View {
             ForEach(Array(blocks.enumerated()), id: \.offset) { _, block in
                 switch block {
                 case .paragraph(let s):
-                    Text(markup: s).font(.body)
+                    Text(markup: s).font(.s(.body))
                 case .bullets(let items):
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(items, id: \.self) { item in
@@ -102,8 +102,8 @@ private struct ConjugationCard: View {
         Card {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(conjugation.verb).font(.title2.weight(.semibold))
-                    Text(conjugation.gloss).font(.subheadline).foregroundStyle(Theme.secondaryText)
+                    Text(conjugation.verb).font(.s(.title2).weight(.semibold))
+                    Text(conjugation.gloss).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                 }
                 Spacer()
                 SpeakButton(text: conjugation.spoken, label: "Прослушать формы", style: .filled)
@@ -125,9 +125,9 @@ private struct ConjugationCard: View {
 
     private func tile(_ row: Conjugation.Row) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(row.person).font(.caption.weight(.medium)).foregroundStyle(Theme.secondaryText)
+            Text(row.person).font(.s(.caption).weight(.medium)).foregroundStyle(Theme.secondaryText)
             Text("\(row.stem)\(Text(row.ending).bold().foregroundStyle(Theme.accent))")
-                .font(.title3)
+                .font(.s(.title3))
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 10)
@@ -151,8 +151,8 @@ private struct ExamplesCard: View {
                     HStack(spacing: 12) {
                         SpeakButton(text: item.0, label: "Прослушать пример")
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(markup: item.0).font(.body)
-                            Text(item.1).font(.subheadline).foregroundStyle(Theme.secondaryText)
+                            Text(markup: item.0).font(.s(.body))
+                            Text(item.1).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                         }
                         Spacer(minLength: 0)
                     }
@@ -187,7 +187,7 @@ private struct TableCard: View {
                 if speaks { Color.clear.frame(width: 1, height: 1) }
                 ForEach(Array(table.header.enumerated()), id: \.offset) { _, title in
                     Text(title)
-                        .font(.caption.weight(.semibold))
+                        .font(.s(.caption).weight(.semibold))
                         .textCase(.uppercase)
                         .foregroundStyle(Theme.secondaryText)
                         .fixedSize()

@@ -47,7 +47,7 @@ struct SettingsView: View {
                     Button("Скачать пакет распознавания") { Task { await download() } }
                 }
                 if let downloadError {
-                    Text(downloadError).font(.footnote).foregroundStyle(Theme.feminine)
+                    Text(downloadError).font(.s(.footnote)).foregroundStyle(Theme.feminine)
                 }
             } header: {
                 Text("Упражнения")
@@ -119,7 +119,7 @@ private struct PaletteSwatch: View {
             }
             .frame(width: 28, height: 28)
             .overlay(Circle().stroke(selected ? Color.primary : .clear, lineWidth: 2).padding(-4))
-            Text(palette.title).font(.caption2).foregroundStyle(selected ? .primary : .secondary)
+            Text(palette.title).font(.s(.caption2)).foregroundStyle(selected ? .primary : .secondary)
         }
         .padding(.vertical, 4)
     }

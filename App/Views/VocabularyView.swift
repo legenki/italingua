@@ -20,13 +20,13 @@ struct VocabularyView: View {
 
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Лексика").font(.largeTitle.weight(.bold))
+                Text("Лексика").font(.s(.largeTitle).weight(.bold))
 
                 Card {
                     HStack {
-                        Text("\(learned) из \(items.count) выучено").font(.headline)
+                        Text("\(learned) из \(items.count) выучено").font(.s(.headline))
                         Spacer()
-                        Text("\(due) к повторению").font(.subheadline).foregroundStyle(Theme.secondaryText)
+                        Text("\(due) к повторению").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                     }
                     ProgressView(value: Double(learned), total: Double(max(items.count, 1)))
                         .tint(Theme.accent)
@@ -34,7 +34,7 @@ struct VocabularyView: View {
                         FlashcardsView(lesson: lesson)
                     } label: {
                         Label("Учить карточками", systemImage: "rectangle.on.rectangle.angled")
-                            .font(.subheadline.weight(.semibold))
+                            .font(.s(.subheadline).weight(.semibold))
                             .foregroundStyle(Theme.accent)
                     }
                     .buttonStyle(.plain)
@@ -52,7 +52,7 @@ struct VocabularyView: View {
                     Toggle("Новые", isOn: $onlyNew)
                         .toggleStyle(.button)
                         .tint(Theme.accent)
-                        .font(.subheadline)
+                        .font(.s(.subheadline))
                 }
                 .padding(.horizontal, 12)
                 .frame(minHeight: 44)
@@ -113,24 +113,24 @@ private struct FocusWordCard: View {
                 Spacer()
                 if let g = item.gender {
                     Text(g)
-                        .font(.footnote.weight(.bold))
+                        .font(.s(.footnote).weight(.bold))
                         .foregroundStyle(g == "f" ? Theme.feminine : Theme.masculine)
                         .padding(.horizontal, 10).padding(.vertical, 4)
                         .background(Theme.onAccent, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
             }
             Text(item.displayWithArticle)
-                .font(.system(size: 34, weight: .bold))
+                .font(.scaledSystem(size: 34, weight: .bold))
                 .minimumScaleFactor(0.6)
                 .lineLimit(2)
-            Text(item.russian).font(.title3).opacity(0.9)
+            Text(item.russian).font(.s(.title3)).opacity(0.9)
             HStack(spacing: 10) {
                 SpeakButton(text: item.withArticle, size: 48, style: .onAccent)
                 NavigationLink {
                     FillBlankView(lesson: lesson)
                 } label: {
                     Text(dueCount > 0 ? "Повторить \(dueCount)" : "Тренировка")
-                        .font(.headline)
+                        .font(.s(.headline))
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Theme.onAccent, lineWidth: 1.5))
                 }
@@ -153,13 +153,13 @@ private struct VocabRow: View {
             SpeakButton(text: item.withArticle)
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {
-                    Text(item.displayWithArticle).font(.body.weight(.semibold))
+                    Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
                     if item.isNew {
-                        Text("НОВОЕ").font(.caption2.weight(.bold)).foregroundStyle(Theme.newBadge)
+                        Text("НОВОЕ").font(.s(.caption2).weight(.bold)).foregroundStyle(Theme.newBadge)
                     }
                 }
                 Text(item.russian + (item.formOf.map { " · от \($0)" } ?? ""))
-                    .font(.subheadline)
+                    .font(.s(.subheadline))
                     .foregroundStyle(Theme.secondaryText)
             }
             Spacer(minLength: 8)

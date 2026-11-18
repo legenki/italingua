@@ -148,7 +148,7 @@ struct CardLabel: View {
 
     var body: some View {
         Text(text.uppercased())
-            .font(.footnote.weight(.semibold))
+            .font(.s(.footnote).weight(.semibold))
             .tracking(0.6)
             .foregroundStyle(color)
     }
@@ -171,7 +171,7 @@ struct SpeakButton: View {
             speech.speak(text)
         } label: {
             Image(systemName: playing ? "stop.fill" : "speaker.wave.2.fill")
-                .font(.system(size: size * 0.38, weight: .semibold))
+                .font(.scaledSystem(size: size * 0.38, weight: .semibold))
                 .frame(width: size, height: size)
                 .foregroundStyle(foreground)
                 .background(background, in: Circle())
@@ -210,7 +210,7 @@ struct WordTag: View {
         default: (item.pos.shortRU, Theme.secondaryText, Theme.tile)
         }
         Text(text)
-            .font(.footnote.weight(.bold))
+            .font(.s(.footnote).weight(.bold))
             .foregroundStyle(fg)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)

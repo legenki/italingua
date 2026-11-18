@@ -27,18 +27,18 @@ struct GrammarTopicView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 Text(topic.topic)
-                    .font(.largeTitle.weight(.bold))
+                    .font(.s(.largeTitle).weight(.bold))
                     .fixedSize(horizontal: false, vertical: true)
 
                 if editing {
                     Card {
                         CardLabel(text: "Правило")
                         TextEditor(text: $draft)
-                            .font(.body.monospaced())
+                            .font(.s(.body).monospaced())
                             .frame(minHeight: 320)
                             .scrollContentBackground(.hidden)
                         Text("Разметка: «• пункт», «! осторожно», «ex: Italiano | Перевод», «conj: verbo | перевод» и шесть строк вида «io parl|o», **жирный**.")
-                            .font(.caption)
+                            .font(.s(.caption))
                             .foregroundStyle(Theme.secondaryText)
                     }
                 } else if currentText.isEmpty {
@@ -53,7 +53,7 @@ struct GrammarTopicView: View {
                 if !editing, note != nil {
                     Label("Изменено в приложении. Попадёт в файлы курса после экспорта правил.",
                           systemImage: "pencil.circle")
-                        .font(.footnote)
+                        .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)
                 }
             }

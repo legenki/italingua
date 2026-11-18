@@ -29,7 +29,7 @@ struct ReadingView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Чтение").font(.largeTitle.weight(.bold))
+                Text("Чтение").font(.s(.largeTitle).weight(.bold))
                 Picker("Текст", selection: $mode) {
                     ForEach(Mode.allCases) { Text($0.title).tag($0) }
                 }
@@ -41,7 +41,7 @@ struct ReadingView: View {
                     Card(fill: Theme.warningFill) {
                         CardLabel(text: "Без модели", color: Theme.warningText)
                         Text("Тексты пишет Apple Intelligence на устройстве, а сейчас модель недоступна.")
-                            .font(.subheadline)
+                            .font(.s(.subheadline))
                     }
                 } else {
                     switch mode {
@@ -51,7 +51,7 @@ struct ReadingView: View {
                 }
 
                 if let error {
-                    Text(error).font(.subheadline).foregroundStyle(Theme.feminine)
+                    Text(error).font(.s(.subheadline)).foregroundStyle(Theme.feminine)
                 }
                 if let reading { result(reading) }
             }
@@ -87,7 +87,7 @@ struct ReadingView: View {
             Text("Вставь итальянский текст — статью, письмо, абзац из книги. Модель перескажет его проще.")
                 .foregroundStyle(Theme.secondaryText)
             TextEditor(text: $original)
-                .font(.body)
+                .font(.s(.body))
                 .scrollContentBackground(.hidden)
                 .frame(minHeight: 140)
                 .padding(8)
@@ -129,17 +129,17 @@ struct ReadingView: View {
             HStack(alignment: .firstTextBaseline) {
                 VStack(alignment: .leading, spacing: 2) {
                     CardLabel(text: mode == .lesson ? "Текст · \(lesson.level)" : "Проще · \(level)")
-                    if !r.title.isEmpty { Text(r.title).font(.title2.weight(.bold)) }
+                    if !r.title.isEmpty { Text(r.title).font(.s(.title2).weight(.bold)) }
                 }
                 Spacer()
                 SpeakButton(text: r.text, label: "Прослушать весь текст", style: .filled)
             }
             Text(r.text)
-                .font(.title3)
+                .font(.s(.title3))
                 .lineSpacing(5)
                 .textSelection(.enabled)
             Text("Текст составлен моделью на устройстве и может содержать ошибки.")
-                .font(.caption)
+                .font(.s(.caption))
                 .foregroundStyle(Theme.secondaryText)
         }
 
@@ -171,8 +171,8 @@ struct ReadingView: View {
                         HStack(spacing: 12) {
                             SpeakButton(text: item.withArticle)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(item.displayWithArticle).font(.body.weight(.semibold))
-                                Text(item.russian).font(.subheadline).foregroundStyle(Theme.secondaryText)
+                                Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
+                                Text(item.russian).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                             }
                             Spacer(minLength: 8)
                             FavoriteButton(wordID: item.wordID, isFavorite: starred.contains(item.wordID))
@@ -206,7 +206,7 @@ private struct ActionButton: View {
                 if working { ProgressView().controlSize(.small).tint(Theme.onAccent) }
                 Text(working ? "Модель пишет…" : title)
             }
-            .font(.headline)
+            .font(.s(.headline))
             .foregroundStyle(Theme.onAccent)
             .frame(maxWidth: .infinity, minHeight: 50)
             .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))

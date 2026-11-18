@@ -15,7 +15,7 @@ struct FavoriteButton: View {
             withAnimation(.snappy) { _ = try? context.toggleFavorite(wordID: wordID) }
         } label: {
             Image(systemName: isFavorite ? "star.fill" : "star")
-                .font(.system(size: size * 0.5, weight: .semibold))
+                .font(.scaledSystem(size: size * 0.5, weight: .semibold))
                 .foregroundStyle(onAccent ? Theme.onAccent : (isFavorite ? Theme.accent : Theme.secondaryText))
                 .frame(width: size, height: size)
                 .contentShape(Rectangle())
@@ -36,10 +36,10 @@ struct FavoritesView: View {
         let items = Self.items(favorites: favorites, vocab: vocab)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Избранное").font(.largeTitle.weight(.bold))
+                Text("Избранное").font(.s(.largeTitle).weight(.bold))
                 if items.isEmpty {
                     Card {
-                        Label("Пока пусто", systemImage: "star").font(.headline)
+                        Label("Пока пусто", systemImage: "star").font(.s(.headline))
                         Text("Отмечай слова звёздочкой в лексике урока, в карточках или в «Слове дня». Здесь из них соберётся своя колода.")
                             .foregroundStyle(Theme.secondaryText)
                     }
@@ -49,7 +49,7 @@ struct FavoritesView: View {
                     } label: {
                         Label("Учить карточками · \(items.count) \(wordWord(items.count))",
                               systemImage: "rectangle.on.rectangle.angled")
-                            .font(.headline)
+                            .font(.s(.headline))
                             .foregroundStyle(Theme.onAccent)
                             .frame(maxWidth: .infinity, minHeight: 52)
                             .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -65,9 +65,9 @@ struct FavoritesView: View {
                                 HStack(spacing: 12) {
                                     SpeakButton(text: item.withArticle)
                                     VStack(alignment: .leading, spacing: 2) {
-                                        Text(item.displayWithArticle).font(.body.weight(.semibold))
+                                        Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
                                         Text(item.russian + (item.lesson.map { " · \($0.sourceLabel)" } ?? ""))
-                                            .font(.subheadline)
+                                            .font(.s(.subheadline))
                                             .foregroundStyle(Theme.secondaryText)
                                     }
                                     Spacer(minLength: 8)

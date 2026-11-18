@@ -16,7 +16,7 @@ struct FillBlankView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Вставь слово").font(.largeTitle.weight(.bold))
+                Text("Вставь слово").font(.s(.largeTitle).weight(.bold))
                 if let session {
                     content(session)
                 } else {
@@ -39,11 +39,11 @@ struct FillBlankView: View {
             Card(fill: Theme.warningFill) {
                 CardLabel(text: "Без модели", color: Theme.warningText)
                 Text(reason + " Пока задания без предложений: вспомни слово по переводу.")
-                    .font(.subheadline)
+                    .font(.s(.subheadline))
             }
         } else if let notice = s.modelNotice {
             Card(fill: Theme.warningFill) {
-                Text(notice).font(.subheadline)
+                Text(notice).font(.s(.subheadline))
             }
         }
 
@@ -58,12 +58,12 @@ struct FillBlankView: View {
         case .finished:
             Card {
                 CardLabel(text: "Готово")
-                Text("\(s.correctCount) из \(s.total) верно").font(.title.weight(.bold))
+                Text("\(s.correctCount) из \(s.total) верно").font(.s(.title).weight(.bold))
                 Button {
                     Task { await restart() }
                 } label: {
                     Text("Ещё раз")
-                        .font(.headline)
+                        .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -81,19 +81,19 @@ struct FillBlankView: View {
             HStack {
                 CardLabel(text: ex.source == .model ? "Предложение" : "Как по-итальянски?")
                 Spacer()
-                Text("\(s.index + 1) из \(s.total)").font(.subheadline).foregroundStyle(Theme.secondaryText)
+                Text("\(s.index + 1) из \(s.total)").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             }
             if ex.source == .model {
-                Text(ex.sentence).font(.title2)
+                Text(ex.sentence).font(.s(.title2))
             }
-            Text(ex.hintRU).font(.title3.weight(ex.source == .model ? .regular : .semibold))
+            Text(ex.hintRU).font(.s(.title3).weight(ex.source == .model ? .regular : .semibold))
                 .foregroundStyle(ex.source == .model ? Theme.secondaryText : .primary)
 
             HStack(spacing: 10) {
                 TextField(voice.isListening ? "Слушаю…" : "Пропущенное слово",
                           text: voice.isListening ? .constant(voice.heard) : $answer)
                     .textFieldStyle(.plain)
-                    .font(.title3)
+                    .font(.s(.title3))
                     .autocorrectionDisabled()
                     #if os(iOS)
                     .textInputAutocapitalization(.never)
@@ -111,11 +111,11 @@ struct FillBlankView: View {
             switch voice.state {
             case .downloading(let p):
                 ProgressView("Скачиваю итальянскую речь (один раз)…", value: p)
-                    .font(.footnote)
+                    .font(.s(.footnote))
             case .failed(let message):
-                Text(message).font(.footnote).foregroundStyle(Theme.feminine)
+                Text(message).font(.s(.footnote)).foregroundStyle(Theme.feminine)
             case .listening:
-                Text("Скажи ответ и нажми ещё раз").font(.footnote).foregroundStyle(Theme.secondaryText)
+                Text("Скажи ответ и нажми ещё раз").font(.s(.footnote)).foregroundStyle(Theme.secondaryText)
             default:
                 EmptyView()
             }
@@ -123,13 +123,13 @@ struct FillBlankView: View {
             if case .checked(let result) = s.phase {
                 HStack(spacing: 12) {
                     Image(systemName: result.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
-                        .font(.title2)
+                        .font(.s(.title2))
                         .foregroundStyle(result.isCorrect ? Theme.accent : Theme.feminine)
                     VStack(alignment: .leading, spacing: 2) {
                         Text(result.feedbackRU)
                         if let heardText {
                             Text("Услышано: «\(heardText.isEmpty ? "ничего" : heardText)»")
-                                .font(.footnote)
+                                .font(.s(.footnote))
                                 .foregroundStyle(Theme.secondaryText)
                         }
                     }
@@ -142,7 +142,7 @@ struct FillBlankView: View {
                 primaryAction(s)
             } label: {
                 Text(s.phase == .answering ? "Проверить" : "Дальше")
-                    .font(.headline)
+                    .font(.s(.headline))
                     .foregroundStyle(Theme.onAccent)
                     .frame(maxWidth: .infinity, minHeight: 50)
                     .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -223,7 +223,7 @@ private struct MicButton: View {
                     ProgressView().controlSize(.small)
                 } else {
                     Image(systemName: listening ? "stop.fill" : "mic.fill")
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(.scaledSystem(size: 18, weight: .semibold))
                         .symbolEffect(.pulse, isActive: listening)
                 }
             }

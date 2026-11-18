@@ -31,7 +31,7 @@ struct FlashcardsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text(title).font(.largeTitle.weight(.bold))
+                Text(title).font(.s(.largeTitle).weight(.bold))
                 if let session {
                     if session.isFinished {
                         summary(session)
@@ -73,7 +73,7 @@ struct FlashcardsView: View {
                 Counter(count: s.learning.count, title: "Ещё учу", color: Theme.warningText, fill: Theme.warningFill)
                 Spacer()
                 Text("\(s.index + 1) / \(s.total)")
-                    .font(.headline.monospacedDigit())
+                    .font(.s(.headline).monospacedDigit())
                     .foregroundStyle(Theme.secondaryText)
                 Spacer()
                 Counter(count: s.known.count, title: "Знаю", color: Theme.accent, fill: Theme.accentSoft)
@@ -112,7 +112,7 @@ struct FlashcardsView: View {
                 withAnimation(.spring(duration: 0.3)) { s.undo() }
             } label: {
                 Label("Назад", systemImage: "arrow.uturn.backward")
-                    .font(.subheadline.weight(.semibold))
+                    .font(.s(.subheadline).weight(.semibold))
                     .foregroundStyle(Theme.secondaryText)
             }
             .buttonStyle(.plain)
@@ -134,7 +134,7 @@ struct FlashcardsView: View {
             .accessibilityHidden(true)
 
         Text("Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу. На Mac: пробел, ← и →.")
-            .font(.footnote)
+            .font(.s(.footnote))
             .foregroundStyle(Theme.secondaryText)
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)
@@ -183,7 +183,7 @@ struct FlashcardsView: View {
                         .stroke(Theme.accent, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                         .rotationEffect(.degrees(-90))
                     Text(total == 0 ? "—" : "\(s.known.count * 100 / total)%")
-                        .font(.title2.weight(.bold).monospacedDigit())
+                        .font(.s(.title2).weight(.bold).monospacedDigit())
                 }
                 .frame(width: 96, height: 96)
                 VStack(alignment: .leading, spacing: 8) {
@@ -192,7 +192,7 @@ struct FlashcardsView: View {
                     Label("Ещё учу: \(s.learning.count)", systemImage: "arrow.trianglehead.2.clockwise")
                         .foregroundStyle(Theme.warningText)
                 }
-                .font(.headline)
+                .font(.s(.headline))
             }
             if !s.learning.isEmpty {
                 WideButton(title: "Повторить «ещё учу» (\(s.learning.count))", filled: true) {
@@ -214,8 +214,8 @@ struct FlashcardsView: View {
                         HStack(spacing: 12) {
                             SpeakButton(text: card.spoken)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(card.italian).font(.body.weight(.semibold))
-                                Text(card.russian).font(.subheadline).foregroundStyle(Theme.secondaryText)
+                                Text(card.italian).font(.s(.body).weight(.semibold))
+                                Text(card.russian).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                             }
                             Spacer(minLength: 0)
                         }
@@ -280,7 +280,7 @@ private struct CardView: View {
         let progress = min(abs(drag.width) / 110, 1)
         if drag.width != 0 {
             Text(drag.width > 0 ? "ЗНАЮ" : "ЕЩЁ УЧУ")
-                .font(.headline.weight(.heavy))
+                .font(.s(.headline).weight(.heavy))
                 .foregroundStyle(drag.width > 0 ? Theme.accent : Theme.warningText)
                 .padding(.horizontal, 14).padding(.vertical, 6)
                 .background(.background, in: Capsule())
@@ -299,7 +299,7 @@ private struct CardView: View {
                 FavoriteButton(wordID: card.wordID, isFavorite: isFavorite)
                 if italian, let g = card.gender {
                     Text(g)
-                        .font(.footnote.weight(.bold))
+                        .font(.s(.footnote).weight(.bold))
                         .foregroundStyle(g == "f" ? Theme.feminine : Theme.masculine)
                         .padding(.horizontal, 10).padding(.vertical, 4)
                         .background(g == "f" ? Theme.feminineFill : Theme.masculineFill,
@@ -308,12 +308,12 @@ private struct CardView: View {
             }
             Spacer(minLength: 0)
             Text(italian ? card.italian : card.russian)
-                .font(.system(size: 36, weight: .bold))
+                .font(.scaledSystem(size: 36, weight: .bold))
                 .multilineTextAlignment(.center)
                 .minimumScaleFactor(0.5)
                 .lineLimit(3)
             if italian, let note = card.note {
-                Text(note).font(.subheadline).foregroundStyle(Theme.secondaryText)
+                Text(note).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             }
             Spacer(minLength: 0)
             if italian {
@@ -341,8 +341,8 @@ private struct Counter: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            Text("\(count)").font(.headline.monospacedDigit())
-            Text(title).font(.subheadline)
+            Text("\(count)").font(.s(.headline).monospacedDigit())
+            Text(title).font(.s(.subheadline))
         }
         .foregroundStyle(color)
         .padding(.horizontal, 12).padding(.vertical, 6)
@@ -361,11 +361,11 @@ private struct RoundAction: View {
         Button(action: action) {
             VStack(spacing: 6) {
                 Image(systemName: systemImage)
-                    .font(.system(size: 22, weight: .bold))
+                    .font(.scaledSystem(size: 22, weight: .bold))
                     .foregroundStyle(color)
                     .frame(width: 64, height: 64)
                     .background(fill, in: Circle())
-                Text(label).font(.footnote.weight(.semibold)).foregroundStyle(Theme.secondaryText)
+                Text(label).font(.s(.footnote).weight(.semibold)).foregroundStyle(Theme.secondaryText)
             }
         }
         .buttonStyle(.plain)
@@ -381,7 +381,7 @@ private struct WideButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.headline)
+                .font(.s(.headline))
                 .foregroundStyle(filled ? Theme.onAccent : Theme.accent)
                 .frame(maxWidth: .infinity, minHeight: 50)
                 .background(filled ? Theme.accent : Theme.accentSoft,

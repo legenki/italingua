@@ -15,10 +15,10 @@ struct LessonDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("\(lesson.sourceLabel) · \(lesson.level)")
-                        .font(.subheadline.weight(.semibold))
+                        .font(.s(.subheadline).weight(.semibold))
                         .foregroundStyle(Theme.accent)
                     Text(lesson.title)
-                        .font(.largeTitle.weight(.bold))
+                        .font(.s(.largeTitle).weight(.bold))
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
@@ -35,15 +35,15 @@ struct LessonDetailView: View {
                             } label: {
                                 HStack(spacing: 12) {
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text(topic.topic).font(.body.weight(.semibold))
+                                        Text(topic.topic).font(.s(.body).weight(.semibold))
                                         Text(rule.isEmpty ? "Правило не написано" : RuleMarkup.preview(rule))
-                                            .font(.subheadline)
+                                            .font(.s(.subheadline))
                                             .foregroundStyle(Theme.secondaryText)
                                             .lineLimit(2)
                                     }
                                     Spacer(minLength: 0)
                                     Image(systemName: "chevron.right")
-                                        .font(.footnote.weight(.semibold))
+                                        .font(.s(.footnote).weight(.semibold))
                                         .foregroundStyle(Theme.secondaryText)
                                 }
                                 .multilineTextAlignment(.leading)
@@ -64,7 +64,7 @@ struct LessonDetailView: View {
                             HStack(spacing: 12) {
                                 SpeakButton(text: pattern.replacingOccurrences(of: "…", with: ""),
                                             label: "Прослушать шаблон", size: 36)
-                                Text(pattern).font(.body.italic())
+                                Text(pattern).font(.s(.body).italic())
                             }
                         }
                     }
@@ -78,12 +78,12 @@ struct LessonDetailView: View {
                             VStack(alignment: .leading, spacing: 6) {
                                 CardLabel(text: "Лексика")
                                 Text("\(learnedHere) из \(lesson.vocab.count) выучено")
-                                    .font(.headline)
+                                    .font(.s(.headline))
                                 ProgressView(value: Double(learnedHere), total: Double(max(lesson.vocab.count, 1)))
                                     .tint(Theme.accent)
                             }
                             Image(systemName: "chevron.right")
-                                .font(.footnote.weight(.semibold))
+                                .font(.s(.footnote).weight(.semibold))
                                 .foregroundStyle(Theme.secondaryText)
                         }
                     }
@@ -124,7 +124,7 @@ private struct PracticeLink<Destination: View>: View {
     var body: some View {
         NavigationLink(destination: destination) {
             Label(title, systemImage: systemImage)
-                .font(.headline)
+                .font(.s(.headline))
                 .foregroundStyle(filled ? Theme.onAccent : Theme.accent)
                 .frame(maxWidth: .infinity, minHeight: 52)
                 .background(filled ? Theme.accent : Theme.accentSoft,

@@ -16,10 +16,10 @@ struct StatsView: View {
         let data = realData
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Статистика").font(.largeTitle.weight(.bold))
+                Text("Статистика").font(.s(.largeTitle).weight(.bold))
                 if data.totalAnswers == 0 {
                     Text("Графики заполнятся, когда появятся ответы в карточках и упражнениях.")
-                        .font(.footnote)
+                        .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)
                 }
 
@@ -66,10 +66,10 @@ struct StatsView: View {
             let status = ModelStatus.current()
             LabeledContent("Модель для упражнений", value: status.isAvailable ? "готова" : "недоступна")
             if case .unavailable(let reason) = status {
-                Text(reason).font(.caption).foregroundStyle(Theme.secondaryText)
+                Text(reason).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
             }
         }
-        .font(.subheadline)
+        .font(.s(.subheadline))
     }
 
     /// Asks CloudKit directly, so sync problems are visible without Console.

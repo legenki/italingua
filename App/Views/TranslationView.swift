@@ -14,7 +14,7 @@ struct TranslationView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Переведи фразу").font(.largeTitle.weight(.bold))
+                Text("Переведи фразу").font(.s(.largeTitle).weight(.bold))
                 if let session { content(session) } else { ProgressView() }
             }
             .padding(16)
@@ -32,7 +32,7 @@ struct TranslationView: View {
             Card(fill: Theme.warningFill) {
                 CardLabel(text: "Без модели", color: Theme.warningText)
                 Text("Ответ сравнивается только с образцом. Если написал иначе, сверь сам и отметь результат.")
-                    .font(.subheadline)
+                    .font(.s(.subheadline))
             }
         }
         if s.phase == .finished {
@@ -42,13 +42,13 @@ struct TranslationView: View {
                 HStack {
                     CardLabel(text: "По-итальянски")
                     Spacer()
-                    Text("\(s.index + 1) из \(s.total)").font(.subheadline).foregroundStyle(Theme.secondaryText)
+                    Text("\(s.index + 1) из \(s.total)").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                 }
-                Text(task.russian).font(.title2.weight(.semibold)).textSelection(.enabled)
+                Text(task.russian).font(.s(.title2).weight(.semibold)).textSelection(.enabled)
 
                 TextField("Твой перевод", text: $answer, axis: .vertical)
                     .textFieldStyle(.plain)
-                    .font(.title3)
+                    .font(.s(.title3))
                     .lineLimit(1...4)
                     .autocorrectionDisabled()
                     #if os(iOS)
@@ -75,7 +75,7 @@ struct TranslationView: View {
 
                 Button { primary(s) } label: {
                     Text(s.phase == .answering ? "Проверить" : "Дальше")
-                        .font(.headline)
+                        .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -85,7 +85,7 @@ struct TranslationView: View {
                 .keyboardShortcut(.defaultAction)
             }
             Text("Фразы — примеры из правил урока. Свой вариант тоже засчитывается, если он верен.")
-                .font(.footnote)
+                .font(.s(.footnote))
                 .foregroundStyle(Theme.secondaryText)
         }
     }
@@ -96,14 +96,14 @@ struct TranslationView: View {
             if s.total == 0 {
                 Text("В правилах этого урока нет примеров для перевода.").foregroundStyle(Theme.secondaryText)
             } else {
-                Text("\(s.correctCount) из \(s.total) верно").font(.title.weight(.bold))
+                Text("\(s.correctCount) из \(s.total) верно").font(.s(.title).weight(.bold))
                 Button {
                     answer = ""
                     s.restart()
                     focused = true
                 } label: {
                     Text("Ещё раз")
-                        .font(.headline)
+                        .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -148,38 +148,38 @@ private struct ResultView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                Image(systemName: icon).font(.title2).foregroundStyle(good ? Theme.accent : Theme.warningText)
-                Text(title).font(.headline)
+                Image(systemName: icon).font(.s(.title2)).foregroundStyle(good ? Theme.accent : Theme.warningText)
+                Text(title).font(.s(.headline))
                 Spacer(minLength: 0)
                 SpeakButton(text: result.corrected, label: "Прослушать", size: 40)
             }
             if result.verdict == .corrected || result.verdict == .accents {
                 // The answer with removed words struck through and fixes highlighted.
-                diffText.font(.title3)
+                diffText.font(.s(.title3))
                 if !result.mistakes.isEmpty {
                     Text(result.mistakes.map(\.titleRU).joined(separator: " · "))
-                        .font(.subheadline)
+                        .font(.s(.subheadline))
                         .foregroundStyle(Theme.secondaryText)
                 }
             }
             if result.verdict != .exact {
                 VStack(alignment: .leading, spacing: 2) {
                     CardLabel(text: "Образец")
-                    Text(task.reference).font(.body).textSelection(.enabled)
+                    Text(task.reference).font(.s(.body)).textSelection(.enabled)
                 }
             }
             if !good && !overridden {
                 Button(action: markCorrect) {
                     Label(result.verdict == .unchecked ? "Я ответил верно" : "Мой вариант тоже верен",
                           systemImage: "checkmark.circle")
-                        .font(.subheadline.weight(.semibold))
+                        .font(.s(.subheadline).weight(.semibold))
                         .foregroundStyle(Theme.accent)
                 }
                 .buttonStyle(.plain)
             }
             if result.verdict == .corrected {
                 Text("Исправление предлагает модель на устройстве — она иногда ошибается.")
-                    .font(.caption)
+                    .font(.s(.caption))
                     .foregroundStyle(Theme.secondaryText)
             }
         }

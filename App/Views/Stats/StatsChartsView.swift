@@ -43,7 +43,7 @@ struct StatsChartsView: View {
                     .foregroundStyle(Theme.secondaryText)
                     .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
                     .annotation(position: .top, alignment: .leading) {
-                        Text("цель \(data.dailyGoal)").font(.caption2).foregroundStyle(Theme.secondaryText)
+                        Text("цель \(data.dailyGoal)").font(.s(.caption2)).foregroundStyle(Theme.secondaryText)
                     }
             }
             .chartXAxis {
@@ -59,7 +59,7 @@ struct StatsChartsView: View {
             CardLabel(text: "Точность по дням")
             let points = data.days.filter { $0.accuracy != nil }
             if points.count < 2 {
-                Text("Появится после двух дней занятий.").font(.subheadline).foregroundStyle(Theme.secondaryText)
+                Text("Появится после двух дней занятий.").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             } else {
                 Chart(points) { day in
                     AreaMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
@@ -103,7 +103,7 @@ struct StatsChartsView: View {
                         .foregroundStyle(Theme.accentMid)
                         .cornerRadius(4)
                         .annotation(position: .trailing) {
-                            Text("\(m.count)").font(.caption.monospacedDigit()).foregroundStyle(Theme.secondaryText)
+                            Text("\(m.count)").font(.s(.caption).monospacedDigit()).foregroundStyle(Theme.secondaryText)
                         }
                 }
                 .chartXAxis(.hidden)
@@ -126,7 +126,7 @@ struct StatsChartsView: View {
                 }
             }
             .frame(height: 150)
-            Text("В — вводный курс, У — основной.").font(.caption).foregroundStyle(Theme.secondaryText)
+            Text("В — вводный курс, У — основной.").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
         }
     }
 
@@ -140,8 +140,8 @@ struct StatsChartsView: View {
             }
             .chartBackground { _ in
                 VStack(spacing: 0) {
-                    Text("\(data.known)").font(.title.weight(.bold).monospacedDigit())
-                    Text("из \(data.totalWords)").font(.caption).foregroundStyle(Theme.secondaryText)
+                    Text("\(data.known)").font(.s(.title).weight(.bold).monospacedDigit())
+                    Text("из \(data.totalWords)").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
                 }
             }
             .frame(height: 170)
@@ -153,7 +153,7 @@ struct StatsChartsView: View {
                         Spacer()
                         Text("\(stage.count)").monospacedDigit().foregroundStyle(Theme.secondaryText)
                     }
-                    .font(.caption)
+                    .font(.s(.caption))
                 }
             }
         }
@@ -169,7 +169,7 @@ struct StatsChartsView: View {
                     .cornerRadius(4)
                     .annotation(position: .top) {
                         if day.count > 0 {
-                            Text("\(day.count)").font(.caption2.monospacedDigit()).foregroundStyle(Theme.secondaryText)
+                            Text("\(day.count)").font(.s(.caption2).monospacedDigit()).foregroundStyle(Theme.secondaryText)
                         }
                     }
             }
@@ -180,7 +180,7 @@ struct StatsChartsView: View {
             }
             .chartYAxis(.hidden)
             .frame(height: 170)
-            Text("Сегодня — с учётом просроченных.").font(.caption).foregroundStyle(Theme.secondaryText)
+            Text("Сегодня — с учётом просроченных.").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
         }
         .frame(minWidth: 260)
     }
@@ -197,12 +197,12 @@ private struct Metric: View {
         VStack(spacing: 4) {
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Image(systemName: symbol).foregroundStyle(color)
-                Text(value).font(.title2.weight(.bold).monospacedDigit())
+                Text(value).font(.s(.title2).weight(.bold).monospacedDigit())
                 if !unit.isEmpty {
-                    Text(unit).font(.caption).foregroundStyle(Theme.secondaryText)
+                    Text(unit).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
                 }
             }
-            Text(title).font(.caption).foregroundStyle(Theme.secondaryText).lineLimit(1)
+            Text(title).font(.s(.caption)).foregroundStyle(Theme.secondaryText).lineLimit(1)
         }
         .frame(maxWidth: .infinity)
     }
@@ -215,7 +215,7 @@ private struct LegendDot: View {
     var body: some View {
         HStack(spacing: 4) {
             Circle().fill(color).frame(width: 8, height: 8)
-            Text(title).font(.caption).foregroundStyle(Theme.secondaryText)
+            Text(title).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
         }
     }
 }

@@ -6,6 +6,10 @@ struct RootView: View {
     private var lessons: [Lesson]
     @Query private var progress: [WordProgress]
     @State private var selection: Lesson.ID?
+    @Query private var vocab: [VocabItem]
+    /// Dictionary-style search in the sidebar; a selected result shows its word.
+    @State private var search = ""
+    @State private var selectedWord: String?
     @State private var showStats = false
     @State private var showSettings = false
     @Query private var ruleNotes: [RuleNote]
@@ -15,11 +19,20 @@ struct RootView: View {
     @AppStorage(Palette.storageKey) private var palette = Palette.green
 
     var body: some View {
+        let results = search.isEmpty ? [] : WordSearch.results(search, in: vocab)
         NavigationSplitView {
-            lessonList
+            Group {
+                if search.isEmpty { lessonList } else { resultList(results) }
+            }
+            .searchable(text: $search, placement: .sidebar, prompt: "Поиск слова")
+            .onChange(of: search) {
+                // Like the Dictionary app: the best match opens right away.
+                selectedWord = WordSearch.results(search, in: vocab, limit: 1).first?.wordID
+            }
             .navigationTitle("Italingua")
             .navigationSplitViewColumnWidth(min: 280, ideal: 320, max: 420)
             .toolbar {
+                TextSizeButtons()
                 #if os(macOS)
                 SettingsLink { Label("Настройки", systemImage: "gearshape") }
                 #else
@@ -36,7 +49,12 @@ struct RootView: View {
             }
         } detail: {
             NavigationStack {
-                if let lesson = lessons.first(where: { $0.id == selection }) {
+                if !search.isEmpty, let item = vocab.first(where: { $0.wordID == selectedWord }) {
+                    WordDetailView(item: item) { id in
+                        search = ""
+                        selection = id
+                    }
+                } else if let lesson = lessons.first(where: { $0.id == selection }) {
                     LessonDetailView(lesson: lesson)
                 } else {
                     TodayView { selection = $0 }
@@ -46,6 +64,8 @@ struct RootView: View {
         }
         // Accent for the sidebar selection, toggles and pickers.
         .tint(Theme.accent)
+        // Default text at the size chosen with the "A / A" buttons.
+        .font(.s(.body))
         // Theme colors are read when views are built, so a palette change
         // rebuilds the split view. Selection and sheets live outside it and stay.
         .id(palette)
@@ -54,6 +74,7 @@ struct RootView: View {
         .sheet(isPresented: $showStats) {
             NavigationStack { StatsView() }
                 .tint(Theme.accent)
+                .font(.s(.body))
                 #if os(macOS)
                 .frame(minWidth: 620, idealWidth: 780, minHeight: 640, idealHeight: 860)
                 #endif
@@ -119,6 +140,40 @@ struct RootView: View {
         #endif
     }
 
+    @ViewBuilder
+    private func resultList(_ results: [VocabItem]) -> some View {
+        if results.isEmpty {
+            ContentUnavailableView.search(text: search)
+        } else {
+            #if os(macOS)
+            List {
+                Section("Слова · \(results.count)") {
+                    ForEach(results, id: \.wordID) { item in
+                        let selected = item.wordID == selectedWord
+                        WordResultRow(item: item, selected: selected)
+                            .padding(.horizontal, 8)
+                            .background(selected ? Theme.accent : .clear,
+                                        in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .contentShape(Rectangle())
+                            .onTapGesture { selectedWord = item.wordID }
+                            .listRowInsets(EdgeInsets(top: 1, leading: 8, bottom: 1, trailing: 8))
+                            .listRowSeparator(.hidden)
+                            .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
+                    }
+                }
+            }
+            #else
+            List(selection: $selectedWord) {
+                Section("Слова · \(results.count)") {
+                    ForEach(results, id: \.wordID) { item in
+                        WordResultRow(item: item, selected: false).tag(item.wordID)
+                    }
+                }
+            }
+            #endif
+        }
+    }
+
     #if os(macOS)
     /// Arrow keys move the selection like in a regular sidebar.
     private func step(_ delta: Int, _ proxy: ScrollViewProxy) {
@@ -158,11 +213,11 @@ private struct LessonRow: View {
                 .overlay(Circle().stroke(Theme.onAccent, lineWidth: selected ? 2 : 0))
             VStack(alignment: .leading, spacing: 3) {
                 Text(lesson.title.isEmpty ? lesson.id : lesson.title)
-                    .font(.body.weight(.semibold))
+                    .font(.s(.body).weight(.semibold))
                     .lineLimit(2)
                     .foregroundStyle(selected ? Theme.onAccent : .primary)
                 Text(statusText)
-                    .font(.subheadline)
+                    .font(.s(.subheadline))
                     .monospacedDigit()
                     .foregroundStyle(selected ? Theme.onAccent.opacity(0.85)
                                      : progress.state == .done ? Theme.accent : .secondary)
@@ -195,7 +250,7 @@ struct LessonBadge: View {
             case .done:
                 Circle().fill(Theme.accent)
                 Image(systemName: "checkmark")
-                    .font(.system(size: size * 0.4, weight: .bold))
+                    .font(.scaledSystem(size: size * 0.4, weight: .bold))
                     .foregroundStyle(Theme.onAccent)
             case .inProgress:
                 Circle().fill(Theme.accentSoft)
@@ -217,7 +272,7 @@ struct LessonBadge: View {
     }
 
     private var label: some View {
-        Text("\(number)").font(.system(size: size * 0.4, weight: .bold, design: .rounded))
+        Text("\(number)").font(.scaledSystem(size: size * 0.4, weight: .bold, design: .rounded))
     }
 
     private var accessibility: String {

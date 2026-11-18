@@ -37,6 +37,7 @@ struct ItalinguaApp: App {
         #if os(macOS)
         Settings {
             SettingsView()
+                .font(.s(.body))
                 .frame(width: 480)
                 .frame(minHeight: 420)
         }
