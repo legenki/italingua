@@ -16,21 +16,7 @@ struct RootView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selection) {
-                ForEach(levels, id: \.self) { level in
-                    ForEach(["intro", "main"], id: \.self) { part in
-                      let items = lessons.filter { $0.level == level && $0.sourcePart == part }
-                      if !items.isEmpty {
-                      Section("\(level) · \(part == "intro" ? "Вводный курс" : "Основной курс")") {
-                        ForEach(items) { lesson in
-                            LessonRow(lesson: lesson, progress: progress(of: lesson, boxes: boxes))
-                                .tag(lesson.id)
-                        }
-                      }
-                      }
-                    }
-                }
-            }
+            lessonList
             .navigationTitle("Italingua")
             .navigationSplitViewColumnWidth(min: 280, ideal: 320, max: 420)
             .toolbar {
@@ -76,6 +62,74 @@ struct RootView: View {
         }
     }
 
+    /// Sections in display order: per level, the intro course, then the main one.
+    private var sections: [(title: String, lessons: [Lesson])] {
+        levels.flatMap { level in
+            ["intro", "main"].compactMap { part -> (String, [Lesson])? in
+                let items = lessons.filter { $0.level == level && $0.sourcePart == part }
+                return items.isEmpty ? nil
+                    : ("\(level) · \(part == "intro" ? "Вводный курс" : "Основной курс")", items)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var lessonList: some View {
+        let boxes = self.boxes
+        #if os(macOS)
+        // The system sidebar highlight ignores the app tint on macOS, so rows
+        // draw their own selection: accent color, same radius as the buttons.
+        ScrollViewReader { proxy in
+            List {
+                ForEach(sections, id: \.title) { section in
+                    Section(section.title) {
+                        ForEach(section.lessons) { lesson in
+                            let selected = lesson.id == selection
+                            LessonRow(lesson: lesson, progress: progress(of: lesson, boxes: boxes), selected: selected)
+                                .padding(.horizontal, 8)
+                                .background(selected ? Theme.accent : .clear,
+                                            in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                                .contentShape(Rectangle())
+                                .onTapGesture { selection = lesson.id }
+                                .listRowInsets(EdgeInsets(top: 1, leading: 8, bottom: 1, trailing: 8))
+                                .listRowSeparator(.hidden)
+                                .accessibilityAddTraits(selected ? [.isButton, .isSelected] : .isButton)
+                                .id(lesson.id)
+                        }
+                    }
+                }
+            }
+            .focusable()
+            .focusEffectDisabled()
+            .onKeyPress(.downArrow) { step(1, proxy); return .handled }
+            .onKeyPress(.upArrow) { step(-1, proxy); return .handled }
+        }
+        #else
+        List(selection: $selection) {
+            ForEach(sections, id: \.title) { section in
+                Section(section.title) {
+                    ForEach(section.lessons) { lesson in
+                        LessonRow(lesson: lesson, progress: progress(of: lesson, boxes: boxes), selected: false)
+                            .tag(lesson.id)
+                    }
+                }
+            }
+        }
+        #endif
+    }
+
+    #if os(macOS)
+    /// Arrow keys move the selection like in a regular sidebar.
+    private func step(_ delta: Int, _ proxy: ScrollViewProxy) {
+        let ordered = sections.flatMap(\.lessons).map(\.id)
+        guard !ordered.isEmpty else { return }
+        let current = selection.flatMap { ordered.firstIndex(of: $0) }
+        let next = current.map { min(max($0 + delta, 0), ordered.count - 1) } ?? 0
+        selection = ordered[next]
+        proxy.scrollTo(ordered[next])
+    }
+    #endif
+
     private var levels: [String] {
         Array(Set(lessons.map(\.level))).sorted()
     }
@@ -94,19 +148,25 @@ struct RootView: View {
 private struct LessonRow: View {
     let lesson: Lesson
     let progress: LessonProgress
+    /// Drawn on the accent background: white text, outlined badge.
+    let selected: Bool
 
     var body: some View {
         HStack(spacing: 12) {
             LessonBadge(number: lesson.sourceLesson, progress: progress)
+                .overlay(Circle().stroke(.white, lineWidth: selected ? 2 : 0))
             VStack(alignment: .leading, spacing: 3) {
                 Text(lesson.title.isEmpty ? lesson.id : lesson.title)
                     .font(.body.weight(.semibold))
                     .lineLimit(2)
+                    .foregroundStyle(selected ? .white : .primary)
                 Text(statusText)
                     .font(.subheadline)
                     .monospacedDigit()
-                    .foregroundStyle(progress.state == .done ? Theme.accent : .secondary)
+                    .foregroundStyle(selected ? .white.opacity(0.85)
+                                     : progress.state == .done ? Theme.accent : .secondary)
             }
+            Spacer(minLength: 0)
         }
         .padding(.vertical, 6)
         .accessibilityElement(children: .combine)
