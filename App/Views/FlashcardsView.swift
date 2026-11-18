@@ -324,8 +324,12 @@ private struct CardView: View {
         }
         .padding(22)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Theme.card, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .shadow(color: .black.opacity(0.08), radius: 16, y: 6)
+        // Shadow on the card shape only: on the whole view it also blurred every letter.
+        .background {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .fill(Theme.card)
+                .shadow(color: .black.opacity(0.08), radius: 16, y: 6)
+        }
     }
 }
 
