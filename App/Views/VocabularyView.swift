@@ -4,11 +4,13 @@ import SwiftUI
 struct VocabularyView: View {
     let lesson: Lesson
     @Query private var progress: [WordProgress]
+    @Query private var favorites: [FavoriteWord]
     @State private var search = ""
     @State private var onlyNew = false
 
     var body: some View {
         let byID = Dictionary(progress.map { ($0.wordID, $0) }, uniquingKeysWith: { a, _ in a })
+        let starred = Set(favorites.map(\.wordID))
         let items = lesson.sortedVocab
         let learned = items.filter { byID[$0.wordID]?.isLearned == true }.count
         let due = items.filter { item in
@@ -63,7 +65,7 @@ struct VocabularyView: View {
                             if index > 0 {
                                 Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 72)
                             }
-                            VocabRow(item: item, box: byID[item.wordID]?.box ?? 0)
+                            VocabRow(item: item, box: byID[item.wordID]?.box ?? 0, isFavorite: starred.contains(item.wordID))
                         }
                         if shown.isEmpty {
                             Text("Ничего не найдено")
@@ -144,6 +146,7 @@ private struct FocusWordCard: View {
 private struct VocabRow: View {
     let item: VocabItem
     let box: Int
+    let isFavorite: Bool
 
     var body: some View {
         HStack(spacing: 12) {
@@ -162,6 +165,7 @@ private struct VocabRow: View {
             Spacer(minLength: 8)
             WordTag(item: item)
             LeitnerDots(box: box)
+            FavoriteButton(wordID: item.wordID, isFavorite: isFavorite)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)

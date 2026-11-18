@@ -360,3 +360,16 @@ struct TodayTests {
         #expect("вторник, 18 ноября".capitalizedFirst == "Вторник, 18 ноября")
     }
 }
+
+@MainActor
+struct FavoriteTests {
+    @Test func toggleAddsRemovesAndClearsDuplicates() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let ctx = container.mainContext
+        #expect(try ctx.toggleFavorite(wordID: "a1/casa") == true)
+        ctx.insert(FavoriteWord(wordID: "a1/casa"))       // a duplicate from another device
+        try ctx.save()
+        #expect(try ctx.toggleFavorite(wordID: "a1/casa") == false)
+        #expect(try ctx.fetchCount(FetchDescriptor<FavoriteWord>()) == 0)
+    }
+}

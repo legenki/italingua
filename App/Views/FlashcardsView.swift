@@ -19,6 +19,7 @@ struct FlashcardsView: View {
 
     @Environment(\.modelContext) private var context
     @Query private var progress: [WordProgress]
+    @Query private var favorites: [FavoriteWord]
     @State private var session: FlashcardSession?
     @AppStorage("flashcardFront") private var front = FlashcardSession.Side.italian
     /// Cards whose answer was already saved in this run; undo + re-answer saves once.
@@ -82,7 +83,8 @@ struct FlashcardsView: View {
         }
 
         if let card = s.current {
-            CardView(card: card, front: front, flipped: s.flipped, drag: drag)
+            CardView(card: card, front: front, flipped: s.flipped, drag: drag,
+                     isFavorite: favorites.contains { $0.wordID == card.wordID })
                 .id(card.id)
                 .transition(.asymmetric(insertion: .scale(scale: 0.95).combined(with: .opacity),
                                         removal: .opacity))
@@ -249,6 +251,7 @@ private struct CardView: View {
     let front: FlashcardSession.Side
     let flipped: Bool
     let drag: CGSize
+    let isFavorite: Bool
 
     var body: some View {
         let showsItalian = (front == .italian) != flipped
@@ -293,6 +296,7 @@ private struct CardView: View {
             HStack {
                 CardLabel(text: italian ? "Итальянский" : "Русский")
                 Spacer()
+                FavoriteButton(wordID: card.wordID, isFavorite: isFavorite)
                 if italian, let g = card.gender {
                     Text(g)
                         .font(.footnote.weight(.bold))

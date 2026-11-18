@@ -11,6 +11,8 @@ struct TodayView: View {
     private var lessons: [Lesson]
     @Query private var progress: [WordProgress]
     @Query(sort: \ReviewLog.date, order: .reverse) private var logs: [ReviewLog]
+    @Query(sort: \FavoriteWord.addedAt, order: .reverse) private var favorites: [FavoriteWord]
+    @Query private var vocab: [VocabItem]
 
     var body: some View {
         let boxes = Dictionary(progress.map { ($0.wordID, $0.box) }, uniquingKeysWith: max)
@@ -41,8 +43,10 @@ struct TodayView: View {
                 }
 
                 if let word = wordOfTheDay {
-                    WordOfTheDay(item: word)
+                    WordOfTheDay(item: word, isFavorite: favorites.contains { $0.wordID == word.wordID })
                 }
+
+                FavoritesCard(items: FavoritesView.items(favorites: favorites, vocab: vocab))
             }
             .padding(.horizontal, 32)
             .padding(.vertical, 24)
@@ -221,6 +225,7 @@ private struct Tile<Content: View>: View {
 
 private struct WordOfTheDay: View {
     let item: VocabItem
+    let isFavorite: Bool
 
     var body: some View {
         HStack(spacing: 16) {
@@ -233,6 +238,7 @@ private struct WordOfTheDay: View {
                 }
             }
             Spacer(minLength: 0)
+            FavoriteButton(wordID: item.wordID, isFavorite: isFavorite, size: 40, onAccent: true)
             if let lesson = item.lesson {
                 NavigationLink {
                     VocabularyView(lesson: lesson)
@@ -251,6 +257,53 @@ private struct WordOfTheDay: View {
         .padding(.vertical, 18)
         .background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
         .textSelection(.enabled)
+    }
+}
+
+/// The starred-words deck: count, flashcards and the list.
+private struct FavoritesCard: View {
+    let items: [VocabItem]
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(systemName: "star.fill")
+                .font(.title2)
+                .foregroundStyle(Theme.accent)
+                .frame(width: 48, height: 48)
+                .background(Theme.accentSoft, in: Circle())
+            VStack(alignment: .leading, spacing: 2) {
+                CardLabel(text: "Избранное")
+                Text(items.isEmpty ? "Отмечай слова звёздочкой" : "\(items.count) \(wordWord(items.count))")
+                    .font(.headline)
+            }
+            Spacer(minLength: 8)
+            if !items.isEmpty {
+                NavigationLink {
+                    FlashcardsView(items: items, title: "Избранное")
+                } label: {
+                    Text("Карточки")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Theme.onAccent)
+                        .padding(.horizontal, 16)
+                        .frame(minHeight: 40)
+                        .background(Theme.accent, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                }
+                .buttonStyle(.plain)
+            }
+            NavigationLink {
+                FavoritesView()
+            } label: {
+                Text("Список")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.accent)
+                    .padding(.horizontal, 16)
+                    .frame(minHeight: 40)
+                    .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(16)
+        .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
     }
 }
 

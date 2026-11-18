@@ -141,3 +141,31 @@ extension ModelContext {
         return rows.first
     }
 }
+
+/// A word the learner starred, for the "Избранное" deck. Synced via iCloud.
+@Model
+final class FavoriteWord {
+    var wordID: String = ""
+    var addedAt: Date = Date.now
+
+    init(wordID: String, addedAt: Date = .now) {
+        self.wordID = wordID
+        self.addedAt = addedAt
+    }
+}
+
+extension ModelContext {
+    /// Stars or unstars a word. Removes every row for it, so duplicates that
+    /// two devices created before syncing go away too.
+    @discardableResult
+    func toggleFavorite(wordID: String) throws -> Bool {
+        let rows = try fetch(FetchDescriptor<FavoriteWord>(predicate: #Predicate { $0.wordID == wordID }))
+        if rows.isEmpty {
+            insert(FavoriteWord(wordID: wordID))
+        } else {
+            rows.forEach(delete)
+        }
+        try save()
+        return rows.isEmpty
+    }
+}
