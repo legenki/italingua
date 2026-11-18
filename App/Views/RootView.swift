@@ -36,7 +36,7 @@ struct RootView: View {
                 #if os(iOS)
                 Button("Настройки", systemImage: "gearshape") { showSettings = true }
                 #endif
-                Button("Статистика", systemImage: "chart.bar") { showStats = true }
+                Button("Статистика", systemImage: "chart.line.uptrend.xyaxis") { showStats = true }
                 Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
                         notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
