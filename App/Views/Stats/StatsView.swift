@@ -28,6 +28,11 @@ struct StatsView: View {
                 HStack(alignment: .firstTextBaseline) {
                     Text("Статистика").font(.largeTitle.weight(.bold))
                     Spacer()
+                    #if os(macOS)
+                    // A sheet on macOS has no title area in the toolbar, so the
+                    // switch lives in the header there.
+                    variantPicker
+                    #endif
                     Toggle("Пример", isOn: $showSample)
                         .toggleStyle(.switch)
                         .controlSize(.small)
@@ -57,18 +62,22 @@ struct StatsView: View {
         .background(Theme.background)
         .task { iCloudStatus = await Self.checkICloud() }
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                Picker("Вид", selection: $variant) {
-                    ForEach(Variant.allCases) { Text($0.title).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .fixedSize()
-                .labelsHidden()
-            }
+            #if os(iOS)
+            ToolbarItem(placement: .principal) { variantPicker }
+            #endif
             ToolbarItem(placement: .confirmationAction) {
                 Button("Готово") { dismiss() }
             }
         }
+    }
+
+    private var variantPicker: some View {
+        Picker("Вид", selection: $variant) {
+            ForEach(Variant.allCases) { Text($0.title).tag($0) }
+        }
+        .pickerStyle(.segmented)
+        .fixedSize()
+        .labelsHidden()
     }
 
     private var lessonInputs: [StatsData.LessonInput] {

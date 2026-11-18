@@ -7,7 +7,7 @@ struct StatsGaugesView: View {
     let data: StatsData
 
     var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 128), spacing: 12)], spacing: 12) {
             GaugeTile(title: "Цель дня", caption: "\(data.todayAnswers) из \(data.dailyGoal) ответов") {
                 Gauge(value: Double(min(data.todayAnswers, data.dailyGoal)), in: 0...Double(data.dailyGoal)) {
                     Image(systemName: "target")
@@ -120,8 +120,8 @@ private struct GaugeTile<G: View>: View {
         VStack(spacing: 10) {
             CardLabel(text: title)
             gauge
-                .scaleEffect(1.5)
-                .frame(width: 92, height: 92)
+                .scaleEffect(1.4)
+                .frame(width: 84, height: 84)
             Text(caption)
                 .font(.caption)
                 .foregroundStyle(Theme.secondaryText)
@@ -148,7 +148,7 @@ private struct StreakTile: View {
                     .symbolEffect(.bounce, value: streak)
                 Text("\(streak)").font(.system(size: 40, weight: .bold, design: .rounded)).monospacedDigit()
             }
-            .frame(height: 92)
+            .frame(height: 84)
             Text("\(dayWord(streak)) подряд · \(due) к повторению")
                 .font(.caption)
                 .foregroundStyle(Theme.secondaryText)
