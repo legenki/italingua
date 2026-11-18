@@ -32,7 +32,7 @@ struct ItalinguaApp: App {
         }
         #if os(macOS)
         // Sidebar (320) + content (800) on first launch.
-        .defaultSize(width: 1160, height: 780)
+        .defaultSize(width: 1160, height: 680)
         #endif
         #if os(macOS)
         Settings {

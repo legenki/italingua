@@ -42,10 +42,7 @@ struct RootView: View {
                     TodayView { selection = $0 }
                 }
             }
-            #if os(macOS)
-            // The content pane never starts smaller than 800×700.
-            .frame(minWidth: 800, minHeight: 700)
-            #endif
+
         }
         // Accent for the sidebar selection, toggles and pickers.
         .tint(Theme.accent)
