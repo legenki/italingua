@@ -9,16 +9,16 @@ struct StatsChartsView: View {
     var body: some View {
         HStack(spacing: 0) {
             Metric(value: "\(data.streak)", unit: dayWord(data.streak), title: "серия", symbol: "flame.fill",
-                   color: Theme.newBadge)
+                   color: Theme.accent)
             Divider().frame(height: 40)
             Metric(value: "\(data.todayAnswers)", unit: "из \(data.dailyGoal)", title: "сегодня",
                    symbol: "target", color: Theme.accent)
             Divider().frame(height: 40)
             Metric(value: data.accuracy7?.percent ?? "—", unit: "", title: "точность за 7 дней",
-                   symbol: "checkmark.seal.fill", color: Theme.masculine)
+                   symbol: "checkmark.seal.fill", color: Theme.accent)
             Divider().frame(height: 40)
             Metric(value: "\(data.dueToday)", unit: "", title: "к повторению", symbol: "clock.arrow.circlepath",
-                   color: Theme.warningText)
+                   color: Theme.accent)
         }
         .padding(.vertical, 14)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
@@ -28,7 +28,7 @@ struct StatsChartsView: View {
                 CardLabel(text: "Активность за 2 недели")
                 Spacer()
                 LegendDot(color: Theme.accent, title: "верно")
-                LegendDot(color: Theme.feminine.opacity(0.75), title: "ошибки")
+                LegendDot(color: Theme.separator, title: "ошибки")
             }
             Chart {
                 ForEach(data.days) { day in
@@ -36,7 +36,7 @@ struct StatsChartsView: View {
                         .foregroundStyle(Theme.accent)
                         .cornerRadius(3)
                     BarMark(x: .value("День", day.date, unit: .day), y: .value("Ответы", day.wrong))
-                        .foregroundStyle(Theme.feminine.opacity(0.75))
+                        .foregroundStyle(Theme.separator)
                         .cornerRadius(3)
                 }
                 RuleMark(y: .value("Цель", data.dailyGoal))
@@ -63,15 +63,15 @@ struct StatsChartsView: View {
             } else {
                 Chart(points) { day in
                     AreaMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
-                        .foregroundStyle(LinearGradient(colors: [Theme.masculine.opacity(0.25), .clear],
+                        .foregroundStyle(LinearGradient(colors: [Theme.accent.opacity(0.25), .clear],
                                                         startPoint: .top, endPoint: .bottom))
                         .interpolationMethod(.catmullRom)
                     LineMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
-                        .foregroundStyle(Theme.masculine)
+                        .foregroundStyle(Theme.accent)
                         .interpolationMethod(.catmullRom)
                         .lineStyle(StrokeStyle(lineWidth: 2.5))
                     PointMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
-                        .foregroundStyle(Theme.masculine)
+                        .foregroundStyle(Theme.accent)
                         .symbolSize(24)
                 }
                 .chartYScale(domain: 0...1)
@@ -100,7 +100,7 @@ struct StatsChartsView: View {
                 CardLabel(text: "Ошибки по типам")
                 Chart(data.mistakes) { m in
                     BarMark(x: .value("Ошибки", m.count), y: .value("Тип", m.kind.titleRU))
-                        .foregroundStyle(Theme.feminine.gradient)
+                        .foregroundStyle(Theme.accentMid)
                         .cornerRadius(4)
                         .annotation(position: .trailing) {
                             Text("\(m.count)").font(.caption.monospacedDigit()).foregroundStyle(Theme.secondaryText)
@@ -115,7 +115,7 @@ struct StatsChartsView: View {
             CardLabel(text: "Уроки: знакомые слова")
             Chart(data.lessons) { lesson in
                 BarMark(x: .value("Урок", lesson.label), y: .value("Знакомо", lesson.progress.fraction))
-                    .foregroundStyle(lesson.progress.state == .done ? Theme.accent : Theme.masculine)
+                    .foregroundStyle(lesson.progress.state == .done ? Theme.accent : Theme.accentMid)
                     .cornerRadius(3)
             }
             .chartYScale(domain: 0...1)
@@ -165,7 +165,7 @@ struct StatsChartsView: View {
             CardLabel(text: "Повторения на неделю")
             Chart(data.forecast) { day in
                 BarMark(x: .value("День", day.date, unit: .day), y: .value("Слова", day.count))
-                    .foregroundStyle(day.id == data.forecast.first?.id ? Theme.warningText : Theme.warningText.opacity(0.45))
+                    .foregroundStyle(day.id == data.forecast.first?.id ? Theme.accent : Theme.accentMid)
                     .cornerRadius(4)
                     .annotation(position: .top) {
                         if day.count > 0 {
@@ -218,4 +218,12 @@ private struct LegendDot: View {
             Text(title).font(.caption).foregroundStyle(Theme.secondaryText)
         }
     }
+}
+
+/// "день", "дня", "дней" for a count.
+func dayWord(_ n: Int) -> String {
+    let m10 = n % 10, m100 = n % 100
+    if m10 == 1 && m100 != 11 { return "день" }
+    if (2...4).contains(m10) && !(12...14).contains(m100) { return "дня" }
+    return "дней"
 }

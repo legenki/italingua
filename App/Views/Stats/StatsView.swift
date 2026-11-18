@@ -2,22 +2,14 @@ import CloudKit
 import SwiftData
 import SwiftUI
 
-/// Statistics in two designs to compare: "Приборы" (gauges) and "Графики"
-/// (Swift Charts). The switch in the top bar picks one; the choice is kept.
+/// Statistics built with Swift Charts (the "Графики" design, chosen over gauges).
 struct StatsView: View {
-    enum Variant: String, CaseIterable, Identifiable {
-        case gauges, charts
-        var id: String { rawValue }
-        var title: String { self == .gauges ? "A · Приборы" : "B · Графики" }
-    }
-
     @Environment(\.dismiss) private var dismiss
     @Query private var progress: [WordProgress]
     @Query private var logs: [ReviewLog]
     @Query private var mistakes: [Mistake]
     @Query(sort: [SortDescriptor(\Lesson.level), SortDescriptor(\Lesson.sourcePart), SortDescriptor(\Lesson.order)])
     private var lessons: [Lesson]
-    @AppStorage("statsVariant") private var variant = Variant.gauges
     @State private var showSample = false
     @State private var iCloudStatus = "проверяю…"
 
@@ -28,11 +20,6 @@ struct StatsView: View {
                 HStack(alignment: .firstTextBaseline) {
                     Text("Статистика").font(.largeTitle.weight(.bold))
                     Spacer()
-                    #if os(macOS)
-                    // A sheet on macOS has no title area in the toolbar, so the
-                    // switch lives in the header there.
-                    variantPicker
-                    #endif
                     Toggle("Пример", isOn: $showSample)
                         .toggleStyle(.switch)
                         .controlSize(.small)
@@ -48,10 +35,7 @@ struct StatsView: View {
                         .foregroundStyle(Theme.secondaryText)
                 }
 
-                switch variant {
-                case .gauges: StatsGaugesView(data: data)
-                case .charts: StatsChartsView(data: data)
-                }
+                StatsChartsView(data: data)
 
                 systemCard
             }
@@ -62,22 +46,10 @@ struct StatsView: View {
         .background(Theme.background)
         .task { iCloudStatus = await Self.checkICloud() }
         .toolbar {
-            #if os(iOS)
-            ToolbarItem(placement: .principal) { variantPicker }
-            #endif
             ToolbarItem(placement: .confirmationAction) {
                 Button("Готово") { dismiss() }
             }
         }
-    }
-
-    private var variantPicker: some View {
-        Picker("Вид", selection: $variant) {
-            ForEach(Variant.allCases) { Text($0.title).tag($0) }
-        }
-        .pickerStyle(.segmented)
-        .fixedSize()
-        .labelsHidden()
     }
 
     private var lessonInputs: [StatsData.LessonInput] {
@@ -131,10 +103,12 @@ struct StatsView: View {
     }
 }
 
-/// Shared colors for the learning stages, used by both variants.
+/// Learning stages from grey (new) through lighter to full accent (learned).
 enum StageStyle {
-    static let colors: [Color] = [Theme.separator, Theme.warningText, Theme.masculine, Color.teal, Theme.accent]
-    static func color(_ stage: Int) -> Color { colors[min(max(stage, 0), colors.count - 1)] }
+    static func color(_ stage: Int) -> Color {
+        let colors = [Theme.separator] + Theme.accentRamp
+        return colors[min(max(stage, 0), colors.count - 1)]
+    }
 }
 
 extension Double {

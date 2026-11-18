@@ -11,6 +11,8 @@ struct RootView: View {
     @Query private var ruleNotes: [RuleNote]
     @State private var exportDoc: RuleExportDocument?
     @State private var exporting = false
+    /// Read so the window is rebuilt with the new accent when the palette changes.
+    @AppStorage(Palette.storageKey) private var palette = Palette.green
 
     var body: some View {
         NavigationSplitView {
@@ -46,17 +48,6 @@ struct RootView: View {
                 .disabled(ruleNotes.isEmpty)
                 .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
             }
-            .fileExporter(isPresented: $exporting, document: exportDoc,
-                          contentType: .json, defaultFilename: "italingua-rules.json") { _ in }
-            .sheet(isPresented: $showStats) {
-                NavigationStack { StatsView() }
-                    #if os(macOS)
-                    .frame(minWidth: 620, idealWidth: 780, minHeight: 640, idealHeight: 860)
-                    #endif
-            }
-            .sheet(isPresented: $showSettings) {
-                NavigationStack { SettingsView() }.appAppearance()
-            }
         } detail: {
             NavigationStack {
                 if let lesson = lessons.first(where: { $0.id == selection }) {
@@ -65,6 +56,23 @@ struct RootView: View {
                     ContentUnavailableView("Выберите урок", systemImage: "book")
                 }
             }
+        }
+        // Accent for the sidebar selection, toggles and pickers.
+        .tint(Theme.accent)
+        // Theme colors are read when views are built, so a palette change
+        // rebuilds the split view. Selection and sheets live outside it and stay.
+        .id(palette)
+        .fileExporter(isPresented: $exporting, document: exportDoc,
+                      contentType: .json, defaultFilename: "italingua-rules.json") { _ in }
+        .sheet(isPresented: $showStats) {
+            NavigationStack { StatsView() }
+                .tint(Theme.accent)
+                #if os(macOS)
+                .frame(minWidth: 620, idealWidth: 780, minHeight: 640, idealHeight: 860)
+                #endif
+        }
+        .sheet(isPresented: $showSettings) {
+            NavigationStack { SettingsView() }.appAppearance()
         }
     }
 

@@ -6,11 +6,68 @@ import UIKit
 import AppKit
 #endif
 
-/// Variant B "Cards": grouped grey background, white rounded cards, one green
-/// accent. Every color has a dark-mode counterpart.
+/// Accent palettes the learner can pick in Settings. Each has the main accent,
+/// a soft fill and a ramp of shades (lightest → full) for charts.
+enum Palette: String, CaseIterable, Identifiable {
+    case green, blue, red
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .green: "Зелёная"
+        case .blue: "Синяя"
+        case .red: "Красная"
+        }
+    }
+
+    /// (light, dark) pairs.
+    fileprivate var accent: (UInt32, UInt32) {
+        switch self {
+        case .green: (0x1A7A52, 0x3FBF85)
+        case .blue: (0x1F5FBF, 0x5B9BFF)
+        case .red: (0xB3261E, 0xFF7A70)
+        }
+    }
+
+    fileprivate var soft: (UInt32, UInt32) {
+        switch self {
+        case .green: (0xE7F2EC, 0x1D3A2D)
+        case .blue: (0xE6EEFA, 0x1C2C44)
+        case .red: (0xFBE9E7, 0x3D1E1C)
+        }
+    }
+
+    /// Four steps from light to the accent itself; in dark mode the full
+    /// accent is the brightest, so the order still reads "more = stronger".
+    fileprivate var ramp: [(UInt32, UInt32)] {
+        switch self {
+        case .green: [(0xCFE8DA, 0x1F4A35), (0x8CCAA8, 0x2E7A55), (0x4FA77A, 0x37A06C), accent]
+        case .blue: [(0xD3E2F8, 0x1E3354), (0x93B6EC, 0x2D5390), (0x5587D6, 0x3E78D6), accent]
+        case .red: [(0xF6D2CE, 0x4A2220), (0xE99A92, 0x7E3730), (0xD2564B, 0xC24A40), accent]
+        }
+    }
+
+    static let storageKey = "palette"
+
+    static var current: Palette {
+        UserDefaults.standard.string(forKey: storageKey).flatMap(Palette.init(rawValue:)) ?? .green
+    }
+}
+
+/// Variant B "Cards": grouped grey background, white rounded cards, one accent
+/// (green by default, see `Palette`). Every color has a dark-mode counterpart.
+/// Accent colors are read from the current palette; the window is rebuilt when
+/// it changes (RootView `.id(palette)`).
 enum Theme {
-    static let accent = dynamic(light: 0x1A7A52, dark: 0x3FBF85)
-    static let accentSoft = dynamic(light: 0xE7F2EC, dark: 0x1D3A2D)
+    static var accent: Color { accent(of: .current) }
+    static var accentSoft: Color { dynamic(Palette.current.soft) }
+    /// Chart shades, lightest first; the last one equals `accent`.
+    static var accentRamp: [Color] { ramp(of: .current) }
+
+    static func accent(of palette: Palette) -> Color { dynamic(palette.accent) }
+    static func ramp(of palette: Palette) -> [Color] { palette.ramp.map(dynamic) }
+    static var accentMid: Color { accentRamp[1] }
     static let background = dynamic(light: 0xF2F2F7, dark: 0x000000)
     static let card = dynamic(light: 0xFFFFFF, dark: 0x1C1C1E)
     static let tile = dynamic(light: 0xF4F7F5, dark: 0x2A2C2B)
@@ -25,6 +82,10 @@ enum Theme {
     static let newBadge = dynamic(light: 0xC2410C, dark: 0xFB923C)
 
     static let cardRadius: CGFloat = 18
+
+    private static func dynamic(_ pair: (UInt32, UInt32)) -> Color {
+        dynamic(light: pair.0, dark: pair.1)
+    }
 
     private static func dynamic(light: UInt32, dark: UInt32) -> Color {
         #if os(iOS)

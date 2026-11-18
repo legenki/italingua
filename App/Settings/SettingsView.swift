@@ -4,6 +4,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage(SettingsKey.appearance) private var appearance = Appearance.system
     @AppStorage(SettingsKey.voiceAnswers) private var voiceAnswers = true
+    @AppStorage(Palette.storageKey) private var palette = Palette.green
     @State private var package: AssetInventory.Status?
     @State private var input = SpeechInput()
     @State private var downloadError: String?
@@ -16,6 +17,19 @@ struct SettingsView: View {
                     ForEach(Appearance.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
+                LabeledContent("Цвет") {
+                    HStack(spacing: 14) {
+                        ForEach(Palette.allCases) { p in
+                            Button { palette = p } label: {
+                                PaletteSwatch(palette: p, selected: p == palette)
+                            }
+                            .buttonStyle(.plain)
+                            .help(p.title)
+                            .accessibilityLabel(p.title)
+                            .accessibilityAddTraits(p == palette ? .isSelected : [])
+                        }
+                    }
+                }
             }
 
             Section {
@@ -88,5 +102,24 @@ struct SettingsView: View {
             downloadError = "Не удалось скачать: \(error.localizedDescription)"
         }
         package = await SpeechInput.packageStatus()
+    }
+}
+
+/// A round sample of a palette: its chart shades around the accent.
+private struct PaletteSwatch: View {
+    let palette: Palette
+    let selected: Bool
+
+    var body: some View {
+        VStack(spacing: 4) {
+            ZStack {
+                Circle().fill(Theme.accent(of: palette))
+                Circle().trim(from: 0, to: 0.5).fill(Theme.ramp(of: palette)[1]).rotationEffect(.degrees(-45))
+            }
+            .frame(width: 28, height: 28)
+            .overlay(Circle().stroke(selected ? Color.primary : .clear, lineWidth: 2).padding(-4))
+            Text(palette.title).font(.caption2).foregroundStyle(selected ? .primary : .secondary)
+        }
+        .padding(.vertical, 4)
     }
 }
