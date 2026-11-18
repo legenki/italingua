@@ -47,6 +47,7 @@ final class Speech {
         utterance.postUtteranceDelay = 0.1
         speakingText = text
         synthesizer.speak(utterance)
+        StudySession.shared.noteSpoken(text)
     }
 
     /// Removes markup the synthesizer would read aloud ("parl|o", "**", "___").

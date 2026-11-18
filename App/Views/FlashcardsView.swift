@@ -150,6 +150,7 @@ struct FlashcardsView: View {
         withAnimation(.easeOut(duration: 0.2)) {
             drag = CGSize(width: knew ? 600 : -600, height: drag.height)
         }
+        StudySession.shared.noteCard(lessonID: card.lessonID, wordID: card.wordID)
         if !recorded.contains(card.id) {
             recorded.insert(card.id)
             do {

@@ -20,6 +20,7 @@ struct ReadingView: View {
     @State private var reading: ReadingText?
     @State private var working = false
     @State private var error: String?
+    @State private var readDone = false
 
     init(lesson: Lesson) {
         self.lesson = lesson
@@ -116,6 +117,7 @@ struct ReadingView: View {
         defer { working = false }
         do {
             reading = try await make()
+            readDone = false
         } catch {
             self.error = "Модель не справилась: \(error.localizedDescription) Попробуй ещё раз."
         }
@@ -141,6 +143,19 @@ struct ReadingView: View {
             Text("Текст составлен моделью на устройстве и может содержать ошибки.")
                 .font(.s(.caption))
                 .foregroundStyle(Theme.secondaryText)
+            Button {
+                StudySession.shared.noteReading(lessonID: lesson.id)
+                readDone = true
+            } label: {
+                Label(readDone ? "Прочитано" : "Я прочитал текст",
+                      systemImage: readDone ? "checkmark.circle.fill" : "checkmark.circle")
+                    .font(.s(.headline))
+                    .foregroundStyle(Theme.accent)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .disabled(readDone)
         }
 
         Card(padding: 0) {

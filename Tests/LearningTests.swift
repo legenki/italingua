@@ -508,3 +508,42 @@ struct TextScaleTests {
         #expect(scale.step == TextScale.range.lowerBound && abs(scale.factor - 0.8) < 0.001)
     }
 }
+
+@MainActor
+struct StudySessionTests {
+    @Test func stepsTimerAndMedal() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let ctx = container.mainContext
+        let lesson = Lesson(id: "a1-01", level: "A1", order: 1, title: "T", sourcePart: "intro", sourceLesson: 1, patterns: [])
+        ctx.insert(lesson)
+        let topic = GrammarTopic(order: 0, topic: "Алфавит", ruleRU: "")
+        topic.lesson = lesson
+        ctx.insert(topic)
+        let word = VocabItem(wordID: "a1/casa", order: 0, italian: "casa", russian: "дом", posRaw: "noun",
+                             gender: "f", number: nil, stress: nil, formOf: nil)
+        word.lesson = lesson
+        ctx.insert(word)
+
+        let session = StudySession()
+        defer { session.reset() }
+        // Notes are timed with the real clock, so the session starts just before now.
+        let t0 = Date.now.addingTimeInterval(-700)
+        session.start(lesson: lesson, now: t0)
+        #expect(session.isRunning && session.currentStep == .rules)
+        #expect(abs(session.remaining(now: t0.addingTimeInterval(600)) - 30 * 60) < 0.001)
+
+        session.pause(now: t0.addingTimeInterval(600))
+        #expect(abs(session.elapsed(now: t0.addingTimeInterval(5000)) - 600) < 0.001)
+        session.resume()
+
+        session.noteTopic(lessonID: "a1-02", topic: "Алфавит")      // another lesson: ignored
+        #expect(!session.isDone(.rules))
+        session.noteTopic(lessonID: "a1-01", topic: "Алфавит")
+        session.noteSpoken("la casa")
+        session.noteSpoken("il mare")                               // not a word of the lesson
+        session.noteCard(lessonID: "a1-01", wordID: "a1/casa")
+        #expect(session.doneSteps == 3 && session.currentStep == .reading)
+        session.noteReading(lessonID: "a1-01")
+        #expect(session.isFinished && session.earnedMedal)
+    }
+}

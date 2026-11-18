@@ -10,6 +10,8 @@ struct RootView: View {
     /// Dictionary-style search in the sidebar; a selected result shows its word.
     @State private var search = ""
     @State private var selectedWord: String?
+    /// Screens pushed in the content pane by the study session plan.
+    @State private var detailPath = NavigationPath()
     @State private var showStats = false
     @State private var showSettings = false
     @Query private var ruleNotes: [RuleNote]
@@ -46,7 +48,8 @@ struct RootView: View {
                 .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
             }
         } detail: {
-            NavigationStack {
+            NavigationStack(path: $detailPath) {
+                Group {
                 if !search.isEmpty, let item = vocab.first(where: { $0.wordID == selectedWord }) {
                     WordDetailView(item: item) { id in
                         search = ""
@@ -57,11 +60,25 @@ struct RootView: View {
                 } else {
                     TodayView { selection = $0 }
                 }
+                }
+                .navigationDestination(for: SessionRoute.self) { route in
+                    switch route {
+                    case .vocabulary(let id): if let l = lesson(id) { VocabularyView(lesson: l) }
+                    case .flashcards(let id): if let l = lesson(id) { FlashcardsView(lesson: l) }
+                    case .reading(let id): if let l = lesson(id) { ReadingView(lesson: l) }
+                    }
+                }
             }
-            // Top-right corner of the window, on every screen of the content pane.
             .toolbar {
+                // The 40-minute study session, in the middle of the top bar.
+                ToolbarItem(placement: .principal) {
+                    SessionCapsule(startLesson: lessons.first { $0.id == selection } ?? nextLesson,
+                                   lessons: lessons, open: openStep)
+                }
+                // Top-right corner of the window, on every screen of the content pane.
                 ToolbarItem(placement: .primaryAction) { TextSizeButtons() }
             }
+            .onChange(of: selection) { detailPath = NavigationPath() }
 
         }
         // Accent for the sidebar selection, toggles and pickers.
@@ -187,6 +204,33 @@ struct RootView: View {
         proxy.scrollTo(ordered[next])
     }
     #endif
+
+    private func lesson(_ id: String) -> Lesson? { lessons.first { $0.id == id } }
+
+    /// First lesson not done yet, for a session started without a selection.
+    private var nextLesson: Lesson? {
+        let boxes = self.boxes
+        return sections.flatMap(\.lessons).first { progress(of: $0, boxes: boxes).state != .done }
+    }
+
+    /// Opens the screen of a session step: the lesson page for the rules,
+    /// its vocabulary, flashcards or reading for the others.
+    private func openStep(_ step: StudySession.Step) {
+        guard let id = StudySession.shared.state?.lessonID else { return }
+        search = ""
+        selection = id
+        Task { @MainActor in
+            // After the selection change has reset the stack.
+            var path = NavigationPath()
+            switch step {
+            case .rules: break
+            case .words: path.append(SessionRoute.vocabulary(id))
+            case .cards: path.append(SessionRoute.flashcards(id))
+            case .reading: path.append(SessionRoute.reading(id))
+            }
+            detailPath = path
+        }
+    }
 
     private var levels: [String] {
         Array(Set(lessons.map(\.level))).sorted()

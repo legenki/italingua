@@ -63,6 +63,8 @@ struct GrammarTopicView: View {
         }
         .background(Theme.background)
         .navigationTitle("")
+        // Counts for the "rules" step of a running study session.
+        .onAppear { StudySession.shared.noteTopic(lessonID: lessonID, topic: topic.topic) }
         .toolbar {
             if editing {
                 ToolbarItem(placement: .cancellationAction) {
