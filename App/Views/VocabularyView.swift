@@ -107,14 +107,14 @@ private struct FocusWordCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
-                CardLabel(text: dueCount > 0 ? "Пора повторить" : "Новое слово", color: .white.opacity(0.85))
+                CardLabel(text: dueCount > 0 ? "Пора повторить" : "Новое слово", color: Theme.onAccent.opacity(0.85))
                 Spacer()
                 if let g = item.gender {
                     Text(g)
                         .font(.footnote.weight(.bold))
                         .foregroundStyle(g == "f" ? Theme.feminine : Theme.masculine)
                         .padding(.horizontal, 10).padding(.vertical, 4)
-                        .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .background(Theme.onAccent, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
             }
             Text(item.displayWithArticle)
@@ -130,12 +130,12 @@ private struct FocusWordCard: View {
                     Text(dueCount > 0 ? "Повторить \(dueCount)" : "Тренировка")
                         .font(.headline)
                         .frame(maxWidth: .infinity, minHeight: 48)
-                        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(.white, lineWidth: 1.5))
+                        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Theme.onAccent, lineWidth: 1.5))
                 }
                 .buttonStyle(.plain)
             }
         }
-        .foregroundStyle(.white)
+        .foregroundStyle(Theme.onAccent)
         .padding(22)
         .background(Theme.accent, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
     }

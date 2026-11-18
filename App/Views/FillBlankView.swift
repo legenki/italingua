@@ -64,7 +64,7 @@ struct FillBlankView: View {
                 } label: {
                     Text("Ещё раз")
                         .font(.headline)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
@@ -143,7 +143,7 @@ struct FillBlankView: View {
             } label: {
                 Text(s.phase == .answering ? "Проверить" : "Дальше")
                     .font(.headline)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Theme.onAccent)
                     .frame(maxWidth: .infinity, minHeight: 50)
                     .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }

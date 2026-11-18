@@ -9,7 +9,7 @@ import AppKit
 /// Accent palettes the learner can pick in Settings. Each has the main accent,
 /// a soft fill and a ramp of shades (lightest → full) for charts.
 enum Palette: String, CaseIterable, Identifiable {
-    case green, blue, red
+    case green, blue, red, terracotta, laguna, lavender, ochre, plum
 
     var id: String { rawValue }
 
@@ -18,6 +18,11 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: "Зелёная"
         case .blue: "Синяя"
         case .red: "Красная"
+        case .terracotta: "Терракота"
+        case .laguna: "Лагуна"
+        case .lavender: "Лаванда"
+        case .ochre: "Охра"
+        case .plum: "Слива"
         }
     }
 
@@ -27,6 +32,11 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: (0x1A7A52, 0x3FBF85)
         case .blue: (0x1F5FBF, 0x5B9BFF)
         case .red: (0xB3261E, 0xFF7A70)
+        case .terracotta: (0xB5562F, 0xF08A5D)
+        case .laguna: (0x0E7C86, 0x3CC4CF)
+        case .lavender: (0x6A4FB3, 0xA996F2)
+        case .ochre: (0x9A6A00, 0xF2C14E)
+        case .plum: (0x9B2C6B, 0xF07FB8)
         }
     }
 
@@ -35,6 +45,11 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: (0xE7F2EC, 0x1D3A2D)
         case .blue: (0xE6EEFA, 0x1C2C44)
         case .red: (0xFBE9E7, 0x3D1E1C)
+        case .terracotta: (0xF8EAE3, 0x3D2419)
+        case .laguna: (0xE2F3F4, 0x163538)
+        case .lavender: (0xEEEAF8, 0x2A2440)
+        case .ochre: (0xF8F0DC, 0x3A2E12)
+        case .plum: (0xF8E6EF, 0x3D1A2C)
         }
     }
 
@@ -45,6 +60,11 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: [(0xCFE8DA, 0x1F4A35), (0x8CCAA8, 0x2E7A55), (0x4FA77A, 0x37A06C), accent]
         case .blue: [(0xD3E2F8, 0x1E3354), (0x93B6EC, 0x2D5390), (0x5587D6, 0x3E78D6), accent]
         case .red: [(0xF6D2CE, 0x4A2220), (0xE99A92, 0x7E3730), (0xD2564B, 0xC24A40), accent]
+        case .terracotta: [(0xF2D3C4, 0x4A2A1C), (0xE3A083, 0x7E4128), (0xCC7650, 0xC0663D), accent]
+        case .laguna: [(0xC6E7EA, 0x173F43), (0x84C9CF, 0x226A70), (0x46A3AC, 0x2E9CA5), accent]
+        case .lavender: [(0xDCD4F2, 0x2E2650), (0xB1A2E2, 0x4C3F86), (0x8B75CC, 0x7562C8), accent]
+        case .ochre: [(0xEFDDB0, 0x45361A), (0xD9B867, 0x7A5E22), (0xBD8F22, 0xC29A3A), accent]
+        case .plum: [(0xF0CFE0, 0x4A1F35), (0xDB91B8, 0x7E2F5A), (0xBE5A90, 0xC2508F), accent]
         }
     }
 
@@ -68,6 +88,9 @@ enum Theme {
     static func accent(of palette: Palette) -> Color { dynamic(palette.accent) }
     static func ramp(of palette: Palette) -> [Color] { palette.ramp.map(dynamic) }
     static var accentMid: Color { accentRamp[1] }
+    /// Text and icons on an accent fill: white in light mode; near-black in
+    /// dark mode, where accents are bright and white text would be too faint.
+    static let onAccent = dynamic(light: 0xFFFFFF, dark: 0x101211)
     static let background = dynamic(light: 0xF2F2F7, dark: 0x000000)
     static let card = dynamic(light: 0xFFFFFF, dark: 0x1C1C1E)
     static let tile = dynamic(light: 0xF4F7F5, dark: 0x2A2C2B)
@@ -173,7 +196,7 @@ struct SpeakButton: View {
     private var foreground: Color {
         switch style {
         case .soft: Theme.accent
-        case .filled: .white
+        case .filled: Theme.onAccent
         case .onAccent: Theme.accent
         }
     }
@@ -182,7 +205,7 @@ struct SpeakButton: View {
         switch style {
         case .soft: Theme.accentSoft
         case .filled: Theme.accent
-        case .onAccent: .white
+        case .onAccent: Theme.onAccent
         }
     }
 }

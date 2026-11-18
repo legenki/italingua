@@ -105,7 +105,7 @@ struct FlashcardsView: View {
             .disabled(s.index == 0)
             .keyboardShortcut("z", modifiers: .command)
             Spacer()
-            RoundAction(systemImage: "checkmark", label: "Знаю", color: .white, fill: Theme.accent) {
+            RoundAction(systemImage: "checkmark", label: "Знаю", color: Theme.onAccent, fill: Theme.accent) {
                 answer(s, knew: true)
             }
             .keyboardShortcut(.rightArrow, modifiers: [])
@@ -362,7 +362,7 @@ private struct WideButton: View {
         Button(action: action) {
             Text(title)
                 .font(.headline)
-                .foregroundStyle(filled ? .white : Theme.accent)
+                .foregroundStyle(filled ? Theme.onAccent : Theme.accent)
                 .frame(maxWidth: .infinity, minHeight: 50)
                 .background(filled ? Theme.accent : Theme.accentSoft,
                             in: RoundedRectangle(cornerRadius: 14, style: .continuous))

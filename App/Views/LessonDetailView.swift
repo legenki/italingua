@@ -106,7 +106,7 @@ struct LessonDetailView: View {
                     } label: {
                         Label("Вставь слово", systemImage: "character.cursor.ibeam")
                             .font(.headline)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(Theme.onAccent)
                             .frame(maxWidth: .infinity, minHeight: 52)
                             .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }

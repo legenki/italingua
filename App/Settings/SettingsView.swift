@@ -17,8 +17,9 @@ struct SettingsView: View {
                     ForEach(Appearance.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
-                LabeledContent("Цвет") {
-                    HStack(spacing: 14) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Цвет")
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 68), spacing: 8)], spacing: 8) {
                         ForEach(Palette.allCases) { p in
                             Button { palette = p } label: {
                                 PaletteSwatch(palette: p, selected: p == palette)

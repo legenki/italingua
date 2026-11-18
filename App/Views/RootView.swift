@@ -154,16 +154,16 @@ private struct LessonRow: View {
     var body: some View {
         HStack(spacing: 12) {
             LessonBadge(number: lesson.sourceLesson, progress: progress)
-                .overlay(Circle().stroke(.white, lineWidth: selected ? 2 : 0))
+                .overlay(Circle().stroke(Theme.onAccent, lineWidth: selected ? 2 : 0))
             VStack(alignment: .leading, spacing: 3) {
                 Text(lesson.title.isEmpty ? lesson.id : lesson.title)
                     .font(.body.weight(.semibold))
                     .lineLimit(2)
-                    .foregroundStyle(selected ? .white : .primary)
+                    .foregroundStyle(selected ? Theme.onAccent : .primary)
                 Text(statusText)
                     .font(.subheadline)
                     .monospacedDigit()
-                    .foregroundStyle(selected ? .white.opacity(0.85)
+                    .foregroundStyle(selected ? Theme.onAccent.opacity(0.85)
                                      : progress.state == .done ? Theme.accent : .secondary)
             }
             Spacer(minLength: 0)
@@ -195,7 +195,7 @@ struct LessonBadge: View {
                 Circle().fill(Theme.accent)
                 Image(systemName: "checkmark")
                     .font(.system(size: size * 0.4, weight: .bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Theme.onAccent)
             case .inProgress:
                 Circle().fill(Theme.accentSoft)
                 Circle().stroke(Theme.separator, lineWidth: 3).padding(1.5)
