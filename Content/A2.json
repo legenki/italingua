@@ -15,15 +15,15 @@
       "grammar": [
         {
           "topic": "Futuro semplice (Будущее простое время)",
-          "rule_ru": ""
+          "rule_ru": "Будущее время — одно слово, без вспомогательного глагола. Берём инфинитив, отбрасываем конечное **-e** и добавляем окончания. У глаголов на **-are** гласная **a** меняется на **e**: parlare → parler-.\nconj: parlare | говорить\nio parler|ò\ntu parler|ai\nlui/lei parler|à\nnoi parler|emo\nvoi parler|ete\nloro parler|anno\n\nconj: scrivere | писать\nio scriver|ò\ntu scriver|ai\nlui/lei scriver|à\nnoi scriver|emo\nvoi scriver|ete\nloro scriver|anno\n\nconj: partire | уезжать\nio partir|ò\ntu partir|ai\nlui/lei partir|à\nnoi partir|emo\nvoi partir|ete\nloro partir|anno\n\n• Ударение на окончании в формах io и lui/lei: parlerò, partirà.\n! -care, -gare получают **h**: cercare → cercherò, pagare → pagherò. У -ciare, -giare i пропадает: mangiare → mangerò.\n• Будущее часто выражает и предположение: Sarà a casa. — Он, наверное, дома.\nex: Domani partiremo presto. | Завтра мы уедем рано.\nex: Quando arriverai a Roma? | Когда ты приедешь в Рим?"
         },
         {
           "topic": "Неправильные формы Futuro semplice (Будущего простого времени)",
-          "rule_ru": ""
+          "rule_ru": "У части глаголов основа будущего времени сокращается или меняется, окончания остаются те же: -ò, -ai, -à, -emo, -ete, -anno.\ntable: Инфинитив* | Основа | io* | Перевод\nessere | sar- | sarò | быть\navere | avr- | avrò | иметь\nandare | andr- | andrò | идти, ехать\nfare | far- | farò | делать\ndare | dar- | darò | давать\nstare | star- | starò | находиться\npotere | potr- | potrò | мочь\ndovere | dovr- | dovrò | быть должным\nsapere | sapr- | saprò | знать\nvedere | vedr- | vedrò | видеть\nvenire | verr- | verrò | приходить\nvolere | vorr- | vorrò | хотеть\nbere | berr- | berrò | пить\n\nconj: essere | быть\nio sar|ò\ntu sar|ai\nlui/lei sar|à\nnoi sar|emo\nvoi sar|ete\nloro sar|anno\n\nex: Sabato andremo al mare. | В субботу мы поедем на море.\nex: Verrai anche tu? | Ты тоже придёшь?"
         },
         {
           "topic": "Обозначения дат",
-          "rule_ru": ""
+          "rule_ru": "Дату называют с определённым артиклем и **количественным** числительным: il due maggio — второе мая.\n• Исключение — первое число: il **primo** gennaio.\n• Месяцы пишутся с маленькой буквы: gennaio, febbraio, marzo…\n• «В такой-то день» — тоже с артиклем, без предлога: Arrivo il dieci aprile.\n• Год — с артиклем: nel 2024 (in + il), il 1990 è stato un anno difficile.\n• Дни недели — с маленькой буквы; все, кроме domenica, мужского рода: il lunedì, la domenica.\ntable: Вопрос* | Ответ*\nChe giorno è oggi? | Oggi è il tre marzo.\nQuanti ne abbiamo oggi? | Ne abbiamo tre.\nIn che anno sei nato? | Sono nato nel 1990.\nex: Il mio compleanno è il primo giugno. | Мой день рождения — первого июня."
         }
       ],
       "vocab": [
@@ -424,11 +424,11 @@
       "grammar": [
         {
           "topic": "Косвенная речь",
-          "rule_ru": ""
+          "rule_ru": "Косвенная речь передаёт чужие слова: Marco dice: «Sono stanco». → Marco dice che **è** stanco.\n• Вводится словами **dire che**, **rispondere che**, **spiegare che**…\n• Лицо глагола и местоимения меняются по смыслу: «Io parto» → dice che **lui** parte.\n• Вопрос без вопросительного слова вводится через **se** (ли): Mi chiede **se** vengo.\n• Вопрос с вопросительным словом сохраняет его: Mi chiede **dove** abito.\n• Просьба или приказ — **di** + инфинитив: Mi dice **di** aspettare.\n! Если главный глагол стоит в настоящем времени (dice, chiede), время в придаточном не меняется.\nex: Anna dice che stasera resta a casa. | Анна говорит, что сегодня вечером останется дома.\nex: Ti chiedo se hai tempo. | Я спрашиваю тебя, есть ли у тебя время."
         },
         {
           "topic": "Изменения наречий места и времени в косвенной речи",
-          "rule_ru": ""
+          "rule_ru": "Когда пересказ звучит в другом месте или в другое время, слова «здесь», «сегодня», «завтра» меняются по смыслу.\ntable: Прямая речь* | Косвенная речь* | Перевод\nqui, qua | lì, là | здесь → там\noggi | quel giorno | сегодня → в тот день\nieri | il giorno prima | вчера → накануне\ndomani | il giorno dopo | завтра → на следующий день\nadesso, ora | allora | сейчас → тогда\nquesto | quello | этот → тот\nfra una settimana | una settimana dopo | через неделю → неделю спустя\n\n! Если пересказ звучит в тот же день и в том же месте, слова не меняются: Dice che domani piove.\nex: Ha detto che il giorno dopo partiva. | Он сказал, что на следующий день уезжает."
         }
       ],
       "vocab": [
@@ -978,11 +978,11 @@
       "grammar": [
         {
           "topic": "Употребление притяжательных местоимений с терминами родства",
-          "rule_ru": ""
+          "rule_ru": "С названием одного родственника в единственном числе артикль перед притяжательным местоимением **не ставится**: mia madre, tuo fratello, sua zia.\nАртикль **нужен**, если:\n• родственников несколько: i miei fratelli, le sue sorelle;\n• слово с уменьшительным суффиксом или ласковое: la mia sorellina, la mia mamma, il mio papà;\n• есть определение: il mio fratello maggiore — мой старший брат;\n• местоимение **loro**: il loro padre, la loro nonna.\ntable: Без артикля* | С артиклем*\nmio padre | i miei genitori\ntua sorella | la tua sorellina\nsuo figlio | il suo figlio più piccolo\nnostra zia | la loro zia\nex: Mia sorella abita a Milano. | Моя сестра живёт в Милане.\nex: I miei nonni sono molto vecchi. | Мои бабушка и дедушка очень старые."
         },
         {
           "topic": "Ударные местоимения",
-          "rule_ru": ""
+          "rule_ru": "Ударные формы личных местоимений ставят после предлога или для выделения: Vieni con **me**? Cerco **te**, non lui.\ntable: Лицо | Ед. ч.* | | Мн. ч.* |\n1-е | me | меня, мне | noi | нас, нам\n2-е | te | тебя, тебе | voi | вас, вам\n3-е м. р. | lui | его, ему | loro | их, им\n3-е ж. р. | lei | её, ей | loro | их, им\nвежливое | Lei | Вас, Вам | |\n\n• После предлогов: per me, con te, da lui, senza di lei, secondo noi.\n• Для выделения вместо безударного: Aspetto **te**, non Marco.\n! «У меня дома» — da me; «по-моему» — secondo me.\nex: Questo regalo è per te. | Этот подарок для тебя.\nex: Stasera venite da noi? | Сегодня вечером придёте к нам?"
         }
       ],
       "vocab": [
@@ -1496,7 +1496,7 @@
       "grammar": [
         {
           "topic": "Passato prossimo (Ближайшее прошедшее время)",
-          "rule_ru": ""
+          "rule_ru": "Passato prossimo — основное прошедшее время для законченных действий. Образуется из **avere** или **essere** в настоящем времени и **причастия прошедшего времени**.\ntable: Инфинитив* | Причастие*\nparlare | parlato\nvendere | venduto\ndormire | dormito\n\nconj: lavorare | работать (с avere)\nio ho lavor|ato\ntu hai lavor|ato\nlui/lei ha lavor|ato\nnoi abbiamo lavor|ato\nvoi avete lavor|ato\nloro hanno lavor|ato\n\nconj: andare | идти (с essere)\nio sono and|ato/a\ntu sei and|ato/a\nlui/lei è and|ato/a\nnoi siamo and|ati/e\nvoi siete and|ati/e\nloro sono and|ati/e\n\n• С **avere** — большинство глаголов, особенно с прямым дополнением: Ho mangiato una pizza.\n• С **essere** — глаголы движения и состояния (andare, venire, partire, arrivare, restare, stare, essere) и возвратные.\n! С essere причастие согласуется с подлежащим: Anna è partit**a**, i ragazzi sono arrivat**i**.\nex: Ieri ho lavorato fino a tardi. | Вчера я работал допоздна.\nex: Domenica siamo andati al mare. | В воскресенье мы ездили на море."
         }
       ],
       "vocab": [
@@ -1812,7 +1812,7 @@
       "grammar": [
         {
           "topic": "Неправильные глаголы Passato prossimo (Ближайшее прошедшее время)",
-          "rule_ru": ""
+          "rule_ru": "Многие частые глаголы, особенно на **-ere**, имеют неправильное причастие. Его нужно запоминать вместе с глаголом.\ntable: Инфинитив* | Причастие* | Перевод\nfare | fatto | делать\ndire | detto | сказать\nleggere | letto | читать\nscrivere | scritto | писать\nprendere | preso | брать\nmettere | messo | класть\nvedere | visto | видеть\naprire | aperto | открыть\nchiudere | chiuso | закрыть\nbere | bevuto | пить\nrispondere | risposto | ответить\nchiedere | chiesto | спросить\nperdere | perso | потерять\nvenire | venuto | прийти\nessere | stato | быть\nnascere | nato | родиться\nmorire | morto | умереть\nrimanere | rimasto | остаться\n\n! essere и stare имеют одно причастие: sono stato — я был (и я находился).\nex: Che cosa hai detto? | Что ты сказал?\nex: Abbiamo messo tutto a posto. | Мы всё убрали на место.\nex: Sei mai stato a Venezia? | Ты когда-нибудь был в Венеции?"
         }
       ],
       "vocab": [
@@ -2254,15 +2254,15 @@
       "grammar": [
         {
           "topic": "Passato prossimo (Ближайшее прошедшее время) модальных глаголов",
-          "rule_ru": ""
+          "rule_ru": "**Dovere, potere, volere** в passato prossimo обычно берут тот вспомогательный глагол, который нужен **следующему** глаголу.\n• Следующий глагол с avere → avere: Ho dovuto lavorare. Non ho potuto dormire.\n• Следующий глагол с essere → essere (в живой речи допустимо и avere): Sono dovuto partire.\n• С essere причастие согласуется: Anna è voluta restare.\ntable: Пример* | Перевод\nHo dovuto studiare. | Мне пришлось учиться.\nNon ho potuto telefonare. | Я не смог позвонить.\nSono dovuta uscire. | Мне пришлось выйти.\nSiamo voluti tornare. | Мы захотели вернуться.\n\n! Без инфинитива — всегда avere: Non ho voluto. — Я не захотел.\nex: Ieri ho dovuto lavorare fino alle otto. | Вчера мне пришлось работать до восьми."
         },
         {
           "topic": "Неправильный глагoл piacere",
-          "rule_ru": ""
+          "rule_ru": "**Piacere** — «нравиться». Тот, кому нравится, стоит в косвенном падеже (mi, ti, gli…), а глагол согласуется с тем, **что** нравится.\n• Одна вещь или действие — **piace**: Mi piace il mare. Mi piace leggere.\n• Несколько вещей — **piacciono**: Mi piacciono i film italiani.\ntable: Кому | Форма* | Перевод\nмне | mi piace | мне нравится\nтебе | ti piace | тебе нравится\nему | gli piace | ему нравится\nей, Вам | le piace, Le piace | ей / Вам нравится\nнам | ci piace | нам нравится\nвам | vi piace | вам нравится\nим | gli piace | им нравится\n\n• В passato prossimo — с **essere**, причастие согласуется с тем, что понравилось: Mi è piaciut**a** la città. Mi sono piaciut**i** i musei.\n! С существительным или именем — предлог **a**: A Marco piace il calcio.\nex: Ti piacciono gli spaghetti? | Тебе нравятся спагетти?\nex: Ci è piaciuto molto il concerto. | Нам очень понравился концерт."
         },
         {
           "topic": "Спряжение глаголов на -gliere",
-          "rule_ru": ""
+          "rule_ru": "Глаголы на **-gliere** (scegliere — выбирать, togliere — снимать, raccogliere — собирать) в некоторых формах меняют **gl** на **lg**.\nconj: scegliere | выбирать\nio scel|go\ntu sceg|li\nlui/lei sceg|lie\nnoi sceg|liamo\nvoi sceg|liete\nloro scel|gono\n\n• Тот же переход lg — в io и loro: tolgo, tolgono; raccolgo, raccolgono.\n• Причастие: scelto, tolto, raccolto.\nex: Scelgo sempre il vino rosso. | Я всегда выбираю красное вино.\nex: Che cosa hai scelto? | Что ты выбрал?"
         }
       ],
       "vocab": [
@@ -2753,11 +2753,11 @@
       "grammar": [
         {
           "topic": "Imperfetto (Незаконченное прошедшее время)",
-          "rule_ru": ""
+          "rule_ru": "Imperfetto описывает прошлое как процесс: что бывало регулярно, что происходило «на фоне», как всё выглядело. Образуется от основы инфинитива с окончаниями **-avo, -evo, -ivo**.\nconj: parlare | говорить\nio parl|avo\ntu parl|avi\nlui/lei parl|ava\nnoi parl|avamo\nvoi parl|avate\nloro parl|avano\n\nconj: leggere | читать\nio legg|evo\ntu legg|evi\nlui/lei legg|eva\nnoi legg|evamo\nvoi legg|evate\nloro legg|evano\n\nconj: dormire | спать\nio dorm|ivo\ntu dorm|ivi\nlui/lei dorm|iva\nnoi dorm|ivamo\nvoi dorm|ivate\nloro dorm|ivano\n\n• Привычка в прошлом: Da bambino giocavo a calcio.\n• Описание: Era una bella giornata, faceva caldo.\n! Ударение в форме loro — на третьем слоге от конца: parlàvano, leggèvano.\nex: Ogni estate andavamo al mare. | Каждое лето мы ездили на море."
         },
         {
           "topic": "Неправильные глаголы в Imperfetto",
-          "rule_ru": ""
+          "rule_ru": "Неправильных глаголов в imperfetto немного. Самый важный — **essere**.\nconj: essere | быть\nio ero\ntu eri\nlui/lei era\nnoi eravamo\nvoi eravate\nloro erano\n\n• **fare, dire, bere** образуют imperfetto от старой основы: facevo, dicevo, bevevo.\ntable: Инфинитив* | io* | noi*\nfare | facevo | facevamo\ndire | dicevo | dicevamo\nbere | bevevo | bevevamo\ntradurre | traducevo | traducevamo\n\n! avere — правильный: avevo, avevi, aveva…\nex: Quando ero piccolo, abitavo a Napoli. | Когда я был маленьким, я жил в Неаполе.\nex: Faceva freddo e non c'era nessuno. | Было холодно, и никого не было."
         }
       ],
       "vocab": [
@@ -3193,15 +3193,15 @@
       "grammar": [
         {
           "topic": "Употребление Imperfetto / Passato prossimo. Фон /точечное действие",
-          "rule_ru": ""
+          "rule_ru": "В одном рассказе часто нужны оба времени.\n• **Imperfetto** — фон, обстановка, то, что длилось: Pioveva, leggevo un libro…\n• **Passato prossimo** — событие, которое произошло на этом фоне: …quando è suonato il telefono.\ntable: Фон — imperfetto* | Событие — passato prossimo*\nMentre cenavamo, | è arrivato Luca.\nDormivo | quando hai chiamato.\nFaceva caldo, | così abbiamo aperto la finestra.\n\n! Два длительных действия одновременно — оба в imperfetto: Mentre io cucinavo, lui guardava la TV.\nex: Quando sono uscito, pioveva. | Когда я вышел, шёл дождь."
         },
         {
           "topic": "Употребление Imperfetto / Passato prossimo. Законченный отрезок времени",
-          "rule_ru": ""
+          "rule_ru": "Если у действия в прошлом есть **рамки** — сколько раз, как долго, с какого и до какого момента, — оно в **passato prossimo**, даже если длилось долго.\n• Ho abitato a Roma **per tre anni**. — Жил три года (и это закончилось).\n• Abbiamo aspettato **due ore**. — Ждали два часа.\n• Sono stato in Italia **tre volte**. — Был трижды.\nБез рамок, как описание привычки или состояния, — **imperfetto**: Abitavo a Roma e lavoravo in un bar.\ntable: Passato prossimo* | Imperfetto*\nHo studiato tutta la notte. | Studiavo sempre di notte.\nIeri ha piovuto per ore. | Quel giorno pioveva.\nex: Siamo rimasti in Toscana due settimane. | Мы пробыли в Тоскане две недели."
         },
         {
           "topic": "Imperfetto в описании людей или предметов",
-          "rule_ru": ""
+          "rule_ru": "Внешность, характер, возраст, погоду, время и обстановку в прошлом описывают в **imperfetto**.\n• Возраст: Quando avevo dieci anni…\n• Внешность и характер: Era alto, aveva i capelli neri ed era molto simpatico.\n• Погода и время: Era mezzanotte e faceva freddo.\n• Обстановка: La casa era piccola, ma c'era un bel giardino.\nex: Mia nonna era una donna allegra. | Моя бабушка была весёлой женщиной.\nex: La stanza aveva due finestre. | В комнате было два окна."
         }
       ],
       "vocab": [
@@ -3639,11 +3639,11 @@
       "grammar": [
         {
           "topic": "Возвратные глаголы",
-          "rule_ru": ""
+          "rule_ru": "Возвратные глаголы обозначают действие, направленное на себя: lavarsi — мыться, alzarsi — вставать. Частица **-si** превращается в местоимение перед глаголом: mi, ti, si, ci, vi, si.\nconj: alzarsi | вставать\nio mi alz|o\ntu ti alz|i\nlui/lei si alz|a\nnoi ci alz|iamo\nvoi vi alz|ate\nloro si alz|ano\n\n• Частые: chiamarsi, svegliarsi, vestirsi, sentirsi, divertirsi, sedersi, preoccuparsi.\n• В passato prossimo — всегда **essere**, причастие согласуется: Anna si è alzat**a** presto.\n! Отрицание ставится перед местоимением: Non mi sento bene.\nex: La mattina mi sveglio alle sette. | Утром я просыпаюсь в семь.\nex: Ci siamo divertiti molto. | Мы очень хорошо повеселились."
         },
         {
           "topic": "Модальный глагол + возвратный глагол",
-          "rule_ru": ""
+          "rule_ru": "С модальными глаголами (dovere, potere, volere) местоимение возвратного глагола можно поставить двумя способами — смысл одинаковый.\ntable: Перед модальным* | После инфинитива*\nMi devo alzare. | Devo alzarmi.\nTi vuoi sedere? | Vuoi sederti?\nCi possiamo vedere. | Possiamo vederci.\n\n• Во втором варианте местоимение пишется слитно с инфинитивом, который теряет конечное -e: alzare → alzarmi.\n! Местоимение меняется по лицу: devo alzar**mi**, devi alzar**ti**, deve alzar**si**.\nex: Domani mi devo svegliare presto. | Завтра мне нужно проснуться рано."
         }
       ],
       "vocab": [
@@ -3951,11 +3951,11 @@
       "grammar": [
         {
           "topic": "Косвенная речь. Согласование времен. Прямая речь – настоящее время",
-          "rule_ru": ""
+          "rule_ru": "Если глагол, вводящий речь, стоит в **прошедшем** времени (ha detto, ha chiesto), настоящее время прямой речи в косвенной становится **imperfetto**.\ntable: Прямая речь* | Косвенная речь*\n«Sono stanco.» | Ha detto che era stanco.\n«Abito a Roma.» | Ha detto che abitava a Roma.\n«Hai tempo?» | Mi ha chiesto se avevo tempo.\n\n• Если главный глагол в настоящем (dice), время не меняется: Dice che è stanco.\n• Не забываем менять лицо, местоимения и наречия: «qui» → lì, «oggi» → quel giorno.\nex: Marco mi ha detto che non stava bene. | Марко сказал мне, что плохо себя чувствует."
         },
         {
           "topic": "Косвенная речь. Согласование времен. Прямая речь – прошедшее время",
-          "rule_ru": ""
+          "rule_ru": "Если и прямая речь, и глагол, вводящий её, в прошедшем времени, то:\n• **imperfetto** остаётся imperfetto: «Pioveva» → Ha detto che pioveva.\n• **passato prossimo** становится **trapassato prossimo** — avere/essere в imperfetto + причастие: «Ho perso il treno» → Ha detto che **aveva perso** il treno.\ntable: Прямая речь* | Косвенная речь*\n«Sono arrivato tardi.» | Ha detto che era arrivato tardi.\n«Ho finito.» | Ha detto che aveva finito.\n«Abbiamo mangiato.» | Hanno detto che avevano mangiato.\n\n! Trapassato prossimo показывает, что одно прошедшее действие случилось раньше другого.\nex: Luca mi ha spiegato che aveva perso le chiavi. | Лука объяснил мне, что потерял ключи."
         }
       ],
       "vocab": [
@@ -4270,15 +4270,15 @@
       "grammar": [
         {
           "topic": "Безударные личные местоимения – косвенный падеж",
-          "rule_ru": ""
+          "rule_ru": "Косвенные местоимения отвечают на вопрос **кому?** Они стоят перед спрягаемым глаголом.\ntable: Лицо | Ед. ч.* | | Мн. ч.* |\n1-е | mi | мне | ci | нам\n2-е | ti | тебе | vi | вам\n3-е м. р. | gli | ему | gli | им\n3-е ж. р. | le | ей | gli | им\nвежливое | Le | Вам | |\n\n• Telefono **a Marco** → **Gli** telefono. Scrivo **ad Anna** → **Le** scrivo.\n• С глаголами dare, dire, telefonare, scrivere, chiedere, rispondere, piacere, mandare, regalare.\n! Не путать с прямыми: lo vedo (его вижу) — gli parlo (ему говорю).\nex: Le posso offrire un caffè? | Могу я предложить Вам кофе?\nex: Gli ho detto tutto. | Я ему всё сказал."
         },
         {
           "topic": "Безударные местоимения при модальных глаголах",
-          "rule_ru": ""
+          "rule_ru": "С модальными глаголами (dovere, potere, volere, sapere) безударное местоимение ставится **перед модальным** глаголом или **слитно с инфинитивом**.\ntable: Перед модальным* | Слитно с инфинитивом*\nTi voglio parlare. | Voglio parlarti.\nLo devo comprare. | Devo comprarlo.\nGli posso telefonare? | Posso telefonargli?\nNon la so fare. | Non so farla.\n\n• Инфинитив теряет -e: comprare → comprarlo.\n! Нельзя ставить местоимение между глаголами раздельно: «Devo lo comprare» — ошибка.\nex: Ti posso aiutare? | Я могу тебе помочь?"
         },
         {
           "topic": "Место безударных личных местоимений при глаголах в Passato prossimo (Ближайшем прошедшем времени)",
-          "rule_ru": ""
+          "rule_ru": "В passato prossimo безударное местоимение стоит **перед вспомогательным глаголом**: Gli ho telefonato. Ti ho visto.\n• Lo, la перед гласной сокращаются: **l'**ho visto, **l'**ho vista.\n• С прямыми **lo, la, li, le** причастие согласуется с местоимением.\ntable: Пример* | Перевод\nIl libro? L'ho letto. | Книгу? Я её прочитал.\nLa lettera? L'ho scritta. | Письмо? Я его написал.\nI biglietti? Li ho comprati. | Билеты? Я их купил.\nLe chiavi? Le ho perse. | Ключи? Я их потерял.\n\n! С косвенными (gli, le) причастие не меняется: Le ho telefonato.\nex: Hai visto Maria? — Sì, l'ho vista ieri. | Ты видел Марию? — Да, видел её вчера."
         }
       ],
       "vocab": [
@@ -4688,11 +4688,11 @@
       "grammar": [
         {
           "topic": "Порядковые числительные",
-          "rule_ru": ""
+          "rule_ru": "Порядковые числительные согласуются с существительным в роде и числе: il primo giorno, la prima volta, i primi giorni.\ntable: Число | Порядковое*\n1 | primo\n2 | secondo\n3 | terzo\n4 | quarto\n5 | quinto\n6 | sesto\n7 | settimo\n8 | ottavo\n9 | nono\n10 | decimo\n\n• Дальше — количественное без последней гласной + **-esimo**: undicesimo, ventesimo, centesimo.\n• Числа на -tré сохраняют e: ventitré → ventitreesimo.\n• Этажи: al primo piano, al terzo piano.\n! Века часто называют римскими цифрами: il XXI (ventunesimo) secolo.\nex: Abito al quinto piano. | Я живу на пятом этаже."
         },
         {
           "topic": "Participio passato (Причастие прошедшего времени)",
-          "rule_ru": ""
+          "rule_ru": "Причастие прошедшего времени нужно не только для passato prossimo: оно работает и как **прилагательное**.\ntable: Инфинитив* | Причастие* | Как прилагательное*\nchiudere | chiuso | la porta chiusa\nrompere | rotto | un vaso rotto\ncuocere | cotto | le verdure cotte\ncomprare | comprato | il pane comprato\nusare | usato | una macchina usata\n\n• Как прилагательное оно согласуется с существительным: un libro letto, una lettera scritta, le finestre aperte.\n• Правильные причастия: -are → **-ato**, -ere → **-uto**, -ire → **-ito**.\nex: Il negozio è chiuso. | Магазин закрыт.\nex: Ho trovato una macchina usata. | Я нашёл подержанную машину."
         }
       ],
       "vocab": [
@@ -5081,15 +5081,15 @@
       "grammar": [
         {
           "topic": "Глаголы с вспомогательными avere / essere в Passato prossimo",
-          "rule_ru": ""
+          "rule_ru": "Некоторые глаголы берут **avere** или **essere** в зависимости от смысла.\n• С прямым дополнением (кого? что?) — **avere**; без дополнения — **essere**.\ntable: С avere* | С essere*\nHo cominciato il lavoro. | Il film è cominciato.\nHo finito il libro. | La lezione è finita.\nHo passato le vacanze al mare. | Sono passato da te.\nHo cambiato casa. | Roma è cambiata molto.\n\n• Так же ведут себя: aumentare, salire, scendere, correre.\n• Погодные глаголы — с обоими: è piovuto / ha piovuto.\nex: Abbiamo cominciato alle nove. | Мы начали в девять.\nex: Lo spettacolo è finito tardi. | Спектакль закончился поздно."
         },
         {
           "topic": "Глаголы со значением «принимать»",
-          "rule_ru": ""
+          "rule_ru": "Русское «принимать» переводится разными глаголами — по смыслу.\ntable: Глагол* | Смысл | Пример*\nprendere | лекарство, душ, решение | prendere una medicina, una decisione\naccettare | предложение, подарок | accettare un invito\nricevere | гостей, письмо | ricevere gli ospiti\nassumere | на работу | assumere un impiegato\nfare | душ, ванну | fare la doccia\n\n! «Принимать участие» — partecipare a: Partecipo alla riunione.\nex: Hai preso la medicina? | Ты принял лекарство?\nex: L'azienda ha assunto due persone. | Компания приняла на работу двух человек."
         },
         {
           "topic": "Значение приставки ri-",
-          "rule_ru": ""
+          "rule_ru": "Приставка **ri-** (перед гласной иногда **r-**) обычно значит «снова, ещё раз» или «обратно».\ntable: Глагол* | С ri-* | Перевод\nfare | rifare | переделать\nleggere | rileggere | перечитать\nvedere | rivedere | увидеть снова\ndare | ridare | вернуть, отдать обратно\nportare | riportare | принести обратно\naprire | riaprire | открыть снова\n\n! Не все глаголы на ri- значат повторение: ricordare — помнить, riposare — отдыхать, ricevere — получать.\nex: Ci rivediamo domani! | Увидимся завтра!"
         }
       ],
       "vocab": [
@@ -5595,7 +5595,7 @@
       "grammar": [
         {
           "topic": "Взаимно-возвратные глаголы",
-          "rule_ru": ""
+          "rule_ru": "Взаимные глаголы показывают, что действие направлено друг на друга. Они спрягаются как возвратные, но только во множественном числе: **ci, vi, si**.\ntable: Глагол | Пример* | Перевод\nvedersi | ci vediamo | мы видимся\nconoscersi | si conoscono | они знакомы\nsalutarsi | ci salutiamo | мы здороваемся\nscriversi | vi scrivete | вы переписываетесь\naiutarsi | si aiutano | они помогают друг другу\n\n• Частые: conoscersi, incontrarsi, salutarsi, sentirsi (созваниваться), aiutarsi, sposarsi.\n• В passato prossimo — с **essere**, причастие во мн. ч.: Ci siamo conosciuti a Roma.\nex: Ci vediamo domani? | Увидимся завтра?\nex: Si sono sposati l'anno scorso. | Они поженились в прошлом году."
         }
       ],
       "vocab": [
@@ -5989,15 +5989,15 @@
       "grammar": [
         {
           "topic": "Множественное число существительных и прилагательных на -ca, -ga и на -co, -go",
-          "rule_ru": ""
+          "rule_ru": "Чтобы сохранить твёрдый звук [к], [г], во множественном числе добавляется **h**.\n• **-ca, -ga** → **-che, -ghe** всегда: amica → amiche, lunga → lunghe.\n• **-co, -go** → **-chi, -ghi**, если ударение на предпоследнем слоге: tedesco → tedeschi, lago → laghi.\n• Если ударение на третьем слоге от конца, обычно **-ci, -gi** (звук смягчается): mèdico → medici, simpàtico → simpatici.\ntable: Ед. ч.* | Мн. ч.*\nl'amica | le amiche\nla lingua lunga | le lingue lunghe\nil parco | i parchi\nl'albergo | gli alberghi\nil medico | i medici\nl'amico | gli amici\n\n! Запомнить исключения: amico → amici, greco → greci, porco → porci; dialogo → dialoghi.\nex: Ho due amiche tedesche. | У меня две подруги-немки."
         },
         {
           "topic": "Собирательные существительные, меняющие свой род во мн. числе",
-          "rule_ru": ""
+          "rule_ru": "Несколько слов мужского рода во множественном числе становятся **женскими** и оканчиваются на **-a**.\ntable: Ед. ч. (м. р.)* | Мн. ч. (ж. р.)* | Перевод\nil paio | le paia | пара — пары\nl'uovo | le uova | яйцо — яйца\nil dito | le dita | палец — пальцы\nil braccio | le braccia | рука — руки\nil labbro | le labbra | губа — губы\nil ginocchio | le ginocchia | колено — колени\nil centinaio | le centinaia | сотня — сотни\nil migliaio | le migliaia | тысяча — тысячи\n\n! Прилагательные к ним — тоже женского рода: le uova fresche, due paia di scarpe nuove.\nex: Ho comprato sei uova. | Я купил шесть яиц.\nex: Mi fanno male le braccia. | У меня болят руки."
         },
         {
           "topic": "Глагол servire",
-          "rule_ru": ""
+          "rule_ru": "**Servire** значит «служить, обслуживать», но чаще — «быть нужным». В этом значении он строится как piacere: тот, кому нужно, — в косвенном падеже.\n• Mi **serve** una penna. — Мне нужна ручка.\n• Ci **servono** due biglietti. — Нам нужны два билета.\n• A che **serve**? — Для чего это нужно?\nconj: servire | служить, быть нужным\nio serv|o\ntu serv|i\nlui/lei serv|e\nnoi serv|iamo\nvoi serv|ite\nloro serv|ono\n\n! В значении «нужно» в passato prossimo — с essere: Mi è servito il tuo aiuto.\nex: Ti serve qualcosa? | Тебе что-нибудь нужно?"
         }
       ],
       "vocab": [
@@ -6326,11 +6326,11 @@
       "grammar": [
         {
           "topic": "Герундий",
-          "rule_ru": ""
+          "rule_ru": "Gerundio — неизменяемая форма, похожая на русское деепричастие: «делая», «читая».\n• -are → **-ando**: parlare → parlando.\n• -ere, -ire → **-endo**: leggere → leggendo, partire → partendo.\ntable: Инфинитив* | Gerundio*\nlavorare | lavorando\nscrivere | scrivendo\ndormire | dormendo\nfare | facendo\ndire | dicendo\nbere | bevendo\n\n• Показывает способ или одновременность: Studio ascoltando la musica.\n• Может значить «если» или «так как»: Andando a piedi, arrivi prima.\n! Безударные местоимения пишутся слитно с gerundio: guardandolo, parlandogli.\nex: Ho imparato l'italiano guardando film. | Я выучил итальянский, смотря фильмы."
         },
         {
           "topic": "Конструкция Stare + Gerundio",
-          "rule_ru": ""
+          "rule_ru": "**Stare + gerundio** — действие, которое происходит **прямо сейчас** (как английское -ing).\nconj: stare + lavorare | работать (сейчас)\nio sto lavor|ando\ntu stai lavor|ando\nlui/lei sta lavor|ando\nnoi stiamo lavor|ando\nvoi state lavor|ando\nloro stanno lavor|ando\n\n• В прошлом — stare в imperfetto: Stavo uscendo quando hai chiamato.\n• Местоимение — перед stare или слитно: Lo sto facendo / Sto facendolo.\n! Для привычных действий обычное настоящее время: Lavoro in banca. — Sto lavorando значит «как раз сейчас работаю».\nex: Che cosa stai facendo? | Что ты сейчас делаешь?\nex: Stiamo mangiando, ti richiamo. | Мы обедаем, я тебе перезвоню."
         }
       ],
       "vocab": [
@@ -6728,11 +6728,11 @@
       "grammar": [
         {
           "topic": "Imperativo – Повелительное наклонение",
-          "rule_ru": ""
+          "rule_ru": "Imperativo — просьбы, советы и приказы. Формы tu, noi, voi в основном совпадают с настоящим временем, кроме **tu** у глаголов на -are.\ntable: Лицо | parlare* | prendere* | sentire*\ntu | parla! | prendi! | senti!\nLei | parli! | prenda! | senta!\nnoi | parliamo! | prendiamo! | sentiamo!\nvoi | parlate! | prendete! | sentite!\n\n• Вежливая форма **Lei** берёт окончание наоборот: -are → **-i**, -ere/-ire → **-a**: Scusi! Senta!\n• Отрицание для **tu** — non + инфинитив: Non parlare! Non correre!\n• Для остальных — non + форма: Non parlate! Non si preoccupi!\nex: Aspetta un momento! | Подожди минутку!\nex: Venga qui, per favore. | Подойдите сюда, пожалуйста."
         },
         {
           "topic": "Повелительное наклонение возвратных глаголов",
-          "rule_ru": ""
+          "rule_ru": "У возвратных глаголов местоимение пишется **слитно** с формами tu, noi, voi и стоит **перед** вежливой формой Lei.\ntable: Лицо | alzarsi* | sedersi*\ntu | alzati! | siediti!\nLei | si alzi! | si sieda!\nnoi | alziamoci! | sediamoci!\nvoi | alzatevi! | sedetevi!\n\n• Отрицание для tu: non + инфинитив с местоимением: Non preoccuparti! (или Non ti preoccupare!)\n! Si accomodi! — Проходите, садитесь! — частая вежливая формула.\nex: Sbrigati, è tardi! | Поторопись, уже поздно!\nex: Si accomodi, prego. | Проходите, пожалуйста."
         }
       ],
       "vocab": [
@@ -6956,11 +6956,11 @@
       "grammar": [
         {
           "topic": "Место безударных местоимений в повелительном наклонении",
-          "rule_ru": ""
+          "rule_ru": "Безударные местоимения (lo, la, gli, mi, ne…) пишутся **слитно** с формами tu, noi, voi и стоят **перед** формой Lei.\ntable: Без местоимения* | С местоимением*\nCompra il pane! | Compralo!\nScrivi a Maria! | Scrivile!\nPrendiamo il treno! | Prendiamolo!\nAprite la porta! | Apritela!\nSignora, dia il libro a me! | Signora, mi dia il libro!\n\n• С отрицанием для tu местоимение пишется слитно с инфинитивом или ставится перед ним: Non dirlo! / Non lo dire!\n! Сочетания местоимений: me lo, te la, glielo: Dammelo! Diglielo!\nex: Il libro? Prendilo pure! | Книгу? Бери, конечно!"
         },
         {
           "topic": "Повелительное наклонение неправильных глаголов",
-          "rule_ru": ""
+          "rule_ru": "У нескольких частых глаголов короткая форма **tu**. С местоимением её согласная удваивается: di' → **dimmi**, fa' → **fammi**.\ntable: Глагол | tu* | Lei* | voi* | С местоимением*\nandare | va' | vada | andate | vacci\ndare | da' | dia | date | dammi\ndire | di' | dica | dite | dimmi\nfare | fa' | faccia | fate | fammi\nstare | sta' | stia | state | stammi bene\nessere | sii | sia | siate | —\navere | abbi | abbia | abbiate | —\nvenire | vieni | venga | venite | —\n\n! Исключение из удвоения — gli: digli, fagli.\nex: Dimmi la verità! | Скажи мне правду!\nex: Faccia attenzione! | Будьте внимательны!"
         }
       ],
       "vocab": [
@@ -7163,11 +7163,11 @@
       "grammar": [
         {
           "topic": "Условное наклонение глагола – Condizionale",
-          "rule_ru": ""
+          "rule_ru": "Condizionale выражает вежливую просьбу, желание, совет и предположение: «я бы хотел», «ты бы мог». Основа та же, что у будущего времени (parlare → parler-), окончания свои.\nconj: parlare | говорить\nio parler|ei\ntu parler|esti\nlui/lei parler|ebbe\nnoi parler|emmo\nvoi parler|este\nloro parler|ebbero\n\nconj: prendere | брать\nio prender|ei\ntu prender|esti\nlui/lei prender|ebbe\nnoi prender|emmo\nvoi prender|este\nloro prender|ebbero\n\n• Вежливая просьба: Potresti aiutarmi?\n• Желание: Mi piacerebbe vedere Venezia.\n• Совет: Dovresti riposare.\n! Как в будущем времени: -care, -gare получают h (cercherei, pagherei).\nex: Vorrei un caffè, per favore. | Я бы хотел кофе, пожалуйста."
         },
         {
           "topic": "Неправильные глаголы в Condizionale",
-          "rule_ru": ""
+          "rule_ru": "Глаголы с неправильной основой будущего времени сохраняют её и в condizionale.\ntable: Инфинитив* | io* | Перевод\nessere | sarei | я был бы\navere | avrei | у меня было бы\nandare | andrei | я пошёл бы\nfare | farei | я сделал бы\ndovere | dovrei | мне следовало бы\npotere | potrei | я мог бы\nsapere | saprei | я знал бы\nvedere | vedrei | я увидел бы\nvenire | verrei | я пришёл бы\nvolere | vorrei | я хотел бы\nbere | berrei | я выпил бы\nstare | starei | я был бы\ndare | darei | я дал бы\n\nconj: volere | хотеть\nio vor|rei\ntu vor|resti\nlui/lei vor|rebbe\nnoi vor|remmo\nvoi vor|reste\nloro vor|rebbero\n\nex: Sarebbe bello andare al mare. | Было бы здорово поехать на море.\nex: Al tuo posto non lo farei. | На твоём месте я бы этого не делал."
         }
       ],
       "vocab": [
@@ -7422,7 +7422,7 @@
       "grammar": [
         {
           "topic": "Особенности употребления местоимения ne",
-          "rule_ru": ""
+          "rule_ru": "**Ne** заменяет часть чего-то или то, о чём уже говорили. Чаще всего — с количеством: «их», «этого».\n• С количеством: Quante mele vuoi? — **Ne** voglio tre. (Хочу три из них.)\n• «Нисколько»: Hai fratelli? — No, non **ne** ho.\n• Вместо di + что-то: Che **ne** pensi? — Что ты об этом думаешь? Parliamo**ne**! — Давай поговорим об этом!\ntable: Вопрос* | Ответ с ne*\nQuanti anni hai? | Ne ho trenta.\nVuoi del vino? | Sì, ne voglio un po'.\nQuanti caffè bevi? | Ne bevo due al giorno.\nHai figli? | No, non ne ho.\n\n• Ne стоит перед глаголом; с инфинитивом, gerundio и imperativo tu/noi/voi — слитно: prenderne, prendine.\n! В passato prossimo причастие согласуется с количеством: Di mele, **ne** ho mangiat**e** tre.\nex: Ne prendo due, grazie. | Я возьму две, спасибо."
         }
       ],
       "vocab": [
