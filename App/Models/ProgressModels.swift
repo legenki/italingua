@@ -170,3 +170,36 @@ extension ModelContext {
         return rows.isEmpty
     }
 }
+
+/// A finished 40-minute study session; the history behind the medals.
+/// Synced via iCloud. `sessionKey` (the start time) prevents saving one twice.
+@Model
+final class SessionRecord {
+    var sessionKey: String = ""
+    var finishedAt: Date = Date.now
+    var lessonID: String = ""
+    var seconds: Double = 0
+    var medal: Bool = false
+
+    init(sessionKey: String, finishedAt: Date, lessonID: String, seconds: Double, medal: Bool) {
+        self.sessionKey = sessionKey
+        self.finishedAt = finishedAt
+        self.lessonID = lessonID
+        self.seconds = seconds
+        self.medal = medal
+    }
+}
+
+extension ModelContext {
+    /// Saves the finished session once.
+    func recordSession(_ s: StudySession.State) throws {
+        guard let finished = s.finishedAt else { return }
+        let key = String(s.startedAt.timeIntervalSince1970)
+        guard try fetchCount(FetchDescriptor<SessionRecord>(predicate: #Predicate { $0.sessionKey == key })) == 0
+        else { return }
+        let seconds = StudySession.elapsed(s, now: finished)
+        insert(SessionRecord(sessionKey: key, finishedAt: finished, lessonID: s.lessonID, seconds: seconds,
+                             medal: seconds <= StudySession.duration))
+        try save()
+    }
+}

@@ -8,6 +8,7 @@ struct StatsView: View {
     @Query private var progress: [WordProgress]
     @Query private var logs: [ReviewLog]
     @Query private var mistakes: [Mistake]
+    @Query private var sessions: [SessionRecord]
     @Query(sort: [SortDescriptor(\Lesson.level), SortDescriptor(\Lesson.sourcePart), SortDescriptor(\Lesson.order)])
     private var lessons: [Lesson]
     @State private var iCloudStatus = "проверяю…"
@@ -22,6 +23,12 @@ struct StatsView: View {
                         .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)
                 }
+
+                MedalsCard(
+                    stats: MedalStats.make(records: sessions.map {
+                        (finishedAt: $0.finishedAt, lessonID: $0.lessonID, seconds: $0.seconds, medal: $0.medal)
+                    }),
+                    lessons: lessons)
 
                 StatsChartsView(data: data)
 

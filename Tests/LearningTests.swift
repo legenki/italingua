@@ -547,3 +547,26 @@ struct StudySessionTests {
         #expect(session.isFinished && session.earnedMedal)
     }
 }
+
+struct MedalStatsTests {
+    @Test func calendarStreakAndBest() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "Europe/Rome")!
+        // Wednesday 18 November 2026, noon.
+        let now = cal.date(from: DateComponents(year: 2026, month: 11, day: 18, hour: 12))!
+        func day(_ n: Int, _ minutes: Double, _ medal: Bool) -> (finishedAt: Date, lessonID: String, seconds: Double, medal: Bool) {
+            (cal.date(byAdding: .day, value: -n, to: now)!, "a1-01", minutes * 60, medal)
+        }
+        let s = MedalStats.make(records: [day(0, 37, true), day(1, 39, true), day(2, 45, false), day(3, 33, true)],
+                                weeks: 2, now: now, calendar: cal)
+        #expect(s.days.count == 14)
+        #expect(cal.component(.weekday, from: s.days[0].date) == 2)        // starts on Monday
+        #expect(s.days.filter { $0.kind == .medal }.count == 3)
+        #expect(s.days.filter { $0.kind == .session }.count == 1)
+        #expect(s.days.contains { $0.isToday && $0.kind == .medal })
+        #expect(s.total == 3 && s.thisWeek == 2)                          // Sun 15 belongs to last week
+        #expect(s.streak == 2)                                            // the day without a medal breaks it
+        #expect(s.bestMinutes == 33)
+        #expect(s.recent.first?.minutes == 37)
+    }
+}

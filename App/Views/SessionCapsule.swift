@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 /// Screens a session step opens from the plan.
@@ -18,11 +19,16 @@ struct SessionCapsule: View {
 
     @State private var session = StudySession.shared
     @State private var showPlan = false
+    @Environment(\.modelContext) private var context
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 1)) { context in
             Button { tap() } label: { capsule(now: context.date) }
                 .buttonStyle(.plain)
+        }
+        // A finished session goes into the medal history (once; also after a relaunch).
+        .onChange(of: session.isFinished, initial: true) { _, finished in
+            if finished, let s = session.state { try? context.recordSession(s) }
         }
         .popover(isPresented: $showPlan, arrowEdge: .bottom) {
             SessionPlan(lesson: sessionLesson, open: { step in showPlan = false; open(step) })

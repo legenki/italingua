@@ -59,7 +59,7 @@ struct WordResultRow: View {
 /// learning progress and examples from the rules that use it.
 struct WordDetailView: View {
     let item: VocabItem
-    let openLesson: (Lesson.ID) -> Void
+    let openLesson: (String) -> Void
     @Query private var progress: [WordProgress]
     @Query private var favorites: [FavoriteWord]
     @Query private var topics: [GrammarTopic]

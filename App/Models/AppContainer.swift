@@ -3,7 +3,7 @@ import SwiftData
 
 enum AppContainer {
     static let contentModels: [any PersistentModel.Type] = [Lesson.self, GrammarTopic.self, VocabItem.self]
-    static let progressModels: [any PersistentModel.Type] = [WordProgress.self, Mistake.self, RuleNote.self, ReviewLog.self, FavoriteWord.self]
+    static let progressModels: [any PersistentModel.Type] = [WordProgress.self, Mistake.self, RuleNote.self, ReviewLog.self, FavoriteWord.self, SessionRecord.self]
 
     /// Two stores in one container:
     /// - "Content": local only, rebuilt from the bundled JSON;
