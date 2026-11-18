@@ -32,10 +32,8 @@ struct RootView: View {
             .navigationTitle("Italingua")
             .navigationSplitViewColumnWidth(min: 280, ideal: 320, max: 420)
             .toolbar {
-                TextSizeButtons()
-                #if os(macOS)
-                SettingsLink { Label("Настройки", systemImage: "gearshape") }
-                #else
+                // On macOS Settings open from the app menu (⌘,), as in other Mac apps.
+                #if os(iOS)
                 Button("Настройки", systemImage: "gearshape") { showSettings = true }
                 #endif
                 Button("Статистика", systemImage: "chart.bar") { showStats = true }
@@ -59,6 +57,10 @@ struct RootView: View {
                 } else {
                     TodayView { selection = $0 }
                 }
+            }
+            // Top-right corner of the window, on every screen of the content pane.
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) { TextSizeButtons() }
             }
 
         }
