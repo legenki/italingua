@@ -68,7 +68,8 @@ final class FillBlankSession {
         let result = AnswerChecker.check(given: answer, expected: ex.answer, pos: ex.pos)
         if result.isCorrect { correctCount += 1 }
         do {
-            try context.progress(for: ex.wordID).record(correct: result.isCorrect)
+            try context.recordAnswer(wordID: ex.wordID, lessonID: ex.lessonID,
+                                      correct: result.isCorrect, exercise: .fillBlank)
             if let kind = result.mistake {
                 context.insert(Mistake(lessonID: ex.lessonID, wordID: ex.wordID, kind: kind,
                                        exercise: .fillBlank, prompt: ex.sentence,

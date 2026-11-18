@@ -51,7 +51,7 @@ struct RootView: View {
             .sheet(isPresented: $showStats) {
                 NavigationStack { StatsView() }
                     #if os(macOS)
-                    .frame(minWidth: 460, idealWidth: 520, minHeight: 560, idealHeight: 640)
+                    .frame(minWidth: 620, idealWidth: 780, minHeight: 640, idealHeight: 860)
                     #endif
             }
             .sheet(isPresented: $showSettings) {

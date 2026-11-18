@@ -60,9 +60,36 @@ final class Mistake {
 
 nonisolated enum ExerciseType: String, Sendable {
     case fillBlank
+    case flashcards
+}
+
+/// One answer, kept for the activity and accuracy charts. Word progress only
+/// stores the current state; this is the history behind it.
+@Model
+final class ReviewLog {
+    var date: Date = Date.now
+    var wordID: String = ""
+    var lessonID: String = ""
+    var correct: Bool = false
+    var exerciseRaw: String = ExerciseType.fillBlank.rawValue
+
+    init(date: Date = .now, wordID: String, lessonID: String, correct: Bool, exercise: ExerciseType) {
+        self.date = date
+        self.wordID = wordID
+        self.lessonID = lessonID
+        self.correct = correct
+        self.exerciseRaw = exercise.rawValue
+    }
 }
 
 extension ModelContext {
+    /// Moves the word's Leitner box and writes the answer to the history.
+    func recordAnswer(wordID: String, lessonID: String, correct: Bool, exercise: ExerciseType,
+                      at now: Date = .now) throws {
+        try progress(for: wordID).record(correct: correct, at: now)
+        insert(ReviewLog(date: now, wordID: wordID, lessonID: lessonID, correct: correct, exercise: exercise))
+    }
+
     /// Progress for a word, created on first use. Two devices may each create a
     /// row for the same word before CloudKit syncs; such duplicates are merged.
     func progress(for wordID: String) throws -> WordProgress {

@@ -139,7 +139,8 @@ struct FlashcardsView: View {
         if !recorded.contains(card.id) {
             recorded.insert(card.id)
             do {
-                try context.progress(for: card.wordID).record(correct: knew)
+                try context.recordAnswer(wordID: card.wordID, lessonID: lesson.id,
+                                          correct: knew, exercise: .flashcards)
                 try context.save()
             } catch {
                 assertionFailure("Saving progress failed: \(error)")

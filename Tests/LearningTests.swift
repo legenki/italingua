@@ -303,3 +303,45 @@ struct FlashcardSessionTests {
         #expect(ordered.last?.id == "known")
     }
 }
+
+struct StatsDataTests {
+    let cal = Calendar(identifier: .gregorian)
+    var now: Date { cal.date(from: DateComponents(year: 2026, month: 11, day: 18, hour: 12))! }
+
+    func daysAgo(_ n: Int) -> Date { cal.date(byAdding: .day, value: -n, to: now)! }
+
+    @Test func activityStreakAndAccuracy() {
+        let answers: [(date: Date, correct: Bool)] = [
+            (daysAgo(0), true), (daysAgo(0), false),
+            (daysAgo(1), true),
+            (daysAgo(2), true),
+            (daysAgo(4), false),          // gap on day 3 ends the streak
+            (daysAgo(20), true),          // outside the 14-day window
+        ]
+        let lessons = [StatsData.LessonInput(id: "l1", label: "В1", title: "T", wordIDs: ["a", "b", "c", "d"])]
+        let data = StatsData.make(answers: answers, boxes: ["a": 5, "b": 2, "c": 1],
+                                  dueDates: ["a": daysAgo(-3), "b": daysAgo(2), "c": daysAgo(-1)],
+                                  lessons: lessons, mistakes: [.article, .article, .accent],
+                                  now: now, calendar: cal)
+        #expect(data.days.count == StatsData.dayCount)
+        #expect(data.days.last?.total == 2 && data.todayAnswers == 2)
+        #expect(data.streak == 3)
+        #expect(data.accuracy7 == 3.0 / 5.0)
+        #expect(data.totalWords == 4 && data.known == 2 && data.learned == 1)
+        #expect(data.stages.map(\.count) == [1, 1, 1, 0, 1])
+        #expect(data.dueToday == 1)                       // "b" is overdue
+        #expect(data.forecast.map(\.count) == [1, 1, 0, 1, 0, 0, 0])
+        #expect(data.mistakes.first?.kind == .article && data.mistakes.first?.count == 2)
+        #expect(data.lessons.first?.progress.known == 2)
+    }
+
+    @Test func streakSurvivesUntilFirstAnswerOfTheDay() {
+        let data = StatsData.make(answers: [(daysAgo(1), true), (daysAgo(2), true)], boxes: [:], dueDates: [:],
+                                  lessons: [], mistakes: [], now: now, calendar: cal)
+        #expect(data.streak == 2 && data.todayAnswers == 0 && data.accuracy7 == 1)
+    }
+
+    @Test func russianDayWords() {
+        #expect([1, 2, 5, 11, 21, 22, 25].map(dayWord) == ["день", "дня", "дней", "дней", "день", "дня", "дней"])
+    }
+}
