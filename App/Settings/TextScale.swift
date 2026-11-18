@@ -113,6 +113,25 @@ struct TextSizeButtons: View {
     @State private var scale = TextScale.shared
 
     var body: some View {
+        #if os(iOS)
+        // iPhone toolbars draw a control group as an empty circle: use a menu.
+        Menu {
+            Button("Крупнее", systemImage: "textformat.size.larger") { scale.grow() }
+                .disabled(!scale.canGrow)
+            Button("Мельче", systemImage: "textformat.size.smaller") { scale.shrink() }
+                .disabled(!scale.canShrink)
+            if scale.step != 0 {
+                Button("Обычный размер", systemImage: "arrow.counterclockwise") { scale.step = 0 }
+            }
+        } label: {
+            Label("Размер текста", systemImage: "textformat.size")
+        }
+        #else
+        controls
+        #endif
+    }
+
+    private var controls: some View {
         ControlGroup {
             Button { scale.shrink() } label: {
                 Image(systemName: "textformat.size.smaller")

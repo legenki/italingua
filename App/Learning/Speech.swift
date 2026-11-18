@@ -12,24 +12,38 @@ final class Speech {
     @ObservationIgnored private let delegate = FinishDelegate()
     private(set) var speakingText: String?
 
+    /// The Italian voice, found in the background: listing the system voices
+    /// can block for a long time (it hung the iOS Simulator on launch), so it
+    /// never runs on the main thread.
+    @ObservationIgnored private var voice: AVSpeechSynthesisVoice?
+    /// False only once the lookup finished and found no Italian voice.
+    private(set) var hasItalianVoice = true
+
     init() {
         synthesizer.delegate = delegate
         delegate.onFinish = { [weak self] in
             Task { @MainActor in self?.speakingText = nil }
         }
+        Task.detached(priority: .utility) {
+            let found = Self.findVoice()
+            await MainActor.run {
+                self.voice = found?.voice
+                self.hasItalianVoice = found != nil
+            }
+        }
     }
 
-    static let voice: AVSpeechSynthesisVoice? = {
+    private struct FoundVoice: @unchecked Sendable { let voice: AVSpeechSynthesisVoice }
+
+    private nonisolated static func findVoice() -> FoundVoice? {
         let italian = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.hasPrefix("it") }
         // Best quality first; among equals prefer the natural adult voices.
         let preferred = ["Federica", "Luca", "Alice", "Paola"]
         func rank(_ v: AVSpeechSynthesisVoice) -> (Int, Int) {
             (v.quality.rawValue, -(preferred.firstIndex { v.name.hasPrefix($0) } ?? preferred.count))
         }
-        return italian.max { rank($0) < rank($1) } ?? AVSpeechSynthesisVoice(language: "it-IT")
-    }()
-
-    static var hasItalianVoice: Bool { voice != nil }
+        return (italian.max { rank($0) < rank($1) } ?? AVSpeechSynthesisVoice(language: "it-IT")).map(FoundVoice.init)
+    }
 
     func isSpeaking(_ text: String) -> Bool { speakingText == text }
 
@@ -42,7 +56,9 @@ final class Speech {
             if same { return }
         }
         let utterance = AVSpeechUtterance(string: Self.spokenForm(text))
-        utterance.voice = Self.voice
+        // Until the lookup finishes, the system picks its default Italian voice.
+        utterance.voice = voice
+        if utterance.voice == nil { utterance.voice = AVSpeechSynthesisVoice(language: "it-IT") }
         utterance.rate = slow ? 0.38 : 0.46
         utterance.postUtteranceDelay = 0.1
         speakingText = text

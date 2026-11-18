@@ -133,7 +133,12 @@ struct FlashcardsView: View {
             .frame(height: 0)
             .accessibilityHidden(true)
 
-        Text("Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу. На Mac: пробел, ← и →.")
+        #if os(macOS)
+        let hint = "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу. Клавиши: пробел, ← и →."
+        #else
+        let hint = "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу."
+        #endif
+        Text(hint)
             .font(.s(.footnote))
             .foregroundStyle(Theme.secondaryText)
             .frame(maxWidth: .infinity)

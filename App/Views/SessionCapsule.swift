@@ -62,7 +62,12 @@ struct SessionCapsule: View {
     private func capsule(now: Date) -> some View {
         if !session.isActive {
             HStack(spacing: 12) {
-                Text("Сессия на 40 минут").font(.s(.subheadline).weight(.semibold))
+                // Shorter on a narrow (iPhone) top bar.
+                ViewThatFits(in: .horizontal) {
+                    Text("Сессия на 40 минут").fixedSize()
+                    Text("40 минут").fixedSize()
+                }
+                .font(.s(.subheadline).weight(.semibold))
                 HStack(spacing: 5) {
                     ForEach(0..<4, id: \.self) { _ in Circle().fill(Theme.separator).frame(width: 7, height: 7) }
                 }

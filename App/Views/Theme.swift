@@ -178,7 +178,7 @@ struct SpeakButton: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(label): \(text)")
-        .disabled(!Speech.hasItalianVoice)
+        .disabled(!speech.hasItalianVoice)
     }
 
     private var foreground: Color {
