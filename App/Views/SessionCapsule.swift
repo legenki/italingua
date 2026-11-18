@@ -23,8 +23,16 @@ struct SessionCapsule: View {
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 1)) { context in
-            Button { tap() } label: { capsule(now: context.date) }
-                .buttonStyle(.plain)
+            if session.isActive && !session.isFinished {
+                // Two buttons in one capsule: the plan, and pause / resume.
+                ViewThatFits(in: .horizontal) {
+                    running(now: context.date, chips: true)
+                    running(now: context.date, chips: false)
+                }
+            } else {
+                Button { tap() } label: { capsule(now: context.date) }
+                    .buttonStyle(.plain)
+            }
         }
         // A finished session goes into the medal history (once; also after a relaunch).
         .onChange(of: session.isFinished, initial: true) { _, finished in
@@ -71,7 +79,7 @@ struct SessionCapsule: View {
             .liquidCapsule(glow: false)
             .opacity(startLesson == nil ? 0.5 : 1)
             .help(startLesson.map { "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут" } ?? "")
-        } else if session.isFinished {
+        } else {
             HStack(spacing: 8) {
                 Image(systemName: session.earnedMedal ? "medal.fill" : "checkmark.circle.fill")
                     .font(.s(.headline))
@@ -82,17 +90,12 @@ struct SessionCapsule: View {
             .padding(.horizontal, 14)
             .frame(height: 36)
             .liquidCapsule(glow: true, tint: Theme.accent)
-        } else {
-            ViewThatFits(in: .horizontal) {
-                running(now: now, chips: true)
-                running(now: now, chips: false)
-            }
         }
     }
 
     private func running(now: Date, chips: Bool) -> some View {
         let remaining = session.remaining(now: now)
-        return HStack(spacing: 8) {
+        let main = HStack(spacing: 8) {
             ZStack {
                 Circle().stroke(Theme.separator, lineWidth: 3.5)
                 Circle()
@@ -121,11 +124,23 @@ struct SessionCapsule: View {
                     }
                 }
             }
-            Image(systemName: session.isRunning ? "pause.fill" : "play.fill")
-                .font(.s(.caption))
-                .frame(width: 24, height: 24)
-                .glassEffect(.regular, in: Circle())
-                .accessibilityHidden(true)
+        }
+        return HStack(spacing: 6) {
+            Button { showPlan.toggle() } label: { main.contentShape(Capsule()) }
+                .buttonStyle(.plain)
+                .help("План сессии")
+            Button {
+                session.isRunning ? session.pause() : session.resume()
+            } label: {
+                Image(systemName: session.isRunning ? "pause.fill" : "play.fill")
+                    .font(.s(.caption))
+                    .frame(width: 24, height: 24)
+                    .contentShape(Circle())
+                    .glassEffect(.regular.interactive(), in: Circle())
+            }
+            .buttonStyle(.plain)
+            .help(session.isRunning ? "Пауза" : "Продолжить")
+            .accessibilityLabel(session.isRunning ? "Пауза" : "Продолжить")
         }
         .padding(.horizontal, 6)
         .frame(height: 36)
@@ -159,7 +174,7 @@ private struct StepChip: View {
                      in: Capsule())
         .background {
             if current {
-                Capsule().fill(Theme.accent.opacity(0.45)).blur(radius: 6)
+                Capsule().fill(Theme.accent.opacity(0.22)).blur(radius: 5)
             }
         }
     }
@@ -282,7 +297,7 @@ private extension View {
             .background {
                 ZStack {
                     Capsule().fill(Color.black.opacity(0.12)).blur(radius: 6).offset(y: 2)
-                    if glow { Capsule().fill(Theme.accent.opacity(0.35)).blur(radius: 10) }
+                    if glow { Capsule().fill(Theme.accent.opacity(0.16)).blur(radius: 8) }
                 }
             }
     }
