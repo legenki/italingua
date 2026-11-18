@@ -1,30 +1,54 @@
 {
-  "fill" : {
-    "linear-gradient" : [
+  "fill": {
+    "linear-gradient": [
       "display-p3:0.20000,0.62000,0.43000,1.00000",
       "display-p3:0.06000,0.36000,0.24000,1.00000"
     ]
   },
-  "groups" : [
+  "groups": [
     {
-      "layers" : [
-        { "image-name" : "dot.svg", "name" : "dot", "glass" : true },
-        { "image-name" : "stem.svg", "name" : "stem", "glass" : true }
+      "layers": [
+        {
+          "image-name": "bang.svg",
+          "name": "bang",
+          "glass": true
+        },
+        {
+          "image-name": "ciao.svg",
+          "name": "ciao",
+          "glass": true
+        }
       ],
-      "name" : "letter",
-      "shadow" : { "kind" : "neutral", "opacity" : 0.4 },
-      "translucency" : { "enabled" : false, "value" : 0.5 }
+      "name": "word",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.4
+      },
+      "translucency": {
+        "enabled": false,
+        "value": 0.5
+      }
     },
     {
-      "layers" : [
-        { "image-name" : "bubble.svg", "name" : "bubble", "glass" : true }
+      "layers": [
+        {
+          "image-name": "bubble.svg",
+          "name": "bubble",
+          "glass": true
+        }
       ],
-      "name" : "bubble",
-      "shadow" : { "kind" : "neutral", "opacity" : 0.5 },
-      "translucency" : { "enabled" : true, "value" : 0.25 }
+      "name": "bubble",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.25
+      }
     }
   ],
-  "supported-platforms" : {
-    "squares" : "shared"
+  "supported-platforms": {
+    "squares": "shared"
   }
 }
