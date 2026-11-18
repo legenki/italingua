@@ -18,17 +18,7 @@ struct FlashcardsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Карточки").font(.largeTitle.weight(.bold))
-                    Spacer()
-                    Picker("Сначала", selection: $front) {
-                        ForEach(FlashcardSession.Side.allCases) { Text($0.title).tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-                    .fixedSize()
-                    .labelsHidden()
-                    .help("Какой стороной показывать карточку сначала")
-                }
+                Text("Карточки").font(.largeTitle.weight(.bold))
                 if let session {
                     if session.isFinished {
                         summary(session)
@@ -45,6 +35,19 @@ struct FlashcardsView: View {
         }
         .background(Theme.background)
         .navigationTitle("")
+        .toolbar {
+            // In the top bar, like the "All | Missed" switch in Phone › Recents;
+            // on iOS 26 / macOS 26 the segmented control gets the glass capsule look.
+            ToolbarItem(placement: .principal) {
+                Picker("Сначала", selection: $front) {
+                    ForEach(FlashcardSession.Side.allCases) { Text($0.title).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .fixedSize()
+                .labelsHidden()
+                .help("Какой стороной показывать карточку сначала")
+            }
+        }
         .onAppear(perform: startIfNeeded)
     }
 
