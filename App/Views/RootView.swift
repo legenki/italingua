@@ -12,6 +12,9 @@ struct RootView: View {
     @State private var selectedWord: String?
     /// Screens pushed in the content pane by the study session plan.
     @State private var detailPath = NavigationPath()
+    /// The lesson list holds keyboard focus from the start, so macOS does not
+    /// put its focus ring on a toolbar button and the arrow keys work at once.
+    @FocusState private var listFocused: Bool
     @State private var showStats = false
     @State private var showSettings = false
     @Query private var ruleNotes: [RuleNote]
@@ -39,8 +42,6 @@ struct RootView: View {
                 Button("Настройки", systemImage: "gearshape") { showSettings = true }
                 #endif
                 Button("Статистика", systemImage: "chart.pie") { showStats = true }
-                    // No keyboard-focus ring around the toolbar button after a click.
-                    .focusable(false)
                 Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
                         notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
@@ -48,7 +49,6 @@ struct RootView: View {
                 }
                 .disabled(ruleNotes.isEmpty)
                 .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
-                .focusable(false)
             }
         } detail: {
             NavigationStack(path: $detailPath) {
@@ -147,6 +147,9 @@ struct RootView: View {
             }
             .focusable()
             .focusEffectDisabled()
+            .focused($listFocused)
+            .defaultFocus($listFocused, true)
+            .onAppear { listFocused = true }
             .onKeyPress(.downArrow) { step(1, proxy); return .handled }
             .onKeyPress(.upArrow) { step(-1, proxy); return .handled }
         }
