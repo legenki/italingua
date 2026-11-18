@@ -16,6 +16,8 @@ struct RuleBlocksView: View {
                 }
             }
         }
+        // Selectable, so the system "Speak Selection" (⌥Esc) can read it too.
+        .textSelection(.enabled)
     }
 
     enum Section {

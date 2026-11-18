@@ -90,16 +90,28 @@ struct LessonDetailView: View {
                 }
                 .buttonStyle(.plain)
 
-                NavigationLink {
-                    FillBlankView(lesson: lesson)
-                } label: {
-                    Text("Вставь пропущенное слово")
-                        .font(.headline)
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity, minHeight: 52)
-                        .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                HStack(spacing: 12) {
+                    NavigationLink {
+                        FlashcardsView(lesson: lesson)
+                    } label: {
+                        Label("Карточки", systemImage: "rectangle.on.rectangle.angled")
+                            .font(.headline)
+                            .foregroundStyle(Theme.accent)
+                            .frame(maxWidth: .infinity, minHeight: 52)
+                            .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    NavigationLink {
+                        FillBlankView(lesson: lesson)
+                    } label: {
+                        Label("Вставь слово", systemImage: "character.cursor.ibeam")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity, minHeight: 52)
+                            .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
             .padding(16)
             .frame(maxWidth: 640, alignment: .leading)

@@ -273,3 +273,33 @@ struct LessonProgressTests {
         #expect(LessonProgress(boxes: [2, nil, 3, 1]).fraction == 0.5)
     }
 }
+
+struct FlashcardSessionTests {
+    private func card(_ id: String) -> Flashcard {
+        Flashcard(wordID: id, italian: id, spoken: id, russian: "ru-" + id, gender: nil, note: nil)
+    }
+
+    @Test func runsThroughDeckAndRepeatsLearning() {
+        let s = FlashcardSession(cards: ["a", "b", "c"].map(card))
+        s.flipped = true
+        s.answer(knew: true)
+        #expect(s.flipped == false && s.index == 1)
+        s.answer(knew: false)
+        s.undo()
+        #expect(s.index == 1 && s.learning.isEmpty)
+        s.answer(knew: false)
+        s.answer(knew: true)
+        #expect(s.isFinished && s.known.count == 2 && s.learning.map(\.id) == ["b"])
+        s.restartWithLearning()
+        #expect(s.total == 1 && s.current?.id == "b" && s.known.isEmpty)
+        s.restartAll()
+        #expect(s.total == 3)
+    }
+
+    @Test func unknownAndDueWordsComeFirst() {
+        let cards = ["new", "known", "due", "weak"].map(card)
+        let ordered = FlashcardSession.order(cards, boxes: ["known": 4, "due": 3, "weak": 1], due: ["due"])
+        #expect(Set(ordered.prefix(3).map(\.id)) == ["new", "due", "weak"])
+        #expect(ordered.last?.id == "known")
+    }
+}

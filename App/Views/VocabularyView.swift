@@ -28,6 +28,14 @@ struct VocabularyView: View {
                     }
                     ProgressView(value: Double(learned), total: Double(max(items.count, 1)))
                         .tint(Theme.accent)
+                    NavigationLink {
+                        FlashcardsView(lesson: lesson)
+                    } label: {
+                        Label("Учить карточками", systemImage: "rectangle.on.rectangle.angled")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.accent)
+                    }
+                    .buttonStyle(.plain)
                 }
 
                 if let word = focusWord(items, byID: byID) {
@@ -65,6 +73,7 @@ struct VocabularyView: View {
                     }
                     .padding(.vertical, 4)
                 }
+                .textSelection(.enabled)
             }
             .padding(16)
             .frame(maxWidth: 640, alignment: .leading)
