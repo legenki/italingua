@@ -10,27 +10,15 @@ struct StatsView: View {
     @Query private var mistakes: [Mistake]
     @Query(sort: [SortDescriptor(\Lesson.level), SortDescriptor(\Lesson.sourcePart), SortDescriptor(\Lesson.order)])
     private var lessons: [Lesson]
-    @State private var showSample = false
     @State private var iCloudStatus = "проверяю…"
 
     var body: some View {
-        let data = showSample ? StatsData.sample(lessons: lessonInputs) : realData
+        let data = realData
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Статистика").font(.largeTitle.weight(.bold))
-                    Spacer()
-                    Toggle("Пример", isOn: $showSample)
-                        .toggleStyle(.switch)
-                        .controlSize(.small)
-                        .help("Показать экран на придуманных данных, пока своей истории мало")
-                }
-                if data.isSample {
-                    Text("Придуманные данные: только чтобы оценить дизайн.")
-                        .font(.footnote)
-                        .foregroundStyle(Theme.warningText)
-                } else if data.totalAnswers == 0 {
-                    Text("История ответов собирается с этой версии. Включи «Пример», чтобы увидеть экран заполненным.")
+                Text("Статистика").font(.largeTitle.weight(.bold))
+                if data.totalAnswers == 0 {
+                    Text("Графики заполнятся, когда появятся ответы в карточках и упражнениях.")
                         .font(.footnote)
                         .foregroundStyle(Theme.secondaryText)
                 }
