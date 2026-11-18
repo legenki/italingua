@@ -39,7 +39,7 @@ struct RootView: View {
                 if let lesson = lessons.first(where: { $0.id == selection }) {
                     LessonDetailView(lesson: lesson)
                 } else {
-                    ContentUnavailableView("Выберите урок", systemImage: "book")
+                    TodayView { selection = $0 }
                 }
             }
         }

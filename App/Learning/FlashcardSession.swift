@@ -4,6 +4,7 @@ import Observation
 /// One flashcard: the Italian side (with article for nouns) and the Russian one.
 nonisolated struct Flashcard: Identifiable, Equatable, Sendable {
     let wordID: String
+    var lessonID: String = ""
     let italian: String
     /// What the speak button reads ("il lavoro").
     let spoken: String

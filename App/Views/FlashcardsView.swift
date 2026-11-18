@@ -4,7 +4,19 @@ import SwiftUI
 /// Quizlet-style flashcards for a lesson: tap to flip, swipe right or press
 /// "Знаю" if you knew the word, swipe left for "Ещё учу".
 struct FlashcardsView: View {
-    let lesson: Lesson
+    /// Words of the deck: a lesson's vocabulary, or due words from several lessons.
+    let items: [VocabItem]
+    var title = "Карточки"
+
+    init(lesson: Lesson) {
+        items = lesson.sortedVocab
+    }
+
+    init(items: [VocabItem], title: String) {
+        self.items = items
+        self.title = title
+    }
+
     @Environment(\.modelContext) private var context
     @Query private var progress: [WordProgress]
     @State private var session: FlashcardSession?
@@ -18,7 +30,7 @@ struct FlashcardsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Карточки").font(.largeTitle.weight(.bold))
+                Text(title).font(.largeTitle.weight(.bold))
                 if let session {
                     if session.isFinished {
                         summary(session)
@@ -139,7 +151,7 @@ struct FlashcardsView: View {
         if !recorded.contains(card.id) {
             recorded.insert(card.id)
             do {
-                try context.recordAnswer(wordID: card.wordID, lessonID: lesson.id,
+                try context.recordAnswer(wordID: card.wordID, lessonID: card.lessonID,
                                           correct: knew, exercise: .flashcards)
                 try context.save()
             } catch {
@@ -221,8 +233,8 @@ struct FlashcardsView: View {
         guard session == nil else { return }
         let boxes = Dictionary(progress.map { ($0.wordID, $0.box) }, uniquingKeysWith: max)
         let due = Set(progress.filter { $0.box > 0 && $0.dueDate <= .now }.map(\.wordID))
-        let cards = lesson.sortedVocab.filter { $0.pos != .proper }.map { item in
-            Flashcard(wordID: item.wordID, italian: item.displayWithArticle, spoken: item.withArticle,
+        let cards = items.filter { $0.pos != .proper }.map { item in
+            Flashcard(wordID: item.wordID, lessonID: item.lesson?.id ?? "", italian: item.displayWithArticle, spoken: item.withArticle,
                       russian: item.russian, gender: item.gender,
                       note: item.formOf.map { "форма от \($0)" })
         }

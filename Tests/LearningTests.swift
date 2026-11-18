@@ -345,3 +345,18 @@ struct StatsDataTests {
         #expect([1, 2, 5, 11, 21, 22, 25].map(dayWord) == ["день", "дня", "дней", "дней", "день", "дня", "дней"])
     }
 }
+
+struct TodayTests {
+    @Test func greetingByHour() {
+        let cal = Calendar.current
+        func at(_ h: Int) -> Date { cal.date(bySettingHour: h, minute: 0, second: 0, of: .now)! }
+        #expect(TodayView.greeting(at: at(9)) == "Buongiorno!")
+        #expect(TodayView.greeting(at: at(19)) == "Buonasera!")
+        #expect(TodayView.greeting(at: at(2)) == "Buonanotte!")
+    }
+
+    @Test func russianWordForms() {
+        #expect([1, 3, 5, 21].map(wordWord) == ["слово", "слова", "слов", "слово"])
+        #expect("вторник, 18 ноября".capitalizedFirst == "Вторник, 18 ноября")
+    }
+}
