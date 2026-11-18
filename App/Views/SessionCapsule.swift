@@ -63,13 +63,12 @@ struct SessionCapsule: View {
                     .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 12)
                     .frame(height: 26)
-                    .background(Theme.accent, in: Capsule())
+                    .glassEffect(.regular.tint(Theme.accent).interactive(), in: Capsule())
             }
             .padding(.leading, 14)
             .padding(.trailing, 6)
             .frame(height: 36)
-            .background(Theme.card, in: Capsule())
-            .overlay(Capsule().stroke(Theme.separator))
+            .liquidCapsule(glow: false)
             .opacity(startLesson == nil ? 0.5 : 1)
             .help(startLesson.map { "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут" } ?? "")
         } else if session.isFinished {
@@ -82,7 +81,7 @@ struct SessionCapsule: View {
             .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, 14)
             .frame(height: 36)
-            .background(Theme.accent, in: Capsule())
+            .liquidCapsule(glow: true, tint: Theme.accent)
         } else {
             ViewThatFits(in: .horizontal) {
                 running(now: now, chips: true)
@@ -107,7 +106,12 @@ struct SessionCapsule: View {
                 .foregroundStyle(session.isRunning ? .primary : Theme.secondaryText)
             Rectangle().fill(Theme.separator).frame(width: 1, height: 18)
             if chips {
-                ForEach(StudySession.Step.allCases) { StepChip(step: $0, session: session) }
+                // Chips share one glass container, so their glass blends like native controls.
+                GlassEffectContainer(spacing: 6) {
+                    HStack(spacing: 6) {
+                        ForEach(StudySession.Step.allCases) { StepChip(step: $0, session: session) }
+                    }
+                }
             } else {
                 HStack(spacing: 5) {
                     ForEach(StudySession.Step.allCases) { step in
@@ -120,13 +124,12 @@ struct SessionCapsule: View {
             Image(systemName: session.isRunning ? "pause.fill" : "play.fill")
                 .font(.s(.caption))
                 .frame(width: 24, height: 24)
-                .background(Theme.tile, in: Circle())
+                .glassEffect(.regular, in: Circle())
                 .accessibilityHidden(true)
         }
         .padding(.horizontal, 6)
         .frame(height: 36)
-        .background(Theme.card, in: Capsule())
-        .overlay(Capsule().stroke(Theme.accent, lineWidth: 1.5))
+        .liquidCapsule(glow: session.isRunning)
     }
 
     static func clock(_ seconds: TimeInterval) -> String {
@@ -149,10 +152,16 @@ private struct StepChip: View {
         }
         .font(.s(.caption).weight(.semibold))
         .foregroundStyle(done ? Theme.onAccent : current ? Theme.accent : Theme.secondaryText)
-        .padding(.horizontal, 9)
+        .padding(.horizontal, 10)
         .frame(height: 24)
-        .background(done ? Theme.accent : current ? Color.clear : Theme.tile, in: Capsule())
-        .overlay(Capsule().stroke(current ? Theme.accent : .clear, lineWidth: 1.5))
+        // Done: accent glass. Current: clear glass with a soft accent glow instead of an outline.
+        .glassEffect(done ? .regular.tint(Theme.accent) : current ? .regular.tint(Theme.accent.opacity(0.12)) : .regular,
+                     in: Capsule())
+        .background {
+            if current {
+                Capsule().fill(Theme.accent.opacity(0.45)).blur(radius: 6)
+            }
+        }
     }
 }
 
@@ -261,5 +270,20 @@ private struct SessionPlan: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+}
+
+private extension View {
+    /// Liquid Glass capsule with a soft shadow and, when active, a faint accent glow.
+    /// Glow and shadow are blurred shapes behind the glass, so the text stays sharp.
+    func liquidCapsule(glow: Bool, tint: Color? = nil) -> some View {
+        self
+            .glassEffect(.regular.tint(tint).interactive(), in: Capsule())
+            .background {
+                ZStack {
+                    Capsule().fill(Color.black.opacity(0.12)).blur(radius: 6).offset(y: 2)
+                    if glow { Capsule().fill(Theme.accent.opacity(0.35)).blur(radius: 10) }
+                }
+            }
     }
 }

@@ -38,7 +38,7 @@ struct RootView: View {
                 #if os(iOS)
                 Button("Настройки", systemImage: "gearshape") { showSettings = true }
                 #endif
-                Button("Статистика", systemImage: "chart.line.uptrend.xyaxis") { showStats = true }
+                Button("Статистика", systemImage: "chart.pie") { showStats = true }
                 Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
                         notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
@@ -75,6 +75,8 @@ struct RootView: View {
                     SessionCapsule(startLesson: lessons.first { $0.id == selection } ?? nextLesson,
                                    lessons: lessons, open: openStep)
                 }
+                // The capsule draws its own glass and glow.
+                .sharedBackgroundVisibility(.hidden)
                 // Top-right corner of the window, on every screen of the content pane.
                 ToolbarItem(placement: .primaryAction) { TextSizeButtons() }
             }
