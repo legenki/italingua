@@ -388,3 +388,96 @@ struct GeneratorLevelTests {
         #expect(ModelFillBlankGenerator.instructions(level: "A2").contains("imperfetto"))
     }
 }
+
+struct TranslationCheckerTests {
+    struct FakeFixer: SentenceFixing {
+        let answer: String
+        func fix(answer: String, reference: String, level: String) async throws -> String { self.answer }
+    }
+    let task = TranslationTask(lessonID: "a1-01", russian: "Я живу в Москве.", reference: "Abito a Mosca.")
+
+    @Test func exactMatchNeedsNoModel() async {
+        let r = await TranslationChecker.check(answer: "abito a Mosca", task: task, level: "A1", fixer: nil)
+        #expect(r.verdict == .exact && r.isCorrect)
+    }
+
+    @Test func accentsOnly() async {
+        let t = TranslationTask(lessonID: "a1-01", russian: "Кофе горячий.", reference: "Il caffè è caldo.")
+        let r = await TranslationChecker.check(answer: "Il caffe e caldo", task: t, level: "A1", fixer: nil)
+        #expect(r.verdict == .accents && r.mistakes == [.accent])
+    }
+
+    @Test func modelKeepsAnswerMeansAlternative() async {
+        let r = await TranslationChecker.check(answer: "Vivo a Mosca.", task: task, level: "A1",
+                                               fixer: FakeFixer(answer: "Vivo a Mosca."))
+        #expect(r.verdict == .alternative && r.isCorrect)
+    }
+
+    @Test func correctionIsDiffedAndClassified() async {
+        let r = await TranslationChecker.check(answer: "Abito in Mosca", task: task, level: "A1",
+                                               fixer: FakeFixer(answer: "Abito a Mosca."))
+        #expect(r.verdict == .corrected && !r.isCorrect)
+        #expect(r.diff.map(\.text) == ["abito", "in", "a", "mosca"])
+        #expect(r.diff.map(\.kind) == [.same, .removed, .added, .same])
+        #expect(r.mistakes == [.preposition])
+    }
+
+    @Test func rewriteFallsBackToReference() async {
+        let t = TranslationTask(lessonID: "a1-01", russian: "Кофе горячий.", reference: "Il caffè è caldo.")
+        let r = await TranslationChecker.check(answer: "Il caffe molto caldo", task: t, level: "A1",
+                                               fixer: FakeFixer(answer: "L'acqua è fredda."))
+        #expect(r.corrected == "Il caffè è caldo.")
+    }
+
+    @Test func noModelLetsLearnerDecide() async {
+        let r = await TranslationChecker.check(answer: "Vivo a Mosca", task: task, level: "A1", fixer: nil)
+        #expect(r.verdict == .unchecked && r.corrected == "Abito a Mosca.")
+    }
+}
+
+@MainActor
+struct ReadingTests {
+    @Test func sentencesSplit() {
+        let r = ReadingText(title: "T", text: "Marco abita a Roma. Ha una casa grande! Ti piace?")
+        #expect(r.sentences.count == 3)
+    }
+
+    @Test func glossaryFindsCourseWords() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let ctx = container.mainContext
+        let casa = VocabItem(wordID: "a1/casa", order: 0, italian: "casa", russian: "дом", posRaw: "noun",
+                             gender: "m", number: nil, stress: nil, formOf: nil)
+        let caffe = VocabItem(wordID: "a1/caffe", order: 1, italian: "caffè", russian: "кофе", posRaw: "noun",
+                             gender: "m", number: nil, stress: nil, formOf: nil)
+        let mare = VocabItem(wordID: "a1/mare", order: 2, italian: "mare", russian: "море", posRaw: "noun",
+                             gender: "m", number: nil, stress: nil, formOf: nil)
+        [casa, caffe, mare].forEach(ctx.insert)
+        let found = ReadingGenerator.glossary(for: "Bevo un caffe a casa.", vocab: [casa, caffe, mare])
+        #expect(found.map(\.italian) == ["caffè", "casa"])
+    }
+}
+
+@MainActor
+struct TranslationTaskTests {
+    @Test func tasksComeFromRuleExamples() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let lesson = Lesson(id: "a1-01", level: "A1", order: 1, title: "T", sourcePart: "intro", sourceLesson: 1, patterns: [])
+        container.mainContext.insert(lesson)
+        let rules = ["Текст.\nex: **Abito** a Mosca. | Я живу в Москве.\nex: Ciao! | Привет!", "ex: Ciao! | Привет!"]
+        let tasks = TranslationSession.tasks(from: lesson, ruleTexts: rules, count: 10)
+        #expect(tasks.count == 2)
+        #expect(tasks.contains { $0.reference == "Abito a Mosca." && $0.russian == "Я живу в Москве." })
+    }
+}
+
+struct ModelReadingSmokeTests {
+    @Test(.enabled(if: ModelStatus.current().isAvailable), .timeLimit(.minutes(2)))
+    func fixerAndReadingWork() async throws {
+        let fixed = try await ModelSentenceFixer().fix(answer: "Ho due fratello.", reference: "Ho due fratelli.", level: "A1")
+        print("FIX: \(fixed)")
+        #expect(TranslationChecker.words(fixed) == ["ho", "due", "fratelli"])
+        let text = try await ReadingGenerator.lessonText(words: ["casa", "amico", "caffè"], topics: ["Артикль"], level: "A1")
+        print("READ: \(text.title) — \(text.text)")
+        #expect(text.sentences.count >= 3)
+    }
+}

@@ -61,6 +61,7 @@ final class Mistake {
 nonisolated enum ExerciseType: String, Sendable {
     case fillBlank
     case flashcards
+    case translation
 }
 
 /// One answer, kept for the activity and accuracy charts. Word progress only

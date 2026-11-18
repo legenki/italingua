@@ -90,27 +90,19 @@ struct LessonDetailView: View {
                 }
                 .buttonStyle(.plain)
 
-                HStack(spacing: 12) {
-                    NavigationLink {
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                    PracticeLink(title: "Карточки", systemImage: "rectangle.on.rectangle.angled", filled: false) {
                         FlashcardsView(lesson: lesson)
-                    } label: {
-                        Label("Карточки", systemImage: "rectangle.on.rectangle.angled")
-                            .font(.headline)
-                            .foregroundStyle(Theme.accent)
-                            .frame(maxWidth: .infinity, minHeight: 52)
-                            .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
-                    .buttonStyle(.plain)
-                    NavigationLink {
+                    PracticeLink(title: "Вставь слово", systemImage: "character.cursor.ibeam", filled: true) {
                         FillBlankView(lesson: lesson)
-                    } label: {
-                        Label("Вставь слово", systemImage: "character.cursor.ibeam")
-                            .font(.headline)
-                            .foregroundStyle(Theme.onAccent)
-                            .frame(maxWidth: .infinity, minHeight: 52)
-                            .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
-                    .buttonStyle(.plain)
+                    PracticeLink(title: "Переведи фразу", systemImage: "text.bubble", filled: false) {
+                        TranslationView(lesson: lesson)
+                    }
+                    PracticeLink(title: "Чтение", systemImage: "book.pages", filled: false) {
+                        ReadingView(lesson: lesson)
+                    }
                 }
             }
             .padding(16)
@@ -119,5 +111,25 @@ struct LessonDetailView: View {
         }
         .background(Theme.background)
         .navigationTitle("")
+    }
+}
+
+/// One of the practice buttons under a lesson.
+private struct PracticeLink<Destination: View>: View {
+    let title: String
+    let systemImage: String
+    let filled: Bool
+    @ViewBuilder var destination: () -> Destination
+
+    var body: some View {
+        NavigationLink(destination: destination) {
+            Label(title, systemImage: systemImage)
+                .font(.headline)
+                .foregroundStyle(filled ? Theme.onAccent : Theme.accent)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .background(filled ? Theme.accent : Theme.accentSoft,
+                            in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 }
