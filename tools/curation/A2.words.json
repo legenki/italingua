@@ -1,0 +1,4593 @@
+{
+  "_comment": "English/Spanish glosses made by the on-device Apple model (translate_words.swift). Fix by hand here if needed.",
+  "words": {
+    "a bologna": {
+      "en": "in Bologna",
+      "es": "en Bolonia"
+    },
+    "a che servono": {
+      "en": "what do you need",
+      "es": "qué necesitas"
+    },
+    "a dirotto": {
+      "en": "flood",
+      "es": "inundación"
+    },
+    "a firenze": {
+      "en": "in Florence",
+      "es": "en Florencia"
+    },
+    "a lungo": {
+      "en": "long",
+      "es": "largo"
+    },
+    "a mezzogiorno": {
+      "en": "noon",
+      "es": "mediodía"
+    },
+    "a mosca": {
+      "en": "in Moscow",
+      "es": "en Moscú"
+    },
+    "a posto": {
+      "en": "place",
+      "es": "lugar"
+    },
+    "a proposito": {
+      "en": "by the way",
+      "es": "de pasada"
+    },
+    "a roma": {
+      "en": "in Rome",
+      "es": "en Roma"
+    },
+    "a verona": {
+      "en": "in Verona",
+      "es": "en Verona"
+    },
+    "a voce alta": {
+      "en": "loudly",
+      "es": "al grito"
+    },
+    "a volte": {
+      "en": "sometimes",
+      "es": "a veces"
+    },
+    "abbastanza": {
+      "en": "sufficiently",
+      "es": "suficientemente"
+    },
+    "abbiamo": {
+      "en": "we have",
+      "es": "tenemos"
+    },
+    "abbigliamento": {
+      "en": "clothing",
+      "es": "vestimenta"
+    },
+    "abitare": {
+      "en": "to live",
+      "es": "vivir"
+    },
+    "abito": {
+      "en": "dress",
+      "es": "vestido"
+    },
+    "accendere": {
+      "en": "to turn on",
+      "es": "encender"
+    },
+    "acceso": {
+      "en": "turned on",
+      "es": "encendido"
+    },
+    "accettare": {
+      "en": "to accept",
+      "es": "aceptar"
+    },
+    "accompagnare": {
+      "en": "to accompany",
+      "es": "acompañar"
+    },
+    "accuratamente": {
+      "en": "accurately",
+      "es": "con precisión"
+    },
+    "acqua": {
+      "en": "water",
+      "es": "agua"
+    },
+    "acquisto": {
+      "en": "purchase",
+      "es": "compra"
+    },
+    "ad esempio": {
+      "en": "for example",
+      "es": "por ejemplo"
+    },
+    "adatto": {
+      "en": "suitable",
+      "es": "adecuado"
+    },
+    "addormentarsi": {
+      "en": "to fall asleep",
+      "es": "dormir"
+    },
+    "adesso": {
+      "en": "now",
+      "es": "ahora"
+    },
+    "agenda": {
+      "en": "weekly planner",
+      "es": "agenda semanal"
+    },
+    "aggiungere": {
+      "en": "to add",
+      "es": "añadir"
+    },
+    "agitato": {
+      "en": "excited",
+      "es": "emocionado"
+    },
+    "ah": {
+      "en": "oh",
+      "es": "¡olla!"
+    },
+    "ai tropici": {
+      "en": "at the Tropics",
+      "es": "en los trópicos"
+    },
+    "aiutarci": {
+      "en": "help us",
+      "es": "ayudarnos"
+    },
+    "aiutare": {
+      "en": "to help",
+      "es": "ayudar"
+    },
+    "al mare": {
+      "en": "at the sea",
+      "es": "en el mar"
+    },
+    "al pianterreno": {
+      "en": "on the ground floor",
+      "es": "en el piso inferior"
+    },
+    "al posto mio": {
+      "en": "at my place",
+      "es": "en mi lugar"
+    },
+    "al primo piano": {
+      "en": "on the first floor",
+      "es": "en el primer piso"
+    },
+    "al quinto piano": {
+      "en": "on the fifth floor",
+      "es": "en el quinto piso"
+    },
+    "al ristorante": {
+      "en": "at the restaurant",
+      "es": "en el restaurante"
+    },
+    "al secondo piano": {
+      "en": "on the second floor",
+      "es": "en el segundo piso"
+    },
+    "al supermercato": {
+      "en": "at the supermarket",
+      "es": "en la tienda de comestibles"
+    },
+    "al terzo piano": {
+      "en": "on the third floor",
+      "es": "en el tercer piso"
+    },
+    "alba": {
+      "en": "dawn",
+      "es": "amanecer"
+    },
+    "alcune": {
+      "en": "some",
+      "es": "algunos"
+    },
+    "all'antica": {
+      "en": "old-fashioned",
+      "es": "antiguo"
+    },
+    "all'improvviso": {
+      "en": "suddenly",
+      "es": "de repente"
+    },
+    "all'ombra": {
+      "en": "in the shadow",
+      "es": "en la sombra"
+    },
+    "all'ora": {
+      "en": "at hour",
+      "es": "a la hora"
+    },
+    "all'ora di": {
+      "en": "at this hour",
+      "es": "a esta hora"
+    },
+    "all'ospedale": {
+      "en": "hospital",
+      "es": "hospital"
+    },
+    "all'universita": {
+      "en": "at the university",
+      "es": "en la universidad"
+    },
+    "alla fine": {
+      "en": "at the end",
+      "es": "al final"
+    },
+    "alla fine di": {
+      "en": "at the end",
+      "es": "al final"
+    },
+    "alle cinque": {
+      "en": "at five",
+      "es": "a las cinco"
+    },
+    "alle otto": {
+      "en": "at eight",
+      "es": "a las ocho"
+    },
+    "alle sei di mattina": {
+      "en": "at six in the morning",
+      "es": "a las seis de la mañana"
+    },
+    "allegro": {
+      "en": "happy",
+      "es": "divertido"
+    },
+    "allontanarsi": {
+      "en": "to move away",
+      "es": "alejarse"
+    },
+    "allontanarsi (mi allontano)": {
+      "en": "to move away",
+      "es": "a alejarse"
+    },
+    "allora": {
+      "en": "then",
+      "es": "entonces"
+    },
+    "almeno": {
+      "en": "at least",
+      "es": "al menos"
+    },
+    "alto": {
+      "en": "high",
+      "es": "alto"
+    },
+    "altri": {
+      "en": "others",
+      "es": "otros"
+    },
+    "altro": {
+      "en": "other",
+      "es": "otro"
+    },
+    "alzarsi": {
+      "en": "to rise",
+      "es": "levantarse"
+    },
+    "ambulanza": {
+      "en": "ambulance",
+      "es": "ambulancia"
+    },
+    "ammalarsi": {
+      "en": "to get sick",
+      "es": "enfermarse"
+    },
+    "ammiratore": {
+      "en": "fan",
+      "es": "fanático"
+    },
+    "anche": {
+      "en": "also",
+      "es": "también"
+    },
+    "anche se": {
+      "en": "even if",
+      "es": "aunque"
+    },
+    "ancora": {
+      "en": "again",
+      "es": "nuevamente"
+    },
+    "andar via": {
+      "en": "to leave",
+      "es": "a salir"
+    },
+    "andare": {
+      "en": "to go",
+      "es": "ir"
+    },
+    "andare a letto": {
+      "en": "to go to bed",
+      "es": "a dormir"
+    },
+    "andare in autobus": {
+      "en": "to go by bus",
+      "es": "a viajar en autobús"
+    },
+    "andare in macchina": {
+      "en": "to go in car",
+      "es": "a viajar en coche"
+    },
+    "andata": {
+      "en": "trip",
+      "es": "viaje"
+    },
+    "andata e ritorno": {
+      "en": "round trip",
+      "es": "viaje y vuelta"
+    },
+    "animale": {
+      "en": "animal",
+      "es": "animal"
+    },
+    "annaffiare": {
+      "en": "to water",
+      "es": "regar"
+    },
+    "anticipo sullo stipendio": {
+      "en": "salary advance",
+      "es": "anticipo salarial"
+    },
+    "anziano": {
+      "en": "old",
+      "es": "viejo"
+    },
+    "aperitivo": {
+      "en": "afternoon drink",
+      "es": "bebida de la tarde"
+    },
+    "apparecchiare": {
+      "en": "to set the table",
+      "es": "preparar la mesa"
+    },
+    "appena": {
+      "en": "as soon as",
+      "es": "tan pronto como"
+    },
+    "appuntamento": {
+      "en": "meeting",
+      "es": "encuentro"
+    },
+    "aprire": {
+      "en": "to open",
+      "es": "abrir"
+    },
+    "aria": {
+      "en": "air",
+      "es": "aire"
+    },
+    "armadio": {
+      "en": "wardrobe",
+      "es": "armario"
+    },
+    "arrabbiarsi": {
+      "en": "to get angry",
+      "es": "enojarse"
+    },
+    "arrabbiarsi (mi arrabbio)": {
+      "en": "to get angry",
+      "es": "a enojarse"
+    },
+    "arrivare": {
+      "en": "to arrive",
+      "es": "llegar"
+    },
+    "asciugamano": {
+      "en": "towel",
+      "es": "paño"
+    },
+    "asciugarsi": {
+      "en": "to dry off",
+      "es": "secarse"
+    },
+    "asciugarsi (mi asciugo)": {
+      "en": "to dry off",
+      "es": "a secarse"
+    },
+    "ascoltare": {
+      "en": "to listen",
+      "es": "escuchar"
+    },
+    "aspettare": {
+      "en": "to wait",
+      "es": "esperar"
+    },
+    "aspirapolvere": {
+      "en": "vacuum cleaner",
+      "es": "aspiradora"
+    },
+    "assaggiare": {
+      "en": "to taste",
+      "es": "to taste"
+    },
+    "assicuratore": {
+      "en": "insurer",
+      "es": "seguro"
+    },
+    "assicurazioni": {
+      "en": "insurance",
+      "es": "seguro"
+    },
+    "assolutamente": {
+      "en": "absolutely",
+      "es": "absolutamente"
+    },
+    "assumere": {
+      "en": "to hire",
+      "es": "contratar"
+    },
+    "attaccapanni": {
+      "en": "clothes hanger",
+      "es": "gancho para ropa"
+    },
+    "attesa": {
+      "en": "waiting",
+      "es": "espera"
+    },
+    "attillato": {
+      "en": "tight-fitting",
+      "es": "ajustado"
+    },
+    "attraversare": {
+      "en": "to cross",
+      "es": "través de"
+    },
+    "autista": {
+      "en": "driver",
+      "es": "conductor"
+    },
+    "autobus": {
+      "en": "bus",
+      "es": "autobús"
+    },
+    "aver bisogno di": {
+      "en": "to need",
+      "es": "a necesitar"
+    },
+    "aver fretta": {
+      "en": "to hurry",
+      "es": "a prisa"
+    },
+    "aver paura di": {
+      "en": "to be afraid of",
+      "es": "averse a"
+    },
+    "avere bisogno": {
+      "en": "to need",
+      "es": "a necesitar"
+    },
+    "avere la febbre": {
+      "en": "have a fever",
+      "es": "tener fiebre"
+    },
+    "avere ragione": {
+      "en": "to be right",
+      "es": "a ser correcto"
+    },
+    "avvicinarsi": {
+      "en": "to approach",
+      "es": "acercarse"
+    },
+    "bagnato": {
+      "en": "wet",
+      "es": "mojado"
+    },
+    "bagnino": {
+      "en": "lifeguard",
+      "es": "guardia de playa"
+    },
+    "bagno": {
+      "en": "bathroom",
+      "es": "baño"
+    },
+    "balbettare": {
+      "en": "to stammer",
+      "es": "tartamudeo"
+    },
+    "ballare": {
+      "en": "to dance",
+      "es": "bailar"
+    },
+    "bambino": {
+      "en": "child",
+      "es": "niño"
+    },
+    "banconota": {
+      "en": "banknote",
+      "es": "billete"
+    },
+    "basta cosi": {
+      "en": "enough",
+      "es": "suficiente"
+    },
+    "basta!": {
+      "en": "enough!",
+      "es": "¡demasiado!"
+    },
+    "bastare": {
+      "en": "to suffice",
+      "es": "asuffecer"
+    },
+    "beh": {
+      "en": "well",
+      "es": "bien"
+    },
+    "bene": {
+      "en": "well",
+      "es": "bien"
+    },
+    "benestante": {
+      "en": "comfortable",
+      "es": "cómodo"
+    },
+    "benzinaio": {
+      "en": "gas station",
+      "es": "estación de servicio"
+    },
+    "bere": {
+      "en": "to drink",
+      "es": "beber"
+    },
+    "bestia": {
+      "en": "animal",
+      "es": "animal"
+    },
+    "beve": {
+      "en": "drinks",
+      "es": "bebe"
+    },
+    "beviamo": {
+      "en": "we drink",
+      "es": "nosotros bebemos"
+    },
+    "bicchiere": {
+      "en": "glass",
+      "es": "copo"
+    },
+    "bicchierino": {
+      "en": "small glass",
+      "es": "small glass"
+    },
+    "bicicletta": {
+      "en": "bicycle",
+      "es": "bicicleta"
+    },
+    "biglietteria": {
+      "en": "ticket counter",
+      "es": "ventana de boletos"
+    },
+    "binario": {
+      "en": "track",
+      "es": "carril"
+    },
+    "birra": {
+      "en": "beer",
+      "es": "cerveza"
+    },
+    "biscotti": {
+      "en": "cookies",
+      "es": "galletas"
+    },
+    "bisogna": {
+      "en": "it is necessary",
+      "es": "es necesario"
+    },
+    "bolletta": {
+      "en": "bill",
+      "es": "factura"
+    },
+    "borsa": {
+      "en": "bag",
+      "es": "maleta"
+    },
+    "bottiglia": {
+      "en": "bottle",
+      "es": "botella"
+    },
+    "braccio": {
+      "en": "arm",
+      "es": "brazo"
+    },
+    "bruciare": {
+      "en": "to burn",
+      "es": "quemar"
+    },
+    "bruciarsi": {
+      "en": "to burn oneself / a plain infinitive: to burn oneself",
+      "es": "quemarse"
+    },
+    "bucce": {
+      "en": "peels",
+      "es": "cáscaras"
+    },
+    "buonanotte": {
+      "en": "good night",
+      "es": "buenas noches"
+    },
+    "buono": {
+      "en": "good",
+      "es": "bueno"
+    },
+    "burro": {
+      "en": "butter",
+      "es": "mantequilla"
+    },
+    "bussare": {
+      "en": "to knock",
+      "es": "aullar"
+    },
+    "buttar via": {
+      "en": "to throw away",
+      "es": "a tirar"
+    },
+    "buttare": {
+      "en": "to throw",
+      "es": "lanzar"
+    },
+    "buttare via": {
+      "en": "to throw away",
+      "es": "a tirar"
+    },
+    "c'e": {
+      "en": "there is",
+      "es": "hay"
+    },
+    "c'e da lavorare": {
+      "en": "work to do",
+      "es": "trabajar que hacer"
+    },
+    "c'erano": {
+      "en": "were",
+      "es": "eran"
+    },
+    "cadere": {
+      "en": "to fall",
+      "es": "caer"
+    },
+    "caldo": {
+      "en": "hot",
+      "es": "caliente"
+    },
+    "calendario": {
+      "en": "calendar",
+      "es": "calendario"
+    },
+    "cambiare": {
+      "en": "to change",
+      "es": "cambiar"
+    },
+    "camera da letto": {
+      "en": "bedroom",
+      "es": "habitación"
+    },
+    "cameriere": {
+      "en": "waiter",
+      "es": "camarero"
+    },
+    "camion": {
+      "en": "truck",
+      "es": "camión"
+    },
+    "camminare": {
+      "en": "to walk",
+      "es": "caminar"
+    },
+    "candidato": {
+      "en": "candidate",
+      "es": "candidato"
+    },
+    "cane": {
+      "en": "dog",
+      "es": "perro"
+    },
+    "cantiere": {
+      "en": "construction site",
+      "es": "lugar de construcción"
+    },
+    "cantina": {
+      "en": "cellar",
+      "es": "bodega"
+    },
+    "capire": {
+      "en": "to understand",
+      "es": "entender"
+    },
+    "capisce": {
+      "en": "understands",
+      "es": "entiende"
+    },
+    "capisco": {
+      "en": "I understand",
+      "es": "entiendo"
+    },
+    "cappotto": {
+      "en": "coat",
+      "es": "abrigo"
+    },
+    "caro": {
+      "en": "dear",
+      "es": "querido"
+    },
+    "carrello": {
+      "en": "cart",
+      "es": "carro"
+    },
+    "cartaccia": {
+      "en": "paper waste",
+      "es": "papel usado"
+    },
+    "cartolina": {
+      "en": "postcard",
+      "es": "tarjeta"
+    },
+    "casa": {
+      "en": "house",
+      "es": "casa"
+    },
+    "casalinga": {
+      "en": "housewife",
+      "es": "casera"
+    },
+    "casino": {
+      "en": "casino",
+      "es": "casino"
+    },
+    "cassetto": {
+      "en": "drawer",
+      "es": "almacén"
+    },
+    "cena": {
+      "en": "dinner",
+      "es": "cena"
+    },
+    "cenare": {
+      "en": "to dine",
+      "es": "comer"
+    },
+    "cento": {
+      "en": "100",
+      "es": "100"
+    },
+    "centro commerciale": {
+      "en": "shopping center",
+      "es": "centro comercial"
+    },
+    "cercare": {
+      "en": "to search",
+      "es": "buscar"
+    },
+    "cercare di fare": {
+      "en": "to try to do",
+      "es": "intentar hacer"
+    },
+    "certo": {
+      "en": "sure",
+      "es": "cierto"
+    },
+    "champagne": {
+      "en": "sparkling wine",
+      "es": "vino espumoso"
+    },
+    "che": {
+      "en": "which",
+      "es": "qué"
+    },
+    "che ore sono": {
+      "en": "what time is it",
+      "es": "¿qué hora es?"
+    },
+    "chi": {
+      "en": "who",
+      "es": "quién"
+    },
+    "chi e stato?": {
+      "en": "Who is it?",
+      "es": "¿Quién es?"
+    },
+    "chiamare": {
+      "en": "to call",
+      "es": "llamar"
+    },
+    "chiave": {
+      "en": "key",
+      "es": "llave"
+    },
+    "chiedere": {
+      "en": "to ask",
+      "es": "preguntar"
+    },
+    "chiedere in prestito": {
+      "en": "to ask for a loan",
+      "es": "to ask for a loan"
+    },
+    "chilo": {
+      "en": "kilogram",
+      "es": "kilograma"
+    },
+    "chiudere": {
+      "en": "to close",
+      "es": "cerrar"
+    },
+    "chiudere a chiave": {
+      "en": "to lock with a key",
+      "es": "a cerrar con llave"
+    },
+    "chiuso": {
+      "en": "closed",
+      "es": "cerrado"
+    },
+    "ci": {
+      "en": "there",
+      "es": "ahí"
+    },
+    "ci sono molte": {
+      "en": "there are many",
+      "es": "hay muchas"
+    },
+    "ci vediamo": {
+      "en": "we see",
+      "es": "nos vemos"
+    },
+    "ci vuole": {
+      "en": "it is needed",
+      "es": "se necesita"
+    },
+    "ciao": {
+      "en": "hello",
+      "es": "hola"
+    },
+    "cinese": {
+      "en": "Chinese",
+      "es": "chino"
+    },
+    "cinque": {
+      "en": "five",
+      "es": "cinco"
+    },
+    "circa": {
+      "en": "around",
+      "es": "alrededor"
+    },
+    "cognac": {
+      "en": "whiskey",
+      "es": "whisky"
+    },
+    "colloquio": {
+      "en": "interview",
+      "es": "entrevista"
+    },
+    "colore": {
+      "en": "color",
+      "es": "color"
+    },
+    "com'e andata": {
+      "en": "how did it go",
+      "es": "cómo estuvo"
+    },
+    "come": {
+      "en": "how",
+      "es": "cómo"
+    },
+    "come al solito": {
+      "en": "as usual",
+      "es": "como siempre"
+    },
+    "come se": {
+      "en": "as if",
+      "es": "como si"
+    },
+    "come si fa": {
+      "en": "how one does",
+      "es": "cómo se hace"
+    },
+    "come stai?": {
+      "en": "How are you?",
+      "es": "¿Cómo estás?"
+    },
+    "cominciare": {
+      "en": "to start",
+      "es": "empezar"
+    },
+    "cominciare (a fare)": {
+      "en": "to start",
+      "es": "a empezar"
+    },
+    "commessa": {
+      "en": "saleswoman",
+      "es": "vendedora"
+    },
+    "completo": {
+      "en": "complete",
+      "es": "completo"
+    },
+    "complicazione": {
+      "en": "complication",
+      "es": "complicación"
+    },
+    "comprare": {
+      "en": "to buy",
+      "es": "comprar"
+    },
+    "comprarsi": {
+      "en": "to buy oneself",
+      "es": "comprarse"
+    },
+    "comprato": {
+      "en": "bought",
+      "es": "comprado"
+    },
+    "compressa": {
+      "en": "pill",
+      "es": "pastilla"
+    },
+    "computer portatile": {
+      "en": "laptop",
+      "es": "ordenador portátil"
+    },
+    "con": {
+      "en": "with",
+      "es": "con"
+    },
+    "con calma": {
+      "en": "calmly",
+      "es": "con calma"
+    },
+    "con fatica": {
+      "en": "with difficulty",
+      "es": "con dificultad"
+    },
+    "con la macchi": {
+      "en": "with the car",
+      "es": "con el coche"
+    },
+    "con le sue mani": {
+      "en": "with his/her hands",
+      "es": "con sus manos"
+    },
+    "con me": {
+      "en": "with me",
+      "es": "conmigo"
+    },
+    "con se": {
+      "en": "with him/her/it",
+      "es": "con él/ella/ello"
+    },
+    "concerto rock": {
+      "en": "rock concert",
+      "es": "concierto de rock"
+    },
+    "concludere": {
+      "en": "to conclude",
+      "es": "concluir"
+    },
+    "condizioni": {
+      "en": "conditions",
+      "es": "condiciones"
+    },
+    "confezione": {
+      "en": "box",
+      "es": "paquete"
+    },
+    "confusione": {
+      "en": "confusion",
+      "es": "confusión"
+    },
+    "conoscere": {
+      "en": "to know",
+      "es": "conocer"
+    },
+    "contento": {
+      "en": "happy",
+      "es": "feliz"
+    },
+    "contenuto": {
+      "en": "content",
+      "es": "contenido"
+    },
+    "continuare": {
+      "en": "to continue",
+      "es": "continuar"
+    },
+    "continuare (a fare)": {
+      "en": "to continue",
+      "es": "a continuar"
+    },
+    "conto": {
+      "en": "account",
+      "es": "cuenta"
+    },
+    "controllare": {
+      "en": "to check",
+      "es": "verificar"
+    },
+    "controllore": {
+      "en": "controller",
+      "es": "controlador"
+    },
+    "conversare": {
+      "en": "to converse",
+      "es": "conversar"
+    },
+    "coppia": {
+      "en": "pair",
+      "es": "pareja"
+    },
+    "correre": {
+      "en": "to run",
+      "es": "correr"
+    },
+    "corridoio": {
+      "en": "hallway",
+      "es": "pasillo"
+    },
+    "corto": {
+      "en": "short",
+      "es": "corto"
+    },
+    "cosa": {
+      "en": "what",
+      "es": "qué"
+    },
+    "cose da fare": {
+      "en": "things to do",
+      "es": "cosas que hacer"
+    },
+    "cosi": {
+      "en": "this way",
+      "es": "así"
+    },
+    "cosina": {
+      "en": "little thing",
+      "es": "cosa pequeña"
+    },
+    "costare": {
+      "en": "cost",
+      "es": "costar"
+    },
+    "costruire": {
+      "en": "to build",
+      "es": "construir"
+    },
+    "costumino": {
+      "en": "costume",
+      "es": "vestido"
+    },
+    "criminale": {
+      "en": "criminal",
+      "es": "criminal"
+    },
+    "cucinare": {
+      "en": "to cook",
+      "es": "cocinar"
+    },
+    "cuore": {
+      "en": "heart",
+      "es": "corazón"
+    },
+    "cuscino": {
+      "en": "pillow",
+      "es": "almohada"
+    },
+    "d'estate": {
+      "en": "summer",
+      "es": "verano"
+    },
+    "d'inverno": {
+      "en": "winter",
+      "es": "invierno"
+    },
+    "da ... a": {
+      "en": "from ... to",
+      "es": "de ... a"
+    },
+    "da 50 euro": {
+      "en": "50 euros",
+      "es": "50 euros"
+    },
+    "da f": {
+      "en": "She gives a balloon",
+      "es": "Ella da una bombilla"
+    },
+    "da fare": {
+      "en": "\"to do\" / \"a task to do",
+      "es": "\"para hacer"
+    },
+    "da lui": {
+      "en": "from him",
+      "es": "de él"
+    },
+    "da me": {
+      "en": "from me",
+      "es": "de mí"
+    },
+    "da solo": {
+      "en": "alone",
+      "es": "solo"
+    },
+    "dal 5 al 7": {
+      "en": "from 5 to 7",
+      "es": "del 5 al 7"
+    },
+    "dal medico": {
+      "en": "from the doctor",
+      "es": "del médico"
+    },
+    "dappertutto": {
+      "en": "everywhere",
+      "es": "en todas partes"
+    },
+    "davanti a": {
+      "en": "in front of",
+      "es": "ante"
+    },
+    "davvero": {
+      "en": "truly",
+      "es": "realmente"
+    },
+    "decidere": {
+      "en": "to decide",
+      "es": "decidir"
+    },
+    "decidere (di fare)": {
+      "en": "to decide (to do)",
+      "es": "a decidir"
+    },
+    "decina": {
+      "en": "tenth",
+      "es": "diezavo"
+    },
+    "dentifricio": {
+      "en": "toothpaste",
+      "es": "pasta dental"
+    },
+    "dentro": {
+      "en": "inside",
+      "es": "dentro"
+    },
+    "descrivere": {
+      "en": "to describe",
+      "es": "describir"
+    },
+    "detersivo per": {
+      "en": "detergent for",
+      "es": "detergente para"
+    },
+    "detersivo per i piatti": {
+      "en": "dishwashing liquid",
+      "es": "detergente para platos"
+    },
+    "deve": {
+      "en": "must",
+      "es": "debe"
+    },
+    "devo": {
+      "en": "I must",
+      "es": "Debo"
+    },
+    "devono": {
+      "en": "they must",
+      "es": "ellos deben"
+    },
+    "di banana": {
+      "en": "of banana",
+      "es": "de plátano"
+    },
+    "di controllo": {
+      "en": "of control",
+      "es": "de control"
+    },
+    "di la": {
+      "en": "beyond",
+      "es": "más allá"
+    },
+    "di lavoro": {
+      "en": "of work",
+      "es": "de trabajo"
+    },
+    "di massima": {
+      "en": "maximum",
+      "es": "máximo"
+    },
+    "di mattina": {
+      "en": "morning",
+      "es": "mañana"
+    },
+    "di minima": {
+      "en": "of minimum",
+      "es": "de mínima"
+    },
+    "di nuovo": {
+      "en": "again",
+      "es": "nuevamente"
+    },
+    "di oggi": {
+      "en": "today",
+      "es": "hoy"
+    },
+    "di pitone": {
+      "en": "of snake skin",
+      "es": "de piel de serpiente"
+    },
+    "di piu": {
+      "en": "more",
+      "es": "más"
+    },
+    "di pomeriggio": {
+      "en": "afternoon",
+      "es": "por la tarde"
+    },
+    "di qc.": {
+      "en": "of something",
+      "es": "de algo"
+    },
+    "di seguito": {
+      "en": "below",
+      "es": "abajo"
+    },
+    "di sera": {
+      "en": "evening",
+      "es": "por la noche"
+    },
+    "di solito": {
+      "en": "usually",
+      "es": "normalmente"
+    },
+    "di tre anni fa": {
+      "en": "of three years ago",
+      "es": "de tres años atrás"
+    },
+    "dice": {
+      "en": "says",
+      "es": "dice"
+    },
+    "dicendo": {
+      "en": "saying",
+      "es": "decir"
+    },
+    "dicono": {
+      "en": "they say",
+      "es": "ellos dicen"
+    },
+    "dieci": {
+      "en": "ten",
+      "es": "diez"
+    },
+    "diecimila": {
+      "en": "ten thousand",
+      "es": "diez mil"
+    },
+    "dietro": {
+      "en": "behind",
+      "es": "detrás"
+    },
+    "difetto": {
+      "en": "defect",
+      "es": "defecto"
+    },
+    "digerire": {
+      "en": "to digest",
+      "es": "digerir"
+    },
+    "dimagrire": {
+      "en": "to lose weight",
+      "es": "perder peso"
+    },
+    "dimenticare": {
+      "en": "to forget",
+      "es": "olvidar"
+    },
+    "dimenticavo": {
+      "en": "forgotten",
+      "es": "olvidado"
+    },
+    "diranno": {
+      "en": "they will say",
+      "es": "ellos dirán"
+    },
+    "dirigente": {
+      "en": "manager",
+      "es": "director"
+    },
+    "disoccupato": {
+      "en": "unemployed",
+      "es": "desempleado"
+    },
+    "disordine": {
+      "en": "disorder",
+      "es": "desorden"
+    },
+    "distrarre": {
+      "en": "to distract",
+      "es": "a distraer"
+    },
+    "disturbare": {
+      "en": "to disturb",
+      "es": "molestar"
+    },
+    "ditta": {
+      "en": "company",
+      "es": "empresa"
+    },
+    "diventare": {
+      "en": "to become",
+      "es": "convertirse"
+    },
+    "dobbiamo": {
+      "en": "we must",
+      "es": "nosotros debemos"
+    },
+    "dodici": {
+      "en": "twelve",
+      "es": "doce"
+    },
+    "dogana": {
+      "en": "customs",
+      "es": "control de inmigración"
+    },
+    "doganiere": {
+      "en": "customs officer",
+      "es": "funcionario de aduanas"
+    },
+    "dollaro": {
+      "en": "dollar",
+      "es": "dolla"
+    },
+    "dolore": {
+      "en": "pain",
+      "es": "dolor"
+    },
+    "domenica": {
+      "en": "Sunday",
+      "es": "domingo"
+    },
+    "domenica prossima": {
+      "en": "next Sunday",
+      "es": "próximo domingo"
+    },
+    "domenica sera": {
+      "en": "Sunday evening",
+      "es": "Noche dominical"
+    },
+    "domestico": {
+      "en": "home",
+      "es": "hogar"
+    },
+    "donna": {
+      "en": "woman",
+      "es": "mujer"
+    },
+    "donna di servizio": {
+      "en": "housekeeper",
+      "es": "due de servicio"
+    },
+    "dopo": {
+      "en": "after",
+      "es": "después"
+    },
+    "dopo un po'": {
+      "en": "after a while",
+      "es": "después de un rato"
+    },
+    "dormire": {
+      "en": "to sleep",
+      "es": "dormir"
+    },
+    "dormita": {
+      "en": "sleep",
+      "es": "dormir"
+    },
+    "dove": {
+      "en": "where",
+      "es": "dónde"
+    },
+    "dovere": {
+      "en": "to have to",
+      "es": "deber"
+    },
+    "dunque": {
+      "en": "therefore",
+      "es": "por tanto"
+    },
+    "durare": {
+      "en": "to last",
+      "es": "durar"
+    },
+    "e lo stesso": {
+      "en": "it is the same",
+      "es": "es lo mismo"
+    },
+    "e vero": {
+      "en": "it is true",
+      "es": "es cierto"
+    },
+    "ecco": {
+      "en": "here",
+      "es": "aquí"
+    },
+    "economia": {
+      "en": "economy",
+      "es": "economía"
+    },
+    "edificio": {
+      "en": "building",
+      "es": "edificio"
+    },
+    "elegante": {
+      "en": "elegant",
+      "es": "elegante"
+    },
+    "elettricista": {
+      "en": "electrician",
+      "es": "electricista"
+    },
+    "elettrodomestici": {
+      "en": "household appliances",
+      "es": "electrodomésticos"
+    },
+    "enorme": {
+      "en": "huge",
+      "es": "enorme"
+    },
+    "entrare": {
+      "en": "to enter",
+      "es": "entrar"
+    },
+    "era": {
+      "en": "was",
+      "es": "era"
+    },
+    "erba": {
+      "en": "grass",
+      "es": "hierba"
+    },
+    "erbaccia": {
+      "en": "weed",
+      "es": "hierba"
+    },
+    "ereditato": {
+      "en": "inherited",
+      "es": "hereditario"
+    },
+    "esaminare": {
+      "en": "to examine",
+      "es": "estudiar"
+    },
+    "esaminatore": {
+      "en": "examiner",
+      "es": "examinador"
+    },
+    "esce": {
+      "en": "leaves",
+      "es": "sale"
+    },
+    "esco": {
+      "en": "I leave",
+      "es": "sale"
+    },
+    "esperienza": {
+      "en": "experience",
+      "es": "experiencia"
+    },
+    "essere": {
+      "en": "to be",
+      "es": "ser"
+    },
+    "essere a dieta": {
+      "en": "to be on a diet",
+      "es": "a dieta estar"
+    },
+    "essere allergico a": {
+      "en": "to be allergic",
+      "es": "estar alérgico"
+    },
+    "essere contento": {
+      "en": "to be happy",
+      "es": "a ser feliz"
+    },
+    "essere ricoverato": {
+      "en": "to be hospitalized",
+      "es": "a ser hospitalizado"
+    },
+    "essere stufo (di fare qc)": {
+      "en": "to be tired (of doing sth)",
+      "es": "estar cansado (de hacer algo)"
+    },
+    "essere sveglio": {
+      "en": "to be awake",
+      "es": "a estar despierto"
+    },
+    "essere triste": {
+      "en": "to be sad",
+      "es": "ser triste"
+    },
+    "estivo": {
+      "en": "summer",
+      "es": "verano"
+    },
+    "evaso": {
+      "en": "escaped",
+      "es": "escapado"
+    },
+    "evidente": {
+      "en": "obvious",
+      "es": "obvio"
+    },
+    "fa freddo": {
+      "en": "it's cold",
+      "es": "hace frío"
+    },
+    "facciamo presto!": {
+      "en": "Let's hurry!",
+      "es": "¡Vamos rápido!"
+    },
+    "faccio": {
+      "en": "I do",
+      "es": "hago"
+    },
+    "facolta": {
+      "en": "faculty",
+      "es": "facultad"
+    },
+    "famiglia": {
+      "en": "family",
+      "es": "familia"
+    },
+    "far rumore": {
+      "en": "to make noise",
+      "es": "aullar"
+    },
+    "far segno": {
+      "en": "to sign",
+      "es": "a señalar"
+    },
+    "fare": {
+      "en": "to do",
+      "es": "hacer"
+    },
+    "fare acquisti": {
+      "en": "to make purchases",
+      "es": "a comprar"
+    },
+    "fare di bello": {
+      "en": "to make pretty",
+      "es": "a hacer bonito"
+    },
+    "fare due passi": {
+      "en": "take two steps",
+      "es": "dar dos pasos"
+    },
+    "fare economie": {
+      "en": "to save money",
+      "es": "a ahorrar dinero"
+    },
+    "fare entrare": {
+      "en": "to let in",
+      "es": "to let in"
+    },
+    "fare il bagno": {
+      "en": "to swim",
+      "es": "a nadar"
+    },
+    "fare il giro di": {
+      "en": "go around",
+      "es": "dar la vuelta"
+    },
+    "fare la fila": {
+      "en": "to stand in line",
+      "es": "a esperar"
+    },
+    "fare la pace": {
+      "en": "make peace",
+      "es": "hacer la paz"
+    },
+    "fare la spesa": {
+      "en": "to shop",
+      "es": "a comprar"
+    },
+    "fare le analisi": {
+      "en": "to do the analyses",
+      "es": "a realizar las análisis"
+    },
+    "fare le pulizie": {
+      "en": "to do the cleaning",
+      "es": "a limpiar"
+    },
+    "fare quattro passi": {
+      "en": "walk a little",
+      "es": "dar una vuelta"
+    },
+    "fare sciopero": {
+      "en": "to strike",
+      "es": "a protestar"
+    },
+    "fare un bagno": {
+      "en": "to take a bath",
+      "es": "a bañarse"
+    },
+    "fare una": {
+      "en": "do",
+      "es": "hacer"
+    },
+    "fare una bella": {
+      "en": "do a nice",
+      "es": "hacer algo agradable"
+    },
+    "fare una telefonata": {
+      "en": "to make a phone call",
+      "es": "a llamar"
+    },
+    "faremo": {
+      "en": "we will do",
+      "es": "haremos"
+    },
+    "farmacia": {
+      "en": "pharmacy",
+      "es": "farmacia"
+    },
+    "farmacista": {
+      "en": "pharmacist",
+      "es": "farmacéutico"
+    },
+    "fegato": {
+      "en": "liver",
+      "es": "hígado"
+    },
+    "fiala": {
+      "en": "bottle",
+      "es": "botella"
+    },
+    "fidanzata": {
+      "en": "girlfriend",
+      "es": "novia"
+    },
+    "figlia": {
+      "en": "daughter",
+      "es": "hija"
+    },
+    "filiale": {
+      "en": "branch",
+      "es": "sucursal"
+    },
+    "finalmente": {
+      "en": "finally",
+      "es": "finalmente"
+    },
+    "fine": {
+      "en": "end",
+      "es": "fin"
+    },
+    "fine settimana": {
+      "en": "weekend",
+      "es": "fin de semana"
+    },
+    "finestrino": {
+      "en": "window",
+      "es": "ventana"
+    },
+    "finisce": {
+      "en": "ends",
+      "es": "termina"
+    },
+    "finisco": {
+      "en": "I finish",
+      "es": "Yo termino"
+    },
+    "fino a": {
+      "en": "until",
+      "es": "hasta"
+    },
+    "fino a quando": {
+      "en": "until",
+      "es": "hasta cuándo"
+    },
+    "fiore": {
+      "en": "flower",
+      "es": "flor"
+    },
+    "fiorista": {
+      "en": "flower seller",
+      "es": "florista"
+    },
+    "foglia": {
+      "en": "leaf",
+      "es": "hoja"
+    },
+    "forno a microonde": {
+      "en": "microwave oven",
+      "es": "horno de microondas"
+    },
+    "forse": {
+      "en": "maybe",
+      "es": "quizás"
+    },
+    "forte": {
+      "en": "strong",
+      "es": "fuerte"
+    },
+    "fra": {
+      "en": "between",
+      "es": "entre"
+    },
+    "fra loro": {
+      "en": "among them",
+      "es": "entre ellos"
+    },
+    "frattura": {
+      "en": "fracture",
+      "es": "fractura"
+    },
+    "freddo": {
+      "en": "cold",
+      "es": "frío"
+    },
+    "frigorifero": {
+      "en": "refrigerator",
+      "es": "refrigerador"
+    },
+    "frullatore": {
+      "en": "blender",
+      "es": "batidora"
+    },
+    "frutta": {
+      "en": "fruit",
+      "es": "fruta"
+    },
+    "fumare": {
+      "en": "to smoke",
+      "es": "fumar"
+    },
+    "fumatori": {
+      "en": "smokers",
+      "es": "fumadores"
+    },
+    "funzionare": {
+      "en": "to work",
+      "es": "trabajar"
+    },
+    "fuori": {
+      "en": "outside",
+      "es": "afuera"
+    },
+    "fuori di se": {
+      "en": "out of oneself",
+      "es": "fuera de uno mismo"
+    },
+    "fuori!": {
+      "en": "out!",
+      "es": "fuera!"
+    },
+    "galleria": {
+      "en": "tunnel",
+      "es": "túnel"
+    },
+    "gamba": {
+      "en": "leg",
+      "es": "pierna"
+    },
+    "gatto": {
+      "en": "cat",
+      "es": "gato"
+    },
+    "gelato": {
+      "en": "ice cream",
+      "es": "helado"
+    },
+    "genitori": {
+      "en": "parents",
+      "es": "padres"
+    },
+    "gente": {
+      "en": "people",
+      "es": "people"
+    },
+    "gia": {
+      "en": "already",
+      "es": "ya"
+    },
+    "giacca": {
+      "en": "jacket",
+      "es": "chaqueta"
+    },
+    "giardino": {
+      "en": "garden",
+      "es": "jardín"
+    },
+    "giocare": {
+      "en": "to play",
+      "es": "jugar"
+    },
+    "giocare a carte": {
+      "en": "to play cards",
+      "es": "a jugar cartas"
+    },
+    "giocare a pallone": {
+      "en": "to play soccer",
+      "es": "a jugar al fútbol"
+    },
+    "giornale": {
+      "en": "newspaper",
+      "es": "periódico"
+    },
+    "giornalismo": {
+      "en": "journalism",
+      "es": "periodismo"
+    },
+    "giornata": {
+      "en": "day",
+      "es": "día"
+    },
+    "giovane": {
+      "en": "young person",
+      "es": "persona joven"
+    },
+    "gira la testa": {
+      "en": "spins, turns, or twirls the head",
+      "es": "gira la cabeza"
+    },
+    "girare": {
+      "en": "to spin",
+      "es": "revolver"
+    },
+    "gita": {
+      "en": "trip",
+      "es": "viaje"
+    },
+    "gli": {
+      "en": "him",
+      "es": "él"
+    },
+    "gli zii": {
+      "en": "uncles",
+      "es": "tíos"
+    },
+    "gocce": {
+      "en": "drops",
+      "es": "gotas"
+    },
+    "gorilla": {
+      "en": "gorilla",
+      "es": "gorila"
+    },
+    "grande": {
+      "en": "big",
+      "es": "grande"
+    },
+    "grandina": {
+      "en": "to hail",
+      "es": "aullar"
+    },
+    "gratis": {
+      "en": "free",
+      "es": "gratuito"
+    },
+    "grave": {
+      "en": "serious",
+      "es": "serio"
+    },
+    "grazie": {
+      "en": "thank you",
+      "es": "gracias"
+    },
+    "gridare": {
+      "en": "to shout",
+      "es": "aullar"
+    },
+    "grosso": {
+      "en": "big",
+      "es": "grande"
+    },
+    "guanti di gomma": {
+      "en": "rubber gloves",
+      "es": "guantes de goma"
+    },
+    "guardando": {
+      "en": "looking",
+      "es": "mirando"
+    },
+    "guardare": {
+      "en": "to look",
+      "es": "mirar"
+    },
+    "ha": {
+      "en": "has",
+      "es": "tiene"
+    },
+    "ha pubblicato": {
+      "en": "has published",
+      "es": "ha publicado"
+    },
+    "hai ragione (avere ragione)": {
+      "en": "you are right",
+      "es": "tú tienes razón"
+    },
+    "ho fame (avere fame)": {
+      "en": "I am hungry",
+      "es": "Estoy hambriento"
+    },
+    "ho mal di testa": {
+      "en": "I have a headache",
+      "es": "Tengo dolor de cabeza"
+    },
+    "i due": {
+      "en": "two",
+      "es": "dos"
+    },
+    "i lavori": {
+      "en": "works",
+      "es": "trabajos"
+    },
+    "i miei": {
+      "en": "my",
+      "es": "mi"
+    },
+    "i miei genitori": {
+      "en": "my parents",
+      "es": "my parents"
+    },
+    "i piatti": {
+      "en": "plates",
+      "es": "platos"
+    },
+    "i rifiuti": {
+      "en": "waste",
+      "es": "basura"
+    },
+    "i vicini": {
+      "en": "neighbors",
+      "es": "vecinos"
+    },
+    "ideale": {
+      "en": "ideal",
+      "es": "ideal"
+    },
+    "identico": {
+      "en": "identical",
+      "es": "idéntico"
+    },
+    "il cameriere": {
+      "en": "waiter",
+      "es": "camarero"
+    },
+    "il computer": {
+      "en": "the computer",
+      "es": "el ordenador"
+    },
+    "il giorno dopo": {
+      "en": "the day after",
+      "es": "el día después"
+    },
+    "il lago di garda": {
+      "en": "Lake Garda",
+      "es": "Lago de Garda"
+    },
+    "il loro": {
+      "en": "they",
+      "es": "ellos"
+    },
+    "il pianoforte": {
+      "en": "piano",
+      "es": "piano"
+    },
+    "il pomeriggio": {
+      "en": "afternoon",
+      "es": "afternoon"
+    },
+    "il quarto piano": {
+      "en": "4th floor",
+      "es": "4º piso"
+    },
+    "impiegato": {
+      "en": "employee",
+      "es": "empleado"
+    },
+    "importante": {
+      "en": "important",
+      "es": "importante"
+    },
+    "impossibile": {
+      "en": "impossible",
+      "es": "imposible"
+    },
+    "in bagno": {
+      "en": "in the bathroom",
+      "es": "en el baño"
+    },
+    "in discoteca": {
+      "en": "at the disco",
+      "es": "en la discoteca"
+    },
+    "in fondo": {
+      "en": "at the end",
+      "es": "al final"
+    },
+    "in fretta": {
+      "en": "quickly",
+      "es": "rápidamente"
+    },
+    "in germania": {
+      "en": "in Germany",
+      "es": "en Alemania"
+    },
+    "in modo tremendo": {
+      "en": "terrible way",
+      "es": "de forma terrible"
+    },
+    "in ordine": {
+      "en": "in order",
+      "es": "en orden"
+    },
+    "in pace": {
+      "en": "peace",
+      "es": "paz"
+    },
+    "in piena attivita": {
+      "en": "fully active",
+      "es": "totalmente activo"
+    },
+    "in piu": {
+      "en": "in addition",
+      "es": "adicionalmente"
+    },
+    "in poche ore": {
+      "en": "in a few hours",
+      "es": "en pocas horas"
+    },
+    "in programma": {
+      "en": "scheduled",
+      "es": "programado"
+    },
+    "in questo caso": {
+      "en": "in this case",
+      "es": "en este caso"
+    },
+    "in realta": {
+      "en": "actually",
+      "es": "en realidad"
+    },
+    "in ritardo": {
+      "en": "late",
+      "es": "tarde"
+    },
+    "in terra": {
+      "en": "on land",
+      "es": "en tierra"
+    },
+    "in un giorno": {
+      "en": "in one day",
+      "es": "en un día"
+    },
+    "inchinarsi": {
+      "en": "to bow",
+      "es": "inclinarse"
+    },
+    "incuriosito": {
+      "en": "curious",
+      "es": "curioso"
+    },
+    "indeciso": {
+      "en": "uncertain",
+      "es": "incerto"
+    },
+    "indicando": {
+      "en": "indicating",
+      "es": "indicando"
+    },
+    "indietro": {
+      "en": "backward",
+      "es": "tras"
+    },
+    "indirizzo": {
+      "en": "address",
+      "es": "dirección"
+    },
+    "infermiera": {
+      "en": "nurse",
+      "es": "enfermera"
+    },
+    "infermiero": {
+      "en": "nurse",
+      "es": "enfermero"
+    },
+    "ingessare": {
+      "en": "to plaster",
+      "es": "cubrir con yeso"
+    },
+    "ingrassare": {
+      "en": "to gain weight",
+      "es": "aumentar de peso"
+    },
+    "ingresso": {
+      "en": "entrance",
+      "es": "entrada"
+    },
+    "iniezione": {
+      "en": "injection",
+      "es": "inyección"
+    },
+    "innamorato": {
+      "en": "smitten",
+      "es": "encantado"
+    },
+    "innervosito": {
+      "en": "irritated",
+      "es": "irritado"
+    },
+    "inoltre": {
+      "en": "also",
+      "es": "también"
+    },
+    "insieme": {
+      "en": "together",
+      "es": "juntos"
+    },
+    "insieme a": {
+      "en": "together with",
+      "es": "junto con"
+    },
+    "insistere": {
+      "en": "to insist",
+      "es": "insistir"
+    },
+    "insomma": {
+      "en": "in short",
+      "es": "en resumen"
+    },
+    "intanto": {
+      "en": "meanwhile",
+      "es": "Mientras tanto"
+    },
+    "intelligente": {
+      "en": "smart",
+      "es": "inteligente"
+    },
+    "intero": {
+      "en": "whole",
+      "es": "entero"
+    },
+    "interrompere": {
+      "en": "to interrupt",
+      "es": "interrumpir"
+    },
+    "interruttore": {
+      "en": "switch",
+      "es": "interruptor"
+    },
+    "inutile": {
+      "en": "useless",
+      "es": "inusital"
+    },
+    "invecchiare": {
+      "en": "to age",
+      "es": "envejecer"
+    },
+    "invece": {
+      "en": "instead",
+      "es": "en lugar"
+    },
+    "invernale": {
+      "en": "winter",
+      "es": "invierno"
+    },
+    "investire": {
+      "en": "to invest",
+      "es": "invertir"
+    },
+    "io": {
+      "en": "I",
+      "es": "Yo"
+    },
+    "irritato": {
+      "en": "irritated",
+      "es": "irritado"
+    },
+    "l'altro": {
+      "en": "the other",
+      "es": "el otro"
+    },
+    "l'austria": {
+      "en": "Austria",
+      "es": "Austria"
+    },
+    "l'inglese": {
+      "en": "English",
+      "es": "Inglés"
+    },
+    "l'italiano": {
+      "en": "Italian language",
+      "es": "Idioma italiano"
+    },
+    "l'ultima volta": {
+      "en": "last time",
+      "es": "último vez"
+    },
+    "l'ultimo": {
+      "en": "last",
+      "es": "último"
+    },
+    "la": {
+      "en": "it",
+      "es": "lo"
+    },
+    "la carta di credito": {
+      "en": "credit card",
+      "es": "tarjeta de crédito"
+    },
+    "la doccia": {
+      "en": "the shower",
+      "es": "la ducha"
+    },
+    "la domenica": {
+      "en": "Sunday",
+      "es": "domingo"
+    },
+    "la mattina": {
+      "en": "morning",
+      "es": "mañana"
+    },
+    "la mattina presto": {
+      "en": "early morning",
+      "es": "temprano por la mañana"
+    },
+    "la sera": {
+      "en": "evening",
+      "es": "noche"
+    },
+    "la sera tardi": {
+      "en": "late in the evening",
+      "es": "tarde por la noche"
+    },
+    "la settimana": {
+      "en": "the week",
+      "es": "la semana"
+    },
+    "la tavola": {
+      "en": "the table",
+      "es": "la mesa"
+    },
+    "la televisione": {
+      "en": "TV",
+      "es": "TV"
+    },
+    "ladro": {
+      "en": "thief",
+      "es": "ladrón"
+    },
+    "lampadina": {
+      "en": "light bulb",
+      "es": "globillo"
+    },
+    "lasciapassare": {
+      "en": "pass",
+      "es": "paseo"
+    },
+    "lasciar stare": {
+      "en": "to leave alone",
+      "es": "dejar tranquilo"
+    },
+    "lasciare": {
+      "en": "to leave",
+      "es": "dejar"
+    },
+    "lavandino": {
+      "en": "sink",
+      "es": "fregadero"
+    },
+    "lavare": {
+      "en": "to wash",
+      "es": "lavar"
+    },
+    "lavare i piatti": {
+      "en": "to wash dishes",
+      "es": "a lavar platos"
+    },
+    "lavare i vetri": {
+      "en": "to wash the windows",
+      "es": "a lavar las ventanas"
+    },
+    "lavare la biancheria": {
+      "en": "to wash the laundry",
+      "es": "a lavar la ropa"
+    },
+    "lavarsi": {
+      "en": "to wash",
+      "es": "lavarse"
+    },
+    "lavarsi i denti": {
+      "en": "to brush teeth",
+      "es": "to brush teeth"
+    },
+    "lavatrice": {
+      "en": "washing machine",
+      "es": "máquina de lavar"
+    },
+    "lavorare": {
+      "en": "to work",
+      "es": "trabajar"
+    },
+    "lavoretto": {
+      "en": "job",
+      "es": "trabajo"
+    },
+    "lavoro": {
+      "en": "work",
+      "es": "trabajo"
+    },
+    "lavoro fisso": {
+      "en": "fixed job",
+      "es": "trabajo fijo"
+    },
+    "le": {
+      "en": "her",
+      "es": "ella"
+    },
+    "le braccia": {
+      "en": "arms",
+      "es": "brazos"
+    },
+    "le faremo": {
+      "en": "we will do",
+      "es": "nosotros haremos"
+    },
+    "le loro": {
+      "en": "theirs",
+      "es": "suyos"
+    },
+    "le otto": {
+      "en": "eight",
+      "es": "ocho"
+    },
+    "le piante": {
+      "en": "plants",
+      "es": "plantas"
+    },
+    "le undici": {
+      "en": "eleven",
+      "es": "once"
+    },
+    "legge": {
+      "en": "law",
+      "es": "ley"
+    },
+    "leggere": {
+      "en": "to read",
+      "es": "leer"
+    },
+    "leggere il giornale": {
+      "en": "to read the newspaper",
+      "es": "a leer el periódico"
+    },
+    "leggero": {
+      "en": "light",
+      "es": "ligero"
+    },
+    "lei": {
+      "en": "you (singular, formal)",
+      "es": "usted (singular, formal)"
+    },
+    "lettere": {
+      "en": "letters",
+      "es": "cartas"
+    },
+    "letto": {
+      "en": "bed",
+      "es": "cama"
+    },
+    "li": {
+      "en": "there",
+      "es": "allí"
+    },
+    "libero": {
+      "en": "free",
+      "es": "libre"
+    },
+    "libro": {
+      "en": "book",
+      "es": "libro"
+    },
+    "limitarsi a qc": {
+      "en": "limit oneself to something",
+      "es": "limitarse a algo"
+    },
+    "lingua": {
+      "en": "foreign language",
+      "es": "lengua extranjera"
+    },
+    "lingue": {
+      "en": "languages",
+      "es": "lenguas"
+    },
+    "lista": {
+      "en": "list",
+      "es": "lista"
+    },
+    "litigare": {
+      "en": "to argue",
+      "es": "discutir"
+    },
+    "lo": {
+      "en": "it",
+      "es": "lo"
+    },
+    "lo stesso": {
+      "en": "the same",
+      "es": "lo mismo"
+    },
+    "luce": {
+      "en": "light",
+      "es": "luz"
+    },
+    "lucidatrice": {
+      "en": "polish dresser",
+      "es": "polisher"
+    },
+    "lunedi": {
+      "en": "Monday",
+      "es": "lunes"
+    },
+    "lungo": {
+      "en": "long",
+      "es": "largo"
+    },
+    "m naco di baviera": {
+      "en": "Munich",
+      "es": "Múnich"
+    },
+    "ma": {
+      "en": "but",
+      "es": "pero"
+    },
+    "macchina": {
+      "en": "car",
+      "es": "auto"
+    },
+    "macchina scavatrice": {
+      "en": "excavator",
+      "es": "excavadora"
+    },
+    "mah": {
+      "en": "uh",
+      "es": "uh"
+    },
+    "mai": {
+      "en": "never",
+      "es": "nunca"
+    },
+    "malattia": {
+      "en": "disease",
+      "es": "enfermedad"
+    },
+    "mancia": {
+      "en": "tip of the hat",
+      "es": "propina"
+    },
+    "mangiare": {
+      "en": "to eat",
+      "es": "comer"
+    },
+    "maniche": {
+      "en": "sleeves",
+      "es": "brazos"
+    },
+    "mantenere": {
+      "en": "to maintain",
+      "es": "mantener"
+    },
+    "marito": {
+      "en": "husband",
+      "es": "marido"
+    },
+    "mattina": {
+      "en": "morning",
+      "es": "mañana"
+    },
+    "mazzo": {
+      "en": "bouquet",
+      "es": "ramo"
+    },
+    "mazzo m f": {
+      "en": "English",
+      "es": "Spanish"
+    },
+    "me lo metto": {
+      "en": "I put it on myself",
+      "es": "lo pongo"
+    },
+    "me lo tolgo": {
+      "en": "I take it off / I remove it",
+      "es": "lo saco"
+    },
+    "medicina": {
+      "en": "medicine",
+      "es": "medicina"
+    },
+    "medico": {
+      "en": "doctor",
+      "es": "médico"
+    },
+    "meglio": {
+      "en": "better",
+      "es": "mejor"
+    },
+    "meglio di no": {
+      "en": "better than no",
+      "es": "mejor que nada"
+    },
+    "meno male": {
+      "en": "lucky",
+      "es": "suerte"
+    },
+    "mentre": {
+      "en": "while",
+      "es": "mientras"
+    },
+    "mese": {
+      "en": "month",
+      "es": "mes"
+    },
+    "meta": {
+      "en": "half",
+      "es": "mitad"
+    },
+    "mettere": {
+      "en": "to put",
+      "es": "poner"
+    },
+    "mettere in ordine": {
+      "en": "to put in order",
+      "es": "a ordenar"
+    },
+    "mettersi": {
+      "en": "to put oneself",
+      "es": "ponerse"
+    },
+    "mettersi a fare": {
+      "en": "to start doing",
+      "es": "empezar a hacer"
+    },
+    "mettersi a qc.": {
+      "en": "to put oneself in a situation",
+      "es": "a ponerse en una situación"
+    },
+    "mettersi d'accordo (di fare)": {
+      "en": "to agree to do",
+      "es": "a convenir"
+    },
+    "mezz'ora": {
+      "en": "half an hour",
+      "es": "media hora"
+    },
+    "mezzogiorno": {
+      "en": "noon",
+      "es": "mediodía"
+    },
+    "mi": {
+      "en": "I am",
+      "es": "Yo soy"
+    },
+    "mi addormento": {
+      "en": "I fall asleep",
+      "es": "Me quedo dormido"
+    },
+    "mi cambio": {
+      "en": "I change",
+      "es": "me cambio"
+    },
+    "mi faccio la doccia": {
+      "en": "I take a shower",
+      "es": "me doy una ducha"
+    },
+    "mi metto": {
+      "en": "I put on",
+      "es": "me pongo"
+    },
+    "mille": {
+      "en": "1000",
+      "es": "1000"
+    },
+    "misurare": {
+      "en": "to measure",
+      "es": "medir"
+    },
+    "mobili": {
+      "en": "furniture",
+      "es": "mobiliario"
+    },
+    "moglie": {
+      "en": "wife",
+      "es": "esposa"
+    },
+    "molto": {
+      "en": "very",
+      "es": "muy"
+    },
+    "mordere": {
+      "en": "to bite",
+      "es": "mordere"
+    },
+    "mostrare": {
+      "en": "to show",
+      "es": "mostrar"
+    },
+    "multa": {
+      "en": "fine",
+      "es": "multa"
+    },
+    "na di": {
+      "en": "you/your",
+      "es": "usted"
+    },
+    "napoli": {
+      "en": "Naples",
+      "es": "Nápoles"
+    },
+    "naturalmente": {
+      "en": "naturally",
+      "es": "naturalmente"
+    },
+    "ne": {
+      "en": "none",
+      "es": "ninguno"
+    },
+    "ne ... ne": {
+      "en": "neither ... nor",
+      "es": "ni ... ni"
+    },
+    "neanche": {
+      "en": "not even",
+      "es": "ni siquiera"
+    },
+    "necessario": {
+      "en": "necessary",
+      "es": "necesario"
+    },
+    "negli ultimi giorni": {
+      "en": "in recent days",
+      "es": "en los últimos días"
+    },
+    "negozio": {
+      "en": "store",
+      "es": "tienda"
+    },
+    "negozio di": {
+      "en": "store",
+      "es": "store"
+    },
+    "nel parco": {
+      "en": "in the park",
+      "es": "en el parque"
+    },
+    "nel pomeriggio": {
+      "en": "afternoon",
+      "es": "por la tarde"
+    },
+    "nel tempo libero": {
+      "en": "free time",
+      "es": "tiempo libre"
+    },
+    "neppure": {
+      "en": "not even",
+      "es": "ni siquiera"
+    },
+    "nero": {
+      "en": "black",
+      "es": "negro"
+    },
+    "nervi a pezzi": {
+      "en": "nervous and stressed",
+      "es": "nervioso y estresado"
+    },
+    "nessuno": {
+      "en": "nobody",
+      "es": "nadie"
+    },
+    "netturbino": {
+      "en": "doorman",
+      "es": "guardia de entrada"
+    },
+    "niente": {
+      "en": "nothing",
+      "es": "nada"
+    },
+    "niente gelato!": {
+      "en": "no ice cream!",
+      "es": "¡no helado!"
+    },
+    "nome": {
+      "en": "name",
+      "es": "nombre"
+    },
+    "non bastasse": {
+      "en": "it wouldn't be enough",
+      "es": "no sería suficiente"
+    },
+    "non c'e niente": {
+      "en": "there is nothing",
+      "es": "no hay nada"
+    },
+    "non c'e piu": {
+      "en": "there is no longer",
+      "es": "no hay más"
+    },
+    "non e permesso": {
+      "en": "it is not allowed",
+      "es": "no está permitido"
+    },
+    "non e un gran": {
+      "en": "It is not a big one",
+      "es": "No es una gran cosa"
+    },
+    "non lo so": {
+      "en": "I do not know",
+      "es": "No sé"
+    },
+    "non mi importa": {
+      "en": "I don't care",
+      "es": "no me importa"
+    },
+    "non mi lasciano": {
+      "en": "they don't let me",
+      "es": "no me dejan"
+    },
+    "non ne puo piu": {
+      "en": "can't do it anymore",
+      "es": "no puede hacerlo más"
+    },
+    "non stare bene": {
+      "en": "not to feel well",
+      "es": "no sentirse bien"
+    },
+    "non ti preoccupare!": {
+      "en": "don't worry!",
+      "es": "¡no te preocupes!"
+    },
+    "nonno": {
+      "en": "grandpa",
+      "es": "abuelo"
+    },
+    "nostro": {
+      "en": "our",
+      "es": "nuestro"
+    },
+    "nulla": {
+      "en": "nothing",
+      "es": "nada"
+    },
+    "nulla di speciale": {
+      "en": "nothing special",
+      "es": "nada especial"
+    },
+    "numero": {
+      "en": "number",
+      "es": "número"
+    },
+    "numeroso": {
+      "en": "numerous",
+      "es": "numeroso"
+    },
+    "occhiali": {
+      "en": "glasses",
+      "es": "glasses"
+    },
+    "occhio": {
+      "en": "eye",
+      "es": "ojo"
+    },
+    "occupare": {
+      "en": "to occupy",
+      "es": "ocupar"
+    },
+    "occupare posto": {
+      "en": "to occupy a place",
+      "es": "a ocupar un lugar"
+    },
+    "occuparsi di qc": {
+      "en": "to take care of something",
+      "es": "a cuidar de algo"
+    },
+    "occupato": {
+      "en": "busy",
+      "es": "ocupado"
+    },
+    "odore": {
+      "en": "smell",
+      "es": "olor"
+    },
+    "oggi": {
+      "en": "today",
+      "es": "hoy"
+    },
+    "ogni": {
+      "en": "every",
+      "es": "cada uno"
+    },
+    "ogni tanto": {
+      "en": "now and then",
+      "es": "de vez en cuando"
+    },
+    "ombrello": {
+      "en": "umbrella",
+      "es": "sombrero"
+    },
+    "ombrellone": {
+      "en": "beach umbrella",
+      "es": "beach umbrella"
+    },
+    "operaio": {
+      "en": "worker",
+      "es": "trabajador"
+    },
+    "oppure": {
+      "en": "or",
+      "es": "o"
+    },
+    "ora": {
+      "en": "now",
+      "es": "ahora"
+    },
+    "orario": {
+      "en": "schedule",
+      "es": "horario"
+    },
+    "ordinare": {
+      "en": "to order",
+      "es": "ordenar"
+    },
+    "ordiniare": {
+      "en": "to order",
+      "es": "ordenar"
+    },
+    "ormai": {
+      "en": "now",
+      "es": "ahora"
+    },
+    "orologio": {
+      "en": "clock",
+      "es": "reloj"
+    },
+    "ospedale": {
+      "en": "hospital",
+      "es": "hospital"
+    },
+    "ospite": {
+      "en": "guest",
+      "es": "invitado"
+    },
+    "ossi di pollo": {
+      "en": "chicken bones",
+      "es": "huesos de pollo"
+    },
+    "ottanta": {
+      "en": "eighty",
+      "es": "ochenta"
+    },
+    "pacchetto": {
+      "en": "package",
+      "es": "paquete"
+    },
+    "pacco": {
+      "en": "package",
+      "es": "paquete"
+    },
+    "padre": {
+      "en": "father",
+      "es": "padre"
+    },
+    "padrone": {
+      "en": "master",
+      "es": "señor"
+    },
+    "paesaggio": {
+      "en": "landscape",
+      "es": "paisaje"
+    },
+    "paese": {
+      "en": "country",
+      "es": "país"
+    },
+    "pagare": {
+      "en": "to pay",
+      "es": "pagar"
+    },
+    "pagare l'affitto": {
+      "en": "to pay the rent",
+      "es": "a pagar la renta"
+    },
+    "paia": {
+      "en": "pairs",
+      "es": "pares"
+    },
+    "paio": {
+      "en": "pair",
+      "es": "par"
+    },
+    "paletta": {
+      "en": "shovel",
+      "es": "pala"
+    },
+    "palla": {
+      "en": "ball",
+      "es": "pelota"
+    },
+    "pallone": {
+      "en": "ball",
+      "es": "balón"
+    },
+    "panchina": {
+      "en": "bench",
+      "es": "banco"
+    },
+    "pane": {
+      "en": "bread",
+      "es": "bread"
+    },
+    "panino": {
+      "en": "sandwich",
+      "es": "sándwich"
+    },
+    "papa": {
+      "en": "father",
+      "es": "padre"
+    },
+    "parco": {
+      "en": "park",
+      "es": "parque"
+    },
+    "parente": {
+      "en": "relative",
+      "es": "relativo"
+    },
+    "parlare": {
+      "en": "to speak",
+      "es": "to speak"
+    },
+    "parlare al": {
+      "en": "talk to",
+      "es": "hablar con"
+    },
+    "parrucchiere": {
+      "en": "hairdresser",
+      "es": "peluquero"
+    },
+    "partire": {
+      "en": "to leave",
+      "es": "viajar"
+    },
+    "partita": {
+      "en": "match",
+      "es": "partida"
+    },
+    "passante": {
+      "en": "pedestrian",
+      "es": "peatonal"
+    },
+    "passaporto": {
+      "en": "passport",
+      "es": "pasaporte"
+    },
+    "passare": {
+      "en": "to pass",
+      "es": "pasar"
+    },
+    "passare da": {
+      "en": "to go to",
+      "es": "a llegar"
+    },
+    "passare tempo": {
+      "en": "to spend time",
+      "es": "a pasar el tiempo"
+    },
+    "passeggero": {
+      "en": "passenger",
+      "es": "pasajero"
+    },
+    "passeggiare": {
+      "en": "to walk",
+      "es": "caminar"
+    },
+    "passeggiata": {
+      "en": "walk",
+      "es": "paseo"
+    },
+    "patate": {
+      "en": "potatoes",
+      "es": "batatas"
+    },
+    "pavimento": {
+      "en": "floor",
+      "es": "suelo"
+    },
+    "pazientemente": {
+      "en": "patiently",
+      "es": "pacientemente"
+    },
+    "pensarci": {
+      "en": "to think about it",
+      "es": "a pensar en ello"
+    },
+    "pensare": {
+      "en": "to think",
+      "es": "pensar"
+    },
+    "penseranno": {
+      "en": "they will think",
+      "es": "ellos pensarán"
+    },
+    "pensionato": {
+      "en": "retired",
+      "es": "retirado"
+    },
+    "per": {
+      "en": "for",
+      "es": "para"
+    },
+    "per colpa sua": {
+      "en": "because of him/her",
+      "es": "por culpa suya"
+    },
+    "per favore": {
+      "en": "please",
+      "es": "por favor"
+    },
+    "per fortuna": {
+      "en": "for good luck",
+      "es": "por suerte"
+    },
+    "per me": {
+      "en": "for me",
+      "es": "para mí"
+    },
+    "per ore e ore": {
+      "en": "for hours and hours",
+      "es": "por horas y horas"
+    },
+    "per prima/o": {
+      "en": "first",
+      "es": "primero"
+    },
+    "per terra": {
+      "en": "on the ground",
+      "es": "en el suelo"
+    },
+    "per tutta": {
+      "en": "for the whole",
+      "es": "para todo"
+    },
+    "per un'ora": {
+      "en": "for an hour",
+      "es": "por una hora"
+    },
+    "perdere": {
+      "en": "to lose",
+      "es": "perder"
+    },
+    "perdere il treno": {
+      "en": "miss the train",
+      "es": "perder el tren"
+    },
+    "perdere tempo": {
+      "en": "waste time",
+      "es": "gastar tiempo"
+    },
+    "pericoloso": {
+      "en": "dangerous",
+      "es": "peligroso"
+    },
+    "pero": {
+      "en": "however",
+      "es": "sin embargo"
+    },
+    "persona": {
+      "en": "person",
+      "es": "persona"
+    },
+    "personale": {
+      "en": "staff",
+      "es": "personal"
+    },
+    "pesante": {
+      "en": "heavy",
+      "es": "pesado"
+    },
+    "pesarsi": {
+      "en": "to weigh",
+      "es": "pesar"
+    },
+    "pesce": {
+      "en": "fish",
+      "es": "peces"
+    },
+    "pettinarsi (mi pettino)": {
+      "en": "to comb one's hair",
+      "es": "a peinar el cabello"
+    },
+    "piacciono": {
+      "en": "please",
+      "es": "gustan"
+    },
+    "piacere": {
+      "en": "to please",
+      "es": "disfrutar"
+    },
+    "piaciuta": {
+      "en": "liked",
+      "es": "gustado"
+    },
+    "piangere": {
+      "en": "to cry",
+      "es": "llorar"
+    },
+    "pianista": {
+      "en": "pianist",
+      "es": "pianista"
+    },
+    "piano": {
+      "en": "floor",
+      "es": "piso"
+    },
+    "pianta": {
+      "en": "plant",
+      "es": "planta"
+    },
+    "piatti": {
+      "en": "plates",
+      "es": "platos"
+    },
+    "piccolo": {
+      "en": "small",
+      "es": "pequeño"
+    },
+    "pieno di": {
+      "en": "full of",
+      "es": "lleno de"
+    },
+    "pigiama": {
+      "en": "nightwear",
+      "es": "pijama"
+    },
+    "piove": {
+      "en": "it rains",
+      "es": "llueve"
+    },
+    "piovere": {
+      "en": "to rain",
+      "es": "pesar de la lluvia"
+    },
+    "pistola": {
+      "en": "gun",
+      "es": "arma"
+    },
+    "piu": {
+      "en": "more",
+      "es": "más"
+    },
+    "piu tardi": {
+      "en": "later",
+      "es": "más tarde"
+    },
+    "piuttosto": {
+      "en": "rather",
+      "es": "más bien"
+    },
+    "poi": {
+      "en": "later",
+      "es": "más tarde"
+    },
+    "polizia": {
+      "en": "police",
+      "es": "policia"
+    },
+    "polmoni": {
+      "en": "lungs",
+      "es": "lungs"
+    },
+    "poltrona": {
+      "en": "chair",
+      "es": "chair"
+    },
+    "polvere": {
+      "en": "dust",
+      "es": "polvo"
+    },
+    "pomeriggio": {
+      "en": "afternoon",
+      "es": "atardecer"
+    },
+    "porta": {
+      "en": "carry",
+      "es": "llevar"
+    },
+    "portabagagli": {
+      "en": "luggage rack",
+      "es": "estantería para equipaje"
+    },
+    "portar via": {
+      "en": "to take away",
+      "es": "a llevar"
+    },
+    "portare": {
+      "en": "to carry",
+      "es": "llevar"
+    },
+    "portare (non) mi sta bene": {
+      "en": "doesn't suit me to carry",
+      "es": "no me conviene llevar"
+    },
+    "portare fuori": {
+      "en": "to take out",
+      "es": "a sacar"
+    },
+    "possiamo": {
+      "en": "we can",
+      "es": "podemos"
+    },
+    "possibile": {
+      "en": "possible",
+      "es": "posible"
+    },
+    "possibilmente": {
+      "en": "possibly",
+      "es": "posiblemente"
+    },
+    "posso": {
+      "en": "I can",
+      "es": "Puedo"
+    },
+    "possono": {
+      "en": "can",
+      "es": "pueden"
+    },
+    "posta": {
+      "en": "mail",
+      "es": "correo"
+    },
+    "posto": {
+      "en": "place",
+      "es": "lugar"
+    },
+    "potrei": {
+      "en": "could I",
+      "es": "podría yo"
+    },
+    "poverino": {
+      "en": "poor child",
+      "es": "niño pobre"
+    },
+    "povero": {
+      "en": "poor",
+      "es": "pobre"
+    },
+    "pranzo": {
+      "en": "lunch",
+      "es": "almuerzo"
+    },
+    "prato": {
+      "en": "lawn",
+      "es": "jardín"
+    },
+    "precedente": {
+      "en": "previous",
+      "es": "anterior"
+    },
+    "preferisce": {
+      "en": "prefers",
+      "es": "prefiere"
+    },
+    "prego!": {
+      "en": "Please!",
+      "es": "Por favor!"
+    },
+    "prendere": {
+      "en": "to take",
+      "es": "tomar"
+    },
+    "prendere il caffe": {
+      "en": "to drink coffee",
+      "es": "to drink coffee"
+    },
+    "prendere il sole": {
+      "en": "to take the sun",
+      "es": "a disfrutar del sol"
+    },
+    "prendere il treno": {
+      "en": "take the train",
+      "es": "tomar el tren"
+    },
+    "prendere l'autobus": {
+      "en": "take the bus",
+      "es": "take the bus"
+    },
+    "preoccupato": {
+      "en": "worried",
+      "es": "preocupado"
+    },
+    "preparare": {
+      "en": "to prepare",
+      "es": "preparar"
+    },
+    "preparare la cena": {
+      "en": "to prepare dinner",
+      "es": "a preparar la cena"
+    },
+    "prescrivere": {
+      "en": "to prescribe",
+      "es": "ordenar"
+    },
+    "presentarsi": {
+      "en": "to present oneself",
+      "es": "presentarse"
+    },
+    "pressione": {
+      "en": "pressure",
+      "es": "presión"
+    },
+    "presto": {
+      "en": "soon",
+      "es": "pronto"
+    },
+    "presto!": {
+      "en": "soon",
+      "es": "pronto"
+    },
+    "prete": {
+      "en": "priest",
+      "es": "sacerdote"
+    },
+    "prigione": {
+      "en": "prison",
+      "es": "prisión"
+    },
+    "prima": {
+      "en": "first",
+      "es": "primero"
+    },
+    "prima ... poi": {
+      "en": "first ... then",
+      "es": "primero ... luego"
+    },
+    "prima di": {
+      "en": "before",
+      "es": "antes"
+    },
+    "prima di tutto": {
+      "en": "first of all",
+      "es": "primero de todo"
+    },
+    "probabilmente": {
+      "en": "probably",
+      "es": "probablemente"
+    },
+    "progetti": {
+      "en": "projects",
+      "es": "proyectos"
+    },
+    "programma": {
+      "en": "program",
+      "es": "programa"
+    },
+    "pronto": {
+      "en": "ready",
+      "es": "listo"
+    },
+    "pronto soccorso": {
+      "en": "emergency aid",
+      "es": "ayuda de emergencia"
+    },
+    "pronto!": {
+      "en": "Hello!",
+      "es": "¡Hola!"
+    },
+    "pronuncia": {
+      "en": "pronunciation",
+      "es": "pronunciación"
+    },
+    "proprio": {
+      "en": "exactly",
+      "es": "exactamente"
+    },
+    "prossimo": {
+      "en": "next",
+      "es": "próximo"
+    },
+    "provare": {
+      "en": "to try",
+      "es": "probar"
+    },
+    "provare (a fare)": {
+      "en": "to try",
+      "es": "a probar"
+    },
+    "provare a fare": {
+      "en": "to try to do",
+      "es": "intentar hacer"
+    },
+    "pulire": {
+      "en": "to clean",
+      "es": "limpiar"
+    },
+    "pulisce": {
+      "en": "cleans",
+      "es": "limpia"
+    },
+    "pulisco": {
+      "en": "I clean",
+      "es": "Yo limpio"
+    },
+    "puo": {
+      "en": "can",
+      "es": "puede"
+    },
+    "purtroppo": {
+      "en": "unfortunately",
+      "es": "desafortunadamente"
+    },
+    "quadro": {
+      "en": "picture",
+      "es": "imagen"
+    },
+    "qualche": {
+      "en": "some",
+      "es": "algunos"
+    },
+    "qualcosa": {
+      "en": "something",
+      "es": "algo"
+    },
+    "qualcuno": {
+      "en": "someone",
+      "es": "alguien"
+    },
+    "quale?": {
+      "en": "which",
+      "es": "qué"
+    },
+    "quando": {
+      "en": "when",
+      "es": "cuando"
+    },
+    "quant'e?": {
+      "en": "how much?",
+      "es": "¿cuánto?"
+    },
+    "quarant'anni": {
+      "en": "40 years",
+      "es": "40 años"
+    },
+    "quasi": {
+      "en": "almost",
+      "es": "casi"
+    },
+    "quello che": {
+      "en": "that which",
+      "es": "lo que"
+    },
+    "queste cose": {
+      "en": "these things",
+      "es": "estas cosas"
+    },
+    "questo": {
+      "en": "this",
+      "es": "esto"
+    },
+    "raccogliere": {
+      "en": "to gather",
+      "es": "recoger"
+    },
+    "radiografia": {
+      "en": "X-ray",
+      "es": "radiografía"
+    },
+    "ragazza": {
+      "en": "girl",
+      "es": "chica"
+    },
+    "ragazzi": {
+      "en": "boys",
+      "es": "chicos"
+    },
+    "ragazzina": {
+      "en": "girl",
+      "es": "niña"
+    },
+    "ragno": {
+      "en": "spider",
+      "es": "araña"
+    },
+    "ramo": {
+      "en": "branch",
+      "es": "rama"
+    },
+    "raro": {
+      "en": "rare",
+      "es": "raro"
+    },
+    "regalo": {
+      "en": "gift",
+      "es": "regalo"
+    },
+    "restare": {
+      "en": "to stay",
+      "es": "quedarse"
+    },
+    "restare (a fare)": {
+      "en": "to stay (to do)",
+      "es": "a quedarse (a hacer)"
+    },
+    "restare a casa": {
+      "en": "to stay at home",
+      "es": "a quedarse en casa"
+    },
+    "restituire": {
+      "en": "to return",
+      "es": "devolver"
+    },
+    "resto": {
+      "en": "rest",
+      "es": "resto"
+    },
+    "reumatismo": {
+      "en": "rheumatism",
+      "es": "reumatismo"
+    },
+    "riaprirsi": {
+      "en": "to reopen",
+      "es": "abrirse de nuevo"
+    },
+    "ricetta": {
+      "en": "recipe",
+      "es": "receta"
+    },
+    "ricevere": {
+      "en": "to receive",
+      "es": "recibir"
+    },
+    "richiudere": {
+      "en": "to close",
+      "es": "cerrar"
+    },
+    "richiudersi": {
+      "en": "to close again",
+      "es": "cerrarse de nuevo"
+    },
+    "ricordare": {
+      "en": "to remember",
+      "es": "recordar"
+    },
+    "riempio": {
+      "en": "I fill / I am filling",
+      "es": "lleno"
+    },
+    "riempire": {
+      "en": "to fill",
+      "es": "llenar"
+    },
+    "rientrare": {
+      "en": "to return",
+      "es": "regresar"
+    },
+    "rifiutare": {
+      "en": "to refuse",
+      "es": "aceptar"
+    },
+    "rifiuti": {
+      "en": "waste",
+      "es": "basura"
+    },
+    "rimesso": {
+      "en": "placed",
+      "es": "colocado"
+    },
+    "rimettere": {
+      "en": "to put back",
+      "es": "poner de nuevo"
+    },
+    "rimettersi (a fare)": {
+      "en": "to put oneself back to doing",
+      "es": "a sí mismo volver a hacer"
+    },
+    "ringraziare": {
+      "en": "to thank",
+      "es": "agradecer"
+    },
+    "riparare": {
+      "en": "to repair",
+      "es": "reparar"
+    },
+    "riportare": {
+      "en": "to bring back",
+      "es": "traer de vuelta"
+    },
+    "riposo": {
+      "en": "rest",
+      "es": "descanso"
+    },
+    "risparmiare": {
+      "en": "to save",
+      "es": "ahorrar"
+    },
+    "rispondere": {
+      "en": "to answer",
+      "es": "responder"
+    },
+    "rivista": {
+      "en": "magazine",
+      "es": "revista"
+    },
+    "roba da mangiare": {
+      "en": "food",
+      "es": "food"
+    },
+    "rompere": {
+      "en": "to break",
+      "es": "romper"
+    },
+    "rosso": {
+      "en": "red",
+      "es": "rojo"
+    },
+    "rotto": {
+      "en": "broken",
+      "es": "rompido"
+    },
+    "rubare": {
+      "en": "to steal",
+      "es": "robar"
+    },
+    "rumore": {
+      "en": "noise",
+      "es": "ruido"
+    },
+    "rumorosamente": {
+      "en": "noisily",
+      "es": "ruidosamente"
+    },
+    "russare": {
+      "en": "to snore",
+      "es": "aullar"
+    },
+    "sa": {
+      "en": "know",
+      "es": "saber"
+    },
+    "sabbia": {
+      "en": "sand",
+      "es": "arena"
+    },
+    "sai": {
+      "en": "you know",
+      "es": "sabes"
+    },
+    "salame": {
+      "en": "sausage",
+      "es": "embutido"
+    },
+    "salire": {
+      "en": "to climb",
+      "es": "subir"
+    },
+    "salotto": {
+      "en": "living room",
+      "es": "sala de estar"
+    },
+    "salutare": {
+      "en": "to greet",
+      "es": "saludar"
+    },
+    "salute": {
+      "en": "health",
+      "es": "salud"
+    },
+    "sangue": {
+      "en": "blood",
+      "es": "sangre"
+    },
+    "sapere": {
+      "en": "to know",
+      "es": "conocer"
+    },
+    "sbadiglio": {
+      "en": "yawn",
+      "es": "tos"
+    },
+    "scaffale": {
+      "en": "bookshelf",
+      "es": "estantería"
+    },
+    "scaffali": {
+      "en": "shelves",
+      "es": "estantes"
+    },
+    "scappare": {
+      "en": "to run away",
+      "es": "correr"
+    },
+    "scarpe": {
+      "en": "shoes",
+      "es": "zapatos"
+    },
+    "scegliere": {
+      "en": "to choose",
+      "es": "elegir"
+    },
+    "scelgo": {
+      "en": "I choose",
+      "es": "Elijo"
+    },
+    "scendere": {
+      "en": "to descend",
+      "es": "bajar"
+    },
+    "sciarpa": {
+      "en": "scarf",
+      "es": "pañuelo"
+    },
+    "sciopero": {
+      "en": "strike",
+      "es": "huelga"
+    },
+    "sciroppo": {
+      "en": "syrup",
+      "es": "sirope"
+    },
+    "scivolare": {
+      "en": "to slide",
+      "es": "deslizarse"
+    },
+    "scollato": {
+      "en": "bare-shouldered",
+      "es": "sin mangas"
+    },
+    "scrivania": {
+      "en": "desk",
+      "es": "mesa"
+    },
+    "scrivere": {
+      "en": "to write",
+      "es": "escribir"
+    },
+    "scuola": {
+      "en": "school",
+      "es": "escuela"
+    },
+    "scuotere": {
+      "en": "to shake",
+      "es": "aullar"
+    },
+    "scusi": {
+      "en": "excuse me",
+      "es": "perdón"
+    },
+    "sdraiarsi (mi sdraio)": {
+      "en": "to lie down",
+      "es": "a descansar"
+    },
+    "se": {
+      "en": "if",
+      "es": "si"
+    },
+    "secchiello": {
+      "en": "bucket",
+      "es": "bucket"
+    },
+    "secco": {
+      "en": "dry",
+      "es": "seco"
+    },
+    "secondo lei": {
+      "en": "according to him/her",
+      "es": "según él/ella"
+    },
+    "segretaria": {
+      "en": "secretary",
+      "es": "secretaria"
+    },
+    "sei": {
+      "en": "you are",
+      "es": "tú eres"
+    },
+    "selezione": {
+      "en": "selection",
+      "es": "selección"
+    },
+    "semplice": {
+      "en": "simple",
+      "es": "simple"
+    },
+    "sempre": {
+      "en": "always",
+      "es": "siempre"
+    },
+    "sentire": {
+      "en": "to hear",
+      "es": "escuchar"
+    },
+    "sentirsi bene": {
+      "en": "to feel good",
+      "es": "a sentirse bien"
+    },
+    "senz'altro": {
+      "en": "of course",
+      "es": "obviamente"
+    },
+    "sera": {
+      "en": "evening",
+      "es": "noche"
+    },
+    "serata": {
+      "en": "evening",
+      "es": "noche"
+    },
+    "serve": {
+      "en": "is needed",
+      "es": "es necesario"
+    },
+    "severo": {
+      "en": "severe",
+      "es": "severo"
+    },
+    "si accomodi": {
+      "en": "sit down",
+      "es": "sentarse"
+    },
+    "si chiama": {
+      "en": "his name is",
+      "es": "su nombre es"
+    },
+    "si dicono": {
+      "en": "they say",
+      "es": "they say"
+    },
+    "si ferma": {
+      "en": "stops",
+      "es": "se detiene"
+    },
+    "siamo d'accordo (essere d'accordo)": {
+      "en": "we agree",
+      "es": "estamos de acuerdo"
+    },
+    "siamo in sei": {
+      "en": "We are six",
+      "es": "Somos seis"
+    },
+    "sig.ra": {
+      "en": "Mrs",
+      "es": "Señora"
+    },
+    "sigaro": {
+      "en": "cigar",
+      "es": "cigarro"
+    },
+    "smettere": {
+      "en": "to stop",
+      "es": "dejar de hacer"
+    },
+    "smettere (di fare)": {
+      "en": "to stop (doing)",
+      "es": "a dejar (hacer)"
+    },
+    "so": {
+      "en": "I know",
+      "es": "sé"
+    },
+    "societa di": {
+      "en": "insurance company",
+      "es": "empresa de seguros"
+    },
+    "soddisfatto": {
+      "en": "satisfied",
+      "es": "satisfactorio"
+    },
+    "soffitto": {
+      "en": "ceiling",
+      "es": "techo"
+    },
+    "soldi": {
+      "en": "money",
+      "es": "dinero"
+    },
+    "sole": {
+      "en": "sun",
+      "es": "sol"
+    },
+    "solo": {
+      "en": "only",
+      "es": "solo"
+    },
+    "sonno pesante": {
+      "en": "heavy sleep",
+      "es": "sueño pesado"
+    },
+    "sono": {
+      "en": "I am",
+      "es": "soy"
+    },
+    "sono sempre io": {
+      "en": "I am always me",
+      "es": "Siempre soy yo"
+    },
+    "sopportare": {
+      "en": "to bear",
+      "es": "aceptar"
+    },
+    "sorella": {
+      "en": "sister",
+      "es": "hermana"
+    },
+    "sotto": {
+      "en": "under",
+      "es": "bajo"
+    },
+    "sottovoce": {
+      "en": "whispering",
+      "es": "susurrando"
+    },
+    "specchio": {
+      "en": "mirror",
+      "es": "espejo"
+    },
+    "specialmente": {
+      "en": "especially",
+      "es": "especialmente"
+    },
+    "spedire": {
+      "en": "to send",
+      "es": "enviar"
+    },
+    "spegnere": {
+      "en": "to turn off",
+      "es": "apagar"
+    },
+    "spendere": {
+      "en": "to spend",
+      "es": "gastar"
+    },
+    "spento": {
+      "en": "turned off",
+      "es": "apagado"
+    },
+    "sperare": {
+      "en": "to hope",
+      "es": "esperar"
+    },
+    "spesso": {
+      "en": "often",
+      "es": "a menudo"
+    },
+    "spettacolo": {
+      "en": "show",
+      "es": "espectáculo"
+    },
+    "spiegare": {
+      "en": "to explain",
+      "es": "explicar"
+    },
+    "spina": {
+      "en": "pin",
+      "es": "clavija"
+    },
+    "spogliarsi": {
+      "en": "to undress",
+      "es": "quitarse la ropa"
+    },
+    "spolverare": {
+      "en": "to dust",
+      "es": "limpiar la suciedad"
+    },
+    "sporcare": {
+      "en": "to dirty",
+      "es": "contaminar"
+    },
+    "sporco": {
+      "en": "dirty",
+      "es": "sucio"
+    },
+    "sportello": {
+      "en": "counter",
+      "es": "puesto"
+    },
+    "sposini": {
+      "en": "groomsmen",
+      "es": "compañeros de novios"
+    },
+    "spostare": {
+      "en": "to move",
+      "es": "mover"
+    },
+    "sta facendo": {
+      "en": "is doing",
+      "es": "está haciendo"
+    },
+    "sta per partire": {
+      "en": "is about to leave",
+      "es": "está a punto de partir"
+    },
+    "stai buona!": {
+      "en": "You are good!",
+      "es": "¡Estás bien!"
+    },
+    "stanchezza": {
+      "en": "fatigue",
+      "es": "cansancio"
+    },
+    "stanza": {
+      "en": "room",
+      "es": "habitación"
+    },
+    "star fermo": {
+      "en": "to stay still",
+      "es": "a esperar"
+    },
+    "stare": {
+      "en": "to stay",
+      "es": "quedarse"
+    },
+    "stare a casa": {
+      "en": "to stay at home",
+      "es": "a quedarse en casa"
+    },
+    "stare in piedi": {
+      "en": "stand up",
+      "es": "parar"
+    },
+    "stare in ufficio": {
+      "en": "to sit in an office",
+      "es": "a trabajar en la oficina"
+    },
+    "stasera": {
+      "en": "tonight",
+      "es": "esta noche"
+    },
+    "stipendio": {
+      "en": "salary",
+      "es": "salario"
+    },
+    "stirare": {
+      "en": "to stretch",
+      "es": "estirar"
+    },
+    "straccio": {
+      "en": "rag",
+      "es": "pano"
+    },
+    "straniera": {
+      "en": "foreign",
+      "es": "extraño"
+    },
+    "straniere": {
+      "en": "foreign languages",
+      "es": "lenguas extranjeras"
+    },
+    "strano": {
+      "en": "strange",
+      "es": "extraño"
+    },
+    "strappare": {
+      "en": "to tear",
+      "es": "rasgar"
+    },
+    "stretto": {
+      "en": "narrow",
+      "es": "estrecho"
+    },
+    "studentessa": {
+      "en": "female student",
+      "es": "estudiante femenina"
+    },
+    "studiare": {
+      "en": "to study",
+      "es": "estudiar"
+    },
+    "studio": {
+      "en": "study",
+      "es": "estudio"
+    },
+    "su": {
+      "en": "on",
+      "es": "sobre"
+    },
+    "subito": {
+      "en": "immediately",
+      "es": "inmediatamente"
+    },
+    "succedere": {
+      "en": "to happen",
+      "es": "ocurrir"
+    },
+    "suggerisce": {
+      "en": "suggests",
+      "es": "sugiere"
+    },
+    "sul balcone": {
+      "en": "on the balcony",
+      "es": "en el balcón"
+    },
+    "sul corridoio": {
+      "en": "on the corridor",
+      "es": "en el pasillo"
+    },
+    "sulla spiaggia": {
+      "en": "on the beach",
+      "es": "en la playa"
+    },
+    "suonare": {
+      "en": "to play",
+      "es": "jugar"
+    },
+    "superare": {
+      "en": "to succeed",
+      "es": "triunfar"
+    },
+    "supermercato": {
+      "en": "supermarket",
+      "es": "supermercado"
+    },
+    "svegliare": {
+      "en": "to wake up",
+      "es": "despertar"
+    },
+    "taglia": {
+      "en": "size",
+      "es": "tamaño"
+    },
+    "tagliare": {
+      "en": "to cut",
+      "es": "cortar"
+    },
+    "tagliare l'erba": {
+      "en": "to cut the grass",
+      "es": "a cortar la hierba"
+    },
+    "tante cose": {
+      "en": "many things",
+      "es": "muchos asuntos"
+    },
+    "tappeto": {
+      "en": "carpet",
+      "es": "tapete"
+    },
+    "tardi": {
+      "en": "late",
+      "es": "tarde"
+    },
+    "tascabile": {
+      "en": "pocketable",
+      "es": "de bolsillo"
+    },
+    "tavolo": {
+      "en": "table",
+      "es": "mesa"
+    },
+    "tazza": {
+      "en": "cup",
+      "es": "taza"
+    },
+    "te": {
+      "en": "tea",
+      "es": "té"
+    },
+    "tedesco m m": {
+      "en": "German",
+      "es": "alemán"
+    },
+    "telecomando": {
+      "en": "remote control",
+      "es": "control remoto"
+    },
+    "telefonare": {
+      "en": "to call",
+      "es": "to call"
+    },
+    "telefonino": {
+      "en": "cell phone",
+      "es": "celular"
+    },
+    "telefono": {
+      "en": "phone",
+      "es": "teléfono"
+    },
+    "televisione": {
+      "en": "television",
+      "es": "televisión"
+    },
+    "tempesta": {
+      "en": "storm",
+      "es": "tormenta"
+    },
+    "tempo": {
+      "en": "time",
+      "es": "tiempo"
+    },
+    "tende": {
+      "en": "curtains",
+      "es": "cortinas"
+    },
+    "terribile": {
+      "en": "terrible",
+      "es": "terrible"
+    },
+    "territorio": {
+      "en": "area",
+      "es": "área"
+    },
+    "tessuto": {
+      "en": "fabric",
+      "es": "tela"
+    },
+    "ti": {
+      "en": "you",
+      "es": "tú"
+    },
+    "tira vento": {
+      "en": "blows wind",
+      "es": "sopla viento"
+    },
+    "tirare fuori": {
+      "en": "to pull out",
+      "es": "a sacar"
+    },
+    "tirarsi su il morale": {
+      "en": "to boost morale",
+      "es": "aumentar el ánimo"
+    },
+    "titolo di studio": {
+      "en": "degree certificate",
+      "es": "certificado de estudios"
+    },
+    "toccare": {
+      "en": "to touch",
+      "es": "tocar"
+    },
+    "togliere": {
+      "en": "to remove",
+      "es": "sacar"
+    },
+    "togliersi": {
+      "en": "to remove oneself",
+      "es": "quitarse"
+    },
+    "togliersi (mi tolgo)": {
+      "en": "to remove",
+      "es": "a quitar"
+    },
+    "topo": {
+      "en": "mouse",
+      "es": "ratón"
+    },
+    "torcia": {
+      "en": "flashlight",
+      "es": "linterna"
+    },
+    "tornare": {
+      "en": "to return",
+      "es": "regresar"
+    },
+    "torno subito": {
+      "en": "I return soon",
+      "es": "Yo regreso pronto"
+    },
+    "tra l'altro": {
+      "en": "among other things",
+      "es": "entre otras cosas"
+    },
+    "tranquillanti": {
+      "en": "calming drugs",
+      "es": "medicamentos calmantes"
+    },
+    "tranquillo": {
+      "en": "calm",
+      "es": "sereno"
+    },
+    "treno": {
+      "en": "train",
+      "es": "tren"
+    },
+    "triste": {
+      "en": "sad",
+      "es": "triste"
+    },
+    "tritacarne": {
+      "en": "meat grinder",
+      "es": "carne cortadora"
+    },
+    "troppo": {
+      "en": "too much",
+      "es": "demasiado"
+    },
+    "trovare": {
+      "en": "to find",
+      "es": "encontrar"
+    },
+    "truccarsi": {
+      "en": "to put on makeup",
+      "es": "ponerse maquillaje"
+    },
+    "tubetto": {
+      "en": "tube",
+      "es": "tubo"
+    },
+    "tuona": {
+      "en": "you roar / hablas",
+      "es": "tú ruges"
+    },
+    "tuta": {
+      "en": "suit",
+      "es": "traje"
+    },
+    "tutta la giornata": {
+      "en": "all day",
+      "es": "todo el día"
+    },
+    "tutti": {
+      "en": "all",
+      "es": "todos"
+    },
+    "tutto": {
+      "en": "all",
+      "es": "todo"
+    },
+    "tutto quello che": {
+      "en": "everything that",
+      "es": "todo lo que"
+    },
+    "ubriaco": {
+      "en": "drunk",
+      "es": "beberizado"
+    },
+    "ufficio": {
+      "en": "office",
+      "es": "oficina"
+    },
+    "un attimo": {
+      "en": "a moment",
+      "es": "un momento"
+    },
+    "un giorno": {
+      "en": "one day",
+      "es": "un día"
+    },
+    "un po'": {
+      "en": "a little",
+      "es": "un poco"
+    },
+    "una notte": {
+      "en": "one night",
+      "es": "una noche"
+    },
+    "una sera": {
+      "en": "one evening",
+      "es": "una tarde"
+    },
+    "una sola": {
+      "en": "one",
+      "es": "uno"
+    },
+    "una volta": {
+      "en": "once",
+      "es": "una vez"
+    },
+    "uno": {
+      "en": "one",
+      "es": "uno"
+    },
+    "uno dopo l'altro": {
+      "en": "one after another",
+      "es": "uno tras otro"
+    },
+    "uomo": {
+      "en": "man",
+      "es": "hombre"
+    },
+    "uova": {
+      "en": "eggs",
+      "es": "huevos"
+    },
+    "urlare": {
+      "en": "to scream",
+      "es": "aullar"
+    },
+    "usare": {
+      "en": "to use",
+      "es": "usar"
+    },
+    "uscire": {
+      "en": "to leave",
+      "es": "salir"
+    },
+    "useremo": {
+      "en": "we will use",
+      "es": "usaremos"
+    },
+    "va": {
+      "en": "goes",
+      "es": "va"
+    },
+    "va bene": {
+      "en": "it's okay",
+      "es": "está bien"
+    },
+    "vacanza": {
+      "en": "holiday",
+      "es": "vacaciones"
+    },
+    "vado": {
+      "en": "I go",
+      "es": "voy"
+    },
+    "valigia": {
+      "en": "suitcase",
+      "es": "maleta"
+    },
+    "vanno": {
+      "en": "they go",
+      "es": "van"
+    },
+    "vanno a piedi": {
+      "en": "they go on foot",
+      "es": "they go on foot"
+    },
+    "vasca": {
+      "en": "bath",
+      "es": "baño"
+    },
+    "vaso": {
+      "en": "vase",
+      "es": "vaso"
+    },
+    "vecchio": {
+      "en": "old",
+      "es": "viejo"
+    },
+    "vedere": {
+      "en": "to see",
+      "es": "ver"
+    },
+    "venerdi": {
+      "en": "Friday",
+      "es": "Viernes"
+    },
+    "vengono": {
+      "en": "they come",
+      "es": "van"
+    },
+    "vent'anni": {
+      "en": "20 years",
+      "es": "20 años"
+    },
+    "ventisette": {
+      "en": "27",
+      "es": "27"
+    },
+    "veramente": {
+      "en": "truly",
+      "es": "realmente"
+    },
+    "verde": {
+      "en": "green",
+      "es": "verde"
+    },
+    "verso": {
+      "en": "toward",
+      "es": "hacia"
+    },
+    "vestirsi": {
+      "en": "to dress",
+      "es": "vestirse"
+    },
+    "vestiti": {
+      "en": "clothes",
+      "es": "vestidos"
+    },
+    "vestito": {
+      "en": "dress",
+      "es": "vestido"
+    },
+    "vestito alla moda": {
+      "en": "fashionable outfit",
+      "es": "vestido de moda"
+    },
+    "vetro": {
+      "en": "glass",
+      "es": "vidrio"
+    },
+    "vi": {
+      "en": "you",
+      "es": "ustedes"
+    },
+    "vi siete divertite": {
+      "en": "you all had fun",
+      "es": "vosotros habéis divertido"
+    },
+    "viaggiatore": {
+      "en": "traveler",
+      "es": "viajero"
+    },
+    "viaggio": {
+      "en": "trip",
+      "es": "viaje"
+    },
+    "viaggio d'affari m m": {
+      "en": "business trip",
+      "es": "viaje de negocios"
+    },
+    "vialetto": {
+      "en": "path",
+      "es": "pasaje"
+    },
+    "vicini di casa": {
+      "en": "neighbors",
+      "es": "vecinos"
+    },
+    "vicino a": {
+      "en": "near",
+      "es": "cerca"
+    },
+    "viene": {
+      "en": "comes",
+      "es": "viene"
+    },
+    "vieni": {
+      "en": "you come",
+      "es": "tú vienes"
+    },
+    "visita": {
+      "en": "visit",
+      "es": "visita"
+    },
+    "visitare": {
+      "en": "to visit",
+      "es": "visitar"
+    },
+    "vistoso": {
+      "en": "bright",
+      "es": "brillante"
+    },
+    "vivace": {
+      "en": "energetic",
+      "es": "energético"
+    },
+    "vivere": {
+      "en": "to live",
+      "es": "vivir"
+    },
+    "vivo": {
+      "en": "alive",
+      "es": "vivo"
+    },
+    "voglio": {
+      "en": "I want",
+      "es": "quiero"
+    },
+    "vogliono": {
+      "en": "they want",
+      "es": "quieren"
+    },
+    "volta": {
+      "en": "turn",
+      "es": "vuelta"
+    },
+    "vuoi": {
+      "en": "you want",
+      "es": "quieres"
+    },
+    "vuole": {
+      "en": "wants",
+      "es": "quiere"
+    },
+    "vuoto": {
+      "en": "empty",
+      "es": "vacío"
+    },
+    "zucchero": {
+      "en": "sugar",
+      "es": "azúcar"
+    }
+  }
+}

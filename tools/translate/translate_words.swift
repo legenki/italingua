@@ -32,6 +32,24 @@ func clean(_ s: String) -> String {
     return t.trimmingCharacters(in: CharacterSet(charactersIn: " \"«»“”"))
 }
 
+/// Reads "English: pen | Spanish: pluma", "pen | pluma" or markdown variants.
+func parsePair(_ raw: String) -> Pair? {
+    let text = raw.replacingOccurrences(of: "*", with: "")
+    func labeled(_ name: String) -> String? {
+        guard let r = text.range(of: name + "[^:\\n]*:\\s*([^|\\n]+)", options: .regularExpression) else { return nil }
+        let match = String(text[r])
+        return match.components(separatedBy: ":").dropFirst().joined(separator: ":").trimmingCharacters(in: .whitespaces)
+    }
+    if let en = labeled("English"), let es = labeled("Spanish"), !en.isEmpty, !es.isEmpty {
+        return Pair(en: en, es: es)
+    }
+    for line in text.components(separatedBy: "\n") where line.contains("|") {
+        let parts = line.components(separatedBy: "|").map { $0.trimmingCharacters(in: .whitespaces) }
+        if parts.count == 2, !parts[0].isEmpty, !parts[1].isEmpty { return Pair(en: parts[0], es: parts[1]) }
+    }
+    return nil
+}
+
 @main struct Main {
     static func main() async throws {
         let level = CommandLine.arguments.dropFirst().first ?? "A1"
@@ -66,6 +84,19 @@ func clean(_ s: String) -> String {
                     break
                 } catch {
                     if attempt == 1 { failed += 1; print("FAIL \(it): \(error)") }
+                }
+            }
+            // The relaxed guardrails apply to plain-text answers only: retry as
+            // "English | Spanish" text for words the structured request refused.
+            if result == nil {
+                let session = LanguageModelSession(model: model, instructions: instructions)
+                if let text = try? await session.respond(
+                    to: "Italian (\(pos)): \(it)\nRussian meaning: \(ru)\nAnswer exactly as: English | Spanish",
+                    options: GenerationOptions(temperature: 0)).content {
+                    if let pair = parsePair(text) {
+                        result = pair
+                        failed -= 1
+                    }
                 }
             }
             if let r = result {

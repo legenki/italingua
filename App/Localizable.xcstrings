@@ -1288,6 +1288,22 @@
         }
       }
     },
+    "Крупнее": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Larger"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más grande"
+          }
+        }
+      }
+    },
     "Лаванда": {
       "localizations": {
         "en": {
@@ -1364,6 +1380,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Medalla del día conseguida! Los 4 pasos en %lld minutos."
+          }
+        }
+      }
+    },
+    "Мельче": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Smaller"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más pequeño"
           }
         }
       }
@@ -1572,6 +1604,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "NUEVA"
+          }
+        }
+      }
+    },
+    "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the card to flip it. Swipe right — know it, left — still learning."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca la tarjeta para girarla. Desliza a la derecha — la sé, a la izquierda — aún aprendo."
           }
         }
       }
@@ -2004,6 +2052,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Respuesta modelo"
+          }
+        }
+      }
+    },
+    "Обычный размер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default size"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño normal"
           }
         }
       }
@@ -3284,6 +3348,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vi"
+          }
+        }
+      }
+    },
+    "Размер текста": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text size"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño del texto"
           }
         }
       }
