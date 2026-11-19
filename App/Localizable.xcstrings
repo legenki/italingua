@@ -1368,18 +1368,18 @@
         }
       }
     },
-    "Меню, экраны, переводы слов и правил. Язык меняется после перезапуска приложения.": {
+    "Меню, экраны, переводы слов и правил. Язык меняется после перезапуска приложения. Английские и испанские переводы слов сделаны моделью на устройстве и могут быть неточными.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Menus, screens, word translations and rules. The language changes after the app restarts."
+            "value": "Menus, screens, word translations and rules. The language changes after the app restarts. English and Spanish word translations were made by the on-device model and may be inaccurate."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Menús, pantallas, traducciones de palabras y reglas. El idioma cambia al reiniciar la app."
+            "value": "Menús, pantallas, traducciones de palabras y reglas. El idioma cambia al reiniciar la app. Las traducciones de palabras al inglés y al español las hizo el modelo del dispositivo y pueden ser imprecisas."
           }
         }
       }

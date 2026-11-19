@@ -1,0 +1,85 @@
+// Translates the course vocabulary into English and Spanish with the on-device
+// Apple model (Foundation Models), from the Italian word with its Russian gloss
+// as a hint. Output: tools/curation/<LEVEL>.words.json, merged by
+// extract_structure.py. Resumable: words already translated are skipped.
+//
+//   swiftc -parse-as-library tools/translate/translate_words.swift -o /tmp/translate_words
+//   /tmp/translate_words A1
+import Foundation
+import FoundationModels
+
+@Generable struct Pair {
+    @Guide(description: "English dictionary translation, 1 to 5 words") var en: String
+    @Guide(description: "Spanish dictionary translation, 1 to 5 words") var es: String
+}
+
+let instructions = """
+    You give short dictionary translations of Italian words and expressions for learners, into English and Spanish.
+    Translate the exact Italian form: a conjugated verb stays in that person and tense ("parlo" = "I speak" / "hablo"), \
+    an infinitive is "to …" in English and a plain infinitive in Spanish ("parlare" = "to speak" / "hablar"), \
+    a plural noun stays plural. Do not add articles that are not in the Italian. \
+    The Russian meaning is given only to pick the right sense. Answer with the translations only, no explanations.
+    """
+
+func fold(_ s: String) -> String {
+    s.lowercased().replacingOccurrences(of: "’", with: "'")
+        .folding(options: .diacriticInsensitive, locale: Locale(identifier: "it"))
+}
+
+func clean(_ s: String) -> String {
+    var t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+    while t.hasSuffix(".") && !t.hasSuffix("...") { t.removeLast() }
+    return t.trimmingCharacters(in: CharacterSet(charactersIn: " \"«»“”"))
+}
+
+@main struct Main {
+    static func main() async throws {
+        let level = CommandLine.arguments.dropFirst().first ?? "A1"
+        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+        let content = root.appendingPathComponent("Content/\(level).json")
+        let outURL = root.appendingPathComponent("tools/curation/\(level).words.json")
+        let json = try JSONSerialization.jsonObject(with: Data(contentsOf: content)) as! [String: Any]
+        var out = (try? JSONSerialization.jsonObject(with: Data(contentsOf: outURL))) as? [String: Any] ?? [:]
+        var words = out["words"] as? [String: [String: String]] ?? [:]
+        let model = SystemLanguageModel(guardrails: .permissiveContentTransformations)
+        let lessons = json["lessons"] as! [[String: Any]]
+        let all = lessons.flatMap { ($0["vocab"] as! [[String: Any]]) }
+        var done = 0, failed = 0
+        func save() throws {
+            out["_comment"] = "English/Spanish glosses made by the on-device Apple model (translate_words.swift). Fix by hand here if needed."
+            out["words"] = words
+            let data = try JSONSerialization.data(withJSONObject: out, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes])
+            try data.write(to: outURL)
+        }
+        for v in all {
+            let it = v["it"] as! String, ru = v["ru"] as! String, pos = v["pos"] as? String ?? ""
+            let key = fold(it)
+            if words[key] != nil { continue }
+            var result: Pair?
+            for attempt in 0..<2 {
+                do {
+                    let session = LanguageModelSession(model: model, instructions: instructions)
+                    result = try await session.respond(
+                        to: "Italian (\(pos)): \(it)\nRussian meaning: \(ru)",
+                        generating: Pair.self,
+                        options: GenerationOptions(temperature: attempt == 0 ? 0 : 0.4)).content
+                    break
+                } catch {
+                    if attempt == 1 { failed += 1; print("FAIL \(it): \(error)") }
+                }
+            }
+            if let r = result {
+                var es = clean(r.es)
+                // The model often writes Spanish infinitives as "a vivir", copying English "to".
+                if it.range(of: "(are|ere|ire|rsi)$", options: .regularExpression) != nil, es.hasPrefix("a ") {
+                    es = String(es.dropFirst(2))
+                }
+                words[key] = ["en": clean(r.en), "es": es]
+                done += 1
+                if done % 25 == 0 { try save(); print("\(level): \(words.count)/\(all.count)") }
+            }
+        }
+        try save()
+        print("\(level) finished: \(words.count) words, \(failed) failed")
+    }
+}

@@ -25,7 +25,7 @@ struct SettingsView: View {
             } header: {
                 Text(String(localized: "Язык интерфейса"))
             } footer: {
-                Text(String(localized: "Меню, экраны, переводы слов и правил. Язык меняется после перезапуска приложения."))
+                Text(String(localized: "Меню, экраны, переводы слов и правил. Язык меняется после перезапуска приложения. Английские и испанские переводы слов сделаны моделью на устройстве и могут быть неточными."))
             }
             .alert(String(localized: "Перезапустить приложение?"), isPresented: $askRestart) {
                 #if os(macOS)

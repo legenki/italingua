@@ -40,8 +40,10 @@ LEVEL_KEYS = {"level": str, "lessons": list}
 LESSON_KEYS = {"id": str, "title": str, "grammar": list, "vocab": list, "patterns": list}
 LESSON_OPTIONAL = {"source": dict}
 GRAMMAR_KEYS = {"topic": str, "rule_ru": str}
+GRAMMAR_OPTIONAL = {"topic_en": str, "topic_es": str, "rule_en": str, "rule_es": str}
 VOCAB_KEYS = {"it": str, "ru": str, "pos": str}
-VOCAB_OPTIONAL = {"gender": str, "number": str, "stress": str, "form_of": str, "new": bool}
+VOCAB_OPTIONAL = {"gender": str, "number": str, "stress": str, "form_of": str, "new": bool,
+                  "en": str, "es": str}
 
 CYR = re.compile("[а-яёА-ЯЁ]")
 # Well-known nouns whose gender does not follow the -o/-a ending rule.
@@ -173,10 +175,13 @@ def validate(path: Path) -> Report:
 
         for gi, g in enumerate(les.get("grammar", [])):
             gw = f"{where}.grammar[{gi}]"
-            if check_keys(rep, gw, g, GRAMMAR_KEYS) and not g.get("topic", "").strip():
+            if check_keys(rep, gw, g, GRAMMAR_KEYS, GRAMMAR_OPTIONAL) and not g.get("topic", "").strip():
                 rep.err(gw, "empty topic")
-            for msg in check_rule_markup(g.get("rule_ru", "")):
-                rep.err(f"{where} «{g.get('topic', '')}»", msg)
+            for field in ("rule_ru", "rule_en", "rule_es"):
+                for msg in check_rule_markup(g.get(field, "")):
+                    rep.err(f"{where} «{g.get('topic', '')}» {field}", msg)
+            if g.get("rule_ru") and not (g.get("rule_en") and g.get("rule_es")):
+                rep.warn(f"{where} «{g.get('topic', '')}»", "rule not translated to en/es")
 
         for pi, p in enumerate(les.get("patterns", [])):
             if not isinstance(p, str) or not p.strip():

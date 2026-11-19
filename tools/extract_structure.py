@@ -285,6 +285,14 @@ def infer_pos(it: str, ru: str, gender: str | None, form_of: str | None) -> str:
     return "other"
 
 
+def grammar_entry(topic: str, rule: str, tr: dict | None) -> dict:
+    entry = {"topic": topic, "rule_ru": rule}
+    for key in ("topic_en", "topic_es", "rule_en", "rule_es"):
+        if tr and tr.get(key):
+            entry[key] = tr[key]
+    return entry
+
+
 # ----------------------------------------------------------------------------
 def apply_merges(items: list[dict], merges: list[list[str]]) -> list[dict]:
     """Join entries whose Italian head was wrapped onto the next table line
@@ -321,6 +329,13 @@ def build_level(level: str) -> dict:
     drop = {fold(w) for w in curation.get("vocab_drop", [])}
     merges = [[fold(w) for w in m] for m in curation.get("vocab_merge", [])]
     overrides = {fold(k): v for k, v in overrides.items()}
+
+    # English/Spanish: topic names and rules written by hand, word glosses made
+    # by the on-device model (tools/translate/translate_words.swift).
+    tr_path = ROOT / "tools" / "curation" / f"{level}.translations.json"
+    translations = json.loads(tr_path.read_text()).get("lessons", {}) if tr_path.exists() else {}
+    words_path = ROOT / "tools" / "curation" / f"{level}.words.json"
+    word_glosses = json.loads(words_path.read_text()).get("words", {}) if words_path.exists() else {}
 
     seen: dict[str, str] = {}
     lessons = []
@@ -369,6 +384,10 @@ def build_level(level: str) -> dict:
                 out["new"] = True          # marked with * in the book: new in this lesson
             if "stress" in out and fold(out["stress"]) != fold(out["it"]):
                 del out["stress"]
+            gloss = word_glosses.get(fold(out["it"]), {})
+            for lang in ("en", "es"):
+                if gloss.get(lang):
+                    out[lang] = gloss[lang]
             vocab.append(out)
 
         lessons.append({
@@ -376,7 +395,8 @@ def build_level(level: str) -> dict:
             "source": {"part": key[0], "lesson": key[1],
                        "pages": [pages.start, pages.stop - 1]},
             "title": cur.get("title", ""),
-            "grammar": [{"topic": t, "rule_ru": rules.get(t, "")} for t in topics],
+            "grammar": [grammar_entry(t, rules.get(t, ""), translations.get(lid, {}).get("topics", {}).get(t))
+                        for t in topics],
             "vocab": vocab,
             "patterns": cur.get("patterns", []),
         })
