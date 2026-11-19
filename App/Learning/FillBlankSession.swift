@@ -47,7 +47,7 @@ final class FillBlankSession {
         let later = ranked.filter { $0.1 > now }.map(\.0)
         return (due + later).prefix(count).map { item in
             TargetWord(wordID: item.wordID, lessonID: lesson.id, italian: item.italian,
-                       russian: item.russian, pos: item.pos, gender: item.gender)
+                       russian: item.translation, pos: item.pos, gender: item.gender)
         }
     }
 
@@ -99,7 +99,7 @@ final class FillBlankSession {
         do {
             current = try await generator.makeExercise(for: word, lessonTitle: lessonTitle)
         } catch {
-            modelNotice = "Модель не справилась с этим словом, поэтому задание без предложения."
+            modelNotice = String(localized: "Модель не справилась с этим словом, поэтому задание без предложения.")
             current = try? await fallback.makeExercise(for: word, lessonTitle: lessonTitle)
         }
         phase = .answering

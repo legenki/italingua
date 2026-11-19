@@ -89,7 +89,7 @@ private struct CalloutCard: View {
 
     var body: some View {
         Card(fill: Theme.warningFill) {
-            CardLabel(text: "Осторожно", color: Theme.warningText)
+            CardLabel(text: String(localized: "Осторожно"), color: Theme.warningText)
             ForEach(lines, id: \.self) { Text(markup: $0) }
         }
     }
@@ -106,7 +106,7 @@ private struct ConjugationCard: View {
                     Text(conjugation.gloss).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                 }
                 Spacer()
-                SpeakButton(text: conjugation.spoken, label: "Прослушать формы", style: .filled)
+                SpeakButton(text: conjugation.spoken, label: String(localized: "Прослушать формы"), style: .filled)
             }
             // io/tu/lui in the left column, noi/voi/loro in the right one.
             let half = (conjugation.rows.count + 1) / 2
@@ -141,7 +141,7 @@ private struct ExamplesCard: View {
 
     var body: some View {
         Card(padding: 0) {
-            CardLabel(text: "Примеры")
+            CardLabel(text: String(localized: "Примеры"))
                 .padding([.top, .horizontal], 16)
             VStack(spacing: 0) {
                 ForEach(Array(items.enumerated()), id: \.offset) { index, item in
@@ -149,7 +149,7 @@ private struct ExamplesCard: View {
                         Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 72)
                     }
                     HStack(spacing: 12) {
-                        SpeakButton(text: item.0, label: "Прослушать пример")
+                        SpeakButton(text: item.0, label: String(localized: "Прослушать пример"))
                         VStack(alignment: .leading, spacing: 2) {
                             Text(markup: item.0).font(.s(.body))
                             Text(item.1).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
@@ -200,7 +200,7 @@ private struct TableCard: View {
                 GridRow(alignment: .center) {
                     if speaks {
                         if let text = table.spoken(row) {
-                            SpeakButton(text: text, label: "Прослушать", size: 32)
+                            SpeakButton(text: text, label: String(localized: "Прослушать"), size: 32)
                         } else {
                             Color.clear.frame(width: 32, height: 32)
                         }

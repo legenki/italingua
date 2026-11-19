@@ -21,37 +21,40 @@ struct GrammarTopicView: View {
     }
 
     private var note: RuleNote? { notes.first }
-    private var currentText: String { note?.text ?? topic.ruleRU }
+    /// Rules are edited in Russian (they go back into the course files), so
+    /// edits show and can be made only in the Russian interface.
+    private var editable: Bool { AppLanguage.current == "ru" }
+    private var currentText: String { (editable ? note?.text : nil) ?? topic.rule }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text(topic.topic)
+                Text(topic.title)
                     .font(.s(.largeTitle).weight(.bold))
                     .fixedSize(horizontal: false, vertical: true)
 
                 if editing {
                     Card {
-                        CardLabel(text: "Правило")
+                        CardLabel(text: String(localized: "Правило"))
                         TextEditor(text: $draft)
                             .font(.s(.body).monospaced())
                             .frame(minHeight: 320)
                             .scrollContentBackground(.hidden)
-                        Text("Разметка: «• пункт», «! осторожно», «ex: Italiano | Перевод», «conj: verbo | перевод» и шесть строк вида «io parl|o», **жирный**.")
+                        Text(String(localized: "Разметка: «• пункт», «! осторожно», «ex: Italiano | Перевод», «conj: verbo | перевод» и шесть строк вида «io parl|o», **жирный**."))
                             .font(.s(.caption))
                             .foregroundStyle(Theme.secondaryText)
                     }
                 } else if currentText.isEmpty {
                     Card {
-                        Text("Правило ещё не написано. Нажмите «Изменить», чтобы записать его своими словами.")
+                        Text(String(localized: "Правило ещё не написано. Нажмите «Изменить», чтобы записать его своими словами."))
                             .foregroundStyle(Theme.secondaryText)
                     }
                 } else {
                     RuleBlocksView(text: currentText)
                 }
 
-                if !editing, note != nil {
-                    Label("Изменено в приложении. Попадёт в файлы курса после экспорта правил.",
+                if !editing, editable, note != nil {
+                    Label(String(localized: "Изменено в приложении. Попадёт в файлы курса после экспорта правил."),
                           systemImage: "pencil.circle")
                         .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)
@@ -68,14 +71,14 @@ struct GrammarTopicView: View {
         .toolbar {
             if editing {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Отмена") { editing = false }
+                    Button(String(localized: "Отмена")) { editing = false }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Сохранить") { save() }
+                    Button(String(localized: "Сохранить")) { save() }
                 }
-            } else {
+            } else if editable {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Изменить") {
+                    Button(String(localized: "Изменить")) {
                         draft = currentText
                         editing = true
                     }

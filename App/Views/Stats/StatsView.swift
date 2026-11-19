@@ -11,15 +11,15 @@ struct StatsView: View {
     @Query private var sessions: [SessionRecord]
     @Query(sort: [SortDescriptor(\Lesson.level), SortDescriptor(\Lesson.sourcePart), SortDescriptor(\Lesson.order)])
     private var lessons: [Lesson]
-    @State private var iCloudStatus = "проверяю…"
+    @State private var iCloudStatus = String(localized: "проверяю…")
 
     var body: some View {
         let data = realData
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Статистика").font(.s(.largeTitle).weight(.bold))
+                Text(String(localized: "Статистика")).font(.s(.largeTitle).weight(.bold))
                 if data.totalAnswers == 0 {
-                    Text("Графики заполнятся, когда появятся ответы в карточках и упражнениях.")
+                    Text(String(localized: "Графики заполнятся, когда появятся ответы в карточках и упражнениях."))
                         .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)
                 }
@@ -42,7 +42,7 @@ struct StatsView: View {
         .task { iCloudStatus = await Self.checkICloud() }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("Готово") { dismiss() }
+                Button(String(localized: "Готово")) { dismiss() }
             }
         }
     }
@@ -51,7 +51,7 @@ struct StatsView: View {
         lessons.map { lesson in
             StatsData.LessonInput(
                 id: lesson.id,
-                label: (lesson.sourcePart == "intro" ? "В" : "У") + "\(lesson.sourceLesson)",
+                label: (lesson.sourcePart == "intro" ? String(localized: "В") : String(localized: "У")) + "\(lesson.sourceLesson)",
                 title: lesson.title,
                 wordIDs: lesson.vocab.filter(FillBlankSession.isPracticable).map(\.wordID))
         }
@@ -68,10 +68,10 @@ struct StatsView: View {
 
     private var systemCard: some View {
         Card {
-            CardLabel(text: "Система")
+            CardLabel(text: String(localized: "Система"))
             LabeledContent("iCloud", value: iCloudStatus)
             let status = ModelStatus.current()
-            LabeledContent("Модель для упражнений", value: status.isAvailable ? "готова" : "недоступна")
+            LabeledContent(String(localized: "Модель для упражнений"), value: status.isAvailable ? String(localized: "готова") : String(localized: "недоступна"))
             if case .unavailable(let reason) = status {
                 Text(reason).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
             }
@@ -82,18 +82,18 @@ struct StatsView: View {
     /// Asks CloudKit directly, so sync problems are visible without Console.
     static func checkICloud() async -> String {
         guard let id = Bundle.main.object(forInfoDictionaryKey: "ItalinguaCloudKitContainer") as? String,
-              !id.isEmpty else { return "контейнер не настроен" }
+              !id.isEmpty else { return String(localized: "контейнер не настроен") }
         do {
             switch try await CKContainer(identifier: id).accountStatus() {
-            case .available: return "подключён"
-            case .noAccount: return "нет входа в iCloud"
-            case .restricted: return "ограничен"
-            case .temporarilyUnavailable: return "временно недоступен"
-            case .couldNotDetermine: return "не удалось определить"
-            @unknown default: return "неизвестно"
+            case .available: return String(localized: "подключён")
+            case .noAccount: return String(localized: "нет входа в iCloud")
+            case .restricted: return String(localized: "ограничен")
+            case .temporarilyUnavailable: return String(localized: "временно недоступен")
+            case .couldNotDetermine: return String(localized: "не удалось определить")
+            @unknown default: return String(localized: "неизвестно")
             }
         } catch {
-            return "ошибка: \(error.localizedDescription)"
+            return String(localized: "ошибка: \(error.localizedDescription)")
         }
     }
 }

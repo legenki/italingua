@@ -37,7 +37,7 @@ final class Lesson {
 
     /// "Вводный урок 3" / "Урок 12" — where it sits in the textbook.
     var sourceLabel: String {
-        sourcePart == "intro" ? "Вводный урок \(sourceLesson)" : "Урок \(sourceLesson)"
+        sourcePart == "intro" ? String(localized: "Вводный урок \(sourceLesson)") : String(localized: "Урок \(sourceLesson)")
     }
 }
 
@@ -47,6 +47,15 @@ final class GrammarTopic {
     var topic: String
     /// Rule in the owner's own words; empty until written.
     var ruleRU: String
+    /// Translations for the English and Spanish interface ("" = not translated yet).
+    var topicEN: String = ""
+    var topicES: String = ""
+    var ruleEN: String = ""
+    var ruleES: String = ""
+
+    /// Topic name and rule in the interface language, Russian when not translated.
+    var title: String { AppLanguage.pick(ru: topic, en: topicEN, es: topicES) }
+    var rule: String { AppLanguage.pick(ru: ruleRU, en: ruleEN, es: ruleES) }
     var lesson: Lesson?
 
     init(order: Int, topic: String, ruleRU: String) {
@@ -63,6 +72,11 @@ final class VocabItem {
     var order: Int
     var italian: String
     var russian: String
+    var english: String = ""
+    var spanish: String = ""
+
+    /// The gloss in the interface language, Russian when not translated.
+    var translation: String { AppLanguage.pick(ru: russian, en: english, es: spanish) }
     var posRaw: String
     var gender: String?
     var number: String?
@@ -111,18 +125,18 @@ nonisolated enum PartOfSpeech: String, CaseIterable, Sendable {
 
     var shortRU: String {
         switch self {
-        case .noun: "сущ."
-        case .verb: "гл."
-        case .adj: "прил."
-        case .adv: "нар."
-        case .pron: "мест."
-        case .prep: "предл."
-        case .conj: "союз"
-        case .art: "арт."
-        case .num: "числ."
-        case .interj: "межд."
-        case .proper: "имя"
-        case .phrase: "выраж."
+        case .noun: String(localized: "сущ.")
+        case .verb: String(localized: "гл.")
+        case .adj: String(localized: "прил.")
+        case .adv: String(localized: "нар.")
+        case .pron: String(localized: "мест.")
+        case .prep: String(localized: "предл.")
+        case .conj: String(localized: "союз")
+        case .art: String(localized: "арт.")
+        case .num: String(localized: "числ.")
+        case .interj: String(localized: "межд.")
+        case .proper: String(localized: "имя")
+        case .phrase: String(localized: "выраж.")
         case .other: "—"
         }
     }

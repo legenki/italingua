@@ -40,8 +40,8 @@ enum FillBlankError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .targetMissing: "Модель не смогла составить предложение с нужным словом."
-        case .badGrammar: "Модель не смогла составить грамотное предложение."
+        case .targetMissing: String(localized: "Модель не смогла составить предложение с нужным словом.")
+        case .badGrammar: String(localized: "Модель не смогла составить грамотное предложение.")
         }
     }
 }

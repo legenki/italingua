@@ -23,20 +23,20 @@ struct LessonDetailView: View {
                 }
 
                 Card(padding: 0) {
-                    CardLabel(text: "Грамматика").padding([.top, .horizontal], 16)
+                    CardLabel(text: String(localized: "Грамматика")).padding([.top, .horizontal], 16)
                     VStack(spacing: 0) {
                         ForEach(Array(lesson.sortedGrammar.enumerated()), id: \.element.id) { index, topic in
                             if index > 0 {
                                 Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 16)
                             }
-                            let rule = edited[RuleNote.key(lessonID: lesson.id, topic: topic.topic)] ?? topic.ruleRU
+                            let rule = (AppLanguage.current == "ru" ? edited[RuleNote.key(lessonID: lesson.id, topic: topic.topic)] : nil) ?? topic.rule
                             NavigationLink {
                                 GrammarTopicView(lessonID: lesson.id, topic: topic)
                             } label: {
                                 HStack(spacing: 12) {
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text(topic.topic).font(.s(.body).weight(.semibold))
-                                        Text(rule.isEmpty ? "Правило не написано" : RuleMarkup.preview(rule))
+                                        Text(topic.title).font(.s(.body).weight(.semibold))
+                                        Text(rule.isEmpty ? String(localized: "Правило не написано") : RuleMarkup.preview(rule))
                                             .font(.s(.subheadline))
                                             .foregroundStyle(Theme.secondaryText)
                                             .lineLimit(2)
@@ -59,11 +59,11 @@ struct LessonDetailView: View {
 
                 if !lesson.patterns.isEmpty {
                     Card {
-                        CardLabel(text: "Речевые шаблоны")
+                        CardLabel(text: String(localized: "Речевые шаблоны"))
                         ForEach(lesson.patterns, id: \.self) { pattern in
                             HStack(spacing: 12) {
                                 SpeakButton(text: pattern.replacingOccurrences(of: "…", with: ""),
-                                            label: "Прослушать шаблон", size: 36)
+                                            label: String(localized: "Прослушать шаблон"), size: 36)
                                 Text(pattern).font(.s(.body).italic())
                             }
                         }
@@ -76,8 +76,8 @@ struct LessonDetailView: View {
                     Card {
                         HStack {
                             VStack(alignment: .leading, spacing: 6) {
-                                CardLabel(text: "Лексика")
-                                Text("\(learnedHere) из \(lesson.vocab.count) выучено")
+                                CardLabel(text: String(localized: "Лексика"))
+                                Text(String(localized: "\(learnedHere) из \(lesson.vocab.count) выучено"))
                                     .font(.s(.headline))
                                 ProgressView(value: Double(learnedHere), total: Double(max(lesson.vocab.count, 1)))
                                     .tint(Theme.accent)
@@ -91,16 +91,16 @@ struct LessonDetailView: View {
                 .buttonStyle(.plain)
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                    PracticeLink(title: "Карточки", systemImage: "rectangle.on.rectangle.angled", filled: false) {
+                    PracticeLink(title: String(localized: "Карточки"), systemImage: "rectangle.on.rectangle.angled", filled: false) {
                         FlashcardsView(lesson: lesson)
                     }
-                    PracticeLink(title: "Вставь слово", systemImage: "character.cursor.ibeam", filled: true) {
+                    PracticeLink(title: String(localized: "Вставь слово"), systemImage: "character.cursor.ibeam", filled: true) {
                         FillBlankView(lesson: lesson)
                     }
-                    PracticeLink(title: "Переведи фразу", systemImage: "text.bubble", filled: false) {
+                    PracticeLink(title: String(localized: "Переведи фразу"), systemImage: "text.bubble", filled: false) {
                         TranslationView(lesson: lesson)
                     }
-                    PracticeLink(title: "Чтение", systemImage: "book.pages", filled: false) {
+                    PracticeLink(title: String(localized: "Чтение"), systemImage: "book.pages", filled: false) {
                         ReadingView(lesson: lesson)
                     }
                 }

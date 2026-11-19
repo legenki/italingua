@@ -6,7 +6,7 @@ import SwiftUI
 struct FlashcardsView: View {
     /// Words of the deck: a lesson's vocabulary, or due words from several lessons.
     let items: [VocabItem]
-    var title = "Карточки"
+    var title = String(localized: "Карточки")
 
     init(lesson: Lesson) {
         items = lesson.sortedVocab
@@ -52,13 +52,13 @@ struct FlashcardsView: View {
             // In the top bar, like the "All | Missed" switch in Phone › Recents;
             // on iOS 26 / macOS 26 the segmented control gets the glass capsule look.
             ToolbarItem(placement: .principal) {
-                Picker("Сначала", selection: $front) {
+                Picker(String(localized: "Сначала"), selection: $front) {
                     ForEach(FlashcardSession.Side.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
                 .fixedSize()
                 .labelsHidden()
-                .help("Какой стороной показывать карточку сначала")
+                .help(String(localized: "Какой стороной показывать карточку сначала"))
             }
         }
         .onAppear(perform: startIfNeeded)
@@ -70,13 +70,13 @@ struct FlashcardsView: View {
     private func run(_ s: FlashcardSession) -> some View {
         VStack(spacing: 8) {
             HStack {
-                Counter(count: s.learning.count, title: "Ещё учу", color: Theme.warningText, fill: Theme.warningFill)
+                Counter(count: s.learning.count, title: String(localized: "Ещё учу"), color: Theme.warningText, fill: Theme.warningFill)
                 Spacer()
                 Text("\(s.index + 1) / \(s.total)")
                     .font(.s(.headline).monospacedDigit())
                     .foregroundStyle(Theme.secondaryText)
                 Spacer()
-                Counter(count: s.known.count, title: "Знаю", color: Theme.accent, fill: Theme.accentSoft)
+                Counter(count: s.known.count, title: String(localized: "Знаю"), color: Theme.accent, fill: Theme.accentSoft)
             }
             ProgressView(value: Double(s.index), total: Double(max(s.total, 1)))
                 .tint(Theme.accent)
@@ -103,7 +103,7 @@ struct FlashcardsView: View {
         }
 
         HStack(spacing: 12) {
-            RoundAction(systemImage: "xmark", label: "Ещё учу", color: Theme.warningText, fill: Theme.warningFill) {
+            RoundAction(systemImage: "xmark", label: String(localized: "Ещё учу"), color: Theme.warningText, fill: Theme.warningFill) {
                 answer(s, knew: false)
             }
             .keyboardShortcut(.leftArrow, modifiers: [])
@@ -111,7 +111,7 @@ struct FlashcardsView: View {
             Button {
                 withAnimation(.spring(duration: 0.3)) { s.undo() }
             } label: {
-                Label("Назад", systemImage: "arrow.uturn.backward")
+                Label(String(localized: "Назад"), systemImage: "arrow.uturn.backward")
                     .font(.s(.subheadline).weight(.semibold))
                     .foregroundStyle(Theme.secondaryText)
             }
@@ -119,7 +119,7 @@ struct FlashcardsView: View {
             .disabled(s.index == 0)
             .keyboardShortcut("z", modifiers: .command)
             Spacer()
-            RoundAction(systemImage: "checkmark", label: "Знаю", color: Theme.onAccent, fill: Theme.accent) {
+            RoundAction(systemImage: "checkmark", label: String(localized: "Знаю"), color: Theme.onAccent, fill: Theme.accent) {
                 answer(s, knew: true)
             }
             .keyboardShortcut(.rightArrow, modifiers: [])
@@ -127,16 +127,16 @@ struct FlashcardsView: View {
         .padding(.horizontal, 8)
 
         // Space flips the card; the button is invisible but keeps the shortcut.
-        Button("Перевернуть") { flip(s) }
+        Button(String(localized: "Перевернуть")) { flip(s) }
             .keyboardShortcut(.space, modifiers: [])
             .opacity(0)
             .frame(height: 0)
             .accessibilityHidden(true)
 
         #if os(macOS)
-        let hint = "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу. Клавиши: пробел, ← и →."
+        let hint = String(localized: "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу. Клавиши: пробел, ← и →.")
         #else
-        let hint = "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу."
+        let hint = String(localized: "Нажми на карточку, чтобы перевернуть. Смахни вправо — знаю, влево — ещё учу.")
         #endif
         Text(hint)
             .font(.s(.footnote))
@@ -180,7 +180,7 @@ struct FlashcardsView: View {
     private func summary(_ s: FlashcardSession) -> some View {
         let total = s.known.count + s.learning.count
         Card {
-            CardLabel(text: "Готово")
+            CardLabel(text: String(localized: "Готово"))
             HStack(spacing: 20) {
                 ZStack {
                     Circle().stroke(Theme.warningFill, lineWidth: 10)
@@ -193,27 +193,27 @@ struct FlashcardsView: View {
                 }
                 .frame(width: 96, height: 96)
                 VStack(alignment: .leading, spacing: 8) {
-                    Label("Знаю: \(s.known.count)", systemImage: "checkmark.circle.fill")
+                    Label(String(localized: "Знаю: \(s.known.count)"), systemImage: "checkmark.circle.fill")
                         .foregroundStyle(Theme.accent)
-                    Label("Ещё учу: \(s.learning.count)", systemImage: "arrow.trianglehead.2.clockwise")
+                    Label(String(localized: "Ещё учу: \(s.learning.count)"), systemImage: "arrow.trianglehead.2.clockwise")
                         .foregroundStyle(Theme.warningText)
                 }
                 .font(.s(.headline))
             }
             if !s.learning.isEmpty {
-                WideButton(title: "Повторить «ещё учу» (\(s.learning.count))", filled: true) {
+                WideButton(title: String(localized: "Повторить «ещё учу» (\(s.learning.count))"), filled: true) {
                     recorded = []
                     withAnimation { s.restartWithLearning() }
                 }
             }
-            WideButton(title: "Начать заново", filled: s.learning.isEmpty) {
+            WideButton(title: String(localized: "Начать заново"), filled: s.learning.isEmpty) {
                 recorded = []
                 withAnimation { s.restartAll() }
             }
         }
         if !s.learning.isEmpty {
             Card(padding: 0) {
-                CardLabel(text: "Ещё учу").padding([.top, .horizontal], 16)
+                CardLabel(text: String(localized: "Ещё учу")).padding([.top, .horizontal], 16)
                 VStack(spacing: 0) {
                     ForEach(Array(s.learning.enumerated()), id: \.element.id) { i, card in
                         if i > 0 { Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 72) }
@@ -243,8 +243,8 @@ struct FlashcardsView: View {
         let due = Set(progress.filter { $0.box > 0 && $0.dueDate <= .now }.map(\.wordID))
         let cards = items.filter { $0.pos != .proper }.map { item in
             Flashcard(wordID: item.wordID, lessonID: item.lesson?.id ?? "", italian: item.displayWithArticle, spoken: item.withArticle,
-                      russian: item.russian, gender: item.gender,
-                      note: item.formOf.map { "форма от \($0)" })
+                      russian: item.translation, gender: item.gender,
+                      note: item.formOf.map { String(localized: "форма от \($0)") })
         }
         session = FlashcardSession(cards: FlashcardSession.order(cards, boxes: boxes, due: due))
     }
@@ -277,7 +277,7 @@ private struct CardView: View {
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
         .accessibilityLabel(showsItalian ? card.italian : card.russian)
-        .accessibilityHint("Нажми, чтобы перевернуть")
+        .accessibilityHint(String(localized: "Нажми, чтобы перевернуть"))
         .accessibilityAddTraits(.isButton)
     }
 
@@ -285,7 +285,7 @@ private struct CardView: View {
     private var swipeHint: some View {
         let progress = min(abs(drag.width) / 110, 1)
         if drag.width != 0 {
-            Text(drag.width > 0 ? "ЗНАЮ" : "ЕЩЁ УЧУ")
+            Text(drag.width > 0 ? String(localized: "ЗНАЮ") : String(localized: "ЕЩЁ УЧУ"))
                 .font(.s(.headline).weight(.heavy))
                 .foregroundStyle(drag.width > 0 ? Theme.accent : Theme.warningText)
                 .padding(.horizontal, 14).padding(.vertical, 6)
@@ -300,7 +300,7 @@ private struct CardView: View {
     private func face(italian: Bool) -> some View {
         VStack(spacing: 14) {
             HStack {
-                CardLabel(text: italian ? "Итальянский" : "Русский")
+                CardLabel(text: italian ? String(localized: "Итальянский") : String(localized: "Русский"))
                 Spacer()
                 FavoriteButton(wordID: card.wordID, isFavorite: isFavorite)
                 if italian, let g = card.gender {
@@ -323,7 +323,7 @@ private struct CardView: View {
             }
             Spacer(minLength: 0)
             if italian {
-                SpeakButton(text: card.spoken, label: "Прослушать слово", size: 48, style: .filled)
+                SpeakButton(text: card.spoken, label: String(localized: "Прослушать слово"), size: 48, style: .filled)
             } else {
                 Color.clear.frame(height: 48)
             }

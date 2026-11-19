@@ -22,8 +22,8 @@ struct FavoriteButton: View {
                 .symbolEffect(.bounce, value: isFavorite)
         }
         .buttonStyle(.plain)
-        .help(isFavorite ? "Убрать из избранного" : "В избранное")
-        .accessibilityLabel(isFavorite ? "Убрать из избранного" : "Добавить в избранное")
+        .help(isFavorite ? String(localized: "Убрать из избранного") : String(localized: "В избранное"))
+        .accessibilityLabel(isFavorite ? String(localized: "Убрать из избранного") : String(localized: "Добавить в избранное"))
     }
 }
 
@@ -36,18 +36,18 @@ struct FavoritesView: View {
         let items = Self.items(favorites: favorites, vocab: vocab)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Избранное").font(.s(.largeTitle).weight(.bold))
+                Text(String(localized: "Избранное")).font(.s(.largeTitle).weight(.bold))
                 if items.isEmpty {
                     Card {
-                        Label("Пока пусто", systemImage: "star").font(.s(.headline))
-                        Text("Отмечай слова звёздочкой в лексике урока, в карточках или в «Слове дня». Здесь из них соберётся своя колода.")
+                        Label(String(localized: "Пока пусто"), systemImage: "star").font(.s(.headline))
+                        Text(String(localized: "Отмечай слова звёздочкой в лексике урока, в карточках или в «Слове дня». Здесь из них соберётся своя колода."))
                             .foregroundStyle(Theme.secondaryText)
                     }
                 } else {
                     NavigationLink {
-                        FlashcardsView(items: items, title: "Избранное")
+                        FlashcardsView(items: items, title: String(localized: "Избранное"))
                     } label: {
-                        Label("Учить карточками · \(items.count) \(wordWord(items.count))",
+                        Label(String(localized: "Учить карточками · \(items.count) \(wordWord(items.count))"),
                               systemImage: "rectangle.on.rectangle.angled")
                             .font(.s(.headline))
                             .foregroundStyle(Theme.onAccent)
@@ -66,7 +66,7 @@ struct FavoritesView: View {
                                     SpeakButton(text: item.withArticle)
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
-                                        Text(item.russian + (item.lesson.map { " · \($0.sourceLabel)" } ?? ""))
+                                        Text(item.translation + (item.lesson.map { " · \($0.sourceLabel)" } ?? ""))
                                             .font(.s(.subheadline))
                                             .foregroundStyle(Theme.secondaryText)
                                     }

@@ -14,15 +14,15 @@ nonisolated enum MistakeKind: String, CaseIterable, Sendable {
 
     var titleRU: String {
         switch self {
-        case .article: "Артикль"
-        case .agreement: "Род и число"
-        case .conjugation: "Спряжение"
-        case .preposition: "Предлог"
-        case .accent: "Ударение / акцент"
-        case .spelling: "Орфография"
-        case .vocabulary: "Не то слово"
-        case .wordOrder: "Порядок слов"
-        case .other: "Другое"
+        case .article: String(localized: "Артикль")
+        case .agreement: String(localized: "Род и число")
+        case .conjugation: String(localized: "Спряжение")
+        case .preposition: String(localized: "Предлог")
+        case .accent: String(localized: "Ударение / акцент")
+        case .spelling: String(localized: "Орфография")
+        case .vocabulary: String(localized: "Не то слово")
+        case .wordOrder: String(localized: "Порядок слов")
+        case .other: String(localized: "Другое")
         }
     }
 }
@@ -54,22 +54,22 @@ nonisolated enum AnswerChecker {
     static func check(given: String, expected: String, pos: PartOfSpeech) -> AnswerCheck {
         let g = normalize(given), e = normalize(expected)
         if g == e {
-            return AnswerCheck(isCorrect: true, mistake: nil, feedbackRU: "Верно!")
+            return AnswerCheck(isCorrect: true, mistake: nil, feedbackRU: String(localized: "Верно!"))
         }
         if g.isEmpty {
-            return AnswerCheck(isCorrect: false, mistake: .vocabulary, feedbackRU: "Нужно: \(expected)")
+            return AnswerCheck(isCorrect: false, mistake: .vocabulary, feedbackRU: String(localized: "Нужно: \(expected)"))
         }
         let kind = classify(given: g, expected: e, pos: pos)
         let hint: String = switch kind {
-        case .accent: "Почти: проверь знак ударения."
-        case .spelling: "Почти: опечатка."
-        case .article: "Артикль не тот."
-        case .preposition: "Предлог не тот."
-        case .agreement: "Окончание не то: род или число."
-        case .conjugation: "Не та форма глагола."
-        default: "Другое слово."
+        case .accent: String(localized: "Почти: проверь знак ударения.")
+        case .spelling: String(localized: "Почти: опечатка.")
+        case .article: String(localized: "Артикль не тот.")
+        case .preposition: String(localized: "Предлог не тот.")
+        case .agreement: String(localized: "Окончание не то: род или число.")
+        case .conjugation: String(localized: "Не та форма глагола.")
+        default: String(localized: "Другое слово.")
         }
-        return AnswerCheck(isCorrect: false, mistake: kind, feedbackRU: "\(hint) Нужно: \(expected)")
+        return AnswerCheck(isCorrect: false, mistake: kind, feedbackRU: String(localized: "\(hint) Нужно: \(expected)"))
     }
 
     static func classify(given g: String, expected e: String, pos: PartOfSpeech) -> MistakeKind {

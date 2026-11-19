@@ -23,7 +23,7 @@ final class FlashcardSession {
     enum Side: String, CaseIterable, Identifiable {
         case italian, russian
         var id: String { rawValue }
-        var title: String { self == .italian ? "Итальянский" : "Русский" }
+        var title: String { self == .italian ? String(localized: "Итальянский") : String(localized: "Русский") }
     }
 
     private(set) var deck: [Flashcard]

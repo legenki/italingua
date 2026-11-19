@@ -15,11 +15,11 @@ enum Palette: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .green: "Зелёная"
-        case .blue: "Синяя"
-        case .red: "Красная"
-        case .lavender: "Лаванда"
-        case .ochre: "Охра"
+        case .green: String(localized: "Зелёная")
+        case .blue: String(localized: "Синяя")
+        case .red: String(localized: "Красная")
+        case .lavender: String(localized: "Лаванда")
+        case .ochre: String(localized: "Охра")
         }
     }
 
@@ -157,7 +157,7 @@ struct CardLabel: View {
 /// Round play/speaker button that reads Italian text aloud.
 struct SpeakButton: View {
     let text: String
-    var label: String = "Прослушать"
+    var label: String = String(localized: "Прослушать")
     var size: CGFloat = 44
     var style: Style = .soft
 

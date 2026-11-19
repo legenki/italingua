@@ -23,12 +23,12 @@ struct TodayView: View {
             VStack(alignment: .leading, spacing: 18) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(Date.now.formatted(.dateTime.weekday(.wide).day().month(.wide)
-                        .locale(Locale(identifier: "ru_RU"))).capitalizedFirst)
+                        .locale(AppLanguage.locale)).capitalizedFirst)
                         .font(.s(.subheadline).weight(.semibold))
                         .foregroundStyle(Theme.accent)
                     Text(Self.greeting()).font(.s(.largeTitle).weight(.bold))
-                    Text(logs.isEmpty ? "Начнём с первого урока: выбери его ниже или в списке слева."
-                                      : "Продолжим с того места, где остановились.")
+                    Text(logs.isEmpty ? String(localized: "Начнём с первого урока: выбери его ниже или в списке слева.")
+                                      : String(localized: "Продолжим с того места, где остановились."))
                         .foregroundStyle(Theme.secondaryText)
                 }
 
@@ -59,33 +59,33 @@ struct TodayView: View {
 
     @ViewBuilder
     private func tiles(stats: StatsData, due: [VocabItem]) -> some View {
-        Tile(label: "К повторению") {
+        Tile(label: String(localized: "К повторению")) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(due.count)").font(.scaledSystem(size: 34, weight: .bold)).monospacedDigit()
-                Text(wordWord(due.count) + (due.count == 1 ? " ждёт" : " ждут")).foregroundStyle(Theme.secondaryText)
+                Text(wordWord(due.count) + (due.count == 1 ? String(localized: " ждёт") : String(localized: " ждут"))).foregroundStyle(Theme.secondaryText)
             }
             if due.isEmpty {
-                Text("Сегодня повторять нечего").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                Text(String(localized: "Сегодня повторять нечего")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             } else {
                 NavigationLink {
-                    FlashcardsView(items: due, title: "Повторение")
+                    FlashcardsView(items: due, title: String(localized: "Повторение"))
                 } label: {
-                    Text("Повторить сейчас →").font(.s(.subheadline).weight(.semibold)).foregroundStyle(Theme.accent)
+                    Text(String(localized: "Повторить сейчас →")).font(.s(.subheadline).weight(.semibold)).foregroundStyle(Theme.accent)
                 }
                 .buttonStyle(.plain)
             }
         }
-        Tile(label: "Серия") {
+        Tile(label: String(localized: "Серия")) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Image(systemName: "flame.fill").font(.s(.title2))
                     .foregroundStyle(stats.streak > 0 ? Theme.accent : Theme.separator)
                 Text("\(stats.streak)").font(.scaledSystem(size: 34, weight: .bold)).monospacedDigit()
-                Text(dayWord(stats.streak) + " подряд").foregroundStyle(Theme.secondaryText)
+                Text(dayWord(stats.streak) + String(localized: " подряд")).foregroundStyle(Theme.secondaryText)
             }
-            Text(stats.todayAnswers > 0 ? "Сегодня уже занимались" : "Позанимайся сегодня, чтобы продлить")
+            Text(stats.todayAnswers > 0 ? String(localized: "Сегодня уже занимались") : String(localized: "Позанимайся сегодня, чтобы продлить"))
                 .font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
         }
-        Tile(label: "Цель дня") {
+        Tile(label: String(localized: "Цель дня")) {
             HStack(spacing: 14) {
                 ZStack {
                     Circle().stroke(Theme.separator, lineWidth: 7)
@@ -97,8 +97,8 @@ struct TodayView: View {
                 }
                 .frame(width: 56, height: 56)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("\(stats.todayAnswers) из \(stats.dailyGoal) ответов").font(.s(.subheadline).weight(.semibold))
-                    Text("карточки и упражнения").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+                    Text(String(localized: "\(stats.todayAnswers) из \(stats.dailyGoal) ответов")).font(.s(.subheadline).weight(.semibold))
+                    Text(String(localized: "карточки и упражнения")).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
                 }
             }
         }
@@ -171,11 +171,11 @@ private struct ContinueCard: View {
 
     private var info: some View {
         VStack(alignment: .leading, spacing: 6) {
-            CardLabel(text: "Продолжить · \(lesson.sourceLabel)")
+            CardLabel(text: String(localized: "Продолжить · \(lesson.sourceLabel)"))
             Text(lesson.title).font(.s(.title3).weight(.bold)).fixedSize(horizontal: false, vertical: true)
             HStack(spacing: 10) {
                 ProgressView(value: progress.fraction).tint(Theme.accent)
-                Text("знакомо \(progress.known) из \(progress.total)")
+                Text(String(localized: "знакомо \(progress.known) из \(progress.total)"))
                     .font(.s(.subheadline).monospacedDigit())
                     .foregroundStyle(Theme.secondaryText)
                     .fixedSize()
@@ -189,7 +189,7 @@ private struct ContinueCard: View {
             NavigationLink {
                 FlashcardsView(lesson: lesson)
             } label: {
-                Text("Карточки")
+                Text(String(localized: "Карточки"))
                     .font(.s(.headline))
                     .foregroundStyle(Theme.onAccent)
                     .frame(maxWidth: .infinity, minHeight: 44)
@@ -197,7 +197,7 @@ private struct ContinueCard: View {
             }
             .buttonStyle(.plain)
             Button(action: open) {
-                Text("Открыть урок")
+                Text(String(localized: "Открыть урок"))
                     .font(.s(.headline))
                     .foregroundStyle(Theme.accent)
                     .frame(maxWidth: .infinity, minHeight: 44)
@@ -229,12 +229,12 @@ private struct WordOfTheDay: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            SpeakButton(text: item.withArticle, label: "Прослушать слово дня", size: 48, style: .onAccent)
+            SpeakButton(text: item.withArticle, label: String(localized: "Прослушать слово дня"), size: 48, style: .onAccent)
             VStack(alignment: .leading, spacing: 2) {
-                CardLabel(text: "Слово дня · \(item.lesson?.sourceLabel ?? "")", color: Theme.onAccent.opacity(0.85))
+                CardLabel(text: String(localized: "Слово дня · \(item.lesson?.sourceLabel ?? "")"), color: Theme.onAccent.opacity(0.85))
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     Text(item.displayWithArticle).font(.s(.title2).weight(.bold))
-                    Text("— \(item.russian)").font(.s(.body).weight(.medium)).opacity(0.85)
+                    Text("— \(item.translation)").font(.s(.body).weight(.medium)).opacity(0.85)
                 }
             }
             Spacer(minLength: 0)
@@ -243,7 +243,7 @@ private struct WordOfTheDay: View {
                 NavigationLink {
                     VocabularyView(lesson: lesson)
                 } label: {
-                    Text("Вся лексика")
+                    Text(String(localized: "Вся лексика"))
                         .font(.s(.subheadline).weight(.semibold))
                         .padding(.horizontal, 16)
                         .frame(minHeight: 40)
@@ -272,16 +272,16 @@ private struct FavoritesCard: View {
                 .frame(width: 48, height: 48)
                 .background(Theme.accentSoft, in: Circle())
             VStack(alignment: .leading, spacing: 2) {
-                CardLabel(text: "Избранное")
-                Text(items.isEmpty ? "Отмечай слова звёздочкой" : "\(items.count) \(wordWord(items.count))")
+                CardLabel(text: String(localized: "Избранное"))
+                Text(items.isEmpty ? String(localized: "Отмечай слова звёздочкой") : "\(items.count) \(wordWord(items.count))")
                     .font(.s(.headline))
             }
             Spacer(minLength: 8)
             if !items.isEmpty {
                 NavigationLink {
-                    FlashcardsView(items: items, title: "Избранное")
+                    FlashcardsView(items: items, title: String(localized: "Избранное"))
                 } label: {
-                    Text("Карточки")
+                    Text(String(localized: "Карточки"))
                         .font(.s(.subheadline).weight(.semibold))
                         .foregroundStyle(Theme.onAccent)
                         .padding(.horizontal, 16)
@@ -293,7 +293,7 @@ private struct FavoritesCard: View {
             NavigationLink {
                 FavoritesView()
             } label: {
-                Text("Список")
+                Text(String(localized: "Список"))
                     .font(.s(.subheadline).weight(.semibold))
                     .foregroundStyle(Theme.accent)
                     .padding(.horizontal, 16)
@@ -308,11 +308,12 @@ private struct FavoritesCard: View {
 }
 
 /// "слово", "слова", "слов" for a count.
-func wordWord(_ n: Int) -> String {
+func wordWord(_ n: Int, language: String = AppLanguage.current) -> String {
+    guard language == "ru" else { return n == 1 ? String(localized: "слово") : String(localized: "слов") }
     let m10 = n % 10, m100 = n % 100
-    if m10 == 1 && m100 != 11 { return "слово" }
-    if (2...4).contains(m10) && !(12...14).contains(m100) { return "слова" }
-    return "слов"
+    if m10 == 1 && m100 != 11 { return String(localized: "слово") }
+    if (2...4).contains(m10) && !(12...14).contains(m100) { return String(localized: "слова") }
+    return String(localized: "слов")
 }
 
 extension String {

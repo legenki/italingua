@@ -44,7 +44,7 @@ final class SpeechInput {
     /// Downloads the Italian package if needed (once, about a few hundred MB).
     func preparePackage() async throws {
         guard let locale = await SpeechTranscriber.supportedLocale(equivalentTo: Self.italian) else {
-            throw Failure("Распознавание итальянской речи на этом устройстве не поддерживается.")
+            throw Failure(String(localized: "Распознавание итальянской речи на этом устройстве не поддерживается."))
         }
         let module = Self.makeTranscriber(locale: locale)
         guard await AssetInventory.status(forModules: [module]) != .installed else { return }
@@ -69,15 +69,15 @@ final class SpeechInput {
         heard = ""
         do {
             guard await AVAudioApplication.requestRecordPermission() else {
-                throw Failure("Нет доступа к микрофону. Разреши его в Настройках → Конфиденциальность → Микрофон.")
+                throw Failure(String(localized: "Нет доступа к микрофону. Разреши его в Настройках → Конфиденциальность → Микрофон."))
             }
             try await preparePackage()
             guard let locale = await SpeechTranscriber.supportedLocale(equivalentTo: Self.italian) else {
-                throw Failure("Итальянский не поддерживается.")
+                throw Failure(String(localized: "Итальянский не поддерживается."))
             }
             let transcriber = Self.makeTranscriber(locale: locale)
             guard let format = await SpeechAnalyzer.bestAvailableAudioFormat(compatibleWith: [transcriber]) else {
-                throw Failure("Не удалось подобрать формат звука.")
+                throw Failure(String(localized: "Не удалось подобрать формат звука."))
             }
             let analyzer = SpeechAnalyzer(modules: [transcriber])
             let (stream, input) = AsyncStream.makeStream(of: AnalyzerInput.self)
@@ -109,7 +109,7 @@ final class SpeechInput {
             state = .failed(failure.message)
         } catch {
             cleanUp()
-            state = .failed("Не получилось включить распознавание: \(error.localizedDescription)")
+            state = .failed(String(localized: "Не получилось включить распознавание: \(error.localizedDescription)"))
         }
     }
 

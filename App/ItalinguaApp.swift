@@ -25,7 +25,7 @@ struct ItalinguaApp: App {
                     .modelContainer(container)
                     .appAppearance()
             } else {
-                ContentUnavailableView("Не удалось открыть данные",
+                ContentUnavailableView(String(localized: "Не удалось открыть данные"),
                                        systemImage: "exclamationmark.triangle",
                                        description: Text(startupError ?? ""))
             }

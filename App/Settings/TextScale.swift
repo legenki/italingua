@@ -116,15 +116,15 @@ struct TextSizeButtons: View {
         #if os(iOS)
         // iPhone toolbars draw a control group as an empty circle: use a menu.
         Menu {
-            Button("Крупнее", systemImage: "textformat.size.larger") { scale.grow() }
+            Button(String(localized: "Крупнее"), systemImage: "textformat.size.larger") { scale.grow() }
                 .disabled(!scale.canGrow)
-            Button("Мельче", systemImage: "textformat.size.smaller") { scale.shrink() }
+            Button(String(localized: "Мельче"), systemImage: "textformat.size.smaller") { scale.shrink() }
                 .disabled(!scale.canShrink)
             if scale.step != 0 {
-                Button("Обычный размер", systemImage: "arrow.counterclockwise") { scale.step = 0 }
+                Button(String(localized: "Обычный размер"), systemImage: "arrow.counterclockwise") { scale.step = 0 }
             }
         } label: {
-            Label("Размер текста", systemImage: "textformat.size")
+            Label(String(localized: "Размер текста"), systemImage: "textformat.size")
         }
         #else
         controls
@@ -138,15 +138,15 @@ struct TextSizeButtons: View {
             }
             .disabled(!scale.canShrink)
             .keyboardShortcut("-", modifiers: .command)
-            .help("Уменьшить текст (⌘−)")
-            .accessibilityLabel("Уменьшить текст")
+            .help(String(localized: "Уменьшить текст (⌘−)"))
+            .accessibilityLabel(String(localized: "Уменьшить текст"))
             Button { scale.grow() } label: {
                 Image(systemName: "textformat.size.larger")
             }
             .disabled(!scale.canGrow)
             .keyboardShortcut("+", modifiers: .command)
-            .help("Увеличить текст (⌘+)")
-            .accessibilityLabel("Увеличить текст")
+            .help(String(localized: "Увеличить текст (⌘+)"))
+            .accessibilityLabel(String(localized: "Увеличить текст"))
         }
     }
 }

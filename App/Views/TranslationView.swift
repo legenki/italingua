@@ -14,7 +14,7 @@ struct TranslationView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Переведи фразу").font(.s(.largeTitle).weight(.bold))
+                Text(String(localized: "Переведи фразу")).font(.s(.largeTitle).weight(.bold))
                 if let session { content(session) } else { ProgressView() }
             }
             .padding(16)
@@ -30,8 +30,8 @@ struct TranslationView: View {
     private func content(_ s: TranslationSession) -> some View {
         if !ModelStatus.current().isAvailable {
             Card(fill: Theme.warningFill) {
-                CardLabel(text: "Без модели", color: Theme.warningText)
-                Text("Ответ сравнивается только с образцом. Если написал иначе, сверь сам и отметь результат.")
+                CardLabel(text: String(localized: "Без модели"), color: Theme.warningText)
+                Text(String(localized: "Ответ сравнивается только с образцом. Если написал иначе, сверь сам и отметь результат."))
                     .font(.s(.subheadline))
             }
         }
@@ -40,13 +40,13 @@ struct TranslationView: View {
         } else if let task = s.current {
             Card {
                 HStack {
-                    CardLabel(text: "По-итальянски")
+                    CardLabel(text: String(localized: "По-итальянски"))
                     Spacer()
-                    Text("\(s.index + 1) из \(s.total)").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                    Text(String(localized: "\(s.index + 1) из \(s.total)")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                 }
                 Text(task.russian).font(.s(.title2).weight(.semibold)).textSelection(.enabled)
 
-                TextField("Твой перевод", text: $answer, axis: .vertical)
+                TextField(String(localized: "Твой перевод"), text: $answer, axis: .vertical)
                     .textFieldStyle(.plain)
                     .font(.s(.title3))
                     .lineLimit(1...4)
@@ -65,7 +65,7 @@ struct TranslationView: View {
                 case .checking:
                     HStack(spacing: 10) {
                         ProgressView().controlSize(.small)
-                        Text("Проверяю…").foregroundStyle(Theme.secondaryText)
+                        Text(String(localized: "Проверяю…")).foregroundStyle(Theme.secondaryText)
                     }
                 case .checked(let result):
                     ResultView(result: result, task: task, overridden: s.overridden) { s.markMineCorrect() }
@@ -74,7 +74,7 @@ struct TranslationView: View {
                 }
 
                 Button { primary(s) } label: {
-                    Text(s.phase == .answering ? "Проверить" : "Дальше")
+                    Text(s.phase == .answering ? String(localized: "Проверить") : String(localized: "Дальше"))
                         .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
@@ -84,7 +84,7 @@ struct TranslationView: View {
                 .disabled(s.phase == .checking || (s.phase == .answering && answer.trimmingCharacters(in: .whitespaces).isEmpty))
                 .keyboardShortcut(.defaultAction)
             }
-            Text("Фразы — примеры из правил урока. Свой вариант тоже засчитывается, если он верен.")
+            Text(String(localized: "Фразы — примеры из правил урока. Свой вариант тоже засчитывается, если он верен."))
                 .font(.s(.footnote))
                 .foregroundStyle(Theme.secondaryText)
         }
@@ -92,17 +92,17 @@ struct TranslationView: View {
 
     private func finished(_ s: TranslationSession) -> some View {
         Card {
-            CardLabel(text: "Готово")
+            CardLabel(text: String(localized: "Готово"))
             if s.total == 0 {
-                Text("В правилах этого урока нет примеров для перевода.").foregroundStyle(Theme.secondaryText)
+                Text(String(localized: "В правилах этого урока нет примеров для перевода.")).foregroundStyle(Theme.secondaryText)
             } else {
-                Text("\(s.correctCount) из \(s.total) верно").font(.s(.title).weight(.bold))
+                Text(String(localized: "\(s.correctCount) из \(s.total) верно")).font(.s(.title).weight(.bold))
                 Button {
                     answer = ""
                     s.restart()
                     focused = true
                 } label: {
-                    Text("Ещё раз")
+                    Text(String(localized: "Ещё раз"))
                         .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
@@ -130,7 +130,7 @@ struct TranslationView: View {
     private func startIfNeeded() {
         guard session == nil else { return }
         let edited = Dictionary(notes.map { ($0.key, $0.text) }, uniquingKeysWith: { a, _ in a })
-        let texts = lesson.sortedGrammar.map { edited[RuleNote.key(lessonID: lesson.id, topic: $0.topic)] ?? $0.ruleRU }
+        let texts = lesson.sortedGrammar.map { (AppLanguage.current == "ru" ? edited[RuleNote.key(lessonID: lesson.id, topic: $0.topic)] : nil) ?? $0.rule }
         let level = lesson.level
         session = TranslationSession(tasks: TranslationSession.tasks(from: lesson, ruleTexts: texts),
                                      level: level,
@@ -151,7 +151,7 @@ private struct ResultView: View {
                 Image(systemName: icon).font(.s(.title2)).foregroundStyle(good ? Theme.accent : Theme.warningText)
                 Text(title).font(.s(.headline))
                 Spacer(minLength: 0)
-                SpeakButton(text: result.corrected, label: "Прослушать", size: 40)
+                SpeakButton(text: result.corrected, label: String(localized: "Прослушать"), size: 40)
             }
             if result.verdict == .corrected || result.verdict == .accents {
                 // The answer with removed words struck through and fixes highlighted.
@@ -164,13 +164,13 @@ private struct ResultView: View {
             }
             if result.verdict != .exact {
                 VStack(alignment: .leading, spacing: 2) {
-                    CardLabel(text: "Образец")
+                    CardLabel(text: String(localized: "Образец"))
                     Text(task.reference).font(.s(.body)).textSelection(.enabled)
                 }
             }
             if !good && !overridden {
                 Button(action: markCorrect) {
-                    Label(result.verdict == .unchecked ? "Я ответил верно" : "Мой вариант тоже верен",
+                    Label(result.verdict == .unchecked ? String(localized: "Я ответил верно") : String(localized: "Мой вариант тоже верен"),
                           systemImage: "checkmark.circle")
                         .font(.s(.subheadline).weight(.semibold))
                         .foregroundStyle(Theme.accent)
@@ -178,7 +178,7 @@ private struct ResultView: View {
                 .buttonStyle(.plain)
             }
             if result.verdict == .corrected {
-                Text("Исправление предлагает модель на устройстве — она иногда ошибается.")
+                Text(String(localized: "Исправление предлагает модель на устройстве — она иногда ошибается."))
                     .font(.s(.caption))
                     .foregroundStyle(Theme.secondaryText)
             }
@@ -192,13 +192,13 @@ private struct ResultView: View {
     }
 
     private var title: String {
-        if overridden { return "Засчитано как верное" }
+        if overridden { return String(localized: "Засчитано как верное") }
         switch result.verdict {
-        case .exact: return "Верно!"
-        case .alternative: return "Верно — твой вариант тоже правильный"
-        case .accents: return "Почти: проверь ударения"
-        case .corrected: return "Есть ошибки"
-        case .unchecked: return "Сравни с образцом"
+        case .exact: return String(localized: "Верно!")
+        case .alternative: return String(localized: "Верно — твой вариант тоже правильный")
+        case .accents: return String(localized: "Почти: проверь ударения")
+        case .corrected: return String(localized: "Есть ошибки")
+        case .unchecked: return String(localized: "Сравни с образцом")
         }
     }
 

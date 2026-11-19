@@ -29,7 +29,7 @@ struct RootView: View {
             Group {
                 if search.isEmpty { lessonList } else { resultList(results) }
             }
-            .searchable(text: $search, placement: .sidebar, prompt: "Поиск слова")
+            .searchable(text: $search, placement: .sidebar, prompt: String(localized: "Поиск слова"))
             .onChange(of: search) {
                 // Like the Dictionary app: the best match opens right away.
                 selectedWord = WordSearch.results(search, in: vocab, limit: 1).first?.wordID
@@ -39,16 +39,16 @@ struct RootView: View {
             .toolbar {
                 // On macOS Settings open from the app menu (⌘,), as in other Mac apps.
                 #if os(iOS)
-                Button("Настройки", systemImage: "gearshape") { showSettings = true }
+                Button(String(localized: "Настройки"), systemImage: "gearshape") { showSettings = true }
                 #endif
-                Button("Статистика", systemImage: "chart.pie") { showStats = true }
-                Button("Экспорт правил (\(ruleNotes.count))", systemImage: "square.and.arrow.up") {
+                Button(String(localized: "Статистика"), systemImage: "chart.pie") { showStats = true }
+                Button(String(localized: "Экспорт правил (\(ruleNotes.count))"), systemImage: "square.and.arrow.up") {
                     exportDoc = try? RuleExportDocument(
                         notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
                     exporting = exportDoc != nil
                 }
                 .disabled(ruleNotes.isEmpty)
-                .help("Сохранить правила, написанные в приложении, для tools/import_rules.py")
+                .help(String(localized: "Сохранить правила, написанные в приложении, для tools/import_rules.py"))
             }
         } detail: {
             NavigationStack(path: $detailPath) {
@@ -114,7 +114,7 @@ struct RootView: View {
             ["intro", "main"].compactMap { part -> (String, [Lesson])? in
                 let items = lessons.filter { $0.level == level && $0.sourcePart == part }
                 return items.isEmpty ? nil
-                    : ("\(level) · \(part == "intro" ? "Вводный курс" : "Основной курс")", items)
+                    : ("\(level) · \(part == "intro" ? String(localized: "Вводный курс") : String(localized: "Основной курс"))", items)
             }
         }
     }
@@ -174,7 +174,7 @@ struct RootView: View {
         } else {
             #if os(macOS)
             List {
-                Section("Слова · \(results.count)") {
+                Section(String(localized: "Слова · \(results.count)")) {
                     ForEach(results, id: \.wordID) { item in
                         let selected = item.wordID == selectedWord
                         WordResultRow(item: item, selected: selected)
@@ -191,7 +191,7 @@ struct RootView: View {
             }
             #else
             List(selection: $selectedWord) {
-                Section("Слова · \(results.count)") {
+                Section(String(localized: "Слова · \(results.count)")) {
                     ForEach(results, id: \.wordID) { item in
                         WordResultRow(item: item, selected: false).tag(item.wordID)
                     }
@@ -284,9 +284,9 @@ private struct LessonRow: View {
 
     private var statusText: String {
         switch progress.state {
-        case .notStarted: "Не начат · \(progress.total) слов"
-        case .inProgress: "Знакомо \(progress.known) из \(progress.total) слов"
-        case .done: "Пройден · \(progress.total) слов"
+        case .notStarted: String(localized: "Не начат · \(progress.total) слов")
+        case .inProgress: String(localized: "Знакомо \(progress.known) из \(progress.total) слов")
+        case .done: String(localized: "Пройден · \(progress.total) слов")
         }
     }
 }
@@ -331,9 +331,9 @@ struct LessonBadge: View {
 
     private var accessibility: String {
         switch progress.state {
-        case .notStarted: "Не начат"
-        case .inProgress: "В процессе, \(Int(progress.fraction * 100))%"
-        case .done: "Пройден"
+        case .notStarted: String(localized: "Не начат")
+        case .inProgress: String(localized: "В процессе, \(Int(progress.fraction * 100))%")
+        case .done: String(localized: "Пройден")
         }
     }
 }

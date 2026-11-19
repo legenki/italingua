@@ -19,19 +19,19 @@ final class StudySession {
 
         var title: String {
             switch self {
-            case .rules: "Правила"
-            case .words: "Слова"
-            case .cards: "Карточки"
-            case .reading: "Чтение"
+            case .rules: String(localized: "Правила")
+            case .words: String(localized: "Слова")
+            case .cards: String(localized: "Карточки")
+            case .reading: String(localized: "Чтение")
             }
         }
 
         var task: String {
             switch self {
-            case .rules: "Повторить правила"
-            case .words: "Поучить слова"
-            case .cards: "Проверить себя карточками"
-            case .reading: "Почитать текст"
+            case .rules: String(localized: "Повторить правила")
+            case .words: String(localized: "Поучить слова")
+            case .cards: String(localized: "Проверить себя карточками")
+            case .reading: String(localized: "Почитать текст")
             }
         }
     }

@@ -18,10 +18,16 @@ nonisolated struct ContentFileDTO: Decodable, Sendable {
     struct GrammarDTO: Decodable, Sendable {
         let topic: String
         let rule_ru: String
+        var topic_en: String? = nil
+        var topic_es: String? = nil
+        var rule_en: String? = nil
+        var rule_es: String? = nil
     }
     struct VocabDTO: Decodable, Sendable {
         let it: String
         let ru: String
+        var en: String? = nil
+        var es: String? = nil
         let pos: String
         let gender: String?
         let number: String?
@@ -80,6 +86,10 @@ enum ContentImporter {
             context.insert(lesson)
             for (gi, g) in dto.grammar.enumerated() {
                 let topic = GrammarTopic(order: gi, topic: g.topic, ruleRU: g.rule_ru)
+                topic.topicEN = g.topic_en ?? ""
+                topic.topicES = g.topic_es ?? ""
+                topic.ruleEN = g.rule_en ?? ""
+                topic.ruleES = g.rule_es ?? ""
                 topic.lesson = lesson
             }
             for (vi, v) in dto.vocab.enumerated() {
@@ -88,6 +98,8 @@ enum ContentImporter {
                 let item = VocabItem(wordID: id, order: vi, italian: v.it, russian: v.ru,
                                      posRaw: v.pos, gender: v.gender, number: v.number,
                                      stress: v.stress, formOf: v.form_of, isNew: v.new ?? false)
+                item.english = v.en ?? ""
+                item.spanish = v.es ?? ""
                 item.lesson = lesson
             }
         }

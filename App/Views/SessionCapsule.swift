@@ -64,14 +64,14 @@ struct SessionCapsule: View {
             HStack(spacing: 12) {
                 // Shorter on a narrow (iPhone) top bar.
                 ViewThatFits(in: .horizontal) {
-                    Text("Сессия на 40 минут").fixedSize()
-                    Text("40 минут").fixedSize()
+                    Text(String(localized: "Сессия на 40 минут")).fixedSize()
+                    Text(String(localized: "40 минут")).fixedSize()
                 }
                 .font(.s(.subheadline).weight(.semibold))
                 HStack(spacing: 5) {
                     ForEach(0..<4, id: \.self) { _ in Circle().fill(Theme.separator).frame(width: 7, height: 7) }
                 }
-                Label("Начать", systemImage: "play.fill")
+                Label(String(localized: "Начать"), systemImage: "play.fill")
                     .font(.s(.subheadline).weight(.semibold))
                     .padding(.horizontal, 12)
                     .frame(height: 26)
@@ -82,13 +82,13 @@ struct SessionCapsule: View {
             .frame(height: 36)
             .liquidCapsule()
             .opacity(startLesson == nil ? 0.5 : 1)
-            .help(startLesson.map { "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут" } ?? "")
+            .help(startLesson.map { String(localized: "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут") } ?? "")
         } else {
             HStack(spacing: 8) {
                 Image(systemName: session.earnedMedal ? "medal.fill" : "checkmark.circle.fill")
                     .font(.s(.headline))
-                Text(session.earnedMedal ? "Медаль дня" : "Сессия пройдена").font(.s(.subheadline).weight(.bold))
-                Text("4 шага за \(Int(session.elapsed(now: now) / 60)) мин").font(.s(.subheadline))
+                Text(session.earnedMedal ? String(localized: "Медаль дня") : String(localized: "Сессия пройдена")).font(.s(.subheadline).weight(.bold))
+                Text(String(localized: "4 шага за \(Int(session.elapsed(now: now) / 60)) мин")).font(.s(.subheadline))
             }
             .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, 14)
@@ -132,7 +132,7 @@ struct SessionCapsule: View {
         return HStack(spacing: 6) {
             Button { showPlan.toggle() } label: { main.contentShape(Capsule()) }
                 .buttonStyle(.plain)
-                .help("План сессии")
+                .help(String(localized: "План сессии"))
             Button {
                 session.isRunning ? session.pause() : session.resume()
             } label: {
@@ -143,8 +143,8 @@ struct SessionCapsule: View {
                     .glassEffect(.regular.interactive(), in: Circle())
             }
             .buttonStyle(.plain)
-            .help(session.isRunning ? "Пауза" : "Продолжить")
-            .accessibilityLabel(session.isRunning ? "Пауза" : "Продолжить")
+            .help(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить"))
+            .accessibilityLabel(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить"))
         }
         .padding(.horizontal, 6)
         .frame(height: 36)
@@ -189,7 +189,7 @@ private struct SessionPlan: View {
         TimelineView(.periodic(from: .now, by: 1)) { context in
             VStack(alignment: .leading, spacing: 14) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text("Сессия · \(lesson?.sourceLabel ?? "")").font(.s(.headline))
+                    Text(String(localized: "Сессия · \(lesson?.sourceLabel ?? "")")).font(.s(.headline))
                     Spacer()
                     Text(headerTime(context.date)).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                 }
@@ -204,19 +204,19 @@ private struct SessionPlan: View {
                 }
                 if session.isFinished {
                     hint(session.earnedMedal
-                         ? "Медаль дня получена! Все 4 шага за \(Int(session.elapsed(now: context.date) / 60)) минут."
-                         : "Все шаги пройдены. Медаль — если уложиться в 40 минут, попробуй завтра.")
+                         ? String(localized: "Медаль дня получена! Все 4 шага за \(Int(session.elapsed(now: context.date) / 60)) минут.")
+                         : String(localized: "Все шаги пройдены. Медаль — если уложиться в 40 минут, попробуй завтра."))
                 } else {
-                    hint("Пройди все 4 шага за 40 минут — получишь медаль дня.")
+                    hint(String(localized: "Пройди все 4 шага за 40 минут — получишь медаль дня."))
                 }
                 HStack {
                     if !session.isFinished {
-                        Button(session.isRunning ? "Пауза" : "Продолжить") {
+                        Button(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить")) {
                             session.isRunning ? session.pause() : session.resume()
                         }
                     }
                     Spacer()
-                    Button(session.isFinished ? "Новая сессия" : "Завершить", role: session.isFinished ? nil : .destructive) {
+                    Button(session.isFinished ? String(localized: "Новая сессия") : String(localized: "Завершить"), role: session.isFinished ? nil : .destructive) {
                         session.reset()
                     }
                 }
@@ -228,9 +228,9 @@ private struct SessionPlan: View {
     }
 
     private func headerTime(_ now: Date) -> String {
-        if session.isFinished { return "готово" }
+        if session.isFinished { return String(localized: "готово") }
         let left = session.remaining(now: now)
-        return left > 0 ? "осталось \(Int((left / 60).rounded(.up))) мин" : "время вышло"
+        return left > 0 ? String(localized: "осталось \(Int((left / 60).rounded(.up))) мин") : String(localized: "время вышло")
     }
 
     private func row(_ step: StudySession.Step) -> some View {
@@ -258,7 +258,7 @@ private struct SessionPlan: View {
             }
             Spacer(minLength: 8)
             if !done {
-                Button(p.done > 0 ? "Продолжить" : "Открыть") { open(step) }
+                Button(p.done > 0 ? String(localized: "Продолжить") : String(localized: "Открыть")) { open(step) }
                     .buttonStyle(.plain)
                     .font(.s(.subheadline).weight(.semibold))
                     .foregroundStyle(Theme.accent)
@@ -269,10 +269,10 @@ private struct SessionPlan: View {
 
     private func detail(_ step: StudySession.Step, _ p: (done: Int, target: Int)) -> String {
         switch step {
-        case .rules: "открыто тем: \(p.done) из \(p.target)"
-        case .words: "прослушано слов: \(p.done) из \(p.target)"
-        case .cards: "карточек: \(p.done) из \(p.target)"
-        case .reading: p.done > 0 ? "текст прочитан" : "текст урока, затем «Я прочитал текст»"
+        case .rules: String(localized: "открыто тем: \(p.done) из \(p.target)")
+        case .words: String(localized: "прослушано слов: \(p.done) из \(p.target)")
+        case .cards: String(localized: "карточек: \(p.done) из \(p.target)")
+        case .reading: p.done > 0 ? String(localized: "текст прочитан") : String(localized: "текст урока, затем «Я прочитал текст»")
         }
     }
 

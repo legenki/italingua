@@ -5,24 +5,24 @@ struct MedalsCard: View {
     let stats: MedalStats
     let lessons: [Lesson]
 
-    private static let weekdays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+    private static let weekdays = [String(localized: "Пн"), String(localized: "Вт"), String(localized: "Ср"), String(localized: "Чт"), String(localized: "Пт"), String(localized: "Сб"), String(localized: "Вс")]
 
     var body: some View {
         Card {
             HStack {
-                CardLabel(text: "Медали дня")
+                CardLabel(text: String(localized: "Медали дня"))
                 Spacer()
                 Image(systemName: "medal.fill").foregroundStyle(Theme.accent)
             }
 
             HStack(spacing: 0) {
-                number("\(stats.total)", "всего")
+                number("\(stats.total)", String(localized: "всего"))
                 Divider().frame(height: 36)
-                number("\(stats.thisWeek)", "на этой неделе")
+                number("\(stats.thisWeek)", String(localized: "на этой неделе"))
                 Divider().frame(height: 36)
-                number("\(stats.streak)", dayWord(stats.streak) + " подряд")
+                number("\(stats.streak)", dayWord(stats.streak) + String(localized: " подряд"))
                 Divider().frame(height: 36)
-                number(stats.bestMinutes.map { "\($0)" } ?? "—", "лучшее время, мин")
+                number(stats.bestMinutes.map { "\($0)" } ?? "—", String(localized: "лучшее время, мин"))
             }
 
             // Calendar: a column per weekday, a row per week, oldest on top.
@@ -41,13 +41,13 @@ struct MedalsCard: View {
             .frame(maxWidth: 420)
 
             HStack(spacing: 14) {
-                legend(Theme.accent, "медаль")
-                legend(Theme.accentRamp[0], "сессия без медали")
-                legend(Theme.tile, "без сессии")
+                legend(Theme.accent, String(localized: "медаль"))
+                legend(Theme.accentRamp[0], String(localized: "сессия без медали"))
+                legend(Theme.tile, String(localized: "без сессии"))
             }
 
             if stats.recent.isEmpty {
-                Text("Пройди учебную сессию в верхней панели: все 4 шага за 40 минут — медаль дня.")
+                Text(String(localized: "Пройди учебную сессию в верхней панели: все 4 шага за 40 минут — медаль дня."))
                     .font(.s(.subheadline))
                     .foregroundStyle(Theme.secondaryText)
             } else {
@@ -57,14 +57,14 @@ struct MedalsCard: View {
                         HStack(spacing: 10) {
                             Image(systemName: s.medal ? "medal.fill" : "checkmark.circle")
                                 .foregroundStyle(s.medal ? Theme.accent : Theme.secondaryText)
-                            Text(s.finishedAt.formatted(.dateTime.day().month(.wide).locale(Locale(identifier: "ru_RU"))))
+                            Text(s.finishedAt.formatted(.dateTime.day().month(.wide).locale(AppLanguage.locale)))
                                 .font(.s(.subheadline).weight(.semibold))
                             Text(lessons.first { $0.id == s.lessonID }?.title ?? "")
                                 .font(.s(.subheadline))
                                 .foregroundStyle(Theme.secondaryText)
                                 .lineLimit(1)
                             Spacer(minLength: 8)
-                            Text("\(s.minutes) мин").font(.s(.subheadline).monospacedDigit())
+                            Text(String(localized: "\(s.minutes) мин")).font(.s(.subheadline).monospacedDigit())
                         }
                         .padding(.vertical, 7)
                     }
@@ -108,7 +108,7 @@ private struct DayCell: View {
         .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous)
             .stroke(day.isToday ? Theme.accent : .clear, lineWidth: 1.5))
         .accessibilityLabel(day.date.formatted(date: .long, time: .omitted) + ": "
-                            + (day.kind == .medal ? "медаль" : day.kind == .session ? "сессия" : "нет"))
+                            + (day.kind == .medal ? String(localized: "медаль") : day.kind == .session ? String(localized: "сессия") : String(localized: "нет")))
     }
 
     private var fill: Color {

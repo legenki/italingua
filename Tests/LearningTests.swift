@@ -348,7 +348,10 @@ struct StatsDataTests {
     }
 
     @Test func russianDayWords() {
-        #expect([1, 2, 5, 11, 21, 22, 25].map(dayWord) == ["день", "дня", "дней", "дней", "день", "дня", "дней"])
+        // Forms come from the string catalog, so compare with the catalog's values.
+        let (one, few, many) = (String(localized: "день"), String(localized: "дня"), String(localized: "дней"))
+        #expect([1, 2, 5, 11, 21, 22, 25].map { dayWord($0, language: "ru") } == [one, few, many, many, one, few, many])
+        #expect([1, 2, 21].map { dayWord($0, language: "en") } == [one, many, many])
     }
 }
 
@@ -362,7 +365,9 @@ struct TodayTests {
     }
 
     @Test func russianWordForms() {
-        #expect([1, 3, 5, 21].map(wordWord) == ["слово", "слова", "слов", "слово"])
+        let (one, few, many) = (String(localized: "слово"), String(localized: "слова"), String(localized: "слов"))
+        #expect([1, 3, 5, 21].map { wordWord($0, language: "ru") } == [one, few, many, one])
+        #expect([1, 3].map { wordWord($0, language: "es") } == [one, many])
         #expect("вторник, 18 ноября".capitalizedFirst == "Вторник, 18 ноября")
     }
 }

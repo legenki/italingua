@@ -14,15 +14,15 @@ nonisolated enum ModelStatus: Equatable, Sendable {
             // Exercises are generated in Italian, so Italian must be supported.
             return model.supportsLocale(Locale(identifier: "it_IT"))
                 ? .available
-                : .unavailable("Модель не поддерживает итальянский на этом устройстве.")
+                : .unavailable(String(localized: "Модель не поддерживает итальянский на этом устройстве."))
         case .unavailable(.deviceNotEligible):
-            return .unavailable("Это устройство не поддерживает Apple Intelligence.")
+            return .unavailable(String(localized: "Это устройство не поддерживает Apple Intelligence."))
         case .unavailable(.appleIntelligenceNotEnabled):
-            return .unavailable("Apple Intelligence выключен. Включите его в Настройках.")
+            return .unavailable(String(localized: "Apple Intelligence выключен. Включите его в Настройках."))
         case .unavailable(.modelNotReady):
-            return .unavailable("Модель Apple Intelligence ещё не скачана или не готова.")
+            return .unavailable(String(localized: "Модель Apple Intelligence ещё не скачана или не готова."))
         case .unavailable:
-            return .unavailable("Модель недоступна.")
+            return .unavailable(String(localized: "Модель недоступна."))
         }
     }
 

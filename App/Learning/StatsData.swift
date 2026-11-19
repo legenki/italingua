@@ -110,7 +110,7 @@ nonisolated struct StatsData: Sendable {
             }
         }
         let stageCounts = Dictionary(grouping: courseBoxes, by: stageOf).mapValues(\.count)
-        data.stages = ["Новые", "Изучаю", "Знакомо", "Закрепляю", "Выучено"].enumerated().map {
+        data.stages = [String(localized: "Новые"), String(localized: "Изучаю"), String(localized: "Знакомо"), String(localized: "Закрепляю"), String(localized: "Выучено")].enumerated().map {
             Stage(id: $0.offset, title: $0.element, count: stageCounts[$0.offset] ?? 0)
         }
 

@@ -8,7 +8,7 @@ struct ReadingView: View {
     enum Mode: String, CaseIterable, Identifiable {
         case lesson, own
         var id: String { rawValue }
-        var title: String { self == .lesson ? "Текст урока" : "Свой текст" }
+        var title: String { self == .lesson ? String(localized: "Текст урока") : String(localized: "Свой текст") }
     }
 
     let lesson: Lesson
@@ -30,8 +30,8 @@ struct ReadingView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Чтение").font(.s(.largeTitle).weight(.bold))
-                Picker("Текст", selection: $mode) {
+                Text(String(localized: "Чтение")).font(.s(.largeTitle).weight(.bold))
+                Picker(String(localized: "Текст"), selection: $mode) {
                     ForEach(Mode.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
@@ -40,8 +40,8 @@ struct ReadingView: View {
 
                 if !ModelStatus.current().isAvailable {
                     Card(fill: Theme.warningFill) {
-                        CardLabel(text: "Без модели", color: Theme.warningText)
-                        Text("Тексты пишет Apple Intelligence на устройстве, а сейчас модель недоступна.")
+                        CardLabel(text: String(localized: "Без модели"), color: Theme.warningText)
+                        Text(String(localized: "Тексты пишет Apple Intelligence на устройстве, а сейчас модель недоступна."))
                             .font(.s(.subheadline))
                     }
                 } else {
@@ -68,9 +68,9 @@ struct ReadingView: View {
 
     private var lessonControls: some View {
         Card {
-            Text("Короткий рассказ из слов этого урока, на уровне \(lesson.level).")
+            Text(String(localized: "Короткий рассказ из слов этого урока, на уровне \(lesson.level)."))
                 .foregroundStyle(Theme.secondaryText)
-            ActionButton(title: reading == nil ? "Составить текст" : "Другой текст", working: working) {
+            ActionButton(title: reading == nil ? String(localized: "Составить текст") : String(localized: "Другой текст"), working: working) {
                 await run {
                     let words = lesson.sortedVocab.filter(FillBlankSession.isPracticable)
                         .filter { [.noun, .verb, .adj, .adv].contains($0.pos) }
@@ -85,7 +85,7 @@ struct ReadingView: View {
 
     private var ownControls: some View {
         Card {
-            Text("Вставь итальянский текст — статью, письмо, абзац из книги. Модель перескажет его проще.")
+            Text(String(localized: "Вставь итальянский текст — статью, письмо, абзац из книги. Модель перескажет его проще."))
                 .foregroundStyle(Theme.secondaryText)
             TextEditor(text: $original)
                 .font(.s(.body))
@@ -94,8 +94,8 @@ struct ReadingView: View {
                 .padding(8)
                 .background(Theme.tile, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             HStack {
-                Text("Уровень")
-                Picker("Уровень", selection: $level) {
+                Text(String(localized: "Уровень"))
+                Picker(String(localized: "Уровень"), selection: $level) {
                     Text("A1").tag("A1")
                     Text("A2").tag("A2")
                 }
@@ -104,7 +104,7 @@ struct ReadingView: View {
                 .fixedSize()
                 Spacer()
             }
-            ActionButton(title: "Упростить", working: working) {
+            ActionButton(title: String(localized: "Упростить"), working: working) {
                 await run { try await ReadingGenerator.adapt(original, level: level) }
             }
             .disabled(original.trimmingCharacters(in: .whitespacesAndNewlines).count < 20)
@@ -119,7 +119,7 @@ struct ReadingView: View {
             reading = try await make()
             readDone = false
         } catch {
-            self.error = "Модель не справилась: \(error.localizedDescription) Попробуй ещё раз."
+            self.error = String(localized: "Модель не справилась: \(error.localizedDescription) Попробуй ещё раз.")
         }
     }
 
@@ -130,24 +130,24 @@ struct ReadingView: View {
         Card {
             HStack(alignment: .firstTextBaseline) {
                 VStack(alignment: .leading, spacing: 2) {
-                    CardLabel(text: mode == .lesson ? "Текст · \(lesson.level)" : "Проще · \(level)")
+                    CardLabel(text: mode == .lesson ? String(localized: "Текст · \(lesson.level)") : String(localized: "Проще · \(level)"))
                     if !r.title.isEmpty { Text(r.title).font(.s(.title2).weight(.bold)) }
                 }
                 Spacer()
-                SpeakButton(text: r.text, label: "Прослушать весь текст", style: .filled)
+                SpeakButton(text: r.text, label: String(localized: "Прослушать весь текст"), style: .filled)
             }
             Text(r.text)
                 .font(.s(.title3))
                 .lineSpacing(5)
                 .textSelection(.enabled)
-            Text("Текст составлен моделью на устройстве и может содержать ошибки.")
+            Text(String(localized: "Текст составлен моделью на устройстве и может содержать ошибки."))
                 .font(.s(.caption))
                 .foregroundStyle(Theme.secondaryText)
             Button {
                 StudySession.shared.noteReading(lessonID: lesson.id)
                 readDone = true
             } label: {
-                Label(readDone ? "Прочитано" : "Я прочитал текст",
+                Label(readDone ? String(localized: "Прочитано") : String(localized: "Я прочитал текст"),
                       systemImage: readDone ? "checkmark.circle.fill" : "checkmark.circle")
                     .font(.s(.headline))
                     .foregroundStyle(Theme.accent)
@@ -159,12 +159,12 @@ struct ReadingView: View {
         }
 
         Card(padding: 0) {
-            CardLabel(text: "По предложениям").padding([.top, .horizontal], 16)
+            CardLabel(text: String(localized: "По предложениям")).padding([.top, .horizontal], 16)
             VStack(spacing: 0) {
                 ForEach(Array(r.sentences.enumerated()), id: \.offset) { i, sentence in
                     if i > 0 { Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 72) }
                     HStack(spacing: 12) {
-                        SpeakButton(text: sentence, label: "Прослушать предложение")
+                        SpeakButton(text: sentence, label: String(localized: "Прослушать предложение"))
                         Text(sentence).textSelection(.enabled)
                         Spacer(minLength: 0)
                     }
@@ -179,7 +179,7 @@ struct ReadingView: View {
         if !words.isEmpty {
             let starred = Set(favorites.map(\.wordID))
             Card(padding: 0) {
-                CardLabel(text: "Слова из курса").padding([.top, .horizontal], 16)
+                CardLabel(text: String(localized: "Слова из курса")).padding([.top, .horizontal], 16)
                 VStack(spacing: 0) {
                     ForEach(Array(words.enumerated()), id: \.element.wordID) { i, item in
                         if i > 0 { Rectangle().fill(Theme.separator).frame(height: 1).padding(.leading, 72) }
@@ -187,7 +187,7 @@ struct ReadingView: View {
                             SpeakButton(text: item.withArticle)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
-                                Text(item.russian).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                                Text(item.translation).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                             }
                             Spacer(minLength: 8)
                             FavoriteButton(wordID: item.wordID, isFavorite: starred.contains(item.wordID))
@@ -219,7 +219,7 @@ private struct ActionButton: View {
         } label: {
             HStack(spacing: 8) {
                 if working { ProgressView().controlSize(.small).tint(Theme.onAccent) }
-                Text(working ? "Модель пишет…" : title)
+                Text(working ? String(localized: "Модель пишет…") : title)
             }
             .font(.s(.headline))
             .foregroundStyle(Theme.onAccent)

@@ -8,16 +8,16 @@ struct StatsChartsView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Metric(value: "\(data.streak)", unit: dayWord(data.streak), title: "серия", symbol: "flame.fill",
+            Metric(value: "\(data.streak)", unit: dayWord(data.streak), title: String(localized: "серия"), symbol: "flame.fill",
                    color: Theme.accent)
             Divider().frame(height: 40)
-            Metric(value: "\(data.todayAnswers)", unit: "из \(data.dailyGoal)", title: "сегодня",
+            Metric(value: "\(data.todayAnswers)", unit: String(localized: "из \(data.dailyGoal)"), title: String(localized: "сегодня"),
                    symbol: "target", color: Theme.accent)
             Divider().frame(height: 40)
-            Metric(value: data.accuracy7?.percent ?? "—", unit: "", title: "точность за 7 дней",
+            Metric(value: data.accuracy7?.percent ?? "—", unit: "", title: String(localized: "точность за 7 дней"),
                    symbol: "checkmark.seal.fill", color: Theme.accent)
             Divider().frame(height: 40)
-            Metric(value: "\(data.dueToday)", unit: "", title: "к повторению", symbol: "clock.arrow.circlepath",
+            Metric(value: "\(data.dueToday)", unit: "", title: String(localized: "к повторению"), symbol: "clock.arrow.circlepath",
                    color: Theme.accent)
         }
         .padding(.vertical, 14)
@@ -25,25 +25,25 @@ struct StatsChartsView: View {
 
         Card {
             HStack {
-                CardLabel(text: "Активность за 2 недели")
+                CardLabel(text: String(localized: "Активность за 2 недели"))
                 Spacer()
-                LegendDot(color: Theme.accent, title: "верно")
-                LegendDot(color: Theme.separator, title: "ошибки")
+                LegendDot(color: Theme.accent, title: String(localized: "верно"))
+                LegendDot(color: Theme.separator, title: String(localized: "ошибки"))
             }
             Chart {
                 ForEach(data.days) { day in
-                    BarMark(x: .value("День", day.date, unit: .day), y: .value("Ответы", day.correct))
+                    BarMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Ответы"), day.correct))
                         .foregroundStyle(Theme.accent)
                         .cornerRadius(3)
-                    BarMark(x: .value("День", day.date, unit: .day), y: .value("Ответы", day.wrong))
+                    BarMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Ответы"), day.wrong))
                         .foregroundStyle(Theme.separator)
                         .cornerRadius(3)
                 }
-                RuleMark(y: .value("Цель", data.dailyGoal))
+                RuleMark(y: .value(String(localized: "Цель"), data.dailyGoal))
                     .foregroundStyle(Theme.secondaryText)
                     .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
                     .annotation(position: .top, alignment: .leading) {
-                        Text("цель \(data.dailyGoal)").font(.s(.caption2)).foregroundStyle(Theme.secondaryText)
+                        Text(String(localized: "цель \(data.dailyGoal)")).font(.s(.caption2)).foregroundStyle(Theme.secondaryText)
                     }
             }
             .chartXAxis {
@@ -56,21 +56,21 @@ struct StatsChartsView: View {
         }
 
         Card {
-            CardLabel(text: "Точность по дням")
+            CardLabel(text: String(localized: "Точность по дням"))
             let points = data.days.filter { $0.accuracy != nil }
             if points.count < 2 {
-                Text("Появится после двух дней занятий.").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                Text(String(localized: "Появится после двух дней занятий.")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             } else {
                 Chart(points) { day in
-                    AreaMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
+                    AreaMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Точность"), day.accuracy ?? 0))
                         .foregroundStyle(LinearGradient(colors: [Theme.accent.opacity(0.25), .clear],
                                                         startPoint: .top, endPoint: .bottom))
                         .interpolationMethod(.catmullRom)
-                    LineMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
+                    LineMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Точность"), day.accuracy ?? 0))
                         .foregroundStyle(Theme.accent)
                         .interpolationMethod(.catmullRom)
                         .lineStyle(StrokeStyle(lineWidth: 2.5))
-                    PointMark(x: .value("День", day.date, unit: .day), y: .value("Точность", day.accuracy ?? 0))
+                    PointMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Точность"), day.accuracy ?? 0))
                         .foregroundStyle(Theme.accent)
                         .symbolSize(24)
                 }
@@ -97,9 +97,9 @@ struct StatsChartsView: View {
 
         if !data.mistakes.isEmpty {
             Card {
-                CardLabel(text: "Ошибки по типам")
+                CardLabel(text: String(localized: "Ошибки по типам"))
                 Chart(data.mistakes) { m in
-                    BarMark(x: .value("Ошибки", m.count), y: .value("Тип", m.kind.titleRU))
+                    BarMark(x: .value(String(localized: "Ошибки"), m.count), y: .value(String(localized: "Тип"), m.kind.titleRU))
                         .foregroundStyle(Theme.accentMid)
                         .cornerRadius(4)
                         .annotation(position: .trailing) {
@@ -112,9 +112,9 @@ struct StatsChartsView: View {
         }
 
         Card {
-            CardLabel(text: "Уроки: знакомые слова")
+            CardLabel(text: String(localized: "Уроки: знакомые слова"))
             Chart(data.lessons) { lesson in
-                BarMark(x: .value("Урок", lesson.label), y: .value("Знакомо", lesson.progress.fraction))
+                BarMark(x: .value(String(localized: "Урок"), lesson.label), y: .value(String(localized: "Знакомо"), lesson.progress.fraction))
                     .foregroundStyle(lesson.progress.state == .done ? Theme.accent : Theme.accentMid)
                     .cornerRadius(3)
             }
@@ -126,22 +126,22 @@ struct StatsChartsView: View {
                 }
             }
             .frame(height: 150)
-            Text("В — вводный курс, У — основной.").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+            Text(String(localized: "В — вводный курс, У — основной.")).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
         }
     }
 
     private var stagesCard: some View {
         Card {
-            CardLabel(text: "Слова курса")
+            CardLabel(text: String(localized: "Слова курса"))
             Chart(data.stages) { stage in
-                SectorMark(angle: .value("Слова", stage.count), innerRadius: .ratio(0.62), angularInset: 1.5)
+                SectorMark(angle: .value(String(localized: "Слова"), stage.count), innerRadius: .ratio(0.62), angularInset: 1.5)
                     .foregroundStyle(StageStyle.color(stage.id))
                     .cornerRadius(3)
             }
             .chartBackground { _ in
                 VStack(spacing: 0) {
                     Text("\(data.known)").font(.s(.title).weight(.bold).monospacedDigit())
-                    Text("из \(data.totalWords)").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+                    Text(String(localized: "из \(data.totalWords)")).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
                 }
             }
             .frame(height: 170)
@@ -162,9 +162,9 @@ struct StatsChartsView: View {
 
     private var forecastCard: some View {
         Card {
-            CardLabel(text: "Повторения на неделю")
+            CardLabel(text: String(localized: "Повторения на неделю"))
             Chart(data.forecast) { day in
-                BarMark(x: .value("День", day.date, unit: .day), y: .value("Слова", day.count))
+                BarMark(x: .value(String(localized: "День"), day.date, unit: .day), y: .value(String(localized: "Слова"), day.count))
                     .foregroundStyle(day.id == data.forecast.first?.id ? Theme.accent : Theme.accentMid)
                     .cornerRadius(4)
                     .annotation(position: .top) {
@@ -180,7 +180,7 @@ struct StatsChartsView: View {
             }
             .chartYAxis(.hidden)
             .frame(height: 170)
-            Text("Сегодня — с учётом просроченных.").font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+            Text(String(localized: "Сегодня — с учётом просроченных.")).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
         }
         .frame(minWidth: 260)
     }
@@ -221,9 +221,10 @@ private struct LegendDot: View {
 }
 
 /// "день", "дня", "дней" for a count.
-func dayWord(_ n: Int) -> String {
+func dayWord(_ n: Int, language: String = AppLanguage.current) -> String {
+    guard language == "ru" else { return n == 1 ? String(localized: "день") : String(localized: "дней") }
     let m10 = n % 10, m100 = n % 100
-    if m10 == 1 && m100 != 11 { return "день" }
-    if (2...4).contains(m10) && !(12...14).contains(m100) { return "дня" }
-    return "дней"
+    if m10 == 1 && m100 != 11 { return String(localized: "день") }
+    if (2...4).contains(m10) && !(12...14).contains(m100) { return String(localized: "дня") }
+    return String(localized: "дней")
 }

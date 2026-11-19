@@ -20,20 +20,20 @@ struct VocabularyView: View {
 
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Лексика").font(.s(.largeTitle).weight(.bold))
+                Text(String(localized: "Лексика")).font(.s(.largeTitle).weight(.bold))
 
                 Card {
                     HStack {
-                        Text("\(learned) из \(items.count) выучено").font(.s(.headline))
+                        Text(String(localized: "\(learned) из \(items.count) выучено")).font(.s(.headline))
                         Spacer()
-                        Text("\(due) к повторению").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                        Text(String(localized: "\(due) к повторению")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
                     }
                     ProgressView(value: Double(learned), total: Double(max(items.count, 1)))
                         .tint(Theme.accent)
                     NavigationLink {
                         FlashcardsView(lesson: lesson)
                     } label: {
-                        Label("Учить карточками", systemImage: "rectangle.on.rectangle.angled")
+                        Label(String(localized: "Учить карточками"), systemImage: "rectangle.on.rectangle.angled")
                             .font(.s(.subheadline).weight(.semibold))
                             .foregroundStyle(Theme.accent)
                     }
@@ -46,10 +46,10 @@ struct VocabularyView: View {
 
                 HStack(spacing: 8) {
                     Image(systemName: "magnifyingglass").foregroundStyle(Theme.secondaryText)
-                    TextField("Поиск по слову или переводу", text: $search)
+                    TextField(String(localized: "Поиск по слову или переводу"), text: $search)
                         .textFieldStyle(.plain)
                         .autocorrectionDisabled()
-                    Toggle("Новые", isOn: $onlyNew)
+                    Toggle(String(localized: "Новые"), isOn: $onlyNew)
                         .toggleStyle(.button)
                         .tint(Theme.accent)
                         .font(.s(.subheadline))
@@ -68,7 +68,7 @@ struct VocabularyView: View {
                             VocabRow(item: item, box: byID[item.wordID]?.box ?? 0, isFavorite: starred.contains(item.wordID))
                         }
                         if shown.isEmpty {
-                            Text("Ничего не найдено")
+                            Text(String(localized: "Ничего не найдено"))
                                 .foregroundStyle(Theme.secondaryText)
                                 .padding(16)
                         }
@@ -96,7 +96,7 @@ struct VocabularyView: View {
         guard !search.isEmpty else { return base }
         let q = AnswerChecker.fold(search)
         return base.filter {
-            AnswerChecker.fold($0.italian).contains(q) || $0.russian.localizedCaseInsensitiveContains(search)
+            AnswerChecker.fold($0.italian).contains(q) || $0.translation.localizedCaseInsensitiveContains(search)
         }
     }
 }
@@ -109,7 +109,7 @@ private struct FocusWordCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
-                CardLabel(text: dueCount > 0 ? "Пора повторить" : "Новое слово", color: Theme.onAccent.opacity(0.85))
+                CardLabel(text: dueCount > 0 ? String(localized: "Пора повторить") : String(localized: "Новое слово"), color: Theme.onAccent.opacity(0.85))
                 Spacer()
                 if let g = item.gender {
                     Text(g)
@@ -123,13 +123,13 @@ private struct FocusWordCard: View {
                 .font(.scaledSystem(size: 34, weight: .bold))
                 .minimumScaleFactor(0.6)
                 .lineLimit(2)
-            Text(item.russian).font(.s(.title3)).opacity(0.9)
+            Text(item.translation).font(.s(.title3)).opacity(0.9)
             HStack(spacing: 10) {
                 SpeakButton(text: item.withArticle, size: 48, style: .onAccent)
                 NavigationLink {
                     FillBlankView(lesson: lesson)
                 } label: {
-                    Text(dueCount > 0 ? "Повторить \(dueCount)" : "Тренировка")
+                    Text(dueCount > 0 ? String(localized: "Повторить \(dueCount)") : String(localized: "Тренировка"))
                         .font(.s(.headline))
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Theme.onAccent, lineWidth: 1.5))
@@ -155,10 +155,10 @@ private struct VocabRow: View {
                 HStack(spacing: 6) {
                     Text(item.displayWithArticle).font(.s(.body).weight(.semibold))
                     if item.isNew {
-                        Text("НОВОЕ").font(.s(.caption2).weight(.bold)).foregroundStyle(Theme.newBadge)
+                        Text(String(localized: "НОВОЕ")).font(.s(.caption2).weight(.bold)).foregroundStyle(Theme.newBadge)
                     }
                 }
-                Text(item.russian + (item.formOf.map { " · от \($0)" } ?? ""))
+                Text(item.translation + (item.formOf.map { String(localized: " · от \($0)") } ?? ""))
                     .font(.s(.subheadline))
                     .foregroundStyle(Theme.secondaryText)
             }
@@ -185,6 +185,6 @@ struct LeitnerDots: View {
             }
         }
         .accessibilityElement()
-        .accessibilityLabel("Уровень \(box) из \(Leitner.maxBox)")
+        .accessibilityLabel(String(localized: "Уровень \(box) из \(Leitner.maxBox)"))
     }
 }

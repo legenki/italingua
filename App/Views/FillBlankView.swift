@@ -16,7 +16,7 @@ struct FillBlankView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Вставь слово").font(.s(.largeTitle).weight(.bold))
+                Text(String(localized: "Вставь слово")).font(.s(.largeTitle).weight(.bold))
                 if let session {
                     content(session)
                 } else {
@@ -37,8 +37,8 @@ struct FillBlankView: View {
     private func content(_ s: FillBlankSession) -> some View {
         if case .unavailable(let reason) = s.status {
             Card(fill: Theme.warningFill) {
-                CardLabel(text: "Без модели", color: Theme.warningText)
-                Text(reason + " Пока задания без предложений: вспомни слово по переводу.")
+                CardLabel(text: String(localized: "Без модели"), color: Theme.warningText)
+                Text(reason + String(localized: " Пока задания без предложений: вспомни слово по переводу."))
                     .font(.s(.subheadline))
             }
         } else if let notice = s.modelNotice {
@@ -52,17 +52,17 @@ struct FillBlankView: View {
             Card {
                 HStack(spacing: 12) {
                     ProgressView()
-                    Text("Составляю задание…").foregroundStyle(Theme.secondaryText)
+                    Text(String(localized: "Составляю задание…")).foregroundStyle(Theme.secondaryText)
                 }
             }
         case .finished:
             Card {
-                CardLabel(text: "Готово")
-                Text("\(s.correctCount) из \(s.total) верно").font(.s(.title).weight(.bold))
+                CardLabel(text: String(localized: "Готово"))
+                Text(String(localized: "\(s.correctCount) из \(s.total) верно")).font(.s(.title).weight(.bold))
                 Button {
                     Task { await restart() }
                 } label: {
-                    Text("Ещё раз")
+                    Text(String(localized: "Ещё раз"))
                         .font(.s(.headline))
                         .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 50)
@@ -79,9 +79,9 @@ struct FillBlankView: View {
     private func task(_ ex: FillBlankExercise, session s: FillBlankSession) -> some View {
         Card {
             HStack {
-                CardLabel(text: ex.source == .model ? "Предложение" : "Как по-итальянски?")
+                CardLabel(text: ex.source == .model ? String(localized: "Предложение") : String(localized: "Как по-итальянски?"))
                 Spacer()
-                Text("\(s.index + 1) из \(s.total)").font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
+                Text(String(localized: "\(s.index + 1) из \(s.total)")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
             }
             if ex.source == .model {
                 Text(ex.sentence).font(.s(.title2))
@@ -90,7 +90,7 @@ struct FillBlankView: View {
                 .foregroundStyle(ex.source == .model ? Theme.secondaryText : .primary)
 
             HStack(spacing: 10) {
-                TextField(voice.isListening ? "Слушаю…" : "Пропущенное слово",
+                TextField(voice.isListening ? String(localized: "Слушаю…") : String(localized: "Пропущенное слово"),
                           text: voice.isListening ? .constant(voice.heard) : $answer)
                     .textFieldStyle(.plain)
                     .font(.s(.title3))
@@ -110,12 +110,12 @@ struct FillBlankView: View {
             }
             switch voice.state {
             case .downloading(let p):
-                ProgressView("Скачиваю итальянскую речь (один раз)…", value: p)
+                ProgressView(String(localized: "Скачиваю итальянскую речь (один раз)…"), value: p)
                     .font(.s(.footnote))
             case .failed(let message):
                 Text(message).font(.s(.footnote)).foregroundStyle(Theme.feminine)
             case .listening:
-                Text("Скажи ответ и нажми ещё раз").font(.s(.footnote)).foregroundStyle(Theme.secondaryText)
+                Text(String(localized: "Скажи ответ и нажми ещё раз")).font(.s(.footnote)).foregroundStyle(Theme.secondaryText)
             default:
                 EmptyView()
             }
@@ -128,20 +128,20 @@ struct FillBlankView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(result.feedbackRU)
                         if let heardText {
-                            Text("Услышано: «\(heardText.isEmpty ? "ничего" : heardText)»")
+                            Text(String(localized: "Услышано: «\(heardText.isEmpty ? String(localized: "ничего") : heardText)»"))
                                 .font(.s(.footnote))
                                 .foregroundStyle(Theme.secondaryText)
                         }
                     }
                     Spacer(minLength: 0)
-                    SpeakButton(text: spokenAnswer(ex), label: "Прослушать ответ", size: 40)
+                    SpeakButton(text: spokenAnswer(ex), label: String(localized: "Прослушать ответ"), size: 40)
                 }
             }
 
             Button {
                 primaryAction(s)
             } label: {
-                Text(s.phase == .answering ? "Проверить" : "Дальше")
+                Text(s.phase == .answering ? String(localized: "Проверить") : String(localized: "Дальше"))
                     .font(.s(.headline))
                     .foregroundStyle(Theme.onAccent)
                     .frame(maxWidth: .infinity, minHeight: 50)
@@ -233,6 +233,6 @@ private struct MicButton: View {
         }
         .buttonStyle(.plain)
         .disabled(busy)
-        .accessibilityLabel(listening ? "Остановить и проверить" : "Ответить голосом")
+        .accessibilityLabel(listening ? String(localized: "Остановить и проверить") : String(localized: "Ответить голосом"))
     }
 }
