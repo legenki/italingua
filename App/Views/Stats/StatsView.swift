@@ -79,10 +79,19 @@ struct StatsView: View {
         .font(.s(.subheadline))
     }
 
+    /// Whether this build was code signed, and so carries the iCloud
+    /// entitlement. Filled in from the CODE_SIGNING_ALLOWED build setting.
+    private static var hasICloudEntitlement: Bool {
+        (Bundle.main.object(forInfoDictionaryKey: "ItalinguaCodeSigned") as? String) != "NO"
+    }
+
     /// Asks CloudKit directly, so sync problems are visible without Console.
     static func checkICloud() async -> String {
         guard let id = Bundle.main.object(forInfoDictionaryKey: "ItalinguaCloudKitContainer") as? String,
               !id.isEmpty else { return String(localized: "контейнер не настроен") }
+        // CKContainer traps (crashes the app) when the build has no iCloud
+        // entitlement, e.g. an unsigned command-line build.
+        guard hasICloudEntitlement else { return String(localized: "сборка без подписи, синхронизации нет") }
         do {
             switch try await CKContainer(identifier: id).accountStatus() {
             case .available: return String(localized: "подключён")

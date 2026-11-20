@@ -39,6 +39,7 @@ targets:
       properties:
         CFBundleDisplayName: Italingua
         ItalinguaCloudKitContainer: $(ITALINGUA_CLOUDKIT_CONTAINER)
+        ItalinguaCodeSigned: $(CODE_SIGNING_ALLOWED)
         CFBundleDevelopmentRegion: ru
         # Interface languages; also what macOS uses for the app's system menus.
         CFBundleLocalizations: [ru, en, es]

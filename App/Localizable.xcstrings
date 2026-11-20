@@ -5368,6 +5368,22 @@
         }
       }
     },
+    "сборка без подписи, синхронизации нет": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "unsigned build, no sync"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "compilación sin firmar, sin sincronización"
+          }
+        }
+      }
+    },
     "сегодня": {
       "localizations": {
         "en": {

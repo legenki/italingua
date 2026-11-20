@@ -28,6 +28,8 @@
 	<string>1</string>
 	<key>ItalinguaCloudKitContainer</key>
 	<string>$(ITALINGUA_CLOUDKIT_CONTAINER)</string>
+	<key>ItalinguaCodeSigned</key>
+	<string>$(CODE_SIGNING_ALLOWED)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>NSMicrophoneUsageDescription</key>
