@@ -54,7 +54,7 @@ struct GrammarTopicView: View {
                 }
 
                 if !editing, editable, note != nil {
-                    Label(String(localized: "Изменено в приложении. Попадёт в файлы курса после экспорта правил."),
+                    Label(String(localized: "Изменено в приложении."),
                           systemImage: "pencil.circle")
                         .font(.s(.footnote))
                         .foregroundStyle(Theme.secondaryText)

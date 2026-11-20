@@ -1048,18 +1048,18 @@
         }
       }
     },
-    "Изменено в приложении. Попадёт в файлы курса после экспорта правил.": {
+    "Изменено в приложении.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Edited in the app. It goes into the course files after exporting the rules."
+            "value": "Edited in the app."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Editado en la app. Pasará a los archivos del curso al exportar las reglas."
+            "value": "Editado en la app."
           }
         }
       }
@@ -3880,22 +3880,6 @@
         }
       }
     },
-    "Сохранить правила, написанные в приложении, для tools/import_rules.py": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save the rules written in the app for tools/import_rules.py"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Guardar las reglas escritas en la app para tools/import_rules.py"
-          }
-        }
-      }
-    },
     "Список": {
       "localizations": {
         "en": {
@@ -4596,22 +4580,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lectura"
-          }
-        }
-      }
-    },
-    "Экспорт правил (%lld)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Export rules (%lld)"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exportar reglas (%lld)"
           }
         }
       }

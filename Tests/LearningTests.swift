@@ -61,14 +61,6 @@ struct ImporterTests {
         #expect(try context.fetchCount(FetchDescriptor<RuleNote>()) == 0)   // merged: drop
     }
 
-    @Test func ruleExportShape() throws {
-        let doc = try RuleExportDocument(notes: [("a1-01", "Род", "Текст")],
-                                         now: Date(timeIntervalSince1970: 0))
-        let obj = try JSONSerialization.jsonObject(with: doc.data) as! [String: Any]
-        let rules = obj["rules"] as! [String: [String: String]]
-        #expect(rules["a1-01"]?["Род"] == "Текст")
-    }
-
     @Test func wordIDFoldsAccentsAndApostrophes() {
         #expect(ContentImporter.wordID(level: "A1", italian: "C’è") == "a1/c'e")
         #expect(ContentImporter.wordID(level: "A1", italian: "città") == "a1/citta")

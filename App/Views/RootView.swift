@@ -17,9 +17,6 @@ struct RootView: View {
     @FocusState private var listFocused: Bool
     @State private var showStats = false
     @State private var showSettings = false
-    @Query private var ruleNotes: [RuleNote]
-    @State private var exportDoc: RuleExportDocument?
-    @State private var exporting = false
     /// Read so the window is rebuilt with the new accent when the palette changes.
     @AppStorage(Palette.storageKey) private var palette = Palette.green
 
@@ -42,13 +39,6 @@ struct RootView: View {
                 Button(String(localized: "Настройки"), systemImage: "gearshape") { showSettings = true }
                 #endif
                 Button(String(localized: "Статистика"), systemImage: "chart.pie") { showStats = true }
-                Button(String(localized: "Экспорт правил (\(ruleNotes.count))"), systemImage: "square.and.arrow.up") {
-                    exportDoc = try? RuleExportDocument(
-                        notes: ruleNotes.map { ($0.lessonID, $0.topic, $0.text) })
-                    exporting = exportDoc != nil
-                }
-                .disabled(ruleNotes.isEmpty)
-                .help(String(localized: "Сохранить правила, написанные в приложении, для tools/import_rules.py"))
             }
         } detail: {
             NavigationStack(path: $detailPath) {
@@ -93,8 +83,6 @@ struct RootView: View {
         // Theme colors are read when views are built, so a palette change
         // rebuilds the split view. Selection and sheets live outside it and stay.
         .id(palette)
-        .fileExporter(isPresented: $exporting, document: exportDoc,
-                      contentType: .json, defaultFilename: "italingua-rules.json") { _ in }
         .sheet(isPresented: $showStats) {
             NavigationStack { StatsView() }
                 .tint(Theme.accent)
