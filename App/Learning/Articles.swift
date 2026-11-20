@@ -1,7 +1,7 @@
 import Foundation
 
 /// Definite article for a noun, from its gender, number and first letters.
-/// The book lists bare nouns; showing "il lavoro", "lo studente", "l'amica"
+/// Vocabulary lists bare nouns; showing "il lavoro", "lo studente", "l'amica"
 /// trains the article together with the word.
 nonisolated enum Articles {
     static func definite(for word: String, gender: String?, plural: Bool = false) -> String? {

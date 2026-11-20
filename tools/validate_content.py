@@ -13,7 +13,7 @@ Errors (exit code 1):
   * Cyrillic letters inside Italian text, Latin-only "translations"
 Warnings (shown with --warnings):
   * gender that contradicts the usual ending (-o feminine, -a masculine):
-    often a typo in the source, needs a human look
+    needs a human look
   * pos "other" (could not be inferred)
   * empty rule_ru (expected until the owner fills them in), counted only
 

@@ -5,11 +5,7 @@
       "id": "a1-01",
       "source": {
         "part": "intro",
-        "lesson": 1,
-        "pages": [
-          7,
-          13
-        ]
+        "lesson": 1
       },
       "title": "Alfabeto, pronuncia e articolo indeterminativo",
       "grammar": [
@@ -445,11 +441,7 @@
       "id": "a1-02",
       "source": {
         "part": "intro",
-        "lesson": 2,
-        "pages": [
-          14,
-          21
-        ]
+        "lesson": 2
       },
       "title": "Il plurale dei nomi e l'aggettivo",
       "grammar": [
@@ -996,11 +988,7 @@
       "id": "a1-03",
       "source": {
         "part": "intro",
-        "lesson": 3,
-        "pages": [
-          22,
-          28
-        ]
+        "lesson": 3
       },
       "title": "L'articolo determinativo",
       "grammar": [
@@ -1606,11 +1594,7 @@
       "id": "a1-04",
       "source": {
         "part": "intro",
-        "lesson": 4,
-        "pages": [
-          29,
-          38
-        ]
+        "lesson": 4
       },
       "title": "I pronomi personali e il verbo essere",
       "grammar": [
@@ -2279,11 +2263,7 @@
       "id": "a1-05",
       "source": {
         "part": "intro",
-        "lesson": 5,
-        "pages": [
-          39,
-          46
-        ]
+        "lesson": 5
       },
       "title": "Il verbo avere, sì e no, le preposizioni",
       "grammar": [
@@ -2670,11 +2650,7 @@
       "id": "a1-06",
       "source": {
         "part": "main",
-        "lesson": 1,
-        "pages": [
-          48,
-          57
-        ]
+        "lesson": 1
       },
       "title": "Il presente dei verbi in -are",
       "grammar": [
@@ -2899,11 +2875,7 @@
       "id": "a1-07",
       "source": {
         "part": "main",
-        "lesson": 2,
-        "pages": [
-          58,
-          66
-        ]
+        "lesson": 2
       },
       "title": "Il presente dei verbi in -ere; dire e bere",
       "grammar": [
@@ -3126,11 +3098,7 @@
       "id": "a1-08",
       "source": {
         "part": "main",
-        "lesson": 3,
-        "pages": [
-          67,
-          74
-        ]
+        "lesson": 3
       },
       "title": "Il presente dei verbi in -ire; il verbo fare",
       "grammar": [
@@ -3222,11 +3190,7 @@
       "id": "a1-09",
       "source": {
         "part": "main",
-        "lesson": 4,
-        "pages": [
-          75,
-          84
-        ]
+        "lesson": 4
       },
       "title": "Le preposizioni articolate: a; molto e poco",
       "grammar": [
@@ -3516,11 +3480,7 @@
       "id": "a1-10",
       "source": {
         "part": "main",
-        "lesson": 5,
-        "pages": [
-          85,
-          93
-        ]
+        "lesson": 5
       },
       "title": "La preposizione da; stare e dare",
       "grammar": [
@@ -3814,11 +3774,7 @@
       "id": "a1-11",
       "source": {
         "part": "main",
-        "lesson": 6,
-        "pages": [
-          94,
-          102
-        ]
+        "lesson": 6
       },
       "title": "C'è e ci sono; il verbo andare",
       "grammar": [
@@ -4096,11 +4052,7 @@
       "id": "a1-12",
       "source": {
         "part": "main",
-        "lesson": 7,
-        "pages": [
-          103,
-          112
-        ]
+        "lesson": 7
       },
       "title": "Le preposizioni articolate: di e in",
       "grammar": [
@@ -4495,11 +4447,7 @@
       "id": "a1-13",
       "source": {
         "part": "main",
-        "lesson": 8,
-        "pages": [
-          113,
-          121
-        ]
+        "lesson": 8
       },
       "title": "I verbi modali e i numeri da 0 a 20",
       "grammar": [
@@ -4813,11 +4761,7 @@
       "id": "a1-14",
       "source": {
         "part": "main",
-        "lesson": 9,
-        "pages": [
-          122,
-          129
-        ]
+        "lesson": 9
       },
       "title": "Gli aggettivi possessivi",
       "grammar": [
@@ -5165,11 +5109,7 @@
       "id": "a1-15",
       "source": {
         "part": "main",
-        "lesson": 10,
-        "pages": [
-          130,
-          139
-        ]
+        "lesson": 10
       },
       "title": "I pronomi diretti; il verbo uscire",
       "grammar": [
@@ -5472,11 +5412,7 @@
       "id": "a1-16",
       "source": {
         "part": "main",
-        "lesson": 11,
-        "pages": [
-          140,
-          148
-        ]
+        "lesson": 11
       },
       "title": "I numeri da 21 in poi; il verbo sapere",
       "grammar": [
@@ -5848,11 +5784,7 @@
       "id": "a1-17",
       "source": {
         "part": "main",
-        "lesson": 12,
-        "pages": [
-          149,
-          156
-        ]
+        "lesson": 12
       },
       "title": "I numeri ordinali; tutto",
       "grammar": [
@@ -6223,11 +6155,7 @@
       "id": "a1-18",
       "source": {
         "part": "main",
-        "lesson": 13,
-        "pages": [
-          157,
-          165
-        ]
+        "lesson": 13
       },
       "title": "Che ora è? I nomi in -ma, -ta, -ca",
       "grammar": [
@@ -6599,11 +6527,7 @@
       "id": "a1-19",
       "source": {
         "part": "main",
-        "lesson": 14,
-        "pages": [
-          166,
-          174
-        ]
+        "lesson": 14
       },
       "title": "Il si impersonale; il tempo e le stagioni",
       "grammar": [
@@ -6960,11 +6884,7 @@
       "id": "a1-20",
       "source": {
         "part": "main",
-        "lesson": 15,
-        "pages": [
-          175,
-          183
-        ]
+        "lesson": 15
       },
       "title": "Gli avverbi in -mente; qualche e alcuni",
       "grammar": [

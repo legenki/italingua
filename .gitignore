@@ -1,8 +1,4 @@
-# Copyrighted textbook — never commit
-source/
-
 # Python
-tools/.venv/
 __pycache__/
 *.pyc
 

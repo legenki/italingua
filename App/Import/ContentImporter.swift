@@ -2,7 +2,7 @@ import CryptoKit
 import Foundation
 import SwiftData
 
-// JSON shape of Content/<LEVEL>.json (produced by tools/extract_structure.py).
+// JSON shape of Content/<LEVEL>.json.
 nonisolated struct ContentFileDTO: Decodable, Sendable {
     let level: String
     let lessons: [LessonDTO]
@@ -107,9 +107,7 @@ enum ContentImporter {
         try context.save()
     }
 
-    /// Rules written in the app are exported to the curation file and come
-    /// back with the bundled JSON; once the bundled text equals the note,
-    /// the note is no longer needed.
+    /// Once the bundled rule text equals an in-app note, the note is no longer needed.
     static func dropMergedRuleNotes(file: ContentFileDTO, in context: ModelContext) throws {
         var bundled: [String: String] = [:]
         for lesson in file.lessons {

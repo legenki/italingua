@@ -35,7 +35,7 @@ final class Lesson {
     var sortedGrammar: [GrammarTopic] { grammar.sorted { $0.order < $1.order } }
     var sortedVocab: [VocabItem] { vocab.sorted { $0.order < $1.order } }
 
-    /// "Вводный урок 3" / "Урок 12" — where it sits in the textbook.
+    /// "Вводный урок 3" / "Урок 12".
     var sourceLabel: String {
         sourcePart == "intro" ? String(localized: "Вводный урок \(sourceLesson)") : String(localized: "Урок \(sourceLesson)")
     }
@@ -82,7 +82,7 @@ final class VocabItem {
     var number: String?
     var stress: String?
     var formOf: String?
-    /// Marked as new in this lesson by the textbook.
+    /// Marked as new in this lesson.
     var isNew: Bool = false
     var lesson: Lesson?
 
@@ -102,7 +102,7 @@ final class VocabItem {
 
     var pos: PartOfSpeech { PartOfSpeech(rawValue: posRaw) ?? .other }
 
-    /// Shown in lists: the stressed form if the book marks it.
+    /// Shown in lists: the stressed form when marked.
     var displayItalian: String { stress ?? italian }
 
     var isPlural: Bool { number == "pl" }
