@@ -42,6 +42,11 @@ struct SessionCapsule: View {
             SessionPlan(lesson: sessionLesson, open: { step in showPlan = false; open(step) })
                 .font(.s(.body))
                 .tint(Theme.accent)
+                #if os(iOS)
+                // On iPhone a half-height sheet that can be pulled up, not an empty full screen.
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
+                #endif
         }
     }
 
@@ -222,8 +227,15 @@ private struct SessionPlan: View {
                 }
                 .font(.s(.subheadline))
             }
+            #if os(macOS)
             .padding(18)
             .frame(width: 440)
+            #else
+            // On iPhone the popover becomes a full-width sheet: keep the content off the edges.
+            .padding(.horizontal, 24)
+            .padding(.vertical, 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            #endif
         }
     }
 
