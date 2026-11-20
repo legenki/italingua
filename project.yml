@@ -5,7 +5,7 @@ options:
     iOS: "26.0"
     macOS: "26.0"
   createIntermediateGroups: true
-  developmentLanguage: ru
+  developmentLanguage: en   # fallback language; string catalogs stay keyed in Russian (sourceLanguage ru)
 configFiles:
   Debug: Config/Base.xcconfig
   Release: Config/Base.xcconfig
@@ -23,6 +23,16 @@ targets:
       - path: Config/Italingua.icon
         type: file
         buildPhase: resources
+    postBuildScripts:
+      # The catalog is keyed in Russian but the development region is English:
+      # without this table Russian users would get English (see the script).
+      - name: Russian strings table
+        script: /usr/bin/python3 "$SRCROOT/tools/build/source_strings.py" "$SCRIPT_INPUT_FILE_1" "$SCRIPT_OUTPUT_FILE_0"
+        inputFiles:
+          - $(SRCROOT)/tools/build/source_strings.py
+          - $(SRCROOT)/App/Localizable.xcstrings
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/ru.lproj/Localizable.strings
     entitlements:
       path: Config/Italingua.entitlements
       properties:
@@ -43,7 +53,8 @@ targets:
         ITSAppUsesNonExemptEncryption: false
         ItalinguaCloudKitContainer: $(ITALINGUA_CLOUDKIT_CONTAINER)
         ItalinguaCodeSigned: $(CODE_SIGNING_ALLOWED)
-        CFBundleDevelopmentRegion: ru
+        # Fallback when none of the user's languages is ru/en/es (the strings stay keyed in Russian).
+        CFBundleDevelopmentRegion: en
         # Interface languages; also what macOS uses for the app's system menus.
         CFBundleLocalizations: [ru, en, es]
         UILaunchScreen: {}

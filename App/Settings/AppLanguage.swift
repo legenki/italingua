@@ -31,8 +31,8 @@ nonisolated enum AppLanguage: String, CaseIterable, Identifiable, Sendable {
 
     /// The language the app runs in now: "ru", "en" or "es".
     static var current: String {
-        let code = Bundle.main.preferredLocalizations.first ?? "ru"
-        return ["ru", "en", "es"].contains(code) ? code : "ru"
+        let code = Bundle.main.preferredLocalizations.first ?? "en"
+        return ["ru", "en", "es"].contains(code) ? code : "en"
     }
 
     static var locale: Locale { Locale(identifier: current) }
