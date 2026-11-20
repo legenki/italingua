@@ -76,14 +76,15 @@ struct SessionCapsule: View {
                 HStack(spacing: 5) {
                     ForEach(0..<4, id: \.self) { _ in Circle().fill(Theme.separator).frame(width: 7, height: 7) }
                 }
-                Label(String(localized: "Начать"), systemImage: "play.fill")
-                    .font(.s(.subheadline).weight(.semibold))
-                    .padding(.horizontal, 12)
-                    .frame(height: 26)
-                    .glassEffect(.clear.interactive(), in: Capsule())
+                Image(systemName: "play.fill")
+                    .font(.s(.subheadline))
+                    .frame(width: Self.knob, height: Self.knob)
+                    .background(Theme.tile.opacity(0.6), in: Circle())
+                    .overlay(Circle().strokeBorder(Theme.separator, lineWidth: 1))
+                    .accessibilityLabel(String(localized: "Начать"))
             }
             .padding(.leading, 14)
-            .padding(.trailing, 6)
+            .padding(.trailing, Self.inset)
             .frame(height: Self.barHeight)
             .liquidCapsule()
             .opacity(startLesson == nil ? 0.5 : 1)
@@ -105,14 +106,15 @@ struct SessionCapsule: View {
     private func running(now: Date, chips: Bool) -> some View {
         let remaining = session.remaining(now: now)
         let main = HStack(spacing: 8) {
+            // The ring fills the capsule's height minus the inset, like the pause button.
             ZStack {
-                Circle().stroke(Theme.separator, lineWidth: 3.5)
-                Circle()
+                Circle().inset(by: 2).stroke(Theme.separator, lineWidth: 4)
+                Circle().inset(by: 2)
                     .trim(from: 0, to: remaining / StudySession.duration)
-                    .stroke(Theme.accent, style: StrokeStyle(lineWidth: 3.5, lineCap: .round))
+                    .stroke(Theme.accent, style: StrokeStyle(lineWidth: 4, lineCap: .round))
                     .rotationEffect(.degrees(-90))
             }
-            .frame(width: 22, height: 22)
+            .frame(width: Self.knob, height: Self.knob)
             Text(Self.clock(remaining))
                 .font(.s(.subheadline).weight(.bold).monospacedDigit())
                 .foregroundStyle(session.isRunning ? .primary : Theme.secondaryText)
@@ -142,16 +144,17 @@ struct SessionCapsule: View {
                 session.isRunning ? session.pause() : session.resume()
             } label: {
                 Image(systemName: session.isRunning ? "pause.fill" : "play.fill")
-                    .font(.s(.caption))
-                    .frame(width: 24, height: 24)
+                    .font(.s(.subheadline))
+                    .frame(width: Self.knob, height: Self.knob)
+                    .background(Theme.tile.opacity(0.6), in: Circle())
+                    .overlay(Circle().strokeBorder(Theme.separator, lineWidth: 1))
                     .contentShape(Circle())
-                    .glassEffect(.regular.interactive(), in: Circle())
             }
             .buttonStyle(.plain)
             .help(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить"))
             .accessibilityLabel(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить"))
         }
-        .padding(.horizontal, 6)
+        .padding(.horizontal, Self.inset)
         .frame(height: Self.barHeight)
         .liquidCapsule()
     }
@@ -162,6 +165,9 @@ struct SessionCapsule: View {
     #else
     static let barHeight: CGFloat = 36
     #endif
+    /// Same gap above, below and beside the ring and the pause button.
+    static let inset: CGFloat = 5
+    static var knob: CGFloat { barHeight - 2 * inset }
 
     static func clock(_ seconds: TimeInterval) -> String {
         let s = Int(seconds.rounded(.up))
