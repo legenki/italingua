@@ -192,6 +192,9 @@ struct FlashcardsView: View {
     private func undo(_ s: FlashcardSession) {
         guard !busy, s.index > 0 else { return }
         withAnimation(.spring(duration: 0.3)) { s.undo() }
+        if let card = s.current {
+            StudySession.shared.forgetCard(lessonID: card.lessonID, wordID: card.wordID)
+        }
         if let card = s.current, let snap = savedRecords.removeValue(forKey: card.id) {
             do {
                 let p = try context.progress(for: snap.wordID)

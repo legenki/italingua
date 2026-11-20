@@ -69,13 +69,21 @@ enum ContentImporter {
     static func importLevel(data: Data, into context: ModelContext) throws {
         let file = try JSONDecoder().decode(ContentFileDTO.self, from: data)
         let level = file.level
-        try context.delete(model: Lesson.self, where: #Predicate { $0.level == level })
-        // Cascade deletes do not run for batch deletes in every SwiftData
-        // version, so clear orphans explicitly.
+        let levelKey = level.lowercased()
+        // Delete the level's lessons one by one (so the cascade runs), then
+        // the level's words by ID prefix and any orphans, in case the cascade
+        // left something behind. Saved before inserting, so the new rows never
+        // meet the old ones (wordID is unique).
+        for lesson in try context.fetch(FetchDescriptor<Lesson>(predicate: #Predicate { $0.level == level })) {
+            context.delete(lesson)
+        }
+        try context.save()   // batch deletes below fail while words still point to unsaved deleted lessons
+        let prefix = levelKey + "/"
+        try context.delete(model: VocabItem.self, where: #Predicate { $0.wordID.starts(with: prefix) })
         try context.delete(model: GrammarTopic.self, where: #Predicate { $0.lesson == nil })
         try context.delete(model: VocabItem.self, where: #Predicate { $0.lesson == nil })
-        let levelKey = level.lowercased()
-        let existing = Set(try context.fetch(FetchDescriptor<VocabItem>()).map(\.wordID))
+        try context.save()
+        var inserted = Set<String>()
 
         for (index, dto) in file.lessons.enumerated() {
             let lesson = Lesson(id: dto.id, level: level, order: index,
@@ -94,7 +102,7 @@ enum ContentImporter {
             }
             for (vi, v) in dto.vocab.enumerated() {
                 let id = wordID(level: levelKey, italian: v.it)
-                if existing.contains(id) { continue }   // defensive: validator forbids dups
+                guard inserted.insert(id).inserted else { continue }   // defensive: validator forbids dups
                 let item = VocabItem(wordID: id, order: vi, italian: v.it, russian: v.ru,
                                      posRaw: v.pos, gender: v.gender, number: v.number,
                                      stress: v.stress, formOf: v.form_of, isNew: v.new ?? false)

@@ -102,9 +102,10 @@ extension ModelContext {
         }
         if rows.count > 1 {
             keep = rows.max { ($0.lastReviewed ?? .distantPast) < ($1.lastReviewed ?? .distantPast) }!
+            // Each row counts only the answers given on its own device, so they add up.
             for other in rows where other !== keep {
-                keep.correctCount = max(keep.correctCount, other.correctCount)
-                keep.wrongCount = max(keep.wrongCount, other.wrongCount)
+                keep.correctCount += other.correctCount
+                keep.wrongCount += other.wrongCount
                 delete(other)
             }
         }

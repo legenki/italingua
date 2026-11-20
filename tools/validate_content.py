@@ -277,7 +277,10 @@ def main() -> int:
     failed = False
     for f in files:
         rep = validate(f)
-        data = json.loads(f.read_text()) if not rep.errors or f.exists() else {}
+        try:
+            data = json.loads(f.read_text())
+        except (OSError, json.JSONDecodeError):
+            data = {}
         lessons = data.get("lessons", []) if isinstance(data, dict) else []
         words = sum(len(l.get("vocab", [])) for l in lessons)
         topics = sum(len(l.get("grammar", [])) for l in lessons)

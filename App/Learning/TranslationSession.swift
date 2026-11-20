@@ -60,7 +60,9 @@ final class TranslationSession {
         let correct = result.isCorrect || overridden
         if correct { correctCount += 1 }
         context.insert(ReviewLog(wordID: "", lessonID: task.lessonID, correct: correct, exercise: .translation))
-        if !correct {
+        // Without a model check the mistake type is unknown: the learner only
+        // grades themselves, so no "Другое" mistake is invented.
+        if !correct && result.verdict != .unchecked {
             for kind in result.mistakes.isEmpty ? [.other] : result.mistakes {
                 context.insert(Mistake(lessonID: task.lessonID, wordID: nil, kind: kind, exercise: .translation,
                                        prompt: task.russian, expected: result.corrected, given: answer))

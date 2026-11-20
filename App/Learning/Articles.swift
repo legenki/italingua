@@ -9,7 +9,7 @@ nonisolated enum Articles {
         let w = word.lowercased()
         guard let first = w.first else { return nil }
         let vowel = "aeiouàèéìòùh".contains(first)
-        let special = w.hasPrefix("z") || w.hasPrefix("gn") || w.hasPrefix("ps")
+        let special = w.hasPrefix("z") || w.hasPrefix("gn") || w.hasPrefix("ps") || w.hasPrefix("pn")
             || w.hasPrefix("x") || w.hasPrefix("y")
             || (w.hasPrefix("s") && w.dropFirst().first.map { !"aeiouàèéìòù".contains($0) } == true)
             || (w.hasPrefix("i") && w.dropFirst().first.map { "aeiou".contains($0) } == true)

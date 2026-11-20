@@ -11,6 +11,7 @@ final class Speech {
     @ObservationIgnored private let synthesizer = AVSpeechSynthesizer()
     @ObservationIgnored private let delegate = FinishDelegate()
     private(set) var speakingText: String?
+    @ObservationIgnored private var currentUtterance: ObjectIdentifier?
 
     /// The Italian voice, found in the background: listing the system voices
     /// can block for a long time (it hung the iOS Simulator on launch), so it
@@ -21,8 +22,14 @@ final class Speech {
 
     init() {
         synthesizer.delegate = delegate
-        delegate.onFinish = { [weak self] in
-            Task { @MainActor in self?.speakingText = nil }
+        // Only the utterance that is playing now may clear the state: the
+        // cancel of a stopped one arrives after the next one has started.
+        delegate.onFinish = { [weak self] finished in
+            Task { @MainActor in
+                guard let self, self.currentUtterance == finished else { return }
+                self.currentUtterance = nil
+                self.speakingText = nil
+            }
         }
         Task.detached(priority: .utility) {
             let found = Self.findVoice()
@@ -53,6 +60,7 @@ final class Speech {
             let same = speakingText == text
             synthesizer.stopSpeaking(at: .immediate)
             speakingText = nil
+            currentUtterance = nil
             if same { return }
         }
         let utterance = AVSpeechUtterance(string: Self.spokenForm(text))
@@ -62,6 +70,7 @@ final class Speech {
         utterance.rate = slow ? 0.38 : 0.46
         utterance.postUtteranceDelay = 0.1
         speakingText = text
+        currentUtterance = ObjectIdentifier(utterance)
         synthesizer.speak(utterance)
         StudySession.shared.noteSpoken(text)
     }
@@ -77,8 +86,8 @@ final class Speech {
 
 /// Reports when speech ends, so the stop button turns back into play.
 private nonisolated final class FinishDelegate: NSObject, AVSpeechSynthesizerDelegate, @unchecked Sendable {
-    var onFinish: (@Sendable () -> Void)?
+    var onFinish: (@Sendable (ObjectIdentifier) -> Void)?
 
-    func speechSynthesizer(_ s: AVSpeechSynthesizer, didFinish u: AVSpeechUtterance) { onFinish?() }
-    func speechSynthesizer(_ s: AVSpeechSynthesizer, didCancel u: AVSpeechUtterance) { onFinish?() }
+    func speechSynthesizer(_ s: AVSpeechSynthesizer, didFinish u: AVSpeechUtterance) { onFinish?(ObjectIdentifier(u)) }
+    func speechSynthesizer(_ s: AVSpeechSynthesizer, didCancel u: AVSpeechUtterance) { onFinish?(ObjectIdentifier(u)) }
 }

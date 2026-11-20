@@ -120,6 +120,11 @@ final class StudySession {
         update(lessonID) { $0.cards.insert(wordID) }
     }
 
+    /// Undo of a flashcard answer.
+    func forgetCard(lessonID: String, wordID: String) {
+        update(lessonID) { $0.cards.remove(wordID) }
+    }
+
     func noteReading(lessonID: String) {
         update(lessonID) { $0.reading = true }
     }

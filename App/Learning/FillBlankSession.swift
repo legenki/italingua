@@ -83,6 +83,8 @@ final class FillBlankSession {
     }
 
     func next() async {
+        // A second tap on "Дальше" before the next task loads must not skip a word.
+        guard case .checked = phase else { return }
         index += 1
         await load()
     }

@@ -39,6 +39,11 @@ struct ImporterTests {
 
         try ContentImporter.importLevel(data: json, into: context)
         #expect(try context.fetchCount(FetchDescriptor<VocabItem>()) == 1)
+        #expect(try context.fetchCount(FetchDescriptor<Lesson>()) == 1)
+        #expect(try context.fetchCount(FetchDescriptor<GrammarTopic>()) == 1)
+        let lesson = try #require(try context.fetch(FetchDescriptor<Lesson>()).first)
+        #expect(lesson.vocab.map(\.wordID) == ["a1/caffe"])
+        #expect(lesson.grammar.count == 1)
         #expect(try context.progress(for: "a1/caffe").box == 1)
     }
 
@@ -244,6 +249,8 @@ struct ArticleTests {
         ("case", "f", true, "le case"),
         ("hotel", "m", false, "l'hotel"),
         ("hotel", "m", true, "gli hotel"),
+        ("pneumatico", "m", false, "lo pneumatico"),
+        ("pneumatici", "m", true, "gli pneumatici"),
     ])
     func definite(word: String, gender: String, plural: Bool, expected: String) {
         #expect(Articles.withArticle(word, gender: gender, plural: plural) == expected)
@@ -386,6 +393,43 @@ struct FavoriteTests {
         try ctx.save()
         #expect(try ctx.toggleFavorite(wordID: "a1/casa") == false)
         #expect(try ctx.fetchCount(FetchDescriptor<FavoriteWord>()) == 0)
+    }
+}
+
+@MainActor
+struct ProgressMergeTests {
+    @Test func duplicateRowsAddUpTheirCounts() throws {
+        let container = try AppContainer.make(inMemory: true)
+        let ctx = container.mainContext
+        let a = WordProgress(wordID: "a1/casa"), b = WordProgress(wordID: "a1/casa")
+        a.correctCount = 3; a.wrongCount = 1
+        b.correctCount = 2; b.wrongCount = 1
+        b.lastReviewed = .now
+        ctx.insert(a); ctx.insert(b)
+        try ctx.save()
+        let p = try ctx.progress(for: "a1/casa")
+        #expect(p.correctCount == 5)
+        #expect(p.wrongCount == 2)
+        try ctx.save()
+        #expect(try ctx.fetchCount(FetchDescriptor<WordProgress>()) == 1)
+    }
+}
+
+@MainActor
+struct FillBlankSessionTests {
+    @Test func secondNextDoesNotSkipAWord() async throws {
+        let container = try AppContainer.make(inMemory: true)
+        let words = (1...3).map {
+            TargetWord(wordID: "a1/w\($0)", lessonID: "a1-01", italian: "w\($0)", russian: "w", pos: .noun, gender: "m")
+        }
+        let s = FillBlankSession(lessonTitle: "T", words: words, status: .unavailable("test"),
+                                 generator: FallbackFillBlankGenerator())
+        await s.start()
+        s.submit("w1", in: container.mainContext)
+        await s.next()
+        await s.next()   // a double tap: the task is not checked yet
+        #expect(s.index == 1)
+        #expect(s.current?.wordID == "a1/w2")
     }
 }
 
