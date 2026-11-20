@@ -22,8 +22,17 @@ struct FlashcardsView: View {
     @Query private var favorites: [FavoriteWord]
     @State private var session: FlashcardSession?
     @AppStorage("flashcardFront") private var front = FlashcardSession.Side.italian
-    /// Cards whose answer was already saved in this run; undo + re-answer saves once.
-    @State private var recorded: Set<String> = []
+    private struct SavedRecord {
+        let wordID: String
+        let box: Int
+        let dueDate: Date
+        let correctCount: Int
+        let wrongCount: Int
+        let lastReviewed: Date?
+        let log: ReviewLog
+    }
+
+    @State private var savedRecords: [String: SavedRecord] = [:]
     @State private var drag: CGSize = .zero
     /// True while a card flies off, so quick double input does not skip a card.
     @State private var busy = false
@@ -109,14 +118,14 @@ struct FlashcardsView: View {
             .keyboardShortcut(.leftArrow, modifiers: [])
             Spacer()
             Button {
-                withAnimation(.spring(duration: 0.3)) { s.undo() }
+                undo(s)
             } label: {
                 Label(String(localized: "Назад"), systemImage: "arrow.uturn.backward")
                     .font(.s(.subheadline).weight(.semibold))
                     .foregroundStyle(Theme.secondaryText)
             }
             .buttonStyle(.plain)
-            .disabled(s.index == 0)
+            .disabled(s.index == 0 || busy)
             .keyboardShortcut("z", modifiers: .command)
             Spacer()
             RoundAction(systemImage: "checkmark", label: String(localized: "Знаю"), color: Theme.onAccent, fill: Theme.accent) {
@@ -156,12 +165,18 @@ struct FlashcardsView: View {
             drag = CGSize(width: knew ? 600 : -600, height: drag.height)
         }
         StudySession.shared.noteCard(lessonID: card.lessonID, wordID: card.wordID)
-        if !recorded.contains(card.id) {
-            recorded.insert(card.id)
+        if savedRecords[card.id] == nil {
             do {
-                try context.recordAnswer(wordID: card.wordID, lessonID: card.lessonID,
-                                          correct: knew, exercise: .flashcards)
+                let p = try context.progress(for: card.wordID)
+                let snap = SavedRecord(wordID: card.wordID, box: p.box, dueDate: p.dueDate,
+                                       correctCount: p.correctCount, wrongCount: p.wrongCount,
+                                       lastReviewed: p.lastReviewed,
+                                       log: ReviewLog(wordID: card.wordID, lessonID: card.lessonID,
+                                                      correct: knew, exercise: .flashcards))
+                p.record(correct: knew)
+                context.insert(snap.log)
                 try context.save()
+                savedRecords[card.id] = snap
             } catch {
                 assertionFailure("Saving progress failed: \(error)")
             }
@@ -171,6 +186,25 @@ struct FlashcardsView: View {
             drag = .zero
             withAnimation(.spring(duration: 0.35)) { _ = s.answer(knew: knew) }
             busy = false
+        }
+    }
+
+    private func undo(_ s: FlashcardSession) {
+        guard !busy, s.index > 0 else { return }
+        withAnimation(.spring(duration: 0.3)) { s.undo() }
+        if let card = s.current, let snap = savedRecords.removeValue(forKey: card.id) {
+            do {
+                let p = try context.progress(for: snap.wordID)
+                p.box = snap.box
+                p.dueDate = snap.dueDate
+                p.correctCount = snap.correctCount
+                p.wrongCount = snap.wrongCount
+                p.lastReviewed = snap.lastReviewed
+                context.delete(snap.log)
+                try context.save()
+            } catch {
+                assertionFailure("Undoing progress failed: \(error)")
+            }
         }
     }
 
@@ -202,12 +236,12 @@ struct FlashcardsView: View {
             }
             if !s.learning.isEmpty {
                 WideButton(title: String(localized: "Повторить «ещё учу» (\(s.learning.count))"), filled: true) {
-                    recorded = []
+                    savedRecords = [:]
                     withAnimation { s.restartWithLearning() }
                 }
             }
             WideButton(title: String(localized: "Начать заново"), filled: s.learning.isEmpty) {
-                recorded = []
+                savedRecords = [:]
                 withAnimation { s.restartAll() }
             }
         }

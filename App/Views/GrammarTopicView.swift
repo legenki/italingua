@@ -2,7 +2,7 @@ import SwiftData
 import SwiftUI
 
 /// One grammar topic: the rule as cards, editable in place. Edits are stored
-/// as a synced RuleNote until exported to the curation file.
+/// as a synced RuleNote.
 struct GrammarTopicView: View {
     let lessonID: String
     let topic: GrammarTopic

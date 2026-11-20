@@ -42,8 +42,8 @@
       "es": "a pie"
     },
     "a testa": {
-      "en": "to someone",
-      "es": "a alguien"
+      "en": "per person",
+      "es": "por persona"
     },
     "a venezia": {
       "en": "in Venice",
@@ -102,8 +102,8 @@
       "es": "agosto"
     },
     "ai funghi": {
-      "en": "to mushrooms",
-      "es": "a hongos"
+      "en": "with mushrooms",
+      "es": "con champiñones"
     },
     "aiutare": {
       "en": "to help",
@@ -215,7 +215,7 @@
     },
     "andare da": {
       "en": "to go to",
-      "es": "a ir a"
+      "es": "ir a casa de"
     },
     "andiamo": {
       "en": "we go",
@@ -303,7 +303,7 @@
     },
     "avere freddo": {
       "en": "to be cold",
-      "es": "a sentirse frío"
+      "es": "tener frío"
     },
     "avere paura di": {
       "en": "to be afraid of",
@@ -318,8 +318,8 @@
       "es": "tener muchas cosas que hacer"
     },
     "avere voglia di": {
-      "en": "to want",
-      "es": "a querer"
+      "en": "to feel like",
+      "es": "tener ganas de"
     },
     "avvocato": {
       "en": "lawyer",
@@ -571,7 +571,7 @@
     },
     "chiedere a": {
       "en": "to ask someone",
-      "es": "a preguntar a alguien"
+      "es": "preguntar a"
     },
     "chiudere": {
       "en": "to close",
@@ -734,8 +734,8 @@
       "es": "nieta"
     },
     "cugino": {
-      "en": "uncle",
-      "es": "uncle"
+      "en": "cousin",
+      "es": "primo"
     },
     "cupola": {
       "en": "dome",
@@ -778,8 +778,8 @@
       "es": "en todas partes"
     },
     "dare su": {
-      "en": "to come out",
-      "es": "a salir"
+      "en": "to overlook, face",
+      "es": "dar a"
     },
     "davanti a": {
       "en": "in front of",
@@ -812,10 +812,6 @@
     "di solito": {
       "en": "usually",
       "es": "normalmente"
-    },
-    "di zucchine": {
-      "en": "of zucchini",
-      "es": "de calabacín"
     },
     "dice": {
       "en": "says",
@@ -954,12 +950,12 @@
       "es": "entrar"
     },
     "esce": {
-      "en": "to exit",
-      "es": "a salir"
+      "en": "goes out",
+      "es": "sale"
     },
     "escono": {
       "en": "they leave",
-      "es": "they leave"
+      "es": "salen"
     },
     "esercizio": {
       "en": "exercise",
@@ -970,12 +966,12 @@
       "es": "ser"
     },
     "essere contento": {
-      "en": "to be happy",
-      "es": "a ser feliz"
+      "en": "to be glad",
+      "es": "estar contento"
     },
     "essere contento di": {
-      "en": "to be happy about",
-      "es": "a estar contento de"
+      "en": "to be pleased with",
+      "es": "estar contento con"
     },
     "essere depresso": {
       "en": "to be depressed",
@@ -987,7 +983,7 @@
     },
     "essere fermo": {
       "en": "to stand still",
-      "es": "a esperar"
+      "es": "estar quieto"
     },
     "essere pieno di": {
       "en": "to be full of",
@@ -995,7 +991,7 @@
     },
     "essere stanco": {
       "en": "to be tired",
-      "es": "a sentirse cansado"
+      "es": "estar cansado"
     },
     "euro": {
       "en": "euro",
@@ -1046,28 +1042,28 @@
       "es": "hacer"
     },
     "fare i documenti": {
-      "en": "to make the documents",
-      "es": "a preparar los documentos"
+      "en": "to do paperwork",
+      "es": "hacer los trámites"
     },
     "fare la fila": {
       "en": "to stand in line",
-      "es": "a esperar"
+      "es": "hacer cola"
     },
     "fare la segretaria": {
-      "en": "to be a secretary",
-      "es": "a ser secretaria"
+      "en": "to work as a secretary",
+      "es": "trabajar de secretaria"
     },
     "fare la spesa": {
-      "en": "to shop",
-      "es": "a comprar"
+      "en": "to go grocery shopping",
+      "es": "hacer la compra"
     },
     "fare lo sconto": {
       "en": "to give a discount",
-      "es": "to give a discount"
+      "es": "hacer un descuento"
     },
     "fare un viaggio": {
-      "en": "to make a trip",
-      "es": "a viajar"
+      "en": "to take a trip",
+      "es": "hacer un viaje"
     },
     "febbraio": {
       "en": "February",
@@ -1111,7 +1107,7 @@
     },
     "finire (di fare)": {
       "en": "to finish (doing)",
-      "es": "a terminar (hacer)"
+      "es": "terminar (de hacer)"
     },
     "finisce": {
       "en": "ends",
@@ -1157,9 +1153,9 @@
       "en": "refrigerator",
       "es": "refrigerador"
     },
-    "frittata": {
-      "en": "egg dish",
-      "es": "tortilla"
+    "frittata di zucchine": {
+      "en": "zucchini omelet",
+      "es": "tortilla de calabacín"
     },
     "frutta": {
       "en": "fruit",
@@ -1203,7 +1199,7 @@
     },
     "gente": {
       "en": "people",
-      "es": "people"
+      "es": "gente"
     },
     "ghiaccio": {
       "en": "ice",
@@ -1279,7 +1275,11 @@
     },
     "guardare fuori": {
       "en": "to look outside",
-      "es": "a mirar afuera"
+      "es": "mirar afuera"
+    },
+    "guardare la televisione": {
+      "en": "to watch TV",
+      "es": "ver la televisión"
     },
     "guardia del corpo": {
       "en": "bodyguard",
@@ -1308,6 +1308,10 @@
     "ho fame": {
       "en": "I am hungry",
       "es": "Estoy hambriento"
+    },
+    "ho fame (aver fame)": {
+      "en": "I am hungry",
+      "es": "tengo hambre"
     },
     "ho freddo": {
       "en": "I am cold",
@@ -1451,7 +1455,7 @@
     },
     "inglese": {
       "en": "English",
-      "es": "Inglés"
+      "es": "inglés"
     },
     "ingorgo": {
       "en": "traffic jam",
@@ -1531,7 +1535,7 @@
     },
     "la loro": {
       "en": "theirs",
-      "es": "theirs"
+      "es": "suyo, la suya"
     },
     "la mattina": {
       "en": "morning",
@@ -1552,10 +1556,6 @@
     "la stessa": {
       "en": "the same",
       "es": "lo mismo"
-    },
-    "la televisione": {
-      "en": "TV",
-      "es": "TV"
     },
     "ladro": {
       "en": "thief",
@@ -1879,7 +1879,7 @@
     },
     "negozio di abbigliamento": {
       "en": "clothing store",
-      "es": "clothing store"
+      "es": "tienda de ropa"
     },
     "nel": {
       "en": "in",
@@ -1906,7 +1906,7 @@
       "es": "nada"
     },
     "non": {
-      "en": "no",
+      "en": "not",
       "es": "no"
     },
     "non c'e": {
@@ -2043,7 +2043,7 @@
     },
     "pane": {
       "en": "bread",
-      "es": "bread"
+      "es": "pan"
     },
     "panino": {
       "en": "sandwich",
@@ -2063,23 +2063,23 @@
     },
     "parlare": {
       "en": "to speak",
-      "es": "to speak"
+      "es": "hablar"
     },
     "parlare con": {
       "en": "to speak with",
-      "es": "a hablar con"
+      "es": "hablar con"
     },
     "parlare di": {
-      "en": "to speak about",
-      "es": "a hablar sobre"
+      "en": "to talk about",
+      "es": "hablar de"
     },
     "parlare inglese": {
       "en": "to speak English",
-      "es": "to speak English"
+      "es": "hablar inglés"
     },
     "parlare italiano": {
       "en": "to speak Italian",
-      "es": "a hablar italiano"
+      "es": "hablar italiano"
     },
     "parli": {
       "en": "you speak",
@@ -2119,7 +2119,7 @@
     },
     "passare il tempo": {
       "en": "to pass the time",
-      "es": "a pasar el tiempo"
+      "es": "pasar el tiempo"
     },
     "passeggero": {
       "en": "passenger",
@@ -2266,8 +2266,8 @@
       "es": "más tarde"
     },
     "poltrona": {
-      "en": "chair",
-      "es": "chair"
+      "en": "armchair",
+      "es": "sillón"
     },
     "ponte": {
       "en": "bridge",
@@ -2314,8 +2314,12 @@
       "es": "Prefiero"
     },
     "prendere": {
-      "en": "to drink",
-      "es": "beber"
+      "en": "to take",
+      "es": "tomar"
+    },
+    "prendere un aperitivo": {
+      "en": "to have an aperitif",
+      "es": "tomar un aperitivo"
     },
     "prenotazione": {
       "en": "reservation",
@@ -2447,7 +2451,7 @@
     },
     "ragazzo": {
       "en": "boy",
-      "es": "boy"
+      "es": "chico"
     },
     "realizzare": {
       "en": "to realize",
@@ -2475,7 +2479,7 @@
     },
     "ricominciare (a fare)": {
       "en": "to start again",
-      "es": "a empezar de nuevo"
+      "es": "volver a empezar"
     },
     "ricordare": {
       "en": "to remember",
@@ -2619,7 +2623,7 @@
     },
     "sedia": {
       "en": "chair",
-      "es": "chair"
+      "es": "silla"
     },
     "sedici": {
       "en": "sixteen",
@@ -2778,12 +2782,12 @@
       "es": "habitación"
     },
     "stare a letto": {
-      "en": "to lie in bed",
-      "es": "a dormir en la cama"
+      "en": "to stay in bed",
+      "es": "estar en cama"
     },
     "stare in fila": {
       "en": "to stand in line",
-      "es": "a esperar"
+      "es": "hacer cola"
     },
     "stazione": {
       "en": "station",
@@ -2895,11 +2899,11 @@
     },
     "telefonare": {
       "en": "to call",
-      "es": "to call"
+      "es": "llamar por teléfono"
     },
     "telefonare a": {
       "en": "to call",
-      "es": "a llamar"
+      "es": "llamar a"
     },
     "telefono": {
       "en": "phone",
@@ -3020,10 +3024,6 @@
     "ufficio": {
       "en": "office",
       "es": "oficina"
-    },
-    "un aperitivo": {
-      "en": "a snack drink",
-      "es": "una bebida para la tarde"
     },
     "un giorno": {
       "en": "one day",
@@ -3219,7 +3219,7 @@
     },
     "zia": {
       "en": "aunt",
-      "es": "aunt"
+      "es": "tía"
     },
     "zii": {
       "en": "uncles",
@@ -3227,7 +3227,7 @@
     },
     "zio": {
       "en": "uncle",
-      "es": "uncle"
+      "es": "tío"
     },
     "zona": {
       "en": "area",

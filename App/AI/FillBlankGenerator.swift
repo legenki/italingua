@@ -158,7 +158,7 @@ nonisolated struct ModelFillBlankGenerator: FillBlankGenerating {
     static func describe(_ w: TargetWord) -> String {
         switch w.pos {
         case .noun: "noun" + (w.gender.map { ", gender \($0)" } ?? "")
-        case .verb: w.italian.hasSuffix("re") ? "verb, infinitive" : "verb form"
+        case .verb: (w.italian.hasSuffix("re") || w.italian.hasSuffix("rsi")) ? "verb, infinitive" : "verb form"
         case .adj: "adjective"
         case .adv: "adverb"
         case .prep: "preposition"
@@ -172,9 +172,9 @@ nonisolated struct ModelFillBlankGenerator: FillBlankGenerating {
     /// Replaces the first whole-word occurrence of `target` (case-insensitive,
     /// accent-sensitive) with the blank. Nil if the sentence lacks the target.
     static func blank(_ target: String, in sentence: String) -> String? {
-        let escaped = NSRegularExpression.escapedPattern(for: target)
+        let normalized = target.replacingOccurrences(of: "’", with: "'")
+        let escaped = NSRegularExpression.escapedPattern(for: normalized)
             .replacingOccurrences(of: "'", with: "['’]")
-            .replacingOccurrences(of: "’", with: "['’]")
         let pattern = "(?<![\\p{L}])" + escaped + "(?![\\p{L}])"
         guard let re = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]),
               let m = re.firstMatch(in: sentence, range: NSRange(sentence.startIndex..., in: sentence)),

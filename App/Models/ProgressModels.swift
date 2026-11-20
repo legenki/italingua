@@ -112,9 +112,8 @@ extension ModelContext {
     }
 }
 
-/// A grammar rule written by the owner in the app. Synced via iCloud, and
-/// exported to tools/curation so it ends up in git and in the bundled JSON.
-/// Shown instead of the bundled `ruleRU` while it exists.
+/// A grammar rule written by the owner in the app. Synced via iCloud and
+/// shown instead of the bundled `ruleRU` while it exists.
 @Model
 final class RuleNote {
     /// "<lessonID>|<topic>", e.g. "a1-01|Род существительных".

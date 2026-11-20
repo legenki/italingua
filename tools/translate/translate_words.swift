@@ -45,7 +45,10 @@ func parsePair(_ raw: String) -> Pair? {
     }
     for line in text.components(separatedBy: "\n") where line.contains("|") {
         let parts = line.components(separatedBy: "|").map { $0.trimmingCharacters(in: .whitespaces) }
-        if parts.count == 2, !parts[0].isEmpty, !parts[1].isEmpty { return Pair(en: parts[0], es: parts[1]) }
+        if parts.count == 2, !parts[0].isEmpty, !parts[1].isEmpty,
+           parts[0].lowercased() != "english", !parts[0].allSatisfy({ $0 == "-" }) {
+            return Pair(en: parts[0], es: parts[1])
+        }
     }
     return nil
 }
@@ -101,11 +104,15 @@ func parsePair(_ raw: String) -> Pair? {
             }
             if let r = result {
                 var es = clean(r.es)
+                let en = clean(r.en)
                 // The model often writes Spanish infinitives as "a vivir", copying English "to".
-                if it.range(of: "(are|ere|ire|rsi)$", options: .regularExpression) != nil, es.hasPrefix("a ") {
+                if (it.range(of: "(are|ere|ire|rsi|rre)$", options: .regularExpression) != nil
+                    || en.lowercased().hasPrefix("to "))
+                    && es.lowercased().hasPrefix("a ")
+                    && es.dropFirst(2).range(of: "^\\S+(ar|er|ir|arse|erse|irse)\\b", options: .regularExpression) != nil {
                     es = String(es.dropFirst(2))
                 }
-                words[key] = ["en": clean(r.en), "es": es]
+                words[key] = ["en": en, "es": es]
                 done += 1
                 if done % 25 == 0 { try save(); print("\(level): \(words.count)/\(all.count)") }
             }

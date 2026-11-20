@@ -20,7 +20,7 @@ struct MedalsCard: View {
                 Divider().frame(height: 36)
                 number("\(stats.thisWeek)", String(localized: "на этой неделе"))
                 Divider().frame(height: 36)
-                number("\(stats.streak)", dayWord(stats.streak) + String(localized: " подряд"))
+                number("\(stats.streak)", dayWord(stats.streak) + inARowWord(stats.streak))
                 Divider().frame(height: 36)
                 number(stats.bestMinutes.map { "\($0)" } ?? "—", String(localized: "лучшее время, мин"))
             }

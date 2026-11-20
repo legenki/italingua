@@ -3,7 +3,7 @@ import SwiftUI
 
 struct LessonDetailView: View {
     let lesson: Lesson
-    @Query private var notes: [RuleNote]
+    @Query(sort: \RuleNote.updatedAt, order: .reverse) private var notes: [RuleNote]
     @Query private var progress: [WordProgress]
 
     var body: some View {

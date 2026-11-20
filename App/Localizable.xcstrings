@@ -568,6 +568,22 @@
         }
       }
     },
+    "Вставь итальянский текст, чтобы слушать его по предложениям и смотреть слова из курса.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paste an Italian text to listen sentence by sentence and see course words."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pega un texto en italiano para escucharlo frase por frase y ver las palabras del curso."
+          }
+        }
+      }
+    },
     "Вставь слово": {
       "localizations": {
         "en": {
@@ -2984,6 +3000,38 @@
         }
       }
     },
+    "Примеры из правил": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rule examples"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ejemplos de las reglas"
+          }
+        }
+      }
+    },
+    "Примеры из правил этого урока для чтения и прослушивания.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examples from this lesson's rules to read and listen to."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ejemplos de las reglas de esta lección para leer y escuchar."
+          }
+        }
+      }
+    },
     "Проверить": {
       "localizations": {
         "en": {
@@ -4548,6 +4596,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meta del día"
+          }
+        }
+      }
+    },
+    "Читать текст": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read text"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer el texto"
           }
         }
       }

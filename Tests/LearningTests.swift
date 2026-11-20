@@ -117,7 +117,13 @@ struct BlankingTests {
         #expect(ModelFillBlankGenerator.blank("in", in: "Inizio domani.") == nil)
         #expect(ModelFillBlankGenerator.blank("Caffè", in: "Bevo un caffè.") == "Bevo un ___.")
         #expect(ModelFillBlankGenerator.blank("c’è", in: "C'è un bar qui.") == "___ un bar qui.")
+        #expect(ModelFillBlankGenerator.blank("c'è", in: "C’è un bar qui.") == "___ un bar qui.")
         #expect(ModelFillBlankGenerator.blank("caffè", in: "Bevo un caffe.") == nil)
+    }
+
+    @Test func describesReflexiveInfinitiveAsInfinitive() {
+        let w = TargetWord(wordID: "a1/chiamarsi", lessonID: "a1-04", italian: "chiamarsi", russian: "зваться", pos: .verb, gender: nil)
+        #expect(ModelFillBlankGenerator.describe(w) == "verb, infinitive")
     }
 }
 
@@ -236,6 +242,8 @@ struct ArticleTests {
         ("amici", "m", true, "gli amici"),
         ("libri", "m", true, "i libri"),
         ("case", "f", true, "le case"),
+        ("hotel", "m", false, "l'hotel"),
+        ("hotel", "m", true, "gli hotel"),
     ])
     func definite(word: String, gender: String, plural: Bool, expected: String) {
         #expect(Articles.withArticle(word, gender: gender, plural: plural) == expected)
@@ -344,6 +352,8 @@ struct StatsDataTests {
         let (one, few, many) = (String(localized: "день"), String(localized: "дня"), String(localized: "дней"))
         #expect([1, 2, 5, 11, 21, 22, 25].map { dayWord($0, language: "ru") } == [one, few, many, many, one, few, many])
         #expect([1, 2, 21].map { dayWord($0, language: "en") } == [one, many, many])
+        #expect(inARowWord(1, language: "es") == " seguido")
+        #expect(inARowWord(2, language: "es") == String(localized: " подряд"))
     }
 }
 
@@ -360,6 +370,8 @@ struct TodayTests {
         let (one, few, many) = (String(localized: "слово"), String(localized: "слова"), String(localized: "слов"))
         #expect([1, 3, 5, 21].map { wordWord($0, language: "ru") } == [one, few, many, one])
         #expect([1, 3].map { wordWord($0, language: "es") } == [one, many])
+        #expect(waitingWord(21, language: "ru") == String(localized: " ждёт"))
+        #expect(waitingWord(2, language: "ru") == String(localized: " ждут"))
         #expect("вторник, 18 ноября".capitalizedFirst == "Вторник, 18 ноября")
     }
 }
@@ -451,6 +463,17 @@ struct ReadingTests {
         [casa, caffe, mare].forEach(ctx.insert)
         let found = ReadingGenerator.glossary(for: "Bevo un caffe a casa.", vocab: [casa, caffe, mare])
         #expect(found.map(\.italian) == ["caffè", "casa"])
+
+        let acqua = VocabItem(wordID: "a1/acqua", order: 3, italian: "acqua", russian: "вода", posRaw: "noun",
+                              gender: "f", number: nil, stress: nil, formOf: nil)
+        let fare = VocabItem(wordID: "a1/fare", order: 4, italian: "fare", russian: "делать", posRaw: "verb",
+                             gender: nil, number: nil, stress: nil, formOf: nil)
+        let fareLaSpesa = VocabItem(wordID: "a1/fare la spesa", order: 5, italian: "fare la spesa", russian: "ходить за покупками", posRaw: "phrase",
+                                    gender: nil, number: nil, stress: nil, formOf: nil)
+        [acqua, fare, fareLaSpesa].forEach(ctx.insert)
+        let elidedAndPhrase = ReadingGenerator.glossary(for: "Bevo l'acqua e vado a fare la spesa.",
+                                                        vocab: [casa, acqua, fare, fareLaSpesa])
+        #expect(elidedAndPhrase.map(\.italian) == ["acqua", "fare la spesa"])
     }
 }
 
@@ -486,6 +509,7 @@ struct WordSearchTests {
         #expect(WordSearch.rank(query: "spesa", italian: "fare la spesa", russian: "делать покупки") == 2)
         #expect(WordSearch.rank(query: "citta", italian: "città", russian: "город") == 0)
         #expect(WordSearch.rank(query: "дом", italian: "casa", russian: "дом") == 4)
+        #expect(WordSearch.rank(query: "musica", italian: "canzone", russian: "música") == 4)
         #expect(WordSearch.rank(query: "xyz", italian: "casa", russian: "дом") == nil)
         #expect(WordSearch.rank(query: "  ", italian: "casa", russian: "дом") == nil)
     }
@@ -537,6 +561,8 @@ struct StudySessionTests {
         #expect(!session.isDone(.rules))
         session.noteTopic(lessonID: "a1-01", topic: "Алфавит")
         session.noteSpoken("la casa")
+        session.noteSpoken("casa")
+        #expect(session.progress(.words).done == 1)
         session.noteSpoken("il mare")                               // not a word of the lesson
         session.noteCard(lessonID: "a1-01", wordID: "a1/casa")
         #expect(session.doneSteps == 3 && session.currentStep == .reading)

@@ -14,7 +14,7 @@ nonisolated enum WordSearch {
         if it.hasPrefix(q) { return 1 }
         if it.contains(" " + q) || it.contains("'" + q) { return 2 }
         if it.contains(q) { return 3 }
-        if russian.lowercased().contains(query.lowercased().trimmingCharacters(in: .whitespaces)) { return 4 }
+        if AnswerChecker.fold(russian).contains(q) { return 4 }
         return nil
     }
 
@@ -169,14 +169,17 @@ struct WordDetailView: View {
 
     /// Up to six rule examples that contain the word (whole word, ignoring accents).
     private var examples: [(String, String)] {
-        let key = " " + TranslationChecker.words(item.italian).map(TranslationChecker.fold).joined(separator: " ") + " "
+        let key = TranslationChecker.words(item.italian).map(TranslationChecker.fold).joined(separator: " ")
+        guard !key.isEmpty else { return [] }
         var seen = Set<String>()
         var out: [(String, String)] = []
         for topic in topics {
             for case .example(let it, let ru) in RuleMarkup.parse(topic.rule) {
                 let words = " " + TranslationChecker.words(it.replacingOccurrences(of: "**", with: ""))
                     .map(TranslationChecker.fold).joined(separator: " ") + " "
-                if words.contains(key), seen.insert(it).inserted { out.append((it, ru)) }
+                if (words.contains(" " + key + " ") || words.contains("'" + key + " ")), seen.insert(it).inserted {
+                    out.append((it, ru))
+                }
                 if out.count == 6 { return out }
             }
         }

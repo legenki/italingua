@@ -352,6 +352,18 @@
     [
       "guardia del",
       "corpo"
+    ],
+    [
+      "guardare",
+      "la televisione"
+    ],
+    [
+      "prendere",
+      "un aperitivo"
+    ],
+    [
+      "frittata",
+      "di zucchine"
     ]
   ],
   "vocab_drop": [
@@ -689,6 +701,18 @@
     },
     "basta!": {
       "pos": "interj"
+    },
+    "guardare la televisione": {
+      "pos": "phrase",
+      "ru": "смотреть телевизор"
+    },
+    "prendere un aperitivo": {
+      "pos": "phrase",
+      "ru": "пить аперитив"
+    },
+    "frittata di zucchine": {
+      "pos": "phrase",
+      "ru": "яичница с цуккини"
     }
   }
 }

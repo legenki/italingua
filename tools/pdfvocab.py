@@ -13,10 +13,10 @@ from dataclasses import dataclass, field
 import pymupdf
 
 # --- page layout constants (measured on the 2016 AST edition) ---------------
-BODY_SIZE = (10.5, 11.5)       # vocabulary table font size
+BODY_SIZE = (10.5, 12.1)       # vocabulary table font size (up to 12pt accented glyphs)
 SMALL_MIN = 7.5                # small glyphs (accented letters) inside entries
 HEADING_MIN_SIZE = 12.5        # anything this large ends a vocab block
-ROW_DX = (55, 105)             # distance between Italian and Russian columns
+ROW_DX = (55, 115)             # distance between Italian and Russian columns
 LINE_TOL = 3.0                 # same-line y tolerance
 
 
@@ -198,13 +198,16 @@ def _find_columns(spans: list[Span]) -> list[tuple[float, float]]:
                 break
         else:
             cols.append([(it_x, ru_x)])
-    result = []
-    for c in cols:
-        if len(c) < 3:
-            continue
-        it_x = min(p[0] for p in c)
-        ru_x = sorted(p[1] for p in c)[len(c) // 2]
-        result.append((it_x, ru_x))
+    def col_pair(c: list[tuple[float, float]]) -> tuple[float, float]:
+        return (min(p[0] for p in c), sorted(p[1] for p in c)[len(c) // 2])
+
+    result = [col_pair(c) for c in cols if len(c) >= 3]
+    if len(result) < 2:
+        all_cols = [col_pair(c) for c in cols]
+        for a in all_cols:
+            for b in all_cols:
+                if 175 < b[0] - a[0] < 195:
+                    return [a, b]
     return sorted(result)
 
 
@@ -315,9 +318,10 @@ def _parse_region(region: list[Span]) -> list[RawEntry]:
             first = it_side[0] if it_side else None
             prev_it = "".join(t for k, t in cur.it_parts if k != "nl").strip() if cur else ""
             hyphen_wrap = prev_it.endswith("-") and not cur.ru_parts[1:]
+            ft = first.text.strip() if first else ""
+            paren_cont = ft.startswith("[") or (ft.startswith("(") and (ft == "(" or ft.rstrip("* ").endswith(")")))
             if first is not None and first.bold and abs(first.x - it_x) < 5 \
-                    and not first.text.strip().startswith(("(", "[")) \
-                    and not hyphen_wrap:
+                    and not paren_cont and not hyphen_wrap:
                 cur = RawEntry(first.page)
                 out.append(cur)
             if cur is None:

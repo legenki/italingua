@@ -205,8 +205,29 @@ def validate(path: Path) -> Report:
                 rep.err(vw, "Cyrillic letters in Italian word")
             if ru and not CYR.search(ru) and not re.fullmatch(r"[\d\s.,…-]+", ru):
                 rep.err(vw, f"translation has no Russian text: {ru!r}")
-            if "*" in it or "[" in it or "[" in ru:
+            if "*" in it or "[" in it or "[" in ru or "*" in ru:
                 rep.err(vw, "leftover markup (* or [..])")
+            if ru.count("(") != ru.count(")"):
+                rep.err(vw, f"unbalanced parentheses in 'ru': {ru!r}")
+            if re.search(r"\b(m|f|pl)\b", it):
+                rep.err(vw, "leftover gender/number tag in 'it'")
+            if re.search(r"[ÀÈÉÌÍÒÓÙÚ]", it[:-1]):
+                rep.err(vw, "uppercase accent inside 'it'")
+            for tok in re.split(r"[\s.,;!?()«»\"/]+", ru):
+                if CYR.search(tok) and LAT.search(tok):
+                    rep.err(vw, f"mixed Cyrillic/Latin token in 'ru': {tok!r}")
+            if re.search(r"(?<=\s)[ca](?=\s)", ru):
+                rep.err(vw, f"standalone Latin homoglyph in 'ru': {ru!r}")
+            for m in re.finditer(r"\bпо-[а-яё]+", ru):
+                if not re.search(r"(ому|ему|ски|цки|ьи)$", m.group(0)):
+                    rep.err(vw, f"unjoined hyphen after 'по-' in 'ru': {m.group(0)!r}")
+            en, es = v.get("en", ""), v.get("es", "")
+            if not en.strip():
+                rep.err(vw, "empty or missing 'en'")
+            if not es.strip():
+                rep.err(vw, "empty or missing 'es'")
+            if es.startswith("to ") or (en == "English" and es == "Spanish"):
+                rep.err(vw, f"untranslated or literal placeholder 'es': {es!r}")
             if it != it.strip() or "  " in it:
                 rep.err(vw, "whitespace problems")
 

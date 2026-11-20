@@ -8,7 +8,7 @@ nonisolated enum Articles {
         guard let gender, gender != "mf" else { return nil }
         let w = word.lowercased()
         guard let first = w.first else { return nil }
-        let vowel = "aeiouàèéìòù".contains(first)
+        let vowel = "aeiouàèéìòùh".contains(first)
         let special = w.hasPrefix("z") || w.hasPrefix("gn") || w.hasPrefix("ps")
             || w.hasPrefix("x") || w.hasPrefix("y")
             || (w.hasPrefix("s") && w.dropFirst().first.map { !"aeiouàèéìòù".contains($0) } == true)

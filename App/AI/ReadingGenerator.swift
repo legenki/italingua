@@ -70,15 +70,38 @@ nonisolated enum ReadingGenerator {
     /// so "fare la spesa" wins over "fare".
     static func glossary(for text: String, vocab: [VocabItem]) -> [VocabItem] {
         let tokens = " " + TranslationChecker.words(text).map(TranslationChecker.fold).joined(separator: " ") + " "
+        var remaining = tokens
         var seen = Set<String>()
+
+        func normalizedKey(_ italian: String) -> String {
+            TranslationChecker.words(italian).map(TranslationChecker.fold).joined(separator: " ")
+        }
+
+        func firstRange(of key: String, in haystack: String) -> Range<String.Index>? {
+            [" " + key + " ", "'" + key + " "]
+                .compactMap { haystack.range(of: $0) }
+                .min { $0.lowerBound < $1.lowerBound }
+        }
+
         return vocab
             .filter { $0.pos != .proper && $0.italian.count > 2 }
             .sorted { $0.italian.count > $1.italian.count }
             .filter { item in
-                let key = " " + TranslationChecker.words(item.italian).map(TranslationChecker.fold).joined(separator: " ") + " "
-                return key.count > 2 && tokens.contains(key) && seen.insert(TranslationChecker.fold(item.italian)).inserted
+                let key = normalizedKey(item.italian)
+                guard !key.isEmpty, firstRange(of: key, in: remaining) != nil,
+                      seen.insert(TranslationChecker.fold(item.italian)).inserted else { return false }
+                while let r = remaining.range(of: " " + key + " ") {
+                    remaining.replaceSubrange(r, with: " ")
+                }
+                while let r = remaining.range(of: "'" + key + " ") {
+                    remaining.replaceSubrange(r, with: "' ")
+                }
+                return true
             }
-            .sorted { tokens.range(of: " " + TranslationChecker.fold($0.italian) + " ")?.lowerBound ?? tokens.endIndex
-                    < tokens.range(of: " " + TranslationChecker.fold($1.italian) + " ")?.lowerBound ?? tokens.endIndex }
+            .sorted {
+                let r0 = firstRange(of: normalizedKey($0.italian), in: tokens)?.lowerBound ?? tokens.endIndex
+                let r1 = firstRange(of: normalizedKey($1.italian), in: tokens)?.lowerBound ?? tokens.endIndex
+                return r0 < r1
+            }
     }
 }

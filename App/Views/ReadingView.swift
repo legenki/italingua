@@ -14,10 +14,12 @@ struct ReadingView: View {
     let lesson: Lesson
     @Query private var vocab: [VocabItem]
     @Query private var favorites: [FavoriteWord]
+    @Query(sort: \RuleNote.updatedAt, order: .reverse) private var notes: [RuleNote]
     @State private var mode = Mode.lesson
     @State private var level: String
     @State private var original = ""
     @State private var reading: ReadingText?
+    @State private var generatedByModel = false
     @State private var working = false
     @State private var error: String?
     @State private var readDone = false
@@ -38,17 +40,17 @@ struct ReadingView: View {
                 .labelsHidden()
                 .onChange(of: mode) { reading = nil; error = nil }
 
-                if !ModelStatus.current().isAvailable {
+                let modelAvailable = ModelStatus.current().isAvailable
+                if !modelAvailable {
                     Card(fill: Theme.warningFill) {
                         CardLabel(text: String(localized: "Без модели"), color: Theme.warningText)
                         Text(String(localized: "Тексты пишет Apple Intelligence на устройстве, а сейчас модель недоступна."))
                             .font(.s(.subheadline))
                     }
-                } else {
-                    switch mode {
-                    case .lesson: lessonControls
-                    case .own: ownControls
-                    }
+                }
+                switch mode {
+                case .lesson: lessonControls(modelAvailable: modelAvailable)
+                case .own: ownControls(modelAvailable: modelAvailable)
                 }
 
                 if let error {
@@ -66,26 +68,46 @@ struct ReadingView: View {
 
     // MARK: - Controls
 
-    private var lessonControls: some View {
+    private func lessonControls(modelAvailable: Bool) -> some View {
         Card {
-            Text(String(localized: "Короткий рассказ из слов этого урока, на уровне \(lesson.level)."))
-                .foregroundStyle(Theme.secondaryText)
-            ActionButton(title: reading == nil ? String(localized: "Составить текст") : String(localized: "Другой текст"), working: working) {
-                await run {
-                    let words = lesson.sortedVocab.filter(FillBlankSession.isPracticable)
-                        .filter { [.noun, .verb, .adj, .adv].contains($0.pos) }
-                        .shuffled().prefix(14).map(\.italian)
-                    return try await ReadingGenerator.lessonText(words: Array(words),
-                                                                 topics: lesson.sortedGrammar.map(\.topic),
-                                                                 level: lesson.level)
+            if modelAvailable {
+                Text(String(localized: "Короткий рассказ из слов этого урока, на уровне \(lesson.level)."))
+                    .foregroundStyle(Theme.secondaryText)
+                ActionButton(title: reading == nil ? String(localized: "Составить текст") : String(localized: "Другой текст"), working: working) {
+                    await run {
+                        let words = lesson.sortedVocab.filter(FillBlankSession.isPracticable)
+                            .filter { [.noun, .verb, .adj, .adv].contains($0.pos) }
+                            .shuffled().prefix(14).map(\.italian)
+                        return try await ReadingGenerator.lessonText(words: Array(words),
+                                                                     topics: lesson.sortedGrammar.map(\.topic),
+                                                                     level: lesson.level)
+                    }
                 }
+            } else {
+                Text(String(localized: "Примеры из правил этого урока для чтения и прослушивания."))
+                    .foregroundStyle(Theme.secondaryText)
+                Button {
+                    reading = lessonExamplesReading()
+                    generatedByModel = false
+                    readDone = false
+                    error = nil
+                } label: {
+                    Text(String(localized: "Примеры из правил"))
+                        .font(.s(.headline))
+                        .foregroundStyle(Theme.onAccent)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .buttonStyle(.plain)
             }
         }
     }
 
-    private var ownControls: some View {
+    private func ownControls(modelAvailable: Bool) -> some View {
         Card {
-            Text(String(localized: "Вставь итальянский текст — статью, письмо, абзац из книги. Модель перескажет его проще."))
+            Text(modelAvailable
+                 ? String(localized: "Вставь итальянский текст — статью, письмо, абзац из книги. Модель перескажет его проще.")
+                 : String(localized: "Вставь итальянский текст, чтобы слушать его по предложениям и смотреть слова из курса."))
                 .foregroundStyle(Theme.secondaryText)
             TextEditor(text: $original)
                 .font(.s(.body))
@@ -93,22 +115,57 @@ struct ReadingView: View {
                 .frame(minHeight: 140)
                 .padding(8)
                 .background(Theme.tile, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            HStack {
-                Text(String(localized: "Уровень"))
-                Picker(String(localized: "Уровень"), selection: $level) {
-                    Text("A1").tag("A1")
-                    Text("A2").tag("A2")
+            if modelAvailable {
+                HStack {
+                    Text(String(localized: "Уровень"))
+                    Picker(String(localized: "Уровень"), selection: $level) {
+                        Text("A1").tag("A1")
+                        Text("A2").tag("A2")
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    .fixedSize()
+                    Spacer()
                 }
-                .pickerStyle(.segmented)
-                .labelsHidden()
-                .fixedSize()
-                Spacer()
+                ActionButton(title: String(localized: "Упростить"), working: working) {
+                    await run { try await ReadingGenerator.adapt(original, level: level) }
+                }
+                .disabled(original.trimmingCharacters(in: .whitespacesAndNewlines).count < 20)
+            } else {
+                Button {
+                    reading = ReadingText(title: "", text: original.trimmingCharacters(in: .whitespacesAndNewlines))
+                    generatedByModel = false
+                    readDone = false
+                    error = nil
+                } label: {
+                    Text(String(localized: "Читать текст"))
+                        .font(.s(.headline))
+                        .foregroundStyle(Theme.onAccent)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .disabled(original.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }
-            ActionButton(title: String(localized: "Упростить"), working: working) {
-                await run { try await ReadingGenerator.adapt(original, level: level) }
-            }
-            .disabled(original.trimmingCharacters(in: .whitespacesAndNewlines).count < 20)
         }
+    }
+
+    private func lessonExamplesReading() -> ReadingText {
+        let edited = Dictionary(notes.map { ($0.key, $0.text) }, uniquingKeysWith: { a, _ in a })
+        let ruleTexts = lesson.sortedGrammar.map {
+            (AppLanguage.current == "ru" ? edited[RuleNote.key(lessonID: lesson.id, topic: $0.topic)] : nil) ?? $0.rule
+        }
+        var seen = Set<String>()
+        let examples = ruleTexts.flatMap(RuleMarkup.parse).compactMap { block -> String? in
+            guard case .example(let it, _) = block else { return nil }
+            let clean = it.replacingOccurrences(of: "**", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !clean.isEmpty, seen.insert(clean).inserted else { return nil }
+            return clean
+        }
+        let body = examples.isEmpty
+            ? lesson.patterns.map { $0.replacingOccurrences(of: "…", with: "") }.joined(separator: "\n")
+            : examples.joined(separator: " ")
+        return ReadingText(title: lesson.title, text: body)
     }
 
     private func run(_ make: @escaping () async throws -> ReadingText) async {
@@ -117,6 +174,7 @@ struct ReadingView: View {
         defer { working = false }
         do {
             reading = try await make()
+            generatedByModel = true
             readDone = false
         } catch {
             self.error = String(localized: "Модель не справилась: \(error.localizedDescription) Попробуй ещё раз.")
@@ -140,9 +198,11 @@ struct ReadingView: View {
                 .font(.s(.title3))
                 .lineSpacing(5)
                 .textSelection(.enabled)
-            Text(String(localized: "Текст составлен моделью на устройстве и может содержать ошибки."))
-                .font(.s(.caption))
-                .foregroundStyle(Theme.secondaryText)
+            if generatedByModel {
+                Text(String(localized: "Текст составлен моделью на устройстве и может содержать ошибки."))
+                    .font(.s(.caption))
+                    .foregroundStyle(Theme.secondaryText)
+            }
             Button {
                 StudySession.shared.noteReading(lessonID: lesson.id)
                 readDone = true

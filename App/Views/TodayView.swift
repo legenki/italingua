@@ -62,7 +62,7 @@ struct TodayView: View {
         Tile(label: String(localized: "К повторению")) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(due.count)").font(.scaledSystem(size: 34, weight: .bold)).monospacedDigit()
-                Text(wordWord(due.count) + (due.count == 1 ? String(localized: " ждёт") : String(localized: " ждут"))).foregroundStyle(Theme.secondaryText)
+                Text(wordWord(due.count) + waitingWord(due.count)).foregroundStyle(Theme.secondaryText)
             }
             if due.isEmpty {
                 Text(String(localized: "Сегодня повторять нечего")).font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
@@ -80,7 +80,7 @@ struct TodayView: View {
                 Image(systemName: "flame.fill").font(.s(.title2))
                     .foregroundStyle(stats.streak > 0 ? Theme.accent : Theme.separator)
                 Text("\(stats.streak)").font(.scaledSystem(size: 34, weight: .bold)).monospacedDigit()
-                Text(dayWord(stats.streak) + String(localized: " подряд")).foregroundStyle(Theme.secondaryText)
+                Text(dayWord(stats.streak) + inARowWord(stats.streak)).foregroundStyle(Theme.secondaryText)
             }
             Text(stats.todayAnswers > 0 ? String(localized: "Сегодня уже занимались") : String(localized: "Позанимайся сегодня, чтобы продлить"))
                 .font(.s(.subheadline)).foregroundStyle(Theme.secondaryText)
@@ -314,6 +314,12 @@ func wordWord(_ n: Int, language: String = AppLanguage.current) -> String {
     if m10 == 1 && m100 != 11 { return String(localized: "слово") }
     if (2...4).contains(m10) && !(12...14).contains(m100) { return String(localized: "слова") }
     return String(localized: "слов")
+}
+
+/// " ждёт" / " ждут" for a count.
+func waitingWord(_ n: Int, language: String = AppLanguage.current) -> String {
+    guard language == "ru" else { return n == 1 ? String(localized: " ждёт") : String(localized: " ждут") }
+    return (n % 10 == 1 && n % 100 != 11) ? String(localized: " ждёт") : String(localized: " ждут")
 }
 
 extension String {

@@ -295,6 +295,102 @@
     [
       "macchina",
       "scavatrice"
+    ],
+    [
+      "avere bisogno",
+      "di qc."
+    ],
+    [
+      "con la macchi",
+      "na di"
+    ],
+    [
+      "mettere",
+      "in ordine"
+    ],
+    [
+      "detersivo per",
+      "i piatti"
+    ],
+    [
+      "guardare",
+      "la televisione"
+    ],
+    [
+      "per tutta",
+      "la settimana"
+    ],
+    [
+      "sta facendo",
+      "la doccia"
+    ],
+    [
+      "apparecchiare",
+      "la tavola"
+    ],
+    [
+      "annaffiare",
+      "le piante"
+    ],
+    [
+      "suonare",
+      "il pianoforte"
+    ],
+    [
+      "società di",
+      "assicurazioni"
+    ],
+    [
+      "esperienza",
+      "di lavoro"
+    ],
+    [
+      "fare",
+      "il cameriere"
+    ],
+    [
+      "lingua",
+      "straniera"
+    ],
+    [
+      "usare",
+      "il computer"
+    ],
+    [
+      "le faremo",
+      "sapere"
+    ],
+    [
+      "l'orario",
+      "di lavoro"
+    ],
+    [
+      "bucce",
+      "di banana"
+    ],
+    [
+      "visita",
+      "di controllo"
+    ],
+    [
+      "non c'e niente",
+      "da fare"
+    ],
+    [
+      "portare fuori",
+      "i rifiuti"
+    ],
+    [
+      "non e un gran",
+      "che"
+    ],
+    [
+      "fare una",
+      "passeggiata"
+    ],
+    [
+      "negozio di",
+      "abbigliamento"
     ]
   ],
   "vocab_drop": [],
@@ -303,7 +399,7 @@
       "ru": "с",
       "_why": "в книге латинская c"
     },
-    "allontanarsi (mi allontano)": {
+    "allontanarsi": {
       "ru": "удаляться",
       "_why": "колонка перевода съехала"
     },
@@ -598,6 +694,74 @@
     "le otto": {
       "pos": "phrase",
       "_why": "время, не существительное"
+    },
+    "cane": {
+      "ru": "собака",
+      "_why": "опечатка в книге: сапог"
+    },
+    "vanno a piedi": {
+      "ru": "(они) ходят пешком",
+      "form_of": "andare a piedi"
+    },
+    "con la macchi na di": {
+      "it": "con la macchina di",
+      "ru": "на машине кого-л.",
+      "pos": "phrase"
+    },
+    "detersivo per i piatti": {
+      "pos": "noun",
+      "gender": "m",
+      "ru": "моющее средство для посуды"
+    },
+    "guardare la televisione": {
+      "pos": "phrase",
+      "ru": "смотреть телевизор"
+    },
+    "societa di assicurazioni": {
+      "pos": "noun",
+      "gender": "f",
+      "ru": "страховая компания"
+    },
+    "esperienza di lavoro": {
+      "pos": "noun",
+      "gender": "f",
+      "ru": "опыт работы"
+    },
+    "lingua straniera": {
+      "pos": "noun",
+      "gender": "f",
+      "ru": "иностранный язык"
+    },
+    "l'orario di lavoro": {
+      "it": "orario di lavoro",
+      "pos": "noun",
+      "gender": "m",
+      "ru": "график работы"
+    },
+    "occupare posto": {
+      "pos": "phrase",
+      "ru": "занимать место",
+      "_why": "в книге пропущено «занимать»"
+    },
+    "bucce di banana": {
+      "pos": "noun",
+      "gender": "f",
+      "number": "pl",
+      "ru": "банановая кожура"
+    },
+    "visita di controllo": {
+      "pos": "noun",
+      "gender": "f",
+      "ru": "осмотр врача"
+    },
+    "negozio di abbigliamento": {
+      "pos": "noun",
+      "gender": "m",
+      "ru": "магазин одежды"
+    },
+    "dott. — dottore": {
+      "pos": "noun",
+      "gender": "m"
     }
   }
 }

@@ -208,7 +208,7 @@ private struct TableCard: View {
                     ForEach(Array(table.header.indices), id: \.self) { col in
                         let cell = col < row.count ? row[col] : ""
                         Text(markup: cell)
-                            .font(table.spokenColumns.contains(col) ? .body.weight(.semibold) : .body)
+                            .font(table.spokenColumns.contains(col) ? .s(.body).weight(.semibold) : .s(.body))
                             .foregroundStyle(col == 0 || table.spokenColumns.contains(col) ? .primary : Theme.secondaryText)
                             .fixedSize(horizontal: false, vertical: true)
                     }

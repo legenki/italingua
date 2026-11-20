@@ -6,7 +6,7 @@ import SwiftUI
 struct TranslationView: View {
     let lesson: Lesson
     @Environment(\.modelContext) private var context
-    @Query private var notes: [RuleNote]
+    @Query(sort: \RuleNote.updatedAt, order: .reverse) private var notes: [RuleNote]
     @State private var session: TranslationSession?
     @State private var answer = ""
     @FocusState private var focused: Bool

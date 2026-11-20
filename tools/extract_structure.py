@@ -12,7 +12,7 @@ What is extracted (structure only):
     which is written by hand in our own words.
 
 `rule_ru` comes only from tools/curation/<LEVEL>.json (lessons.<id>.rules),
-written by the owner (by hand or exported from the app with import_rules.py).
+written by the owner by hand.
 """
 
 from __future__ import annotations
@@ -49,8 +49,13 @@ HOMOGLYPHS = str.maketrans({
     "А": "A", "Е": "E", "О": "O", "Р": "P", "С": "C", "Т": "T", "Н": "H",
     "К": "K", "М": "M", "В": "B", "Х": "X",
 })
+CYR_HOMOGLYPHS = str.maketrans({
+    "a": "а", "e": "е", "o": "о", "p": "р", "c": "с", "y": "у", "x": "х",
+    "A": "А", "E": "Е", "O": "О", "P": "Р", "C": "С", "T": "Т", "H": "Н",
+    "K": "К", "M": "М", "B": "В", "X": "Х",
+})
 LIGATURES = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl"}
-VOWEL_ACCENTS = "àèéìíòóùú"
+VOWEL_ACCENTS = "àèéìíòóùúÀÈÉÌÍÒÓÙÚ"
 CYRILLIC = re.compile("[а-яё]{2,}", re.I)
 
 
@@ -108,7 +113,7 @@ def fold(s: str) -> str:
 # ----------------------------------------------------------------------------
 # Raw entry -> vocab item
 # ----------------------------------------------------------------------------
-GENDER_TAG = re.compile(r"⟨\s*(m\s*,\s*f|m|f)\s*(?:⟩\s*⟨)?\s*(,?\s*pl)?\.?\s*⟩")
+GENDER_TAG = re.compile(r"⟨\s*(m\s*,\s*f|m|f)(?:\s+\1)?\s*(?:⟩\s*⟨)?\s*(,?\s*pl)?\.?\s*⟩")
 GENDER_TAIL = re.compile(r"\s(m|f)\s*,\s*pl\.?\s*$")
 
 
@@ -142,7 +147,7 @@ def parse_entry(raw: pv.RawEntry) -> dict | None:
         nonlocal form_of
         inner = mm.group(1)
         plain = clean_space(inner.replace("⟨", "").replace("⟩", ""))
-        if re.match(r"^io\s", plain):
+        if re.match(r"^(io|mi)\s", plain):
             return " "                            # conjugation hint, e.g. (io cammino)
         first_word = plain.split()[0] if plain.split() else ""
         if "⟨" not in inner and VERB_INF.search(first_word) and mm.start() > 0:
@@ -154,7 +159,7 @@ def parse_entry(raw: pv.RawEntry) -> dict | None:
             form_of = v.group(1)
             return " "
         if "⟨" in inner:
-            if re.match(r"^(io|tu|lui|lei)\b", plain):
+            if re.match(r"^(io|tu|lui|lei|mi)\b", plain):
                 return " "                        # conjugation hint, e.g. (io àbito)
             if re.fullmatch(r"v\.?", plain):
                 return " "
@@ -188,10 +193,14 @@ def parse_entry(raw: pv.RawEntry) -> dict | None:
         ru = ru.rstrip(" ,") + (sep if ru.strip() else "") + " ".join(extra_ru)
     ru = fix_ligatures(ru)
     # rejoin words hyphenated across lines, but keep real hyphens like "по-итальянски"
-    ru = re.sub(r"(?<!\bпо)(?<!\bкое)-\s*\n\s*(?=[а-яё])", "", ru)
+    ru = re.sub(r"\bпо-\s*\n\s*(?![а-яё]*(?:ому|ему|ски|цки|ьи)\b)", "по", ru)
+    ru = re.sub(r"(?<!\bпо)(?<!\bкое)-\s*\n\s*(?=[а-яё])(?!(?:нибудь|либо|то|таки|ка)\b|единственн)", "", ru)
     ru = re.sub(r"-\s*\n\s*", "-", ru)
     ru = re.sub(r"\[[^\]]*\]", " ", ru.replace("\x04", ""))
     ru = clean_space(ru.replace("\n", " "))
+    ru = re.sub(r"^\((?:a|di) fare\)\s*", "", ru)
+    ru = re.sub(r"\S+", lambda m: m.group(0).translate(CYR_HOMOGLYPHS) if re.search(r"[а-яёА-ЯЁ]", m.group(0)) else m.group(0), ru)
+    ru = re.sub(r"(?<=[а-яёА-ЯЁ]\s)c(?=\s+[а-яёА-ЯЁ])", "с", ru)
     ru = ru.strip(" ,;")
     if ru.startswith(")"):                     # tail of a wrapped "(io leggo)" hint
         ru = ru[1:].strip()

@@ -228,3 +228,9 @@ func dayWord(_ n: Int, language: String = AppLanguage.current) -> String {
     if (2...4).contains(m10) && !(12...14).contains(m100) { return String(localized: "дня") }
     return String(localized: "дней")
 }
+
+/// " подряд" ("in a row", "seguido"/"seguidos" in Spanish).
+func inARowWord(_ n: Int, language: String = AppLanguage.current) -> String {
+    if language == "es" && n == 1 { return " seguido" }
+    return String(localized: " подряд")
+}

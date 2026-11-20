@@ -1,9 +1,17 @@
 {
   "_comment": "English/Spanish glosses made by the on-device Apple model (translate_words.swift). Fix by hand here if needed.",
   "words": {
+    "(non) mi sta bene": {
+      "en": "it suits (or doesn't suit) me",
+      "es": "me queda (o no) bien"
+    },
     "a bologna": {
       "en": "in Bologna",
       "es": "en Bolonia"
+    },
+    "a che ora": {
+      "en": "at what time",
+      "es": "a qué hora"
     },
     "a che servono": {
       "en": "what do you need",
@@ -60,10 +68,6 @@
     "abbiamo": {
       "en": "we have",
       "es": "tenemos"
-    },
-    "abbigliamento": {
-      "en": "clothing",
-      "es": "vestimenta"
     },
     "abitare": {
       "en": "to live",
@@ -210,8 +214,8 @@
       "es": "a esta hora"
     },
     "all'ospedale": {
-      "en": "hospital",
-      "es": "hospital"
+      "en": "at the hospital",
+      "es": "en el hospital"
     },
     "all'universita": {
       "en": "at the university",
@@ -244,10 +248,6 @@
     "allontanarsi": {
       "en": "to move away",
       "es": "alejarse"
-    },
-    "allontanarsi (mi allontano)": {
-      "en": "to move away",
-      "es": "a alejarse"
     },
     "allora": {
       "en": "then",
@@ -299,7 +299,7 @@
     },
     "andar via": {
       "en": "to leave",
-      "es": "a salir"
+      "es": "irse"
     },
     "andare": {
       "en": "to go",
@@ -307,15 +307,15 @@
     },
     "andare a letto": {
       "en": "to go to bed",
-      "es": "a dormir"
+      "es": "irse a la cama"
     },
     "andare in autobus": {
       "en": "to go by bus",
-      "es": "a viajar en autobús"
+      "es": "ir en autobús"
     },
     "andare in macchina": {
-      "en": "to go in car",
-      "es": "a viajar en coche"
+      "en": "to go by car",
+      "es": "ir en coche"
     },
     "andata": {
       "en": "trip",
@@ -329,9 +329,9 @@
       "en": "animal",
       "es": "animal"
     },
-    "annaffiare": {
-      "en": "to water",
-      "es": "regar"
+    "annaffiare le piante": {
+      "en": "to water the plants",
+      "es": "regar las plantas"
     },
     "anticipo sullo stipendio": {
       "en": "salary advance",
@@ -345,9 +345,9 @@
       "en": "afternoon drink",
       "es": "bebida de la tarde"
     },
-    "apparecchiare": {
+    "apparecchiare la tavola": {
       "en": "to set the table",
-      "es": "preparar la mesa"
+      "es": "poner la mesa"
     },
     "appena": {
       "en": "as soon as",
@@ -373,10 +373,6 @@
       "en": "to get angry",
       "es": "enojarse"
     },
-    "arrabbiarsi (mi arrabbio)": {
-      "en": "to get angry",
-      "es": "a enojarse"
-    },
     "arrivare": {
       "en": "to arrive",
       "es": "llegar"
@@ -386,12 +382,8 @@
       "es": "paño"
     },
     "asciugarsi": {
-      "en": "to dry off",
+      "en": "to dry oneself",
       "es": "secarse"
-    },
-    "asciugarsi (mi asciugo)": {
-      "en": "to dry off",
-      "es": "a secarse"
     },
     "ascoltare": {
       "en": "to listen",
@@ -407,14 +399,10 @@
     },
     "assaggiare": {
       "en": "to taste",
-      "es": "to taste"
+      "es": "probar"
     },
     "assicuratore": {
       "en": "insurer",
-      "es": "seguro"
-    },
-    "assicurazioni": {
-      "en": "insurance",
       "es": "seguro"
     },
     "assolutamente": {
@@ -451,19 +439,19 @@
     },
     "aver bisogno di": {
       "en": "to need",
-      "es": "a necesitar"
+      "es": "necesitar"
     },
     "aver fretta": {
-      "en": "to hurry",
-      "es": "a prisa"
+      "en": "to be in a hurry",
+      "es": "tener prisa"
     },
     "aver paura di": {
       "en": "to be afraid of",
       "es": "averse a"
     },
-    "avere bisogno": {
-      "en": "to need",
-      "es": "a necesitar"
+    "avere bisogno di qc.": {
+      "en": "to need something",
+      "es": "necesitar algo"
     },
     "avere la febbre": {
       "en": "have a fever",
@@ -471,7 +459,7 @@
     },
     "avere ragione": {
       "en": "to be right",
-      "es": "a ser correcto"
+      "es": "tener razón"
     },
     "avvicinarsi": {
       "en": "to approach",
@@ -538,8 +526,8 @@
       "es": "beber"
     },
     "bestia": {
-      "en": "animal",
-      "es": "animal"
+      "en": "animal, beast",
+      "es": "bestia, animal"
     },
     "beve": {
       "en": "drinks",
@@ -554,8 +542,8 @@
       "es": "copo"
     },
     "bicchierino": {
-      "en": "small glass",
-      "es": "small glass"
+      "en": "shot glass",
+      "es": "copita"
     },
     "bicicletta": {
       "en": "bicycle",
@@ -585,6 +573,10 @@
       "en": "bill",
       "es": "factura"
     },
+    "bomboletta": {
+      "en": "spray can",
+      "es": "aerosol"
+    },
     "borsa": {
       "en": "bag",
       "es": "maleta"
@@ -605,9 +597,9 @@
       "en": "to burn oneself / a plain infinitive: to burn oneself",
       "es": "quemarse"
     },
-    "bucce": {
-      "en": "peels",
-      "es": "cáscaras"
+    "bucce di banana": {
+      "en": "banana peel",
+      "es": "cáscara de plátano"
     },
     "buonanotte": {
       "en": "good night",
@@ -627,7 +619,7 @@
     },
     "buttar via": {
       "en": "to throw away",
-      "es": "a tirar"
+      "es": "tirar"
     },
     "buttare": {
       "en": "to throw",
@@ -635,7 +627,7 @@
     },
     "buttare via": {
       "en": "to throw away",
-      "es": "a tirar"
+      "es": "tirar"
     },
     "c'e": {
       "en": "there is",
@@ -806,8 +798,8 @@
       "es": "preguntar"
     },
     "chiedere in prestito": {
-      "en": "to ask for a loan",
-      "es": "to ask for a loan"
+      "en": "to borrow",
+      "es": "pedir prestado"
     },
     "chilo": {
       "en": "kilogram",
@@ -819,7 +811,7 @@
     },
     "chiudere a chiave": {
       "en": "to lock with a key",
-      "es": "a cerrar con llave"
+      "es": "cerrar con llave"
     },
     "chiuso": {
       "en": "closed",
@@ -898,8 +890,8 @@
       "es": "empezar"
     },
     "cominciare (a fare)": {
-      "en": "to start",
-      "es": "a empezar"
+      "en": "to start (doing)",
+      "es": "empezar (a hacer)"
     },
     "commessa": {
       "en": "saleswoman",
@@ -945,9 +937,9 @@
       "en": "with difficulty",
       "es": "con dificultad"
     },
-    "con la macchi": {
-      "en": "with the car",
-      "es": "con el coche"
+    "con la macchina di": {
+      "en": "in someone's car",
+      "es": "en el coche de alguien"
     },
     "con le sue mani": {
       "en": "with his/her hands",
@@ -999,7 +991,7 @@
     },
     "continuare (a fare)": {
       "en": "to continue",
-      "es": "a continuar"
+      "es": "continuar"
     },
     "conto": {
       "en": "account",
@@ -1085,6 +1077,10 @@
       "en": "winter",
       "es": "invierno"
     },
+    "da": {
+      "en": "she gives",
+      "es": "da"
+    },
     "da ... a": {
       "en": "from ... to",
       "es": "de ... a"
@@ -1092,14 +1088,6 @@
     "da 50 euro": {
       "en": "50 euros",
       "es": "50 euros"
-    },
-    "da f": {
-      "en": "She gives a balloon",
-      "es": "Ella da una bombilla"
-    },
-    "da fare": {
-      "en": "\"to do\" / \"a task to do",
-      "es": "\"para hacer"
     },
     "da lui": {
       "en": "from him",
@@ -1139,7 +1127,7 @@
     },
     "decidere (di fare)": {
       "en": "to decide (to do)",
-      "es": "a decidir"
+      "es": "decidir"
     },
     "decina": {
       "en": "tenth",
@@ -1153,13 +1141,13 @@
       "en": "inside",
       "es": "dentro"
     },
+    "depilarsi": {
+      "en": "to wax, shave",
+      "es": "depilarse"
+    },
     "descrivere": {
       "en": "to describe",
       "es": "describir"
-    },
-    "detersivo per": {
-      "en": "detergent for",
-      "es": "detergente para"
     },
     "detersivo per i piatti": {
       "en": "dishwashing liquid",
@@ -1177,21 +1165,9 @@
       "en": "they must",
       "es": "ellos deben"
     },
-    "di banana": {
-      "en": "of banana",
-      "es": "de plátano"
-    },
-    "di controllo": {
-      "en": "of control",
-      "es": "de control"
-    },
     "di la": {
       "en": "beyond",
       "es": "más allá"
-    },
-    "di lavoro": {
-      "en": "of work",
-      "es": "de trabajo"
     },
     "di massima": {
       "en": "maximum",
@@ -1225,9 +1201,9 @@
       "en": "afternoon",
       "es": "por la tarde"
     },
-    "di qc.": {
-      "en": "of something",
-      "es": "de algo"
+    "di primavera": {
+      "en": "spring (adj.)",
+      "es": "primaveral"
     },
     "di seguito": {
       "en": "below",
@@ -1307,7 +1283,7 @@
     },
     "distrarre": {
       "en": "to distract",
-      "es": "a distraer"
+      "es": "distraer"
     },
     "disturbare": {
       "en": "to disturb",
@@ -1384,6 +1360,10 @@
     "dormita": {
       "en": "sleep",
       "es": "dormir"
+    },
+    "dott. — dottore": {
+      "en": "doctor, graduate (title)",
+      "es": "doctor, licenciado"
     },
     "dove": {
       "en": "where",
@@ -1473,9 +1453,9 @@
       "en": "I leave",
       "es": "sale"
     },
-    "esperienza": {
-      "en": "experience",
-      "es": "experiencia"
+    "esperienza di lavoro": {
+      "en": "work experience",
+      "es": "experiencia laboral"
     },
     "essere": {
       "en": "to be",
@@ -1483,19 +1463,19 @@
     },
     "essere a dieta": {
       "en": "to be on a diet",
-      "es": "a dieta estar"
+      "es": "estar a dieta"
     },
     "essere allergico a": {
       "en": "to be allergic",
       "es": "estar alérgico"
     },
     "essere contento": {
-      "en": "to be happy",
-      "es": "a ser feliz"
+      "en": "to be glad",
+      "es": "estar contento"
     },
     "essere ricoverato": {
       "en": "to be hospitalized",
-      "es": "a ser hospitalizado"
+      "es": "ser hospitalizado"
     },
     "essere stufo (di fare qc)": {
       "en": "to be tired (of doing sth)",
@@ -1503,7 +1483,7 @@
     },
     "essere sveglio": {
       "en": "to be awake",
-      "es": "a estar despierto"
+      "es": "estar despierto"
     },
     "essere triste": {
       "en": "to be sad",
@@ -1546,20 +1526,20 @@
       "es": "aullar"
     },
     "far segno": {
-      "en": "to sign",
-      "es": "a señalar"
+      "en": "to signal",
+      "es": "hacer una seña"
     },
     "fare": {
       "en": "to do",
       "es": "hacer"
     },
     "fare acquisti": {
-      "en": "to make purchases",
-      "es": "a comprar"
+      "en": "to shop",
+      "es": "hacer compras"
     },
     "fare di bello": {
-      "en": "to make pretty",
-      "es": "a hacer bonito"
+      "en": "to do something nice",
+      "es": "hacer algo bueno"
     },
     "fare due passi": {
       "en": "take two steps",
@@ -1567,15 +1547,19 @@
     },
     "fare economie": {
       "en": "to save money",
-      "es": "a ahorrar dinero"
+      "es": "ahorrar dinero"
     },
     "fare entrare": {
       "en": "to let in",
-      "es": "to let in"
+      "es": "dejar entrar"
     },
     "fare il bagno": {
       "en": "to swim",
-      "es": "a nadar"
+      "es": "bañarse"
+    },
+    "fare il cameriere": {
+      "en": "to work as a waiter",
+      "es": "trabajar de camarero"
     },
     "fare il giro di": {
       "en": "go around",
@@ -1583,47 +1567,47 @@
     },
     "fare la fila": {
       "en": "to stand in line",
-      "es": "a esperar"
+      "es": "hacer cola"
     },
     "fare la pace": {
       "en": "make peace",
       "es": "hacer la paz"
     },
     "fare la spesa": {
-      "en": "to shop",
-      "es": "a comprar"
+      "en": "to go grocery shopping",
+      "es": "hacer la compra"
     },
     "fare le analisi": {
-      "en": "to do the analyses",
-      "es": "a realizar las análisis"
+      "en": "to get tests done",
+      "es": "hacerse análisis"
     },
     "fare le pulizie": {
-      "en": "to do the cleaning",
-      "es": "a limpiar"
+      "en": "to clean",
+      "es": "limpiar"
     },
     "fare quattro passi": {
       "en": "walk a little",
       "es": "dar una vuelta"
     },
     "fare sciopero": {
-      "en": "to strike",
-      "es": "a protestar"
+      "en": "to go on strike",
+      "es": "hacer huelga"
     },
     "fare un bagno": {
       "en": "to take a bath",
-      "es": "a bañarse"
-    },
-    "fare una": {
-      "en": "do",
-      "es": "hacer"
+      "es": "bañarse"
     },
     "fare una bella": {
       "en": "do a nice",
       "es": "hacer algo agradable"
     },
+    "fare una passeggiata": {
+      "en": "to take a walk",
+      "es": "dar un paseo"
+    },
     "fare una telefonata": {
       "en": "to make a phone call",
-      "es": "a llamar"
+      "es": "hacer una llamada"
     },
     "faremo": {
       "en": "we will do",
@@ -1636,6 +1620,10 @@
     "farmacista": {
       "en": "pharmacist",
       "es": "farmacéutico"
+    },
+    "farsi la barba": {
+      "en": "to shave",
+      "es": "afeitarse"
     },
     "fegato": {
       "en": "liver",
@@ -1787,7 +1775,7 @@
     },
     "gente": {
       "en": "people",
-      "es": "people"
+      "es": "gente"
     },
     "gia": {
       "en": "already",
@@ -1807,11 +1795,11 @@
     },
     "giocare a carte": {
       "en": "to play cards",
-      "es": "a jugar cartas"
+      "es": "jugar a las cartas"
     },
     "giocare a pallone": {
       "en": "to play soccer",
-      "es": "a jugar al fútbol"
+      "es": "jugar al fútbol"
     },
     "giornale": {
       "en": "newspaper",
@@ -1897,6 +1885,10 @@
       "en": "to look",
       "es": "mirar"
     },
+    "guardare la televisione": {
+      "en": "to watch TV",
+      "es": "ver la televisión"
+    },
     "ha": {
       "en": "has",
       "es": "tiene"
@@ -1931,11 +1923,7 @@
     },
     "i miei genitori": {
       "en": "my parents",
-      "es": "my parents"
-    },
-    "i piatti": {
-      "en": "plates",
-      "es": "platos"
+      "es": "mis padres"
     },
     "i rifiuti": {
       "en": "waste",
@@ -1953,14 +1941,6 @@
       "en": "identical",
       "es": "idéntico"
     },
-    "il cameriere": {
-      "en": "waiter",
-      "es": "camarero"
-    },
-    "il computer": {
-      "en": "the computer",
-      "es": "el ordenador"
-    },
     "il giorno dopo": {
       "en": "the day after",
       "es": "el día después"
@@ -1973,13 +1953,9 @@
       "en": "they",
       "es": "ellos"
     },
-    "il pianoforte": {
-      "en": "piano",
-      "es": "piano"
-    },
     "il pomeriggio": {
-      "en": "afternoon",
-      "es": "afternoon"
+      "en": "in the afternoon",
+      "es": "por la tarde"
     },
     "il quarto piano": {
       "en": "4th floor",
@@ -2020,10 +1996,6 @@
     "in modo tremendo": {
       "en": "terrible way",
       "es": "de forma terrible"
-    },
-    "in ordine": {
-      "en": "in order",
-      "es": "en orden"
     },
     "in pace": {
       "en": "peace",
@@ -2199,7 +2171,7 @@
     },
     "l'inglese": {
       "en": "English",
-      "es": "Inglés"
+      "es": "el inglés"
     },
     "l'italiano": {
       "en": "Italian language",
@@ -2221,10 +2193,6 @@
       "en": "credit card",
       "es": "tarjeta de crédito"
     },
-    "la doccia": {
-      "en": "the shower",
-      "es": "la ducha"
-    },
     "la domenica": {
       "en": "Sunday",
       "es": "domingo"
@@ -2244,18 +2212,6 @@
     "la sera tardi": {
       "en": "late in the evening",
       "es": "tarde por la noche"
-    },
-    "la settimana": {
-      "en": "the week",
-      "es": "la semana"
-    },
-    "la tavola": {
-      "en": "the table",
-      "es": "la mesa"
-    },
-    "la televisione": {
-      "en": "TV",
-      "es": "TV"
     },
     "ladro": {
       "en": "thief",
@@ -2286,24 +2242,24 @@
       "es": "lavar"
     },
     "lavare i piatti": {
-      "en": "to wash dishes",
-      "es": "a lavar platos"
+      "en": "to wash the dishes",
+      "es": "lavar los platos"
     },
     "lavare i vetri": {
       "en": "to wash the windows",
-      "es": "a lavar las ventanas"
+      "es": "limpiar los cristales"
     },
     "lavare la biancheria": {
-      "en": "to wash the laundry",
-      "es": "a lavar la ropa"
+      "en": "to do the laundry",
+      "es": "lavar la ropa"
     },
     "lavarsi": {
       "en": "to wash",
       "es": "lavarse"
     },
     "lavarsi i denti": {
-      "en": "to brush teeth",
-      "es": "to brush teeth"
+      "en": "to brush one's teeth",
+      "es": "lavarse los dientes"
     },
     "lavatrice": {
       "en": "washing machine",
@@ -2333,9 +2289,9 @@
       "en": "arms",
       "es": "brazos"
     },
-    "le faremo": {
-      "en": "we will do",
-      "es": "nosotros haremos"
+    "le faremo sapere": {
+      "en": "we will let you know",
+      "es": "se lo haremos saber"
     },
     "le loro": {
       "en": "theirs",
@@ -2344,10 +2300,6 @@
     "le otto": {
       "en": "eight",
       "es": "ocho"
-    },
-    "le piante": {
-      "en": "plants",
-      "es": "plantas"
     },
     "le undici": {
       "en": "eleven",
@@ -2363,7 +2315,7 @@
     },
     "leggere il giornale": {
       "en": "to read the newspaper",
-      "es": "a leer el periódico"
+      "es": "leer el periódico"
     },
     "leggero": {
       "en": "light",
@@ -2397,7 +2349,7 @@
       "en": "limit oneself to something",
       "es": "limitarse a algo"
     },
-    "lingua": {
+    "lingua straniera": {
       "en": "foreign language",
       "es": "lengua extranjera"
     },
@@ -2437,10 +2389,6 @@
       "en": "long",
       "es": "largo"
     },
-    "m naco di baviera": {
-      "en": "Munich",
-      "es": "Múnich"
-    },
     "ma": {
       "en": "but",
       "es": "pero"
@@ -2454,8 +2402,8 @@
       "es": "excavadora"
     },
     "mah": {
-      "en": "uh",
-      "es": "uh"
+      "en": "well, I don't know",
+      "es": "pues no sé"
     },
     "mai": {
       "en": "never",
@@ -2492,10 +2440,6 @@
     "mazzo": {
       "en": "bouquet",
       "es": "ramo"
-    },
-    "mazzo m f": {
-      "en": "English",
-      "es": "Spanish"
     },
     "me lo metto": {
       "en": "I put it on myself",
@@ -2542,8 +2486,8 @@
       "es": "poner"
     },
     "mettere in ordine": {
-      "en": "to put in order",
-      "es": "a ordenar"
+      "en": "to tidy up",
+      "es": "poner en orden"
     },
     "mettersi": {
       "en": "to put oneself",
@@ -2554,16 +2498,20 @@
       "es": "empezar a hacer"
     },
     "mettersi a qc.": {
-      "en": "to put oneself in a situation",
-      "es": "a ponerse en una situación"
+      "en": "to start doing something",
+      "es": "ponerse a hacer algo"
     },
     "mettersi d'accordo (di fare)": {
-      "en": "to agree to do",
-      "es": "a convenir"
+      "en": "to agree (to do)",
+      "es": "ponerse de acuerdo"
     },
     "mezz'ora": {
       "en": "half an hour",
       "es": "media hora"
+    },
+    "mezzanotte": {
+      "en": "midnight",
+      "es": "medianoche"
     },
     "mezzogiorno": {
       "en": "noon",
@@ -2609,6 +2557,10 @@
       "en": "very",
       "es": "muy"
     },
+    "monaco di baviera": {
+      "en": "Munich",
+      "es": "Múnich"
+    },
     "mordere": {
       "en": "to bite",
       "es": "mordere"
@@ -2620,10 +2572,6 @@
     "multa": {
       "en": "fine",
       "es": "multa"
-    },
-    "na di": {
-      "en": "you/your",
-      "es": "usted"
     },
     "napoli": {
       "en": "Naples",
@@ -2657,9 +2605,9 @@
       "en": "store",
       "es": "tienda"
     },
-    "negozio di": {
-      "en": "store",
-      "es": "store"
+    "negozio di abbigliamento": {
+      "en": "clothing store",
+      "es": "tienda de ropa"
     },
     "nel parco": {
       "en": "in the park",
@@ -2709,9 +2657,9 @@
       "en": "it wouldn't be enough",
       "es": "no sería suficiente"
     },
-    "non c'e niente": {
-      "en": "there is nothing",
-      "es": "no hay nada"
+    "non c'e niente da fare": {
+      "en": "nothing can be done",
+      "es": "no hay nada que hacer"
     },
     "non c'e piu": {
       "en": "there is no longer",
@@ -2721,9 +2669,9 @@
       "en": "it is not allowed",
       "es": "no está permitido"
     },
-    "non e un gran": {
-      "en": "It is not a big one",
-      "es": "No es una gran cosa"
+    "non e un gran che": {
+      "en": "nothing special",
+      "es": "no es gran cosa"
     },
     "non lo so": {
       "en": "I do not know",
@@ -2775,7 +2723,7 @@
     },
     "occhiali": {
       "en": "glasses",
-      "es": "glasses"
+      "es": "gafas"
     },
     "occhio": {
       "en": "eye",
@@ -2786,12 +2734,12 @@
       "es": "ocupar"
     },
     "occupare posto": {
-      "en": "to occupy a place",
-      "es": "a ocupar un lugar"
+      "en": "to take up a seat",
+      "es": "ocupar un asiento"
     },
     "occuparsi di qc": {
-      "en": "to take care of something",
-      "es": "a cuidar de algo"
+      "en": "to deal with something",
+      "es": "ocuparse de algo"
     },
     "occupato": {
       "en": "busy",
@@ -2819,7 +2767,7 @@
     },
     "ombrellone": {
       "en": "beach umbrella",
-      "es": "beach umbrella"
+      "es": "sombrilla"
     },
     "operaio": {
       "en": "worker",
@@ -2833,9 +2781,9 @@
       "en": "now",
       "es": "ahora"
     },
-    "orario": {
-      "en": "schedule",
-      "es": "horario"
+    "orario di lavoro": {
+      "en": "work schedule",
+      "es": "horario de trabajo"
     },
     "ordinare": {
       "en": "to order",
@@ -2899,7 +2847,7 @@
     },
     "pagare l'affitto": {
       "en": "to pay the rent",
-      "es": "a pagar la renta"
+      "es": "pagar el alquiler"
     },
     "paia": {
       "en": "pairs",
@@ -2927,7 +2875,7 @@
     },
     "pane": {
       "en": "bread",
-      "es": "bread"
+      "es": "pan"
     },
     "panino": {
       "en": "sandwich",
@@ -2947,7 +2895,7 @@
     },
     "parlare": {
       "en": "to speak",
-      "es": "to speak"
+      "es": "hablar"
     },
     "parlare al": {
       "en": "talk to",
@@ -2978,12 +2926,12 @@
       "es": "pasar"
     },
     "passare da": {
-      "en": "to go to",
-      "es": "a llegar"
+      "en": "to stop by",
+      "es": "pasar por"
     },
     "passare tempo": {
       "en": "to spend time",
-      "es": "a pasar el tiempo"
+      "es": "pasar tiempo"
     },
     "passeggero": {
       "en": "passenger",
@@ -3009,9 +2957,13 @@
       "en": "patiently",
       "es": "pacientemente"
     },
+    "peccato che": {
+      "en": "it is a pity that",
+      "es": "qué pena que"
+    },
     "pensarci": {
       "en": "to think about it",
-      "es": "a pensar en ello"
+      "es": "pensarlo"
     },
     "pensare": {
       "en": "to think",
@@ -3057,9 +3009,9 @@
       "en": "on the ground",
       "es": "en el suelo"
     },
-    "per tutta": {
-      "en": "for the whole",
-      "es": "para todo"
+    "per tutta la settimana": {
+      "en": "all week long",
+      "es": "durante toda la semana"
     },
     "per un'ora": {
       "en": "for an hour",
@@ -3105,9 +3057,9 @@
       "en": "fish",
       "es": "peces"
     },
-    "pettinarsi (mi pettino)": {
+    "pettinarsi": {
       "en": "to comb one's hair",
-      "es": "a peinar el cabello"
+      "es": "peinarse"
     },
     "piacciono": {
       "en": "please",
@@ -3187,11 +3139,11 @@
     },
     "polmoni": {
       "en": "lungs",
-      "es": "lungs"
+      "es": "pulmones"
     },
     "poltrona": {
-      "en": "chair",
-      "es": "chair"
+      "en": "armchair",
+      "es": "sillón"
     },
     "polvere": {
       "en": "dust",
@@ -3211,19 +3163,19 @@
     },
     "portar via": {
       "en": "to take away",
-      "es": "a llevar"
+      "es": "llevarse"
     },
     "portare": {
       "en": "to carry",
       "es": "llevar"
     },
-    "portare (non) mi sta bene": {
-      "en": "doesn't suit me to carry",
-      "es": "no me conviene llevar"
-    },
     "portare fuori": {
       "en": "to take out",
-      "es": "a sacar"
+      "es": "sacar"
+    },
+    "portare fuori i rifiuti": {
+      "en": "to take out the trash",
+      "es": "sacar la basura"
     },
     "possiamo": {
       "en": "we can",
@@ -3290,20 +3242,20 @@
       "es": "tomar"
     },
     "prendere il caffe": {
-      "en": "to drink coffee",
-      "es": "to drink coffee"
+      "en": "to have a coffee",
+      "es": "tomar un café"
     },
     "prendere il sole": {
-      "en": "to take the sun",
-      "es": "a disfrutar del sol"
+      "en": "to sunbathe",
+      "es": "tomar el sol"
     },
     "prendere il treno": {
       "en": "take the train",
       "es": "tomar el tren"
     },
     "prendere l'autobus": {
-      "en": "take the bus",
-      "es": "take the bus"
+      "en": "to take the bus",
+      "es": "tomar el autobús"
     },
     "preoccupato": {
       "en": "worried",
@@ -3314,8 +3266,8 @@
       "es": "preparar"
     },
     "preparare la cena": {
-      "en": "to prepare dinner",
-      "es": "a preparar la cena"
+      "en": "to make dinner",
+      "es": "preparar la cena"
     },
     "prescrivere": {
       "en": "to prescribe",
@@ -3402,8 +3354,8 @@
       "es": "probar"
     },
     "provare (a fare)": {
-      "en": "to try",
-      "es": "a probar"
+      "en": "to try (to do)",
+      "es": "intentar (hacer)"
     },
     "provare a fare": {
       "en": "to try to do",
@@ -3420,6 +3372,14 @@
     "pulisco": {
       "en": "I clean",
       "es": "Yo limpio"
+    },
+    "pulizie": {
+      "en": "cleaning",
+      "es": "limpieza"
+    },
+    "pulizie di primavera": {
+      "en": "spring cleaning",
+      "es": "limpieza de primavera"
     },
     "puo": {
       "en": "can",
@@ -3457,6 +3417,10 @@
       "en": "how much?",
       "es": "¿cuánto?"
     },
+    "quanto costa?": {
+      "en": "how much does it cost?",
+      "es": "¿cuánto cuesta?"
+    },
     "quarant'anni": {
       "en": "40 years",
       "es": "40 años"
@@ -3468,6 +3432,10 @@
     "quello che": {
       "en": "that which",
       "es": "lo que"
+    },
+    "questa domenica": {
+      "en": "this Sunday",
+      "es": "este domingo"
     },
     "queste cose": {
       "en": "these things",
@@ -3519,11 +3487,11 @@
     },
     "restare (a fare)": {
       "en": "to stay (to do)",
-      "es": "a quedarse (a hacer)"
+      "es": "quedarse (a hacer)"
     },
     "restare a casa": {
       "en": "to stay at home",
-      "es": "a quedarse en casa"
+      "es": "quedarse en casa"
     },
     "restituire": {
       "en": "to return",
@@ -3590,8 +3558,8 @@
       "es": "poner de nuevo"
     },
     "rimettersi (a fare)": {
-      "en": "to put oneself back to doing",
-      "es": "a sí mismo volver a hacer"
+      "en": "to start again",
+      "es": "volver a empezar"
     },
     "ringraziare": {
       "en": "to thank",
@@ -3623,7 +3591,7 @@
     },
     "roba da mangiare": {
       "en": "food",
-      "es": "food"
+      "es": "comida"
     },
     "rompere": {
       "en": "to break",
@@ -3725,6 +3693,10 @@
       "en": "to descend",
       "es": "bajar"
     },
+    "schiuma da barba": {
+      "en": "shaving foam",
+      "es": "espuma de afeitar"
+    },
     "sciarpa": {
       "en": "scarf",
       "es": "pañuelo"
@@ -3765,9 +3737,9 @@
       "en": "excuse me",
       "es": "perdón"
     },
-    "sdraiarsi (mi sdraio)": {
+    "sdraiarsi": {
       "en": "to lie down",
-      "es": "a descansar"
+      "es": "tumbarse"
     },
     "se": {
       "en": "if",
@@ -3775,7 +3747,7 @@
     },
     "secchiello": {
       "en": "bucket",
-      "es": "bucket"
+      "es": "cubo"
     },
     "secco": {
       "en": "dry",
@@ -3798,8 +3770,8 @@
       "es": "selección"
     },
     "semplice": {
-      "en": "simple",
-      "es": "simple"
+      "en": "simply",
+      "es": "sencillo"
     },
     "sempre": {
       "en": "always",
@@ -3810,8 +3782,8 @@
       "es": "escuchar"
     },
     "sentirsi bene": {
-      "en": "to feel good",
-      "es": "a sentirse bien"
+      "en": "to feel well",
+      "es": "sentirse bien"
     },
     "senz'altro": {
       "en": "of course",
@@ -3842,8 +3814,8 @@
       "es": "su nombre es"
     },
     "si dicono": {
-      "en": "they say",
-      "es": "they say"
+      "en": "they say to each other",
+      "es": "se dicen"
     },
     "si ferma": {
       "en": "stops",
@@ -3871,15 +3843,15 @@
     },
     "smettere (di fare)": {
       "en": "to stop (doing)",
-      "es": "a dejar (hacer)"
+      "es": "dejar (de hacer)"
     },
     "so": {
       "en": "I know",
       "es": "sé"
     },
-    "societa di": {
+    "societa di assicurazioni": {
       "en": "insurance company",
-      "es": "empresa de seguros"
+      "es": "compañía de seguros"
     },
     "soddisfatto": {
       "en": "satisfied",
@@ -4001,9 +3973,9 @@
       "en": "to move",
       "es": "mover"
     },
-    "sta facendo": {
-      "en": "is doing",
-      "es": "está haciendo"
+    "sta facendo la doccia": {
+      "en": "she is taking a shower",
+      "es": "está duchándose"
     },
     "sta per partire": {
       "en": "is about to leave",
@@ -4023,7 +3995,7 @@
     },
     "star fermo": {
       "en": "to stay still",
-      "es": "a esperar"
+      "es": "quedarse quieto"
     },
     "stare": {
       "en": "to stay",
@@ -4031,15 +4003,15 @@
     },
     "stare a casa": {
       "en": "to stay at home",
-      "es": "a quedarse en casa"
+      "es": "quedarse en casa"
     },
     "stare in piedi": {
       "en": "stand up",
       "es": "parar"
     },
     "stare in ufficio": {
-      "en": "to sit in an office",
-      "es": "a trabajar en la oficina"
+      "en": "to be in the office",
+      "es": "estar en la oficina"
     },
     "stasera": {
       "en": "tonight",
@@ -4056,10 +4028,6 @@
     "straccio": {
       "en": "rag",
       "es": "pano"
-    },
-    "straniera": {
-      "en": "foreign",
-      "es": "extraño"
     },
     "straniere": {
       "en": "foreign languages",
@@ -4117,9 +4085,9 @@
       "en": "on the beach",
       "es": "en la playa"
     },
-    "suonare": {
-      "en": "to play",
-      "es": "jugar"
+    "suonare il pianoforte": {
+      "en": "to play the piano",
+      "es": "tocar el piano"
     },
     "superare": {
       "en": "to succeed",
@@ -4143,7 +4111,7 @@
     },
     "tagliare l'erba": {
       "en": "to cut the grass",
-      "es": "a cortar la hierba"
+      "es": "cortar la hierba"
     },
     "tante cose": {
       "en": "many things",
@@ -4173,7 +4141,7 @@
       "en": "tea",
       "es": "té"
     },
-    "tedesco m m": {
+    "tedesco": {
       "en": "German",
       "es": "alemán"
     },
@@ -4183,7 +4151,7 @@
     },
     "telefonare": {
       "en": "to call",
-      "es": "to call"
+      "es": "llamar por teléfono"
     },
     "telefonino": {
       "en": "cell phone",
@@ -4204,6 +4172,10 @@
     "tempo": {
       "en": "time",
       "es": "tiempo"
+    },
+    "tempo libero": {
+      "en": "free time",
+      "es": "tiempo libre"
     },
     "tende": {
       "en": "curtains",
@@ -4230,8 +4202,8 @@
       "es": "sopla viento"
     },
     "tirare fuori": {
-      "en": "to pull out",
-      "es": "a sacar"
+      "en": "to take out",
+      "es": "sacar"
     },
     "tirarsi su il morale": {
       "en": "to boost morale",
@@ -4250,12 +4222,8 @@
       "es": "sacar"
     },
     "togliersi": {
-      "en": "to remove oneself",
+      "en": "to take off",
       "es": "quitarse"
-    },
-    "togliersi (mi tolgo)": {
-      "en": "to remove",
-      "es": "a quitar"
     },
     "topo": {
       "en": "mouse",
@@ -4397,6 +4365,10 @@
       "en": "to use",
       "es": "usar"
     },
+    "usare il computer": {
+      "en": "to use a computer",
+      "es": "usar el ordenador"
+    },
     "uscire": {
       "en": "to leave",
       "es": "salir"
@@ -4431,7 +4403,7 @@
     },
     "vanno a piedi": {
       "en": "they go on foot",
-      "es": "they go on foot"
+      "es": "van a pie"
     },
     "vasca": {
       "en": "bath",
@@ -4513,7 +4485,7 @@
       "en": "trip",
       "es": "viaje"
     },
-    "viaggio d'affari m m": {
+    "viaggio d'affari": {
       "en": "business trip",
       "es": "viaje de negocios"
     },
@@ -4540,6 +4512,10 @@
     "visita": {
       "en": "visit",
       "es": "visita"
+    },
+    "visita di controllo": {
+      "en": "check-up",
+      "es": "revisión médica"
     },
     "visitare": {
       "en": "to visit",

@@ -523,7 +523,7 @@
           "ru": "англичанин, английский",
           "pos": "adj",
           "en": "English",
-          "es": "Inglés"
+          "es": "inglés"
         },
         {
           "it": "visitare",
@@ -754,7 +754,7 @@
           "ru": "говорить",
           "pos": "verb",
           "en": "to speak",
-          "es": "to speak"
+          "es": "hablar"
         },
         {
           "it": "parlo",
@@ -1390,8 +1390,8 @@
           "ru": "двоюродный брат",
           "pos": "noun",
           "gender": "m",
-          "en": "uncle",
-          "es": "uncle"
+          "en": "cousin",
+          "es": "primo"
         },
         {
           "it": "cugina",
@@ -2433,7 +2433,7 @@
           "pos": "noun",
           "gender": "m",
           "en": "uncle",
-          "es": "uncle"
+          "es": "tío"
         },
         {
           "it": "zia",
@@ -2441,7 +2441,7 @@
           "pos": "noun",
           "gender": "f",
           "en": "aunt",
-          "es": "aunt"
+          "es": "tía"
         },
         {
           "it": "zii",
@@ -2811,7 +2811,7 @@
           "it": "non",
           "ru": "не",
           "pos": "adv",
-          "en": "no",
+          "en": "not",
           "es": "no"
         },
         {
@@ -2820,7 +2820,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to speak Italian",
-          "es": "a hablar italiano"
+          "es": "hablar italiano"
         },
         {
           "it": "oppure",
@@ -2836,7 +2836,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to speak English",
-          "es": "to speak English"
+          "es": "hablar inglés"
         },
         {
           "it": "fra",
@@ -2939,7 +2939,7 @@
           "pos": "noun",
           "gender": "m",
           "en": "boy",
-          "es": "boy"
+          "es": "chico"
         },
         {
           "it": "donna",
@@ -3052,7 +3052,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to be cold",
-          "es": "a sentirse frío"
+          "es": "tener frío"
         },
         {
           "it": "ho sonno",
@@ -3158,8 +3158,8 @@
           "pos": "phrase",
           "stress": "fare la segretària",
           "new": true,
-          "en": "to be a secretary",
-          "es": "a ser secretaria"
+          "en": "to work as a secretary",
+          "es": "trabajar de secretaria"
         },
         {
           "it": "lavorare",
@@ -3443,8 +3443,8 @@
           "it": "parlare di",
           "ru": "говорить о чем-л.",
           "pos": "phrase",
-          "en": "to speak about",
-          "es": "a hablar sobre"
+          "en": "to talk about",
+          "es": "hablar de"
         },
         {
           "it": "alla fine di",
@@ -3606,7 +3606,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to look outside",
-          "es": "a mirar afuera"
+          "es": "mirar afuera"
         },
         {
           "it": "fuori",
@@ -3670,8 +3670,8 @@
           "ru": "лежать в постели",
           "pos": "phrase",
           "new": true,
-          "en": "to lie in bed",
-          "es": "a dormir en la cama"
+          "en": "to stay in bed",
+          "es": "estar en cama"
         },
         {
           "it": "sul",
@@ -3702,7 +3702,7 @@
           "pos": "verb",
           "new": true,
           "en": "to call",
-          "es": "to call"
+          "es": "llamar por teléfono"
         },
         {
           "it": "nessuno",
@@ -3745,12 +3745,12 @@
           "es": "nunca"
         },
         {
-          "it": "la televisione",
+          "it": "guardare la televisione",
           "ru": "смотреть телевизор",
           "pos": "phrase",
           "new": true,
-          "en": "TV",
-          "es": "TV"
+          "en": "to watch TV",
+          "es": "ver la televisión"
         },
         {
           "it": "televisione",
@@ -3762,20 +3762,12 @@
           "es": "televisión"
         },
         {
-          "it": "prendere",
-          "ru": "пить",
-          "pos": "verb",
-          "stress": "prèndere",
-          "en": "to drink",
-          "es": "beber"
-        },
-        {
-          "it": "un aperitivo",
-          "ru": "аперитив",
+          "it": "prendere un aperitivo",
+          "ru": "пить аперитив",
           "pos": "phrase",
-          "new": true,
-          "en": "a snack drink",
-          "es": "una bebida para la tarde"
+          "stress": "prèndere un aperitivo",
+          "en": "to have an aperitif",
+          "es": "tomar un aperitivo"
         },
         {
           "it": "finire",
@@ -3940,8 +3932,8 @@
           "pos": "phrase",
           "stress": "èssere contento di",
           "new": true,
-          "en": "to be happy about",
-          "es": "a estar contento de"
+          "en": "to be pleased with",
+          "es": "estar contento con"
         },
         {
           "it": "entrare",
@@ -3964,8 +3956,8 @@
           "ru": "выходить на (об окнах)",
           "pos": "phrase",
           "new": true,
-          "en": "to come out",
-          "es": "a salir"
+          "en": "to overlook, face",
+          "es": "dar a"
         },
         {
           "it": "strada",
@@ -3991,8 +3983,8 @@
           "pos": "noun",
           "gender": "f",
           "new": true,
-          "en": "chair",
-          "es": "chair"
+          "en": "armchair",
+          "es": "sillón"
         },
         {
           "it": "comodino",
@@ -4031,7 +4023,7 @@
           "stress": "sèdia",
           "new": true,
           "en": "chair",
-          "es": "chair"
+          "es": "silla"
         },
         {
           "it": "frigorifero",
@@ -4042,6 +4034,14 @@
           "new": true,
           "en": "refrigerator",
           "es": "refrigerador"
+        },
+        {
+          "it": "prendere",
+          "ru": "брать",
+          "pos": "verb",
+          "stress": "prèndere",
+          "en": "to take",
+          "es": "tomar"
         },
         {
           "it": "diciamo",
@@ -4191,8 +4191,8 @@
           "ru": "ходить (ездить) в магазин за продуктами",
           "pos": "phrase",
           "new": true,
-          "en": "to shop",
-          "es": "a comprar"
+          "en": "to go grocery shopping",
+          "es": "hacer la compra"
         },
         {
           "it": "andare a trovare",
@@ -4216,7 +4216,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to go to",
-          "es": "a ir a"
+          "es": "ir a casa de"
         },
         {
           "it": "genitori",
@@ -4259,8 +4259,8 @@
           "pos": "phrase",
           "stress": "fare un viàggio",
           "new": true,
-          "en": "to make a trip",
-          "es": "a viajar"
+          "en": "to take a trip",
+          "es": "hacer un viaje"
         },
         {
           "it": "lasciare",
@@ -4363,7 +4363,7 @@
           "stress": "èssere fermo",
           "new": true,
           "en": "to stand still",
-          "es": "a esperar"
+          "es": "estar quieto"
         },
         {
           "it": "passare",
@@ -4455,8 +4455,8 @@
           "ru": "быть довольным",
           "pos": "phrase",
           "stress": "èssere contento",
-          "en": "to be happy",
-          "es": "a ser feliz"
+          "en": "to be glad",
+          "es": "estar contento"
         },
         {
           "it": "lo stesso",
@@ -4575,7 +4575,7 @@
           "pos": "phrase",
           "stress": "èssere stanco",
           "en": "to be tired",
-          "es": "a sentirse cansado"
+          "es": "estar cansado"
         },
         {
           "it": "tutta la sera",
@@ -4649,14 +4649,14 @@
           "pos": "noun",
           "gender": "f",
           "en": "people",
-          "es": "people"
+          "es": "gente"
         },
         {
           "it": "fare la fila",
           "ru": "стоять в очереди",
           "pos": "phrase",
           "en": "to stand in line",
-          "es": "a esperar"
+          "es": "hacer cola"
         },
         {
           "it": "comprare",
@@ -4700,8 +4700,8 @@
           "it": "avere voglia di",
           "ru": "хотеться чего-нибудь",
           "pos": "phrase",
-          "en": "to want",
-          "es": "a querer"
+          "en": "to feel like",
+          "es": "tener ganas de"
         },
         {
           "it": "al bar",
@@ -4774,7 +4774,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to pass the time",
-          "es": "a pasar el tiempo"
+          "es": "pasar el tiempo"
         },
         {
           "it": "in un altro modo",
@@ -4954,7 +4954,7 @@
           "pos": "phrase",
           "stress": "chièdere a",
           "en": "to ask someone",
-          "es": "a preguntar a alguien"
+          "es": "preguntar a"
         },
         {
           "it": "scusi",
@@ -5197,7 +5197,7 @@
           "pos": "phrase",
           "stress": "negòzio di abbigliamento",
           "en": "clothing store",
-          "es": "clothing store"
+          "es": "tienda de ropa"
         },
         {
           "it": "cominciare a fare",
@@ -5394,7 +5394,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to give a discount",
-          "es": "to give a discount"
+          "es": "hacer un descuento"
         },
         {
           "it": "cassiera",
@@ -5433,8 +5433,8 @@
           "ru": "она выходит",
           "pos": "verb",
           "form_of": "uscire",
-          "en": "to exit",
-          "es": "a salir"
+          "en": "goes out",
+          "es": "sale"
         },
         {
           "it": "lei",
@@ -5536,7 +5536,7 @@
           "ru": "их",
           "pos": "phrase",
           "en": "theirs",
-          "es": "theirs"
+          "es": "suyo, la suya"
         },
         {
           "it": "nessuno di loro",
@@ -5694,8 +5694,8 @@
           "ru": "на человека",
           "pos": "phrase",
           "new": true,
-          "en": "to someone",
-          "es": "a alguien"
+          "en": "per person",
+          "es": "por persona"
         },
         {
           "it": "per molti giorni",
@@ -5806,27 +5806,18 @@
         },
         {
           "it": "uova al bacon",
-          "ru": "яичница c беконом",
+          "ru": "яичница с беконом",
           "pos": "phrase",
           "new": true,
           "en": "eggs with bacon",
           "es": "huevos con tocino"
         },
         {
-          "it": "frittata",
-          "ru": "яичница",
-          "pos": "noun",
-          "gender": "f",
-          "en": "egg dish",
-          "es": "tortilla"
-        },
-        {
-          "it": "di zucchine",
-          "ru": "с цуккини",
+          "it": "frittata di zucchine",
+          "ru": "яичница с цуккини",
           "pos": "phrase",
-          "new": true,
-          "en": "of zucchini",
-          "es": "de calabacín"
+          "en": "zucchini omelet",
+          "es": "tortilla de calabacín"
         },
         {
           "it": "uova sode",
@@ -6038,8 +6029,8 @@
           "it": "ai funghi",
           "ru": "с грибами",
           "pos": "phrase",
-          "en": "to mushrooms",
-          "es": "a hongos"
+          "en": "with mushrooms",
+          "es": "con champiñones"
         },
         {
           "it": "tortellini",
@@ -6195,7 +6186,7 @@
           "stress": "èscono",
           "form_of": "uscire",
           "en": "they leave",
-          "es": "they leave"
+          "es": "salen"
         },
         {
           "it": "per la strada",
@@ -6204,6 +6195,13 @@
           "new": true,
           "en": "on the street",
           "es": "por la calle"
+        },
+        {
+          "it": "ho fame (aver fame)",
+          "ru": "я голоден",
+          "pos": "phrase",
+          "en": "I am hungry",
+          "es": "tengo hambre"
         },
         {
           "it": "andiamo in un altro ristorante",
@@ -6273,7 +6271,7 @@
           "ru": "говорить с",
           "pos": "phrase",
           "en": "to speak with",
-          "es": "a hablar con"
+          "es": "hablar con"
         },
         {
           "it": "portiere",
@@ -6578,7 +6576,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to call",
-          "es": "a llamar"
+          "es": "llamar a"
         },
         {
           "it": "a Venezia",
@@ -6788,8 +6786,8 @@
           "ru": "оформлять документы",
           "pos": "phrase",
           "new": true,
-          "en": "to make the documents",
-          "es": "a preparar los documentos"
+          "en": "to do paperwork",
+          "es": "hacer los trámites"
         },
         {
           "it": "ogni volta",
@@ -6805,7 +6803,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to stand in line",
-          "es": "a esperar"
+          "es": "hacer cola"
         },
         {
           "it": "motivo",
@@ -7153,7 +7151,7 @@
           "gender": "m",
           "new": true,
           "en": "bread",
-          "es": "bread"
+          "es": "pan"
         },
         {
           "it": "dobbiamo",
@@ -7186,7 +7184,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to start again",
-          "es": "a empezar de nuevo"
+          "es": "volver a empezar"
         },
         {
           "it": "finire (di fare)",
@@ -7194,7 +7192,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to finish (doing)",
-          "es": "a terminar (hacer)"
+          "es": "terminar (de hacer)"
         },
         {
           "it": "restare a fare",

@@ -22,7 +22,7 @@ struct SessionCapsule: View {
     @Environment(\.modelContext) private var context
 
     var body: some View {
-        TimelineView(.periodic(from: .now, by: 1)) { context in
+        TimelineView(.animation(minimumInterval: 1, paused: !(session.isActive && !session.isFinished && session.isRunning))) { context in
             if session.isActive && !session.isFinished {
                 // Two buttons in one capsule: the plan, and pause / resume.
                 ViewThatFits(in: .horizontal) {
@@ -204,7 +204,7 @@ private struct SessionPlan: View {
     @State private var session = StudySession.shared
 
     var body: some View {
-        TimelineView(.periodic(from: .now, by: 1)) { context in
+        TimelineView(.animation(minimumInterval: 1, paused: !(session.isActive && !session.isFinished && session.isRunning))) { context in
             VStack(alignment: .leading, spacing: 14) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(String(localized: "Сессия · \(lesson?.sourceLabel ?? "")")).font(.s(.headline))

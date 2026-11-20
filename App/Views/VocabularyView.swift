@@ -96,7 +96,7 @@ struct VocabularyView: View {
         guard !search.isEmpty else { return base }
         let q = AnswerChecker.fold(search)
         return base.filter {
-            AnswerChecker.fold($0.italian).contains(q) || $0.translation.localizedCaseInsensitiveContains(search)
+            AnswerChecker.fold($0.italian).contains(q) || AnswerChecker.fold($0.translation).contains(q)
         }
     }
 }

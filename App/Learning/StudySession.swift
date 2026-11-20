@@ -102,8 +102,18 @@ final class StudySession {
 
     /// Called for everything the app speaks; counts only this lesson's words.
     func noteSpoken(_ text: String) {
-        guard let s = state, s.wordForms.contains(Self.form(text)) else { return }
-        update(s.lessonID) { $0.spoken.insert(Self.form(text)) }
+        let f = Self.form(text)
+        guard let s = state, s.wordForms.contains(f) else { return }
+        let key = Self.canonical(f, in: s.wordForms)
+        update(s.lessonID) { $0.spoken.insert(key) }
+    }
+
+    static func canonical(_ form: String, in wordForms: Set<String>) -> String {
+        for prefix in ["il ", "lo ", "la ", "i ", "gli ", "le ", "l'"] where form.hasPrefix(prefix) {
+            let bare = String(form.dropFirst(prefix.count))
+            if wordForms.contains(bare) { return bare }
+        }
+        return form
     }
 
     func noteCard(lessonID: String, wordID: String) {

@@ -160,8 +160,8 @@
           "ru": "ездить на машине",
           "pos": "phrase",
           "stress": "andare in màcchina",
-          "en": "to go in car",
-          "es": "a viajar en coche"
+          "en": "to go by car",
+          "es": "ir en coche"
         },
         {
           "it": "benzinaio",
@@ -180,7 +180,7 @@
           "stress": "andare in àutobus",
           "new": true,
           "en": "to go by bus",
-          "es": "a viajar en autobús"
+          "es": "ir en autobús"
         },
         {
           "it": "dal 5 al 7",
@@ -199,11 +199,12 @@
         },
         {
           "it": "vanno a piedi",
-          "ru": "(они) ходят andare a piedi) пешком",
+          "ru": "(они) ходят пешком",
           "pos": "phrase",
+          "form_of": "andare a piedi",
           "new": true,
           "en": "they go on foot",
-          "es": "they go on foot"
+          "es": "van a pie"
         },
         {
           "it": "supermercato",
@@ -339,7 +340,7 @@
           "ru": "остаться дома",
           "pos": "phrase",
           "en": "to stay at home",
-          "es": "a quedarse en casa"
+          "es": "quedarse en casa"
         },
         {
           "it": "insieme",
@@ -418,7 +419,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to go to bed",
-          "es": "a dormir"
+          "es": "irse a la cama"
         },
         {
           "it": "presto",
@@ -508,7 +509,7 @@
           "ru": "говорить",
           "pos": "verb",
           "en": "to speak",
-          "es": "to speak"
+          "es": "hablar"
         },
         {
           "it": "treno",
@@ -524,8 +525,8 @@
           "pos": "adj",
           "stress": "sèmplice",
           "new": true,
-          "en": "simple",
-          "es": "simple"
+          "en": "simply",
+          "es": "sencillo"
         },
         {
           "it": "fare sciopero",
@@ -533,8 +534,8 @@
           "pos": "phrase",
           "stress": "fare sciòpero",
           "new": true,
-          "en": "to strike",
-          "es": "a protestar"
+          "en": "to go on strike",
+          "es": "hacer huelga"
         }
       ],
       "patterns": [
@@ -608,7 +609,7 @@
           "ru": "звонить по телефону",
           "pos": "verb",
           "en": "to call",
-          "es": "to call"
+          "es": "llamar por teléfono"
         },
         {
           "it": "ciao",
@@ -646,8 +647,8 @@
           "ru": "делать хорошенького",
           "pos": "phrase",
           "new": true,
-          "en": "to make pretty",
-          "es": "a hacer bonito"
+          "en": "to do something nice",
+          "es": "hacer algo bueno"
         },
         {
           "it": "stasera",
@@ -675,7 +676,7 @@
         },
         {
           "it": "uscire",
-          "ru": "пойти куданибудь",
+          "ru": "пойти куда-нибудь",
           "pos": "verb",
           "en": "to leave",
           "es": "salir"
@@ -957,19 +958,11 @@
           "es": "centro comercial"
         },
         {
-          "it": "avere bisogno",
-          "ru": "нуждаться",
+          "it": "avere bisogno di qc.",
+          "ru": "нуждаться в чем-л.",
           "pos": "phrase",
-          "en": "to need",
-          "es": "a necesitar"
-        },
-        {
-          "it": "di qc.",
-          "ru": "в чем-л.",
-          "pos": "phrase",
-          "new": true,
-          "en": "of something",
-          "es": "de algo"
+          "en": "to need something",
+          "es": "necesitar algo"
         },
         {
           "it": "scarpe",
@@ -1393,7 +1386,7 @@
           "ru": "мои родители",
           "pos": "phrase",
           "en": "my parents",
-          "es": "my parents"
+          "es": "mis padres"
         },
         {
           "it": "nonno",
@@ -2061,20 +2054,11 @@
           "es": "a las ocho"
         },
         {
-          "it": "con la macchi",
-          "ru": "на машине",
+          "it": "con la macchina di",
+          "ru": "на машине кого-л.",
           "pos": "phrase",
-          "stress": "con la màcchi",
-          "en": "with the car",
-          "es": "con el coche"
-        },
-        {
-          "it": "na di",
-          "ru": "кого-л.",
-          "pos": "phrase",
-          "new": true,
-          "en": "you/your",
-          "es": "usted"
+          "en": "in someone's car",
+          "es": "en el coche de alguien"
         },
         {
           "it": "viaggio",
@@ -2163,7 +2147,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to play soccer",
-          "es": "a jugar al fútbol"
+          "es": "jugar al fútbol"
         },
         {
           "it": "fare il bagno",
@@ -2171,7 +2155,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to swim",
-          "es": "a nadar"
+          "es": "bañarse"
         },
         {
           "it": "prendere il sole",
@@ -2179,15 +2163,15 @@
           "pos": "phrase",
           "stress": "prèndere il sole",
           "new": true,
-          "en": "to take the sun",
-          "es": "a disfrutar del sol"
+          "en": "to sunbathe",
+          "es": "tomar el sol"
         },
         {
           "it": "restare (a fare)",
           "ru": "остаться (чтобы сделать что-л.)",
           "pos": "phrase",
           "en": "to stay (to do)",
-          "es": "a quedarse (a hacer)"
+          "es": "quedarse (a hacer)"
         },
         {
           "it": "pulire",
@@ -2225,8 +2209,8 @@
           "ru": "выпить кофе",
           "pos": "phrase",
           "new": true,
-          "en": "to drink coffee",
-          "es": "to drink coffee"
+          "en": "to have a coffee",
+          "es": "tomar un café"
         },
         {
           "it": "mangiare",
@@ -2249,7 +2233,7 @@
           "ru": "сидеть дома",
           "pos": "phrase",
           "en": "to stay at home",
-          "es": "a quedarse en casa"
+          "es": "quedarse en casa"
         },
         {
           "it": "cena",
@@ -2285,8 +2269,8 @@
           "it": "lavare i piatti",
           "ru": "мыть посуду",
           "pos": "phrase",
-          "en": "to wash dishes",
-          "es": "a lavar platos"
+          "en": "to wash the dishes",
+          "es": "lavar los platos"
         },
         {
           "it": "tornare",
@@ -2419,8 +2403,54 @@
       ],
       "vocab": [
         {
+          "it": "pulizie",
+          "ru": "уборка",
+          "pos": "noun",
+          "gender": "f",
+          "number": "pl",
+          "stress": "pulizìe",
+          "new": true,
+          "en": "cleaning",
+          "es": "limpieza"
+        },
+        {
+          "it": "di primavera",
+          "ru": "весенний/-яя",
+          "pos": "phrase",
+          "new": true,
+          "en": "spring (adj.)",
+          "es": "primaveral"
+        },
+        {
+          "it": "pulizie di primavera",
+          "ru": "генеральная уборка",
+          "pos": "phrase",
+          "stress": "pulizìe di primavera",
+          "new": true,
+          "en": "spring cleaning",
+          "es": "limpieza de primavera"
+        },
+        {
+          "it": "questa domenica",
+          "ru": "в это воскресенье",
+          "pos": "phrase",
+          "stress": "questa domènica",
+          "new": true,
+          "en": "this Sunday",
+          "es": "este domingo"
+        },
+        {
+          "it": "tempo libero",
+          "ru": "свободное время",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "tempo lìbero",
+          "en": "free time",
+          "es": "tiempo libre"
+        },
+        {
           "it": "esco",
-          "ru": "я пойду куданибудь",
+          "ru": "я пойду куда-нибудь",
           "pos": "verb",
           "form_of": "uscire",
           "en": "I leave",
@@ -2539,21 +2569,13 @@
           "es": "pano"
         },
         {
-          "it": "mettere",
-          "ru": "приводить",
-          "pos": "verb",
-          "stress": "mèttere",
-          "new": true,
-          "en": "to put",
-          "es": "poner"
-        },
-        {
-          "it": "in ordine",
-          "ru": "в порядок что-л.",
+          "it": "mettere in ordine",
+          "ru": "приводить в порядок что-л.",
           "pos": "phrase",
+          "stress": "mèttere in ordine",
           "new": true,
-          "en": "in order",
-          "es": "en orden"
+          "en": "to tidy up",
+          "es": "poner en orden"
         },
         {
           "it": "studio",
@@ -2579,6 +2601,14 @@
           "pos": "phrase",
           "en": "place",
           "es": "lugar"
+        },
+        {
+          "it": "mettere",
+          "ru": "ставить, класть",
+          "pos": "verb",
+          "stress": "mèttere",
+          "en": "to put",
+          "es": "poner"
         },
         {
           "it": "cassetto",
@@ -2623,7 +2653,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to wash the windows",
-          "es": "a lavar las ventanas"
+          "es": "limpiar los cristales"
         },
         {
           "it": "vestiti",
@@ -2650,7 +2680,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to throw away",
-          "es": "a tirar"
+          "es": "tirar"
         },
         {
           "it": "inutile",
@@ -2755,7 +2785,7 @@
         },
         {
           "it": "cane",
-          "ru": "сапог",
+          "ru": "собака",
           "pos": "noun",
           "gender": "m",
           "new": true,
@@ -2871,27 +2901,19 @@
           "es": "sucio"
         },
         {
-          "it": "detersivo per",
-          "ru": "моющее",
-          "pos": "phrase",
-          "en": "detergent for",
-          "es": "detergente para"
-        },
-        {
-          "it": "i piatti",
-          "ru": "средство для по-суды",
+          "it": "detersivo per i piatti",
+          "ru": "моющее средство для посуды",
           "pos": "noun",
           "gender": "m",
-          "new": true,
-          "en": "plates",
-          "es": "platos"
+          "en": "dishwashing liquid",
+          "es": "detergente para platos"
         },
         {
           "it": "cominciare (a fare)",
           "ru": "начинать (делать что-л.)",
           "pos": "phrase",
-          "en": "to start",
-          "es": "a empezar"
+          "en": "to start (doing)",
+          "es": "empezar (a hacer)"
         },
         {
           "it": "domenica sera",
@@ -2927,11 +2949,11 @@
           "es": "sala de estar"
         },
         {
-          "it": "la televisione",
-          "ru": "телевизор",
+          "it": "guardare la televisione",
+          "ru": "смотреть телевизор",
           "pos": "phrase",
-          "en": "TV",
-          "es": "TV"
+          "en": "to watch TV",
+          "es": "ver la televisión"
         },
         {
           "it": "stanchezza",
@@ -3032,8 +3054,8 @@
           "ru": "делать покупки",
           "pos": "phrase",
           "new": true,
-          "en": "to make purchases",
-          "es": "a comprar"
+          "en": "to shop",
+          "es": "hacer compras"
         },
         {
           "it": "prima",
@@ -3063,8 +3085,8 @@
           "ru": "зайти к",
           "pos": "phrase",
           "new": true,
-          "en": "to go to",
-          "es": "a llegar"
+          "en": "to stop by",
+          "es": "pasar por"
         },
         {
           "it": "padrone",
@@ -3081,15 +3103,15 @@
           "pos": "phrase",
           "new": true,
           "en": "to pay the rent",
-          "es": "a pagar la renta"
+          "es": "pagar el alquiler"
         },
         {
           "it": "prendere l’autobus",
           "ru": "сесть на автобус",
           "pos": "phrase",
           "stress": "prèndere l’autobus",
-          "en": "take the bus",
-          "es": "take the bus"
+          "en": "to take the bus",
+          "es": "tomar el autobús"
         },
         {
           "it": "piacciono",
@@ -3160,7 +3182,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to spend time",
-          "es": "a pasar el tiempo"
+          "es": "pasar tiempo"
         },
         {
           "it": "fare il giro di",
@@ -3182,8 +3204,8 @@
           "it": "fare la spesa",
           "ru": "делать покупки (продуктовые)",
           "pos": "phrase",
-          "en": "to shop",
-          "es": "a comprar"
+          "en": "to go grocery shopping",
+          "es": "hacer la compra"
         },
         {
           "it": "al supermercato",
@@ -3360,7 +3382,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to stand in line",
-          "es": "a esperar"
+          "es": "hacer cola"
         },
         {
           "it": "mezz’ora",
@@ -3411,7 +3433,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to make a phone call",
-          "es": "a llamar"
+          "es": "hacer una llamada"
         },
         {
           "it": "alcune",
@@ -3480,7 +3502,7 @@
         },
         {
           "it": "pesce",
-          "ru": "рыбa",
+          "ru": "рыба",
           "pos": "noun",
           "gender": "m",
           "new": true,
@@ -3562,7 +3584,7 @@
           "stress": "fare economìe",
           "new": true,
           "en": "to save money",
-          "es": "a ahorrar dinero"
+          "es": "ahorrar dinero"
         },
         {
           "it": "risparmiare",
@@ -3592,7 +3614,7 @@
           "pos": "noun",
           "gender": "m",
           "en": "bread",
-          "es": "bread"
+          "es": "pan"
         },
         {
           "it": "burro",
@@ -3721,7 +3743,7 @@
           "ru": "нуждаться в чем-л.",
           "pos": "phrase",
           "en": "to need",
-          "es": "a necesitar"
+          "es": "necesitar"
         },
         {
           "it": "dimagrire",
@@ -3849,7 +3871,7 @@
         },
         {
           "it": "smettere",
-          "ru": "(di fare) прекращать",
+          "ru": "прекращать",
           "pos": "verb",
           "stress": "smèttere",
           "new": true,
@@ -3912,7 +3934,7 @@
           "stress": "andàr via",
           "new": true,
           "en": "to leave",
-          "es": "a salir"
+          "es": "irse"
         },
         {
           "it": "subito",
@@ -3939,7 +3961,7 @@
         },
         {
           "it": "sperare",
-          "ru": "(di fare) надеяться",
+          "ru": "надеяться",
           "pos": "verb",
           "new": true,
           "en": "to hope",
@@ -3959,7 +3981,7 @@
           "pos": "noun",
           "gender": "f",
           "en": "people",
-          "es": "people"
+          "es": "gente"
         },
         {
           "it": "concerto rock",
@@ -4001,20 +4023,12 @@
           "es": "imposible"
         },
         {
-          "it": "per tutta",
-          "ru": "в течение",
+          "it": "per tutta la settimana",
+          "ru": "в течение всей недели",
           "pos": "phrase",
           "new": true,
-          "en": "for the whole",
-          "es": "para todo"
-        },
-        {
-          "it": "la settimana",
-          "ru": "всей недели",
-          "pos": "phrase",
-          "new": true,
-          "en": "the week",
-          "es": "la semana"
+          "en": "all week long",
+          "es": "durante toda la semana"
         },
         {
           "it": "da ... a",
@@ -4045,8 +4059,8 @@
           "pos": "phrase",
           "stress": "stare in uffìcio",
           "new": true,
-          "en": "to sit in an office",
-          "es": "a trabajar en la oficina"
+          "en": "to be in the office",
+          "es": "estar en la oficina"
         },
         {
           "it": "mentre",
@@ -4254,6 +4268,14 @@
       ],
       "vocab": [
         {
+          "it": "alto",
+          "ru": "зд. высотой",
+          "pos": "adj",
+          "new": true,
+          "en": "high",
+          "es": "alto"
+        },
+        {
           "it": "spina",
           "ru": "шип",
           "pos": "noun",
@@ -4296,8 +4318,8 @@
           "ru": "пробовать",
           "pos": "phrase",
           "new": true,
-          "en": "to try",
-          "es": "a probar"
+          "en": "to try (to do)",
+          "es": "intentar (hacer)"
         },
         {
           "it": "questo",
@@ -4327,7 +4349,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to take away",
-          "es": "a llevar"
+          "es": "llevarse"
         },
         {
           "it": "disturbare",
@@ -4341,8 +4363,8 @@
           "it": "preparare la cena",
           "ru": "готовить ужин",
           "pos": "phrase",
-          "en": "to prepare dinner",
-          "es": "a preparar la cena"
+          "en": "to make dinner",
+          "es": "preparar la cena"
         },
         {
           "it": "stretto",
@@ -4376,18 +4398,11 @@
           "es": "baño"
         },
         {
-          "it": "sta facendo",
-          "ru": "она",
+          "it": "sta facendo la doccia",
+          "ru": "она принимает душ",
           "pos": "phrase",
-          "en": "is doing",
-          "es": "está haciendo"
-        },
-        {
-          "it": "la doccia",
-          "ru": "принимает душ",
-          "pos": "phrase",
-          "en": "the shower",
-          "es": "la ducha"
+          "en": "she is taking a shower",
+          "es": "está duchándose"
         },
         {
           "it": "chiuso",
@@ -4603,7 +4618,7 @@
         },
         {
           "it": "continuare",
-          "ru": "(a fare) продолжать",
+          "ru": "продолжать",
           "pos": "verb",
           "en": "to continue",
           "es": "continuar"
@@ -4771,8 +4786,8 @@
           "ru": "договариваться (сделать)",
           "pos": "verb",
           "stress": "mèttersi d’accordo (di fare)",
-          "en": "to agree to do",
-          "es": "a convenir"
+          "en": "to agree (to do)",
+          "es": "ponerse de acuerdo"
         },
         {
           "it": "decidere (di fare)",
@@ -4780,7 +4795,7 @@
           "pos": "phrase",
           "stress": "decìdere (di fare)",
           "en": "to decide (to do)",
-          "es": "a decidir"
+          "es": "decidir"
         },
         {
           "it": "ingresso",
@@ -4891,13 +4906,12 @@
           "es": "lavarse"
         },
         {
-          "it": "asciugarsi (mi asciugo)",
+          "it": "asciugarsi",
           "ru": "вытираться",
-          "pos": "phrase",
-          "stress": "asciugarsi (mi asciùgo)",
+          "pos": "verb",
           "new": true,
-          "en": "to dry off",
-          "es": "a secarse"
+          "en": "to dry oneself",
+          "es": "secarse"
         },
         {
           "it": "pesarsi",
@@ -4908,13 +4922,12 @@
           "es": "pesar"
         },
         {
-          "it": "pettinarsi (mi pettino)",
+          "it": "pettinarsi",
           "ru": "причесываться",
-          "pos": "phrase",
-          "stress": "pettinarsi (mi pèttino)",
+          "pos": "verb",
           "new": true,
           "en": "to comb one's hair",
-          "es": "a peinar el cabello"
+          "es": "peinarse"
         },
         {
           "it": "truccarsi",
@@ -4937,8 +4950,8 @@
           "ru": "чистить зубы",
           "pos": "phrase",
           "new": true,
-          "en": "to brush teeth",
-          "es": "to brush teeth"
+          "en": "to brush one's teeth",
+          "es": "lavarse los dientes"
         },
         {
           "it": "per un’ora",
@@ -5065,8 +5078,8 @@
           "ru": "стирать белье",
           "pos": "phrase",
           "new": true,
-          "en": "to wash the laundry",
-          "es": "a lavar la ropa"
+          "en": "to do the laundry",
+          "es": "lavar la ropa"
         },
         {
           "it": "pulisce",
@@ -5082,7 +5095,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to lock with a key",
-          "es": "a cerrar con llave"
+          "es": "cerrar con llave"
         },
         {
           "it": "fare un bagno",
@@ -5090,7 +5103,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to take a bath",
-          "es": "a bañarse"
+          "es": "bañarse"
         },
         {
           "it": "caldo",
@@ -5119,7 +5132,7 @@
           "ru": "читать газету",
           "pos": "phrase",
           "en": "to read the newspaper",
-          "es": "a leer el periódico"
+          "es": "leer el periódico"
         },
         {
           "it": "ogni tanto",
@@ -5171,7 +5184,7 @@
         },
         {
           "it": "acqua",
-          "ru": "вода депиляцию",
+          "ru": "вода",
           "pos": "noun",
           "gender": "f",
           "en": "water",
@@ -5179,38 +5192,39 @@
         },
         {
           "it": "freddo",
-          "ru": "холодный verso к, около",
+          "ru": "холодный",
           "pos": "adj",
           "en": "cold",
           "es": "frío"
         },
         {
-          "it": "togliersi (mi tolgo)",
-          "ru": "снимать с себя finisce (v finire) закончит",
-          "pos": "phrase",
+          "it": "togliersi",
+          "ru": "снимать с себя",
+          "pos": "verb",
           "new": true,
-          "en": "to remove",
-          "es": "a quitar"
+          "en": "to take off",
+          "es": "quitarse"
         },
         {
-          "it": "dà f",
-          "ru": "она дает bomboletta* балончик",
+          "it": "dà",
+          "ru": "она дает",
           "pos": "verb",
           "form_of": "dare",
-          "en": "She gives a balloon",
-          "es": "Ella da una bombilla"
+          "en": "she gives",
+          "es": "da"
         },
         {
-          "it": "mazzo m f",
-          "ru": "букет schiuma da barba* пена для",
-          "pos": "phrase",
+          "it": "mazzo",
+          "ru": "букет",
+          "pos": "noun",
+          "gender": "m",
           "new": true,
-          "en": "English",
-          "es": "Spanish"
+          "en": "bouquet",
+          "es": "ramo"
         },
         {
           "it": "ci",
-          "ru": "там бритья",
+          "ru": "там",
           "pos": "pron",
           "new": true,
           "en": "there",
@@ -5218,11 +5232,89 @@
         },
         {
           "it": "sera",
-          "ru": "вечер insomma в общем",
+          "ru": "вечер",
           "pos": "noun",
           "gender": "f",
           "en": "evening",
           "es": "noche"
+        },
+        {
+          "it": "depilarsi",
+          "ru": "сделать депиляцию",
+          "pos": "verb",
+          "en": "to wax, shave",
+          "es": "depilarse"
+        },
+        {
+          "it": "mezzanotte",
+          "ru": "полночь",
+          "pos": "noun",
+          "gender": "f",
+          "en": "midnight",
+          "es": "medianoche"
+        },
+        {
+          "it": "farsi la barba",
+          "ru": "бриться",
+          "pos": "phrase",
+          "new": true,
+          "en": "to shave",
+          "es": "afeitarse"
+        },
+        {
+          "it": "sa",
+          "ru": "знает",
+          "pos": "verb",
+          "form_of": "sapere",
+          "en": "know",
+          "es": "saber"
+        },
+        {
+          "it": "a che ora",
+          "ru": "во сколько",
+          "pos": "phrase",
+          "en": "at what time",
+          "es": "a qué hora"
+        },
+        {
+          "it": "finisce",
+          "ru": "закончит",
+          "pos": "verb",
+          "form_of": "finire",
+          "en": "ends",
+          "es": "termina"
+        },
+        {
+          "it": "a lungo",
+          "ru": "долго",
+          "pos": "phrase",
+          "new": true,
+          "en": "long",
+          "es": "largo"
+        },
+        {
+          "it": "bomboletta",
+          "ru": "балончик",
+          "pos": "noun",
+          "gender": "f",
+          "new": true,
+          "en": "spray can",
+          "es": "aerosol"
+        },
+        {
+          "it": "schiuma da barba",
+          "ru": "пена для бритья",
+          "pos": "phrase",
+          "new": true,
+          "en": "shaving foam",
+          "es": "espuma de afeitar"
+        },
+        {
+          "it": "insomma",
+          "ru": "в общем",
+          "pos": "adv",
+          "en": "in short",
+          "es": "en resumen"
         }
       ],
       "patterns": [
@@ -5465,8 +5557,8 @@
           "ru": "спешить",
           "pos": "phrase",
           "new": true,
-          "en": "to hurry",
-          "es": "a prisa"
+          "en": "to be in a hurry",
+          "es": "tener prisa"
         },
         {
           "it": "posso",
@@ -5500,13 +5592,6 @@
           "new": true,
           "en": "smokers",
           "es": "fumadores"
-        },
-        {
-          "it": "insomma",
-          "ru": "в общем",
-          "pos": "adv",
-          "en": "in short",
-          "es": "en resumen"
         },
         {
           "it": "basta!",
@@ -5577,8 +5662,8 @@
           "ru": "делать знак",
           "pos": "phrase",
           "new": true,
-          "en": "to sign",
-          "es": "a señalar"
+          "en": "to signal",
+          "es": "hacer una seña"
         },
         {
           "it": "binario",
@@ -5589,14 +5674,6 @@
           "new": true,
           "en": "track",
           "es": "carril"
-        },
-        {
-          "it": "arrabbiarsi (mi arrabbio)",
-          "ru": "сердиться",
-          "pos": "phrase",
-          "stress": "arrabbiarsi (mi arràbbio)",
-          "en": "to get angry",
-          "es": "a enojarse"
         },
         {
           "it": "qualcuno",
@@ -5719,8 +5796,8 @@
           "ru": "делать уборку",
           "pos": "phrase",
           "stress": "fare le pulizìe",
-          "en": "to do the cleaning",
-          "es": "a limpiar"
+          "en": "to clean",
+          "es": "limpiar"
         },
         {
           "it": "provare",
@@ -5757,8 +5834,8 @@
           "ru": "приниматься за что-л.",
           "pos": "phrase",
           "stress": "mèttersi a qc.",
-          "en": "to put oneself in a situation",
-          "es": "a ponerse en una situación"
+          "en": "to start doing something",
+          "es": "ponerse a hacer algo"
         },
         {
           "it": "lavoro",
@@ -5781,8 +5858,8 @@
           "ru": "чувствовать себя хорошо",
           "pos": "phrase",
           "new": true,
-          "en": "to feel good",
-          "es": "a sentirse bien"
+          "en": "to feel well",
+          "es": "sentirse bien"
         },
         {
           "it": "stare in piedi",
@@ -5793,13 +5870,6 @@
           "es": "parar"
         },
         {
-          "it": "a lungo",
-          "ru": "долго",
-          "pos": "phrase",
-          "en": "long",
-          "es": "largo"
-        },
-        {
           "it": "lavatrice",
           "ru": "стиральная машина",
           "pos": "noun",
@@ -5807,14 +5877,6 @@
           "new": true,
           "en": "washing machine",
           "es": "máquina de lavar"
-        },
-        {
-          "it": "sa",
-          "ru": "она знает",
-          "pos": "verb",
-          "form_of": "sapere",
-          "en": "know",
-          "es": "saber"
         },
         {
           "it": "funzionare",
@@ -5942,13 +6004,6 @@
           "es": "estar alérgico"
         },
         {
-          "it": "detersivo per i piatti",
-          "ru": "жидкость для мытья посуды",
-          "pos": "phrase",
-          "en": "dishwashing liquid",
-          "es": "detergente para platos"
-        },
-        {
           "it": "neanche",
           "ru": "тоже не",
           "pos": "conj",
@@ -6017,20 +6072,12 @@
           "es": "polvo"
         },
         {
-          "it": "apparecchiare",
-          "ru": "накрывать",
-          "pos": "verb",
-          "en": "to set the table",
-          "es": "preparar la mesa"
-        },
-        {
-          "it": "la tavola",
-          "ru": "на стол",
+          "it": "apparecchiare la tavola",
+          "ru": "накрывать на стол",
           "pos": "phrase",
-          "stress": "la tàvola",
-          "new": true,
-          "en": "the table",
-          "es": "la mesa"
+          "stress": "apparecchiare la tàvola",
+          "en": "to set the table",
+          "es": "poner la mesa"
         },
         {
           "it": "rompere",
@@ -6063,7 +6110,7 @@
           "stress": "èssere a dieta",
           "new": true,
           "en": "to be on a diet",
-          "es": "a dieta estar"
+          "es": "estar a dieta"
         },
         {
           "it": "portare fuori",
@@ -6071,7 +6118,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to take out",
-          "es": "a sacar"
+          "es": "sacar"
         },
         {
           "it": "rifiuti",
@@ -6101,19 +6148,11 @@
           "es": "olor"
         },
         {
-          "it": "annaffiare",
-          "ru": "поливать",
-          "pos": "verb",
-          "en": "to water",
-          "es": "regar"
-        },
-        {
-          "it": "le piante",
-          "ru": "цветы",
+          "it": "annaffiare le piante",
+          "ru": "поливать цветы",
           "pos": "phrase",
-          "new": true,
-          "en": "plants",
-          "es": "plantas"
+          "en": "to water the plants",
+          "es": "regar las plantas"
         },
         {
           "it": "reumatismo",
@@ -6130,7 +6169,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to play cards",
-          "es": "a jugar cartas"
+          "es": "jugar a las cartas"
         },
         {
           "it": "sigaro",
@@ -6155,8 +6194,8 @@
           "pos": "noun",
           "gender": "m",
           "new": true,
-          "en": "small glass",
-          "es": "small glass"
+          "en": "shot glass",
+          "es": "copita"
         },
         {
           "it": "cognac",
@@ -6294,14 +6333,6 @@
           "es": "encantado"
         },
         {
-          "it": "mazzo",
-          "ru": "букет",
-          "pos": "noun",
-          "gender": "m",
-          "en": "bouquet",
-          "es": "ramo"
-        },
-        {
           "it": "moglie",
           "ru": "жена",
           "pos": "noun",
@@ -6426,19 +6457,11 @@
           "es": "hija"
         },
         {
-          "it": "suonare",
-          "ru": "играть",
-          "pos": "verb",
-          "en": "to play",
-          "es": "jugar"
-        },
-        {
-          "it": "il pianoforte",
-          "ru": "на фортепиано",
+          "it": "suonare il pianoforte",
+          "ru": "играть на фортепиано",
           "pos": "phrase",
-          "new": true,
-          "en": "piano",
-          "es": "piano"
+          "en": "to play the piano",
+          "es": "tocar el piano"
         },
         {
           "it": "vivere",
@@ -6585,8 +6608,8 @@
           "pos": "phrase",
           "stress": "chièdere in prèstito",
           "new": true,
-          "en": "to ask for a loan",
-          "es": "to ask for a loan"
+          "en": "to borrow",
+          "es": "pedir prestado"
         },
         {
           "it": "uova",
@@ -6676,14 +6699,6 @@
           "es": "hereditario"
         },
         {
-          "it": "finisce",
-          "ru": "он заканчивает",
-          "pos": "verb",
-          "form_of": "finire",
-          "en": "ends",
-          "es": "termina"
-        },
-        {
           "it": "chiamare",
           "ru": "вызывать",
           "pos": "verb",
@@ -6705,8 +6720,8 @@
           "ru": "в больнице",
           "pos": "phrase",
           "new": true,
-          "en": "hospital",
-          "es": "hospital"
+          "en": "at the hospital",
+          "es": "en el hospital"
         },
         {
           "it": "gratis",
@@ -6772,20 +6787,12 @@
           "es": "entrevista"
         },
         {
-          "it": "società di",
-          "ru": "страховая",
-          "pos": "phrase",
-          "en": "insurance company",
-          "es": "empresa de seguros"
-        },
-        {
-          "it": "assicurazioni",
-          "ru": "компания",
+          "it": "società di assicurazioni",
+          "ru": "страховая компания",
           "pos": "noun",
           "gender": "f",
-          "new": true,
-          "en": "insurance",
-          "es": "seguro"
+          "en": "insurance company",
+          "es": "compañía de seguros"
         },
         {
           "it": "filiale",
@@ -6926,8 +6933,8 @@
           "ru": "днем",
           "pos": "phrase",
           "stress": "il pomerìggio",
-          "en": "afternoon",
-          "es": "afternoon"
+          "en": "in the afternoon",
+          "es": "por la tarde"
         },
         {
           "it": "l’ultimo",
@@ -6983,7 +6990,7 @@
           "number": "pl",
           "new": true,
           "en": "glasses",
-          "es": "glasses"
+          "es": "gafas"
         },
         {
           "it": "si accomodi",
@@ -7016,8 +7023,8 @@
           "ru": "ну, не знаю",
           "pos": "interj",
           "new": true,
-          "en": "uh",
-          "es": "uh"
+          "en": "well, I don't know",
+          "es": "pues no sé"
         },
         {
           "it": "cambiare",
@@ -7151,48 +7158,32 @@
           "es": "anterior"
         },
         {
-          "it": "esperienza",
-          "ru": "опыт",
+          "it": "esperienza di lavoro",
+          "ru": "опыт работы",
           "pos": "noun",
           "gender": "f",
-          "en": "experience",
-          "es": "experiencia"
+          "en": "work experience",
+          "es": "experiencia laboral"
         },
         {
-          "it": "di lavoro",
-          "ru": "работы",
+          "it": "fare il cameriere",
+          "ru": "работать официантом",
           "pos": "phrase",
-          "new": true,
-          "en": "of work",
-          "es": "de trabajo"
+          "en": "to work as a waiter",
+          "es": "trabajar de camarero"
         },
         {
-          "it": "il cameriere",
-          "ru": "официантом",
-          "pos": "phrase",
-          "en": "waiter",
-          "es": "camarero"
-        },
-        {
-          "it": "lingua",
-          "ru": "иностранный",
-          "pos": "adj",
-          "stress": "lìngua",
+          "it": "lingua straniera",
+          "ru": "иностранный язык",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "lìngua straniera",
           "en": "foreign language",
           "es": "lengua extranjera"
         },
         {
-          "it": "straniera",
-          "ru": "язык",
-          "pos": "noun",
-          "gender": "f",
-          "new": true,
-          "en": "foreign",
-          "es": "extraño"
-        },
-        {
           "it": "una sola",
-          "ru": "однаединственная",
+          "ru": "одна-единственная",
           "pos": "phrase",
           "new": true,
           "en": "one",
@@ -7208,12 +7199,11 @@
           "es": "Idioma italiano"
         },
         {
-          "it": "il computer",
-          "ru": "компьютером",
+          "it": "usare il computer",
+          "ru": "пользоваться компьютером",
           "pos": "phrase",
-          "new": true,
-          "en": "the computer",
-          "es": "el ordenador"
+          "en": "to use a computer",
+          "es": "usar el ordenador"
         },
         {
           "it": "basta così",
@@ -7241,11 +7231,11 @@
           "es": "irritado"
         },
         {
-          "it": "Le faremo",
-          "ru": "мы дадим",
+          "it": "Le faremo sapere",
+          "ru": "мы дадим Вам знать",
           "pos": "phrase",
-          "en": "we will do",
-          "es": "nosotros haremos"
+          "en": "we will let you know",
+          "es": "se lo haremos saber"
         },
         {
           "it": "inchinarsi",
@@ -7348,7 +7338,7 @@
           "stress": "èssere sveglio",
           "new": true,
           "en": "to be awake",
-          "es": "a estar despierto"
+          "es": "estar despierto"
         },
         {
           "it": "com’è andata",
@@ -7359,12 +7349,12 @@
           "es": "cómo estuvo"
         },
         {
-          "it": "orario",
-          "ru": "график",
+          "it": "orario di lavoro",
+          "ru": "график работы",
           "pos": "noun",
           "gender": "m",
-          "en": "schedule",
-          "es": "horario"
+          "en": "work schedule",
+          "es": "horario de trabajo"
         },
         {
           "it": "era",
@@ -7380,13 +7370,6 @@
           "pos": "adj",
           "en": "heavy",
           "es": "pesado"
-        },
-        {
-          "it": "alto",
-          "ru": "высокий",
-          "pos": "adj",
-          "en": "high",
-          "es": "alto"
         },
         {
           "it": "rifiutare",
@@ -7426,9 +7409,10 @@
       ],
       "vocab": [
         {
-          "it": "tedesco m m",
+          "it": "tedesco",
           "ru": "немец",
-          "pos": "phrase",
+          "pos": "noun",
+          "gender": "m",
           "en": "German",
           "es": "alemán"
         },
@@ -7449,9 +7433,10 @@
           "es": "tomar el tren"
         },
         {
-          "it": "M naco di Baviera",
+          "it": "Monaco di Baviera",
           "ru": "Мюнхен",
           "pos": "phrase",
+          "stress": "Mònaco di Baviera",
           "new": true,
           "en": "Munich",
           "es": "Múnich"
@@ -7473,10 +7458,11 @@
           "es": "través de"
         },
         {
-          "it": "l’Àustria",
+          "it": "l’Austria",
           "ru": "Австрия",
           "pos": "noun",
           "gender": "f",
+          "stress": "l’Àustria",
           "new": true,
           "en": "Austria",
           "es": "Austria"
@@ -7501,7 +7487,7 @@
         },
         {
           "it": "salire",
-          "ru": "садиться в по-езд",
+          "ru": "садиться в поезд",
           "pos": "verb",
           "new": true,
           "en": "to climb",
@@ -7516,21 +7502,20 @@
           "es": "viejo"
         },
         {
-          "it": "sdraiarsi (mi sdraio)",
+          "it": "sdraiarsi",
           "ru": "ложиться",
-          "pos": "phrase",
-          "stress": "sdraiarsi (mi sdràio)",
+          "pos": "verb",
           "new": true,
           "en": "to lie down",
-          "es": "a descansar"
+          "es": "tumbarse"
         },
         {
           "it": "poltrona",
           "ru": "кресло",
           "pos": "noun",
           "gender": "f",
-          "en": "chair",
-          "es": "chair"
+          "en": "armchair",
+          "es": "sillón"
         },
         {
           "it": "addormentarsi",
@@ -7542,11 +7527,10 @@
         },
         {
           "it": "occupare posto",
-          "ru": "место",
-          "pos": "noun",
-          "gender": "m",
-          "en": "to occupy a place",
-          "es": "a ocupar un lugar"
+          "ru": "занимать место",
+          "pos": "phrase",
+          "en": "to take up a seat",
+          "es": "ocupar un asiento"
         },
         {
           "it": "russare",
@@ -7693,8 +7677,8 @@
           "ru": "вытаскивать",
           "pos": "phrase",
           "new": true,
-          "en": "to pull out",
-          "es": "a sacar"
+          "en": "to take out",
+          "es": "sacar"
         },
         {
           "it": "pacchetto",
@@ -7711,7 +7695,7 @@
           "pos": "phrase",
           "new": true,
           "en": "food",
-          "es": "food"
+          "es": "comida"
         },
         {
           "it": "panino",
@@ -7744,15 +7728,15 @@
           "ru": "говорят друг другу",
           "pos": "phrase",
           "new": true,
-          "en": "they say",
-          "es": "they say"
+          "en": "they say to each other",
+          "es": "se dicen"
         },
         {
           "it": "assaggiare",
           "ru": "пробовать",
           "pos": "verb",
           "en": "to taste",
-          "es": "to taste"
+          "es": "probar"
         },
         {
           "it": "Prego!",
@@ -7788,19 +7772,13 @@
           "es": "en tierra"
         },
         {
-          "it": "bucce",
-          "ru": "банановая",
-          "pos": "adj",
-          "en": "peels",
-          "es": "cáscaras"
-        },
-        {
-          "it": "di banana",
-          "ru": "кожура",
-          "pos": "phrase",
-          "new": true,
-          "en": "of banana",
-          "es": "de plátano"
+          "it": "bucce di banana",
+          "ru": "банановая кожура",
+          "pos": "noun",
+          "gender": "f",
+          "number": "pl",
+          "en": "banana peel",
+          "es": "cáscara de plátano"
         },
         {
           "it": "cartaccia",
@@ -7958,27 +7936,36 @@
       ],
       "vocab": [
         {
-          "it": "viaggio d’affari m m",
-          "ru": "деловая по- dott. — dottore уважительное ездка обращение к",
-          "pos": "phrase",
-          "stress": "viàggio d’affari m m",
+          "it": "viaggio d’affari",
+          "ru": "деловая поездка",
+          "pos": "noun",
+          "gender": "m",
+          "stress": "viàggio d’affari",
           "new": true,
           "en": "business trip",
           "es": "viaje de negocios"
         },
         {
           "it": "a Mosca",
-          "ru": "в Москву выпускнику",
+          "ru": "в Москву",
           "pos": "phrase",
           "en": "in Moscow",
           "es": "en Moscú"
         },
         {
           "it": "con sé",
-          "ru": "с собой вуза",
+          "ru": "с собой",
           "pos": "phrase",
           "en": "with him/her/it",
           "es": "con él/ella/ello"
+        },
+        {
+          "it": "dott. — dottore",
+          "ru": "уважительное обращение к выпускнику вуза",
+          "pos": "noun",
+          "gender": "m",
+          "en": "doctor, graduate (title)",
+          "es": "doctor, licenciado"
         },
         {
           "it": "nero",
@@ -8241,7 +8228,7 @@
           "ru": "продолжать",
           "pos": "phrase",
           "en": "to continue",
-          "es": "a continuar"
+          "es": "continuar"
         },
         {
           "it": "macchina",
@@ -8276,7 +8263,7 @@
           "pos": "noun",
           "gender": "m",
           "en": "English",
-          "es": "Inglés"
+          "es": "el inglés"
         },
         {
           "it": "aggiungere",
@@ -8302,8 +8289,8 @@
           "gender": "f",
           "stress": "bèstia",
           "new": true,
-          "en": "animal",
-          "es": "animal"
+          "en": "animal, beast",
+          "es": "bestia, animal"
         },
         {
           "it": "raro",
@@ -8451,12 +8438,13 @@
           "es": "en todas partes"
         },
         {
-          "it": "di controllo",
-          "ru": "врача",
-          "pos": "phrase",
-          "new": true,
-          "en": "of control",
-          "es": "de control"
+          "it": "visita di controllo",
+          "ru": "осмотр врача",
+          "pos": "noun",
+          "gender": "f",
+          "stress": "vìsita di controllo",
+          "en": "check-up",
+          "es": "revisión médica"
         },
         {
           "it": "ospedale",
@@ -8517,8 +8505,8 @@
           "pos": "phrase",
           "stress": "fare le anàlisi",
           "new": true,
-          "en": "to do the analyses",
-          "es": "a realizar las análisis"
+          "en": "to get tests done",
+          "es": "hacerse análisis"
         },
         {
           "it": "sangue",
@@ -8594,7 +8582,7 @@
           "number": "pl",
           "new": true,
           "en": "lungs",
-          "es": "lungs"
+          "es": "pulmones"
         },
         {
           "it": "prescrivere",
@@ -8783,7 +8771,7 @@
           "stress": "èssere ricoverato",
           "new": true,
           "en": "to be hospitalized",
-          "es": "a ser hospitalizado"
+          "es": "ser hospitalizado"
         },
         {
           "it": "prete",
@@ -8810,7 +8798,7 @@
           "pos": "verb",
           "new": true,
           "en": "to distract",
-          "es": "a distraer"
+          "es": "distraer"
         },
         {
           "it": "accettare",
@@ -9006,7 +8994,7 @@
           "stress": "smèttere (di fare)",
           "new": true,
           "en": "to stop (doing)",
-          "es": "a dejar (hacer)"
+          "es": "dejar (de hacer)"
         },
         {
           "it": "insistere",
@@ -9070,19 +9058,11 @@
           "es": "gato"
         },
         {
-          "it": "non c’è niente",
-          "ru": "ничего",
+          "it": "non c’è niente da fare",
+          "ru": "ничего не поделаешь",
           "pos": "phrase",
-          "en": "there is nothing",
-          "es": "no hay nada"
-        },
-        {
-          "it": "da fare",
-          "ru": "не поделаешь",
-          "pos": "phrase",
-          "new": true,
-          "en": "\"to do\" / \"a task to do",
-          "es": "\"para hacer"
+          "en": "nothing can be done",
+          "es": "no hay nada que hacer"
         },
         {
           "it": "dicendo",
@@ -9097,8 +9077,8 @@
           "it": "essere contento",
           "ru": "быть довольным",
           "pos": "phrase",
-          "en": "to be happy",
-          "es": "a ser feliz"
+          "en": "to be glad",
+          "es": "estar contento"
         },
         {
           "it": "controllare",
@@ -9140,8 +9120,8 @@
           "pos": "phrase",
           "stress": "rimèttersi (a fare)",
           "new": true,
-          "en": "to put oneself back to doing",
-          "es": "a sí mismo volver a hacer"
+          "en": "to start again",
+          "es": "volver a empezar"
         },
         {
           "it": "agitato",
@@ -9156,7 +9136,7 @@
           "ru": "быть правым/ой",
           "pos": "phrase",
           "en": "to be right",
-          "es": "a ser correcto"
+          "es": "tener razón"
         },
         {
           "it": "telecomando",
@@ -9243,15 +9223,7 @@
           "gender": "m",
           "new": true,
           "en": "bucket",
-          "es": "bucket"
-        },
-        {
-          "it": "togliersi",
-          "ru": "снимать с себя",
-          "pos": "verb",
-          "stress": "tògliersi",
-          "en": "to remove oneself",
-          "es": "quitarse"
+          "es": "cubo"
         },
         {
           "it": "scappare",
@@ -9274,15 +9246,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to stay still",
-          "es": "a esperar"
-        },
-        {
-          "it": "allontanarsi (mi allontano)",
-          "ru": "удаляться",
-          "pos": "phrase",
-          "stress": "allontanarsi (mi allontàno)",
-          "en": "to move away",
-          "es": "a alejarse"
+          "es": "quedarse quieto"
         },
         {
           "it": "ombrellone",
@@ -9291,7 +9255,7 @@
           "gender": "m",
           "new": true,
           "en": "beach umbrella",
-          "es": "beach umbrella"
+          "es": "sombrilla"
         },
         {
           "it": "a mezzogiorno",
@@ -9348,7 +9312,7 @@
           "ru": "выбрасывать",
           "pos": "phrase",
           "en": "to throw away",
-          "es": "a tirar"
+          "es": "tirar"
         },
         {
           "it": "palla",
@@ -9382,13 +9346,6 @@
           "form_of": "venire",
           "en": "you come",
           "es": "tú vienes"
-        },
-        {
-          "it": "asciugarsi",
-          "ru": "вытираться",
-          "pos": "verb",
-          "en": "to dry off",
-          "es": "secarse"
         },
         {
           "it": "asciugamano",
@@ -9516,8 +9473,8 @@
           "ru": "заниматься чем-л.",
           "pos": "phrase",
           "new": true,
-          "en": "to take care of something",
-          "es": "a cuidar de algo"
+          "en": "to deal with something",
+          "es": "ocuparse de algo"
         },
         {
           "it": "lampadina",
@@ -9542,7 +9499,7 @@
           "pos": "phrase",
           "new": true,
           "en": "to let in",
-          "es": "to let in"
+          "es": "dejar entrar"
         },
         {
           "it": "aria",
@@ -9555,12 +9512,11 @@
           "es": "aire"
         },
         {
-          "it": "mettere in ordine",
-          "ru": "привести в по-рядок",
+          "it": "portare fuori i rifiuti",
+          "ru": "вынести мусор",
           "pos": "phrase",
-          "stress": "mèttere in ordine",
-          "en": "to put in order",
-          "es": "a ordenar"
+          "en": "to take out the trash",
+          "es": "sacar la basura"
         },
         {
           "it": "rimesso",
@@ -9600,7 +9556,7 @@
           "ru": "подстричь траву",
           "pos": "phrase",
           "en": "to cut the grass",
-          "es": "a cortar la hierba"
+          "es": "cortar la hierba"
         },
         {
           "it": "foglia",
@@ -9686,11 +9642,11 @@
           "es": "en realidad"
         },
         {
-          "it": "non è un gran",
-          "ru": "не Бог весть",
+          "it": "non è un gran che",
+          "ru": "не Бог весть что",
           "pos": "phrase",
-          "en": "It is not a big one",
-          "es": "No es una gran cosa"
+          "en": "nothing special",
+          "es": "no es gran cosa"
         },
         {
           "it": "gli zii",
@@ -9717,11 +9673,11 @@
           "es": "enviar"
         },
         {
-          "it": "fare una",
-          "ru": "совершать",
+          "it": "fare una passeggiata",
+          "ru": "совершать прогулку",
           "pos": "phrase",
-          "en": "do",
-          "es": "hacer"
+          "en": "to take a walk",
+          "es": "dar un paseo"
         },
         {
           "it": "fare quattro passi",
@@ -9835,20 +9791,13 @@
           "es": "Señora"
         },
         {
-          "it": "negozio di",
-          "ru": "магазин",
-          "pos": "phrase",
-          "stress": "negòzio di",
-          "en": "store",
-          "es": "store"
-        },
-        {
-          "it": "abbigliamento",
-          "ru": "одежды",
+          "it": "negozio di abbigliamento",
+          "ru": "магазин одежды",
           "pos": "noun",
           "gender": "m",
-          "en": "clothing",
-          "es": "vestimenta"
+          "stress": "negòzio di abbigliamento",
+          "en": "clothing store",
+          "es": "tienda de ropa"
         },
         {
           "it": "commessa",
@@ -9887,11 +9836,11 @@
           "es": "tamaño"
         },
         {
-          "it": "portare (non) mi sta bene",
-          "ru": "носить мне (не) идет",
+          "it": "(non) mi sta bene",
+          "ru": "мне (не) идет",
           "pos": "phrase",
-          "en": "doesn't suit me to carry",
-          "es": "no me conviene llevar"
+          "en": "it suits (or doesn't suit) me",
+          "es": "me queda (o no) bien"
         },
         {
           "it": "attillato",
@@ -10016,7 +9965,7 @@
           "pos": "verb",
           "new": true,
           "en": "to think about it",
-          "es": "a pensar en ello"
+          "es": "pensarlo"
         },
         {
           "it": "con calma",
@@ -10108,6 +10057,21 @@
           "new": true,
           "en": "that which",
           "es": "lo que"
+        },
+        {
+          "it": "peccato che",
+          "ru": "жаль, что",
+          "pos": "phrase",
+          "new": true,
+          "en": "it is a pity that",
+          "es": "qué pena que"
+        },
+        {
+          "it": "quanto costa?",
+          "ru": "сколько стоит?",
+          "pos": "phrase",
+          "en": "how much does it cost?",
+          "es": "¿cuánto cuesta?"
         }
       ],
       "patterns": [
