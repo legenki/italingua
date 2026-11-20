@@ -16,3 +16,4 @@ DerivedData/
 *.xcodeproj/
 build/
 build-tests/
+build-signed/

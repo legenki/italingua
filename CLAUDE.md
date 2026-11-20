@@ -48,7 +48,11 @@ python3 tools/validate_content.py --warnings                   # без зави
 xcodegen generate            # Italingua.xcodeproj генерируется из project.yml, в git не лежит
 xcodebuild -project Italingua.xcodeproj -scheme Italingua -destination 'platform=macOS' \
   -derivedDataPath build CODE_SIGNING_ALLOWED=NO test
+# подписанная сборка для работы (iCloud-синхронизация есть только в ней):
+xcodebuild -project Italingua.xcodeproj -scheme Italingua -destination 'platform=macOS' \
+  -derivedDataPath build-signed -allowProvisioningUpdates build
 ```
+- Сборка без подписи не имеет iCloud: прогресс в отдельном несинхронизируемом хранилище, статистика пишет «сборка без подписи».
 - Один мультиплатформенный таргет (iOS + macOS 26), настройки подписи — `Config/Base.xcconfig`.
 - SwiftData: хранилище `Content` (локальное, пересоздаётся из JSON при смене хеша) и
   `Progress` (CloudKit, `.automatic`). Прогресс ссылается на слова по `wordID` = `<level>/<слово без диакритики>`.
