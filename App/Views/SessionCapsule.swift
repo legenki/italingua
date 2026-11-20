@@ -84,7 +84,7 @@ struct SessionCapsule: View {
             }
             .padding(.leading, 14)
             .padding(.trailing, 6)
-            .frame(height: 36)
+            .frame(height: Self.barHeight)
             .liquidCapsule()
             .opacity(startLesson == nil ? 0.5 : 1)
             .help(startLesson.map { String(localized: "Урок «\($0.title)»: правила, слова, карточки и чтение за 40 минут") } ?? "")
@@ -97,7 +97,7 @@ struct SessionCapsule: View {
             }
             .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, 14)
-            .frame(height: 36)
+            .frame(height: Self.barHeight)
             .liquidCapsule(tint: Theme.accent)
         }
     }
@@ -152,9 +152,16 @@ struct SessionCapsule: View {
             .accessibilityLabel(session.isRunning ? String(localized: "Пауза") : String(localized: "Продолжить"))
         }
         .padding(.horizontal, 6)
-        .frame(height: 36)
+        .frame(height: Self.barHeight)
         .liquidCapsule()
     }
+
+    /// As tall as the round toolbar buttons next to it (back, text size).
+    #if os(iOS)
+    static let barHeight: CGFloat = 44
+    #else
+    static let barHeight: CGFloat = 36
+    #endif
 
     static func clock(_ seconds: TimeInterval) -> String {
         let s = Int(seconds.rounded(.up))
@@ -305,8 +312,5 @@ private extension View {
     func liquidCapsule(tint: Color? = nil) -> some View {
         self
             .glassEffect(.regular.tint(tint).interactive(), in: Capsule())
-            .background {
-                Capsule().fill(Color.black.opacity(0.12)).blur(radius: 6).offset(y: 2)
-            }
     }
 }
