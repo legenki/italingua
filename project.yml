@@ -37,6 +37,10 @@ targets:
       path: Config/Info.plist
       properties:
         CFBundleDisplayName: Italingua
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        # Only Apple's built-in encryption (HTTPS/CloudKit) is used: exempt.
+        ITSAppUsesNonExemptEncryption: false
         ItalinguaCloudKitContainer: $(ITALINGUA_CLOUDKIT_CONTAINER)
         ItalinguaCodeSigned: $(CODE_SIGNING_ALLOWED)
         CFBundleDevelopmentRegion: ru
