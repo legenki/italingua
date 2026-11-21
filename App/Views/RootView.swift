@@ -113,6 +113,9 @@ struct RootView: View {
                 ToolbarItem(placement: .primaryAction) { TextSizeButtons() }
             }
             .onChange(of: selection) { detailPath = NavigationPath() }
+            #if DEBUG
+            .task { openDemoScreen() }
+            #endif
 
         }
         // Accent for the sidebar selection, toggles and pickers.
@@ -246,6 +249,25 @@ struct RootView: View {
     private var showingWord: Bool {
         !search.isEmpty && vocab.contains { $0.wordID == selectedWord }
     }
+
+    #if DEBUG
+    /// Screenshots: `-demoScreen lesson|flashcards|stats` opens that screen for
+    /// the fourth lesson (the one the demo data has in progress).
+    private func openDemoScreen() {
+        let args = ProcessInfo.processInfo.arguments
+        guard let i = args.firstIndex(of: "-demoScreen"), i + 1 < args.count else { return }
+        let lesson = sections.flatMap(\.lessons).dropFirst(3).first
+        switch args[i + 1] {
+        case "stats": showStats = true
+        case "lesson": selection = lesson?.id
+        case "flashcards":
+            guard let id = lesson?.id else { return }
+            selection = id
+            Task { @MainActor in detailPath = NavigationPath([SessionRoute.flashcards(id)]) }
+        default: break
+        }
+    }
+    #endif
 
     /// Back to the Today screen from the lesson list.
     private func showToday() {

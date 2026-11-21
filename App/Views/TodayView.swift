@@ -140,7 +140,10 @@ struct TodayView: View {
     }
 
     static func greeting(at date: Date = .now) -> String {
-        switch Calendar.current.component(.hour, from: date) {
+        #if DEBUG
+        if DemoData.isRequested { return "Buongiorno!" }   // screenshots taken at any hour
+        #endif
+        return switch Calendar.current.component(.hour, from: date) {
         case 5..<17: "Buongiorno!"
         case 17..<23: "Buonasera!"
         default: "Buonanotte!"

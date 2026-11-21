@@ -10,6 +10,9 @@ struct ItalinguaApp: App {
         do {
             let container = try AppContainer.make()
             try ContentImporter.importBundledContent(into: container.mainContext)
+            #if DEBUG
+            if DemoData.isRequested { try DemoData.seed(into: container.mainContext) }
+            #endif
             self.container = container
             self.startupError = nil
         } catch {
