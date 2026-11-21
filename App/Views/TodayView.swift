@@ -339,6 +339,8 @@ private struct FavoritesCard: View {
                 } label: {
                     Text(String(localized: "Карточки"))
                         .font(.s(.subheadline).weight(.semibold))
+                        .lineLimit(1)
+                        .fixedSize()
                         .foregroundStyle(Theme.onAccent)
                         .padding(.horizontal, 16)
                         .frame(minHeight: 40)

@@ -114,7 +114,11 @@ struct RootView: View {
             }
             .onChange(of: selection) { detailPath = NavigationPath() }
             #if DEBUG
-            .task { openDemoScreen() }
+            .task {
+                // After the window is on screen, or a sheet would not present.
+                try? await Task.sleep(for: .seconds(1))
+                openDemoScreen()
+            }
             #endif
 
         }
