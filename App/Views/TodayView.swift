@@ -223,40 +223,93 @@ private struct Tile<Content: View>: View {
     }
 }
 
+/// Wide windows: one row (speaker, word, star, "all vocabulary").
+/// iPhone: label and star on top, the word under the speaker button,
+/// and the vocabulary link as a full-width button, so nothing is squeezed.
 private struct WordOfTheDay: View {
     let item: VocabItem
     let isFavorite: Bool
 
     var body: some View {
-        HStack(spacing: 16) {
-            SpeakButton(text: item.withArticle, label: String(localized: "Прослушать слово дня"), size: 48, style: .onAccent)
-            VStack(alignment: .leading, spacing: 2) {
-                CardLabel(text: String(localized: "Слово дня · \(item.lesson?.sourceLabel ?? "")"), color: Theme.onAccent.opacity(0.85))
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    Text(item.displayWithArticle).font(.s(.title2).weight(.bold))
-                    Text("— \(item.translation)").font(.s(.body).weight(.medium)).opacity(0.85)
-                }
-            }
-            Spacer(minLength: 0)
-            FavoriteButton(wordID: item.wordID, isFavorite: isFavorite, size: 40, onAccent: true)
-            if let lesson = item.lesson {
-                NavigationLink {
-                    VocabularyView(lesson: lesson)
-                } label: {
-                    Text(String(localized: "Вся лексика"))
-                        .font(.s(.subheadline).weight(.semibold))
-                        .padding(.horizontal, 16)
-                        .frame(minHeight: 40)
-                        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Theme.onAccent, lineWidth: 1.5))
-                }
-                .buttonStyle(.plain)
-            }
+        ViewThatFits(in: .horizontal) {
+            wide
+            compact
         }
         .foregroundStyle(Theme.onAccent)
         .padding(.horizontal, 20)
         .padding(.vertical, 18)
         .background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
         .textSelection(.enabled)
+    }
+
+    private var wide: some View {
+        HStack(spacing: 16) {
+            speakButton
+            VStack(alignment: .leading, spacing: 2) {
+                label
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    word
+                    Text("— \(item.translation)").font(.s(.body).weight(.medium)).opacity(0.85)
+                }
+            }
+            .fixedSize()
+            Spacer(minLength: 16)
+            favoriteButton
+            vocabularyLink(fullWidth: false)
+        }
+    }
+
+    private var compact: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .center) {
+                label
+                Spacer(minLength: 8)
+                favoriteButton
+            }
+            HStack(alignment: .center, spacing: 14) {
+                speakButton
+                VStack(alignment: .leading, spacing: 2) {
+                    word
+                    Text(item.translation).font(.s(.body).weight(.medium)).opacity(0.85)
+                }
+            }
+            vocabularyLink(fullWidth: true)
+        }
+    }
+
+    private var label: some View {
+        CardLabel(text: String(localized: "Слово дня · \(item.lesson?.sourceLabel ?? "")"), color: Theme.onAccent.opacity(0.85))
+    }
+
+    private var word: some View {
+        Text(item.displayWithArticle).font(.s(.title2).weight(.bold))
+    }
+
+    private var speakButton: some View {
+        SpeakButton(text: item.withArticle, label: String(localized: "Прослушать слово дня"), size: 48, style: .onAccent)
+    }
+
+    private var favoriteButton: some View {
+        FavoriteButton(wordID: item.wordID, isFavorite: isFavorite, size: 40, onAccent: true)
+    }
+
+    @ViewBuilder
+    private func vocabularyLink(fullWidth: Bool) -> some View {
+        if let lesson = item.lesson {
+            NavigationLink {
+                VocabularyView(lesson: lesson)
+            } label: {
+                Text(String(localized: "Вся лексика"))
+                    .font(.s(.subheadline).weight(.semibold))
+                    .lineLimit(1)
+                    .fixedSize(horizontal: !fullWidth, vertical: false)
+                    .padding(.horizontal, 16)
+                    .frame(maxWidth: fullWidth ? .infinity : nil, minHeight: 40)
+                    .contentShape(Rectangle())
+                    .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Theme.onAccent, lineWidth: 1.5))
+            }
+            .buttonStyle(.plain)
+        }
     }
 }
 
