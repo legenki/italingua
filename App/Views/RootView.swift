@@ -15,6 +15,9 @@ struct RootView: View {
     /// The lesson list holds keyboard focus from the start, so macOS does not
     /// put its focus ring on a toolbar button and the arrow keys work at once.
     @FocusState private var listFocused: Bool
+    /// iPhone: the app opens on the Today screen (as the Mac window does);
+    /// the lesson list is one step back, and the house button returns to Today.
+    @State private var compactColumn = NavigationSplitViewColumn.detail
     @State private var showStats = false
     @State private var showSettings = false
     /// Read so the window is rebuilt with the new accent when the palette changes.
@@ -22,7 +25,7 @@ struct RootView: View {
 
     var body: some View {
         let results = search.isEmpty ? [] : WordSearch.results(search, in: vocab)
-        NavigationSplitView {
+        NavigationSplitView(preferredCompactColumn: $compactColumn) {
             Group {
                 if search.isEmpty { lessonList } else { resultList(results) }
             }
@@ -36,9 +39,16 @@ struct RootView: View {
             .toolbar {
                 // On macOS Settings open from the app menu (⌘,), as in other Mac apps.
                 #if os(iOS)
-                Button(String(localized: "Настройки"), systemImage: "gearshape") { showSettings = true }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(String(localized: "Сегодня"), systemImage: "house") { showToday() }
+                }
+                ToolbarItem(placement: .primaryAction) {
+                    Button(String(localized: "Настройки"), systemImage: "gearshape") { showSettings = true }
+                }
                 #endif
-                Button(String(localized: "Статистика"), systemImage: "chart.pie") { showStats = true }
+                ToolbarItem(placement: .primaryAction) {
+                    Button(String(localized: "Статистика"), systemImage: "chart.pie") { showStats = true }
+                }
             }
         } detail: {
             NavigationStack(path: $detailPath) {
@@ -202,6 +212,14 @@ struct RootView: View {
     #endif
 
     private func lesson(_ id: String) -> Lesson? { lessons.first { $0.id == id } }
+
+    /// Back to the Today screen from the lesson list.
+    private func showToday() {
+        search = ""
+        selection = nil
+        detailPath = NavigationPath()
+        compactColumn = .detail
+    }
 
     /// First lesson not done yet, for a session started without a selection.
     private var nextLesson: Lesson? {
