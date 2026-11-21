@@ -536,6 +536,22 @@
         }
       }
     },
+    "Все уроки": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All lessons"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas las lecciones"
+          }
+        }
+      }
+    },
     "Все шаги пройдены. Медаль — если уложиться в 40 минут, попробуй завтра.": {
       "localizations": {
         "en": {

@@ -18,6 +18,9 @@ struct RootView: View {
     /// iPhone: the app opens on the Today screen (as the Mac window does);
     /// the lesson list is one step back, and the house button returns to Today.
     @State private var compactColumn = NavigationSplitViewColumn.detail
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    #endif
     @State private var showStats = false
     @State private var showSettings = false
     /// Read so the window is rebuilt with the new accent when the palette changes.
@@ -62,6 +65,20 @@ struct RootView: View {
                     LessonDetailView(lesson: lesson)
                 } else {
                     TodayView { selection = $0 }
+                        #if os(iOS)
+                        // iPhone: the lesson list sits behind Today; a labelled
+                        // books button replaces the bare back chevron.
+                        .navigationBarBackButtonHidden(sizeClass == .compact)
+                        .toolbar {
+                            if sizeClass == .compact {
+                                ToolbarItem(placement: .topBarLeading) {
+                                    Button(String(localized: "Все уроки"), systemImage: "books.vertical") {
+                                        compactColumn = .sidebar
+                                    }
+                                }
+                            }
+                        }
+                        #endif
                 }
                 }
                 .navigationDestination(for: SessionRoute.self) { route in
