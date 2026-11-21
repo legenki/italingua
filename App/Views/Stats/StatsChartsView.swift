@@ -109,16 +109,7 @@ struct StatsChartsView: View {
         if !data.mistakes.isEmpty {
             Card {
                 CardLabel(text: String(localized: "Ошибки по типам"))
-                Chart(data.mistakes) { m in
-                    BarMark(x: .value(String(localized: "Ошибки"), m.count), y: .value(String(localized: "Тип"), m.kind.titleRU))
-                        .foregroundStyle(Theme.accentMid)
-                        .cornerRadius(4)
-                        .annotation(position: .trailing) {
-                            Text("\(m.count)").font(.s(.caption).monospacedDigit()).foregroundStyle(Theme.secondaryText)
-                        }
-                }
-                .chartXAxis(.hidden)
-                .frame(height: CGFloat(data.mistakes.count) * 30 + 10)
+                MistakeBars(mistakes: data.mistakes)
             }
         }
 
@@ -326,6 +317,36 @@ private struct LessonCell: View {
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(lesson.section), \(lesson.number): \(lesson.title)")
         .accessibilityValue(lesson.progress.fraction.percent)
+    }
+}
+
+/// Mistakes by type as labelled bars: the name and count on one line, the bar
+/// under it. Chart axis labels sat on top of the bars on a narrow iPhone.
+private struct MistakeBars: View {
+    let mistakes: [StatsData.MistakeCount]
+
+    var body: some View {
+        let top = max(mistakes.map(\.count).max() ?? 1, 1)
+        VStack(alignment: .leading, spacing: 12) {
+            ForEach(mistakes) { m in
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(m.kind.titleRU).font(.s(.subheadline))
+                        Spacer(minLength: 8)
+                        Text("\(m.count)").font(.s(.subheadline).monospacedDigit()).foregroundStyle(Theme.secondaryText)
+                    }
+                    GeometryReader { geo in
+                        Capsule()
+                            .fill(Theme.accentMid)
+                            .frame(width: max(8, geo.size.width * CGFloat(m.count) / CGFloat(top)))
+                    }
+                    .frame(height: 8)
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(m.kind.titleRU)
+                .accessibilityValue("\(m.count)")
+            }
+        }
     }
 }
 
