@@ -23,6 +23,9 @@ nonisolated struct StatsData: Sendable {
         let label: String
         let title: String
         let progress: LessonProgress
+        /// Course section ("A1 · Intro course") and the lesson number in it.
+        var section = ""
+        var number = 0
     }
 
     struct MistakeCount: Identifiable, Sendable {
@@ -42,6 +45,8 @@ nonisolated struct StatsData: Sendable {
         let label: String
         let title: String
         let wordIDs: [String]
+        var section = ""
+        var number = 0
     }
 
     var days: [Day] = []
@@ -125,7 +130,8 @@ nonisolated struct StatsData: Sendable {
 
         data.lessons = lessons.map { lesson in
             LessonRow(id: lesson.id, label: lesson.label, title: lesson.title,
-                      progress: LessonProgress(boxes: lesson.wordIDs.map { boxes[$0] }))
+                      progress: LessonProgress(boxes: lesson.wordIDs.map { boxes[$0] }),
+                      section: lesson.section, number: lesson.number)
         }
 
         let kinds = Dictionary(grouping: mistakes, by: { $0 }).mapValues(\.count)

@@ -6,19 +6,30 @@ import SwiftUI
 struct StatsChartsView: View {
     let data: StatsData
 
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    #endif
+
     var body: some View {
-        HStack(spacing: 0) {
-            Metric(value: "\(data.streak)", unit: dayWord(data.streak), title: String(localized: "серия"), symbol: "flame.fill",
-                   color: Theme.accent)
-            Divider().frame(height: 40)
-            Metric(value: "\(data.todayAnswers)", unit: String(localized: "из \(data.dailyGoal)"), title: String(localized: "сегодня"),
-                   symbol: "target", color: Theme.accent)
-            Divider().frame(height: 40)
-            Metric(value: data.accuracy7?.percent ?? "—", unit: "", title: String(localized: "точность за 7 дней"),
-                   symbol: "checkmark.seal.fill", color: Theme.accent)
-            Divider().frame(height: 40)
-            Metric(value: "\(data.dueToday)", unit: "", title: String(localized: "к повторению"), symbol: "clock.arrow.circlepath",
-                   color: Theme.accent)
+        // iPhone: two rows of two, so no caption is cut; wider: one row.
+        Group {
+            if metricsInGrid {
+                VStack(spacing: 12) {
+                    HStack(spacing: 0) { streakMetric; Divider().frame(height: 40); todayMetric }
+                    Divider().padding(.horizontal, 16)
+                    HStack(spacing: 0) { accuracyMetric; Divider().frame(height: 40); dueMetric }
+                }
+            } else {
+                HStack(spacing: 0) {
+                    streakMetric
+                    Divider().frame(height: 40)
+                    todayMetric
+                    Divider().frame(height: 40)
+                    accuracyMetric
+                    Divider().frame(height: 40)
+                    dueMetric
+                }
+            }
         }
         .padding(.vertical, 14)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
@@ -113,21 +124,36 @@ struct StatsChartsView: View {
 
         Card {
             CardLabel(text: String(localized: "Уроки: знакомые слова"))
-            Chart(data.lessons) { lesson in
-                BarMark(x: .value(String(localized: "Урок"), lesson.label), y: .value(String(localized: "Знакомо"), lesson.progress.fraction))
-                    .foregroundStyle(lesson.progress.state == .done ? Theme.accent : Theme.accentMid)
-                    .cornerRadius(3)
-            }
-            .chartYScale(domain: 0...1)
-            .chartYAxis {
-                AxisMarks(values: [0, 0.5, 1]) { value in
-                    AxisGridLine()
-                    AxisValueLabel { Text((value.as(Double.self) ?? 0).percent) }
-                }
-            }
-            .frame(height: 150)
-            Text(String(localized: "В — вводный курс, У — основной.")).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+            LessonProgressGrid(lessons: data.lessons)
         }
+    }
+
+    private var metricsInGrid: Bool {
+        #if os(iOS)
+        sizeClass == .compact
+        #else
+        false
+        #endif
+    }
+
+    private var streakMetric: some View {
+        Metric(value: "\(data.streak)", unit: dayWord(data.streak), title: String(localized: "серия"), symbol: "flame.fill",
+               color: Theme.accent)
+    }
+
+    private var todayMetric: some View {
+        Metric(value: "\(data.todayAnswers)", unit: String(localized: "из \(data.dailyGoal)"), title: String(localized: "сегодня"),
+               symbol: "target", color: Theme.accent)
+    }
+
+    private var accuracyMetric: some View {
+        Metric(value: data.accuracy7?.percent ?? "—", unit: "", title: String(localized: "точность за 7 дней"),
+               symbol: "checkmark.seal.fill", color: Theme.accent)
+    }
+
+    private var dueMetric: some View {
+        Metric(value: "\(data.dueToday)", unit: "", title: String(localized: "к повторению"), symbol: "clock.arrow.circlepath",
+               color: Theme.accent)
     }
 
     private var stagesCard: some View {
@@ -202,9 +228,104 @@ private struct Metric: View {
                     Text(unit).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
                 }
             }
-            Text(title).font(.s(.caption)).foregroundStyle(Theme.secondaryText).lineLimit(1)
+            Text(title).font(.s(.caption)).foregroundStyle(Theme.secondaryText)
+                .lineLimit(2).multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
+    }
+}
+
+/// Every lesson as a small square, grouped by course section: the number on
+/// a fill that darkens with the share of familiar words (one hue, light to
+/// dark), a check once the lesson is done. Forty lessons stay readable on a
+/// phone, where a bar chart squeezed its labels into a fence.
+private struct LessonProgressGrid: View {
+    let lessons: [StatsData.LessonRow]
+
+    private static let cell: CGFloat = 34
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            ForEach(sections, id: \.title) { section in
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(section.title).font(.s(.caption).weight(.semibold)).foregroundStyle(Theme.secondaryText)
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: Self.cell, maximum: Self.cell + 6), spacing: 6)],
+                              alignment: .leading, spacing: 6) {
+                        ForEach(section.lessons) { LessonCell(lesson: $0) }
+                    }
+                }
+            }
+            legend
+        }
+    }
+
+    private var sections: [(title: String, lessons: [StatsData.LessonRow])] {
+        var result: [(title: String, lessons: [StatsData.LessonRow])] = []
+        for lesson in lessons {
+            if result.last?.title == lesson.section {
+                result[result.count - 1].lessons.append(lesson)
+            } else {
+                result.append((lesson.section, [lesson]))
+            }
+        }
+        return result
+    }
+
+    private var legend: some View {
+        HStack(spacing: 6) {
+            Text("0%")
+            ForEach(0..<LessonCell.steps.count, id: \.self) { i in
+                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                    .fill(LessonCell.steps[i])
+                    .overlay(RoundedRectangle(cornerRadius: 3, style: .continuous)
+                        .stroke(Theme.separator, lineWidth: i == 0 ? 1 : 0))
+                    .frame(width: 14, height: 14)
+            }
+            Text("100%")
+            Spacer(minLength: 12)
+            Image(systemName: "checkmark").font(.s(.caption2).weight(.bold)).foregroundStyle(Theme.accent)
+            Text(String(localized: "пройден"))
+        }
+        .font(.s(.caption).monospacedDigit())
+        .foregroundStyle(Theme.secondaryText)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct LessonCell: View {
+    let lesson: StatsData.LessonRow
+
+    /// Not started, then three shades of familiar words; the full accent is "done".
+    static var steps: [Color] { [Theme.tile] + Array(Theme.accentRamp.prefix(3)) + [Theme.accent] }
+
+    private var step: Int {
+        switch lesson.progress.state {
+        case .notStarted: 0
+        case .done: 4
+        case .inProgress: min(3, 1 + Int(lesson.progress.fraction * 3))
+        }
+    }
+
+    var body: some View {
+        let step = self.step
+        ZStack {
+            RoundedRectangle(cornerRadius: 8, style: .continuous).fill(Self.steps[step])
+            if step == 0 {
+                RoundedRectangle(cornerRadius: 8, style: .continuous).stroke(Theme.separator, lineWidth: 1)
+            }
+            if step == 4 {
+                Image(systemName: "checkmark").font(.s(.caption).weight(.bold)).foregroundStyle(Theme.onAccent)
+            } else {
+                Text("\(lesson.number)")
+                    .font(.s(.caption).weight(.semibold).monospacedDigit())
+                    .foregroundStyle(step >= 3 ? Theme.onAccent : step == 0 ? Theme.secondaryText : .primary)
+            }
+        }
+        .aspectRatio(1, contentMode: .fit)
+        .help("\(lesson.title) · \(lesson.progress.fraction.percent)")
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(lesson.section), \(lesson.number): \(lesson.title)")
+        .accessibilityValue(lesson.progress.fraction.percent)
     }
 }
 

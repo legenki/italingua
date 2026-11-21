@@ -440,22 +440,6 @@
         }
       }
     },
-    "В — вводный курс, У — основной.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "I — introductory course, L — main course."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "I — curso introductorio, L — curso principal."
-          }
-        }
-      }
-    },
     "Вводный курс": {
       "localizations": {
         "en": {
@@ -5412,6 +5396,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "comprobando…"
+          }
+        }
+      }
+    },
+    "пройден": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "done"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "completada"
           }
         }
       }

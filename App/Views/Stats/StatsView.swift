@@ -54,7 +54,10 @@ struct StatsView: View {
                 id: lesson.id,
                 label: (lesson.sourcePart == "intro" ? String(localized: "В") : String(localized: "У")) + "\(lesson.sourceLesson)",
                 title: lesson.title,
-                wordIDs: lesson.vocab.filter(FillBlankSession.isPracticable).map(\.wordID))
+                wordIDs: lesson.vocab.filter(FillBlankSession.isPracticable).map(\.wordID),
+                section: "\(lesson.level) · " + (lesson.sourcePart == "intro" ? String(localized: "Вводный курс")
+                                                                       : String(localized: "Основной курс")),
+                number: lesson.sourceLesson)
         }
     }
 
