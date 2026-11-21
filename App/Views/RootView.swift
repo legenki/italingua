@@ -67,12 +67,12 @@ struct RootView: View {
                     TodayView { selection = $0 }
                         #if os(iOS)
                         // iPhone: the lesson list sits behind Today; a labelled
-                        // books button replaces the bare back chevron.
+                        // grid button replaces the bare back chevron.
                         .navigationBarBackButtonHidden(sizeClass == .compact)
                         .toolbar {
                             if sizeClass == .compact {
                                 ToolbarItem(placement: .topBarLeading) {
-                                    Button(String(localized: "Все уроки"), systemImage: "books.vertical") {
+                                    Button(String(localized: "Все уроки"), systemImage: "square.grid.2x2") {
                                         compactColumn = .sidebar
                                     }
                                 }
