@@ -90,7 +90,9 @@ struct LessonDetailView: View {
                 }
                 .buttonStyle(.plain)
 
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: PracticeGrid.spacing),
+                                         count: PracticeGrid.columns),
+                          spacing: PracticeGrid.spacing) {
                     PracticeLink(title: String(localized: "Карточки"), systemImage: "rectangle.on.rectangle.angled", filled: false) {
                         FlashcardsView(lesson: lesson)
                     }
@@ -115,6 +117,18 @@ struct LessonDetailView: View {
 }
 
 /// One of the practice buttons under a lesson.
+/// iPhone and iPad: one row of four compact tiles, icon above a small
+/// caption. macOS: two rows of wide buttons with the icon beside the title.
+private enum PracticeGrid {
+    #if os(iOS)
+    static let columns = 4
+    static let spacing: CGFloat = 8
+    #else
+    static let columns = 2
+    static let spacing: CGFloat = 12
+    #endif
+}
+
 private struct PracticeLink<Destination: View>: View {
     let title: String
     let systemImage: String
@@ -123,13 +137,36 @@ private struct PracticeLink<Destination: View>: View {
 
     var body: some View {
         NavigationLink(destination: destination) {
-            Label(title, systemImage: systemImage)
-                .font(.s(.headline))
+            label
                 .foregroundStyle(filled ? Theme.onAccent : Theme.accent)
-                .frame(maxWidth: .infinity, minHeight: 52)
                 .background(filled ? Theme.accent : Theme.accentSoft,
                             in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
+    }
+
+    @ViewBuilder
+    private var label: some View {
+        #if os(iOS)
+        VStack(spacing: 5) {
+            Image(systemName: systemImage)
+                .font(.s(.title3))
+                .frame(height: 26)
+            // Two lines kept for every tile, so the four are the same height.
+            Text(title)
+                .font(.s(.caption2).weight(.semibold))
+                .multilineTextAlignment(.center)
+                .lineLimit(2, reservesSpace: true)
+                .minimumScaleFactor(0.8)
+        }
+        .padding(.horizontal, 4)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, minHeight: 68)
+        .accessibilityElement(children: .combine)
+        #else
+        Label(title, systemImage: systemImage)
+            .font(.s(.headline))
+            .frame(maxWidth: .infinity, minHeight: 52)
+        #endif
     }
 }
