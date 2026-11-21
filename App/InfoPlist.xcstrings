@@ -1,53 +1,77 @@
 {
-  "sourceLanguage": "ru",
-  "version": "1.0",
-  "strings": {
-    "NSMicrophoneUsageDescription": {
-      "localizations": {
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Микрофон нужен, чтобы отвечать в упражнениях голосом. Речь распознаётся на устройстве."
+  "sourceLanguage" : "ru",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Italingua"
           }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The microphone lets you answer exercises by voice. Speech is recognised on the device."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El micrófono permite responder a los ejercicios con la voz. El habla se reconoce en el dispositivo."
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Italingua"
           }
         }
       }
     },
-    "NSSpeechRecognitionUsageDescription": {
-      "localizations": {
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Речь распознаётся на устройстве, чтобы проверить ответ, сказанный вслух."
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Privacy - Microphone Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The microphone lets you answer exercises by voice. Speech is recognised on the device."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Speech is recognised on the device to check an answer said aloud."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El micrófono permite responder a los ejercicios con la voz. El habla se reconoce en el dispositivo."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El habla se reconoce en el dispositivo para comprobar una respuesta dicha en voz alta."
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Микрофон нужен, чтобы отвечать в упражнениях голосом. Речь распознаётся на устройстве."
           }
         }
       }
     },
-    "CFBundleDisplayName": {
-      "shouldTranslate": false
+    "NSSpeechRecognitionUsageDescription" : {
+      "comment" : "Privacy - Speech Recognition Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech is recognised on the device to check an answer said aloud."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El habla se reconoce en el dispositivo para comprobar una respuesta dicha en voz alta."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Речь распознаётся на устройстве, чтобы проверить ответ, сказанный вслух."
+          }
+        }
+      }
     }
-  }
+  },
+  "version" : "1.0"
 }
