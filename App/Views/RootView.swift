@@ -34,7 +34,15 @@ struct RootView: View {
             }
             .searchable(text: $search, placement: .sidebar, prompt: String(localized: "Поиск слова"))
             .onChange(of: search) {
-                // Like the Dictionary app: the best match opens right away.
+                // Like the Dictionary app: the best match opens right away
+                // beside the list. On iPhone the word would cover the list
+                // after the first letter, so there the learner picks a row.
+                #if os(iOS)
+                if sizeClass == .compact {
+                    selectedWord = nil
+                    return
+                }
+                #endif
                 selectedWord = WordSearch.results(search, in: vocab, limit: 1).first?.wordID
             }
             .navigationTitle("Italingua")
@@ -91,12 +99,16 @@ struct RootView: View {
             }
             .toolbar {
                 // The 40-minute study session, in the middle of the top bar.
-                ToolbarItem(placement: .principal) {
-                    SessionCapsule(startLesson: lessons.first { $0.id == selection } ?? nextLesson,
-                                   lessons: lessons, open: openStep)
+                // Not over a dictionary word: on iPhone it ran into the text
+                // size buttons, and a word lookup is not a study step.
+                if !showingWord {
+                    ToolbarItem(placement: .principal) {
+                        SessionCapsule(startLesson: lessons.first { $0.id == selection } ?? nextLesson,
+                                       lessons: lessons, open: openStep)
+                    }
+                    // The capsule draws its own glass and glow.
+                    .sharedBackgroundVisibility(.hidden)
                 }
-                // The capsule draws its own glass and glow.
-                .sharedBackgroundVisibility(.hidden)
                 // Top-right corner of the window, on every screen of the content pane.
                 ToolbarItem(placement: .primaryAction) { TextSizeButtons() }
             }
@@ -229,6 +241,11 @@ struct RootView: View {
     #endif
 
     private func lesson(_ id: String) -> Lesson? { lessons.first { $0.id == id } }
+
+    /// A word from the search is open in the content pane.
+    private var showingWord: Bool {
+        !search.isEmpty && vocab.contains { $0.wordID == selectedWord }
+    }
 
     /// Back to the Today screen from the lesson list.
     private func showToday() {
