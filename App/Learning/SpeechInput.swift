@@ -214,6 +214,8 @@ private nonisolated final class MicCapture: @unchecked Sendable {
         continuation = nil
         #if os(iOS)
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        // Back to the default, so `Speech` can switch to spoken-audio playback.
+        try? AVAudioSession.sharedInstance().setCategory(.soloAmbient)
         #endif
     }
 }

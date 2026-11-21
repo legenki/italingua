@@ -29,6 +29,7 @@ final class Speech {
                 guard let self, self.currentUtterance == finished else { return }
                 self.currentUtterance = nil
                 self.speakingText = nil
+                self.releaseAudioSession()
             }
         }
         Task.detached(priority: .utility) {
@@ -71,8 +72,32 @@ final class Speech {
         utterance.postUtteranceDelay = 0.1
         speakingText = text
         currentUtterance = ObjectIdentifier(utterance)
+        activateAudioSession()
         synthesizer.speak(utterance)
         StudySession.shared.noteSpoken(text)
+    }
+
+    /// iOS: the default audio session (solo ambient) is muted by the Ring/Silent
+    /// switch, so with the phone on silent nothing was heard. Pronunciation is
+    /// what the user asked for, like a video, so it plays as spoken audio and
+    /// only lowers other apps' sound while speaking.
+    private func activateAudioSession() {
+        #if os(iOS)
+        let session = AVAudioSession.sharedInstance()
+        // While a voice answer is being recorded the mic owns the session
+        // (play-and-record already ignores the switch); switching would stop it.
+        guard session.category != .playAndRecord else { return }
+        try? session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
+        try? session.setActive(true)
+        #endif
+    }
+
+    /// Lets other apps' audio return to full volume once speech has ended.
+    private func releaseAudioSession() {
+        #if os(iOS)
+        guard !synthesizer.isSpeaking else { return }
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        #endif
     }
 
     /// Removes markup the synthesizer would read aloud ("parl|o", "**", "___").
