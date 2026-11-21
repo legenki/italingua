@@ -637,3 +637,20 @@ struct MedalStatsTests {
         #expect(s.recent.first?.minutes == 37)
     }
 }
+
+#if os(macOS)
+import AppKit
+
+@MainActor
+struct ThemeColorTests {
+    /// SwiftUI resolves dynamic colors on its render thread; a main-actor
+    /// provider trapped there (TestFlight build 2 crash on iPhone).
+    @Test func dynamicColorResolvesOffTheMainThread() async {
+        let color = NSColor(Theme.card)
+        let red = await Task.detached {
+            color.usingColorSpace(.sRGB)?.redComponent
+        }.value
+        #expect(red != nil)
+    }
+}
+#endif

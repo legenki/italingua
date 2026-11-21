@@ -74,7 +74,7 @@ enum Theme {
     static var accentRamp: [Color] { ramp(of: .current) }
 
     static func accent(of palette: Palette) -> Color { dynamic(palette.accent) }
-    static func ramp(of palette: Palette) -> [Color] { palette.ramp.map(dynamic) }
+    static func ramp(of palette: Palette) -> [Color] { palette.ramp.map { dynamic($0) } }
     static var accentMid: Color { accentRamp[1] }
     /// Text and icons on an accent fill: white in light mode; near-black in
     /// dark mode, where accents are bright and white text would be too faint.
@@ -94,15 +94,20 @@ enum Theme {
 
     static let cardRadius: CGFloat = 18
 
-    private static func dynamic(_ pair: (UInt32, UInt32)) -> Color {
+    private nonisolated static func dynamic(_ pair: (UInt32, UInt32)) -> Color {
         dynamic(light: pair.0, dark: pair.1)
     }
 
-    private static func dynamic(light: UInt32, dark: UInt32) -> Color {
+    /// Nonisolated with a @Sendable provider: SwiftUI resolves these colors on
+    /// its async render thread, and a main-actor closure crashed there
+    /// (isolation check trap in TestFlight build 2 on iPhone).
+    private nonisolated static func dynamic(light: UInt32, dark: UInt32) -> Color {
         #if os(iOS)
-        Color(UIColor { $0.userInterfaceStyle == .dark ? UIColor(hex: dark) : UIColor(hex: light) })
+        Color(UIColor { @Sendable traits in
+            traits.userInterfaceStyle == .dark ? UIColor(hex: dark) : UIColor(hex: light)
+        })
         #else
-        Color(NSColor(name: nil) { appearance in
+        Color(NSColor(name: nil) { @Sendable appearance in
             appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua ? NSColor(hex: dark) : NSColor(hex: light)
         })
         #endif
@@ -111,14 +116,14 @@ enum Theme {
 
 #if os(iOS)
 private extension UIColor {
-    convenience init(hex: UInt32) {
+    nonisolated convenience init(hex: UInt32) {
         self.init(red: CGFloat((hex >> 16) & 0xFF) / 255, green: CGFloat((hex >> 8) & 0xFF) / 255,
                   blue: CGFloat(hex & 0xFF) / 255, alpha: 1)
     }
 }
 #else
 private extension NSColor {
-    convenience init(hex: UInt32) {
+    nonisolated convenience init(hex: UInt32) {
         self.init(srgbRed: CGFloat((hex >> 16) & 0xFF) / 255, green: CGFloat((hex >> 8) & 0xFF) / 255,
                   blue: CGFloat(hex & 0xFF) / 255, alpha: 1)
     }
