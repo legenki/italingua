@@ -69,6 +69,15 @@ Italingua — курс итальянского для начинающих: о�
 
 **Что нового (1.0):** Первый выпуск.
 
+**Что нового (1.1):**
+• iPhone открывается на экране «Сегодня»; все уроки — по кнопке слева вверху.
+• Произношение слышно и в беззвучном режиме.
+• Кнопки упражнений в уроке — в один ряд.
+• Поиск слова показывает список результатов, пока вы печатаете.
+• Новая карта уроков в статистике: прогресс по каждому уроку с первого взгляда.
+• Аккуратнее отступы, карточка «Слово дня» и показатели на экране iPhone.
+• Исправлены ошибки.
+
 ---
 
 ## English (en)
@@ -110,6 +119,15 @@ exercise.
 
 **What’s New (1.0):** First release.
 
+**What’s New (1.1):**
+• On iPhone the app opens on Today; all lessons are one tap away at the top left.
+• Pronunciation now plays with the Ring/Silent switch on.
+• Exercise buttons in a lesson fit in one row.
+• Word search keeps the list of results while you type.
+• A new lesson map in Statistics shows your progress in every lesson at a glance.
+• Tidier margins, Word of the Day card and stats on iPhone.
+• Bug fixes.
+
 ---
 
 ## Español (es)
@@ -150,6 +168,15 @@ disponibles las lecciones, las reglas, el vocabulario, las tarjetas, la correcci
 modelo y el ejercicio de recordar la palabra a partir de su traducción.
 
 **Novedades (1.0):** Primera versión.
+
+**Novedades (1.1):**
+• En el iPhone la app se abre en Hoy; todas las lecciones están a un toque, arriba a la izquierda.
+• La pronunciación se oye también con el iPhone en silencio.
+• Los botones de ejercicios de la lección caben en una fila.
+• La búsqueda de palabras mantiene la lista de resultados mientras escribes.
+• Un nuevo mapa de lecciones en Estadísticas muestra tu progreso en cada lección de un vistazo.
+• Márgenes, tarjeta de la Palabra del día y estadísticas más cuidados en el iPhone.
+• Corrección de errores.
 
 ---
 
