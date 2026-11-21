@@ -34,7 +34,8 @@ struct StatsView: View {
 
                 systemCard
             }
-            .padding(20)
+            .padding(.vertical, 20)
+            .padding(.horizontal, min(Theme.pageMargin, 20))
             .frame(maxWidth: 760, alignment: .leading)
             .frame(maxWidth: .infinity)
         }

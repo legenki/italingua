@@ -89,6 +89,13 @@ enum Theme {
     static let newBadge = dynamic(light: 0xC2410C, dark: 0xFB923C)
 
     static let cardRadius: CGFloat = 18
+    /// Side margin of scrolling pages. iPhone/iPad: the same as the inset
+    /// lesson list (16), so every screen lines up; the Mac window is roomier.
+    #if os(iOS)
+    static let pageMargin: CGFloat = 16
+    #else
+    static let pageMargin: CGFloat = 32
+    #endif
 
     private nonisolated static func dynamic(_ pair: (UInt32, UInt32)) -> Color {
         dynamic(light: pair.0, dark: pair.1)

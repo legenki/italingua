@@ -48,7 +48,7 @@ struct TodayView: View {
 
                 FavoritesCard(items: FavoritesView.items(favorites: favorites, vocab: vocab))
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, Theme.pageMargin)
             .padding(.vertical, 24)
             .frame(maxWidth: 800, alignment: .leading)
             .frame(maxWidth: .infinity)

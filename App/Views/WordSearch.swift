@@ -149,7 +149,7 @@ struct WordDetailView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, Theme.pageMargin)
             .padding(.vertical, 24)
             .frame(maxWidth: 760, alignment: .leading)
             .frame(maxWidth: .infinity)
