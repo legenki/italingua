@@ -1208,22 +1208,6 @@
         }
       }
     },
-    "Как в системе": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Same as system"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Como el sistema"
-          }
-        }
-      }
-    },
     "Как по-итальянски?": {
       "localizations": {
         "en": {
@@ -1332,22 +1316,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más grande"
-          }
-        }
-      }
-    },
-    "Лаванда": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lavender"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lavanda"
           }
         }
       }

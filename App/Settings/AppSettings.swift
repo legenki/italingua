@@ -11,7 +11,7 @@ enum Appearance: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .system: String(localized: "Как в системе")
+        case .system: String(localized: "Система")
         case .light: String(localized: "Светлая")
         case .dark: String(localized: "Тёмная")
         }

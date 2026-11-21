@@ -15,7 +15,7 @@ nonisolated enum AppLanguage: String, CaseIterable, Identifiable, Sendable {
     /// Language names are shown in their own language and never translated.
     var nativeName: String {
         switch self {
-        case .system: String(localized: "Как в системе")
+        case .system: String(localized: "Система")
         case .ru: "Русский"
         case .en: "English"
         case .es: "Español"

@@ -9,7 +9,7 @@ import AppKit
 /// Accent palettes the learner can pick in Settings. Each has the main accent,
 /// a soft fill and a ramp of shades (lightest → full) for charts.
 enum Palette: String, CaseIterable, Identifiable {
-    case green, blue, red, lavender, ochre
+    case green, blue, red, ochre
 
     var id: String { rawValue }
 
@@ -18,7 +18,6 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: String(localized: "Зелёная")
         case .blue: String(localized: "Синяя")
         case .red: String(localized: "Красная")
-        case .lavender: String(localized: "Лаванда")
         case .ochre: String(localized: "Охра")
         }
     }
@@ -29,7 +28,6 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: (0x1A7A52, 0x3FBF85)
         case .blue: (0x1F5FBF, 0x5B9BFF)
         case .red: (0xB3261E, 0xFF7A70)
-        case .lavender: (0x6A4FB3, 0xA996F2)
         case .ochre: (0x9A6A00, 0xF2C14E)
         }
     }
@@ -39,7 +37,6 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: (0xE7F2EC, 0x1D3A2D)
         case .blue: (0xE6EEFA, 0x1C2C44)
         case .red: (0xFBE9E7, 0x3D1E1C)
-        case .lavender: (0xEEEAF8, 0x2A2440)
         case .ochre: (0xF8F0DC, 0x3A2E12)
         }
     }
@@ -51,7 +48,6 @@ enum Palette: String, CaseIterable, Identifiable {
         case .green: [(0xCFE8DA, 0x1F4A35), (0x8CCAA8, 0x2E7A55), (0x4FA77A, 0x37A06C), accent]
         case .blue: [(0xD3E2F8, 0x1E3354), (0x93B6EC, 0x2D5390), (0x5587D6, 0x3E78D6), accent]
         case .red: [(0xF6D2CE, 0x4A2220), (0xE99A92, 0x7E3730), (0xD2564B, 0xC24A40), accent]
-        case .lavender: [(0xDCD4F2, 0x2E2650), (0xB1A2E2, 0x4C3F86), (0x8B75CC, 0x7562C8), accent]
         case .ochre: [(0xEFDDB0, 0x45361A), (0xD9B867, 0x7A5E22), (0xBD8F22, 0xC29A3A), accent]
         }
     }
