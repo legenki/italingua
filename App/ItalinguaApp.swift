@@ -7,6 +7,9 @@ struct ItalinguaApp: App {
     private let startupError: String?
 
     init() {
+        #if DEBUG
+        if CloudKitSchema.isRequested { CloudKitSchema.initializeAndExit() }
+        #endif
         do {
             let container = try AppContainer.make()
             try ContentImporter.importBundledContent(into: container.mainContext)

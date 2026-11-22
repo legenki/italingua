@@ -42,10 +42,11 @@
    `iCloud.com.y6a9lrqdh7.italingua`) и Push Notifications (нужны для тихих пушей CloudKit). Automatic signing создаст
    дистрибутивные профили сам.
 3. **CloudKit Console → контейнер `iCloud.com.y6a9lrqdh7.italingua` → Schema → Deploy Schema Changes…** —
-   выкатить схему из Development в Production. Перед этим один раз запустить **подписанную** сборку и
-   пройти хотя бы одно упражнение, добавить слово в избранное, заметку к правилу и т. д., чтобы все типы записей
-   (`CD_WordProgress`, `CD_Mistake`, `CD_RuleNote`, `CD_ReviewLog`, `CD_FavoriteWord`, `CD_SessionRecord`) появились
-   в Development. Без деплоя синхронизация в App Store/TestFlight-сборках не работает. После релиза поля и типы можно
+   выкатить схему из Development в Production. **Сделано 2026-11-22** (все 6 типов в Production). Перед деплоем
+   все типы записей (`CD_WordProgress`, `CD_Mistake`, `CD_RuleNote`, `CD_ReviewLog`, `CD_FavoriteWord`,
+   `CD_SessionRecord`) должны быть в Development: подписанная Debug-сборка с аргументом `-initCloudKitSchema`
+   создаёт их сама (`App/Models/CloudKitSchema.swift`, `initializeCloudKitSchema`) и закрывается. При новых полях
+   моделей прогресса — запустить её снова и снова выкатить схему. Без деплоя синхронизация в App Store/TestFlight-сборках не работает. После релиза поля и типы можно
    только добавлять — удалять и переименовывать модели прогресса нельзя.
 4. **App Store Connect → Apps → +**: новое приложение, платформы iOS и macOS, bundle ID `com.y6a9lrqdh7.italingua`,
    основной язык — английский (English (U.S.)), русский и испанский — локализации; SKU `italingua`. Заполнить по `AppStore/metadata.md`: цену и страны (не указаны),
