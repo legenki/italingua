@@ -118,6 +118,9 @@ struct RootView: View {
                 // After the window is on screen, or a sheet would not present.
                 try? await Task.sleep(for: .seconds(1))
                 openDemoScreen()
+                #if os(macOS)
+                DemoSnapshot.scheduleIfRequested()
+                #endif
             }
             #endif
 

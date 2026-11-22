@@ -21,6 +21,9 @@ struct ItalinguaApp: App {
         } catch {
             self.container = nil
             self.startupError = String(describing: error)
+            #if DEBUG
+            NSLog("Italingua startup error: %@", String(describing: error))
+            #endif
         }
     }
 
