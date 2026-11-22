@@ -2943,6 +2943,7 @@
       }
     },
     "Ошибки" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5055,6 +5056,7 @@
       }
     },
     "Тип" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
