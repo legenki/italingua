@@ -182,14 +182,25 @@ modelo y el ejercicio de recordar la palabra a partir de su traducción.
 
 ## Заметки для App Review (Review Notes, en)
 
+Ответ на запрос Apple по Guideline 2.1 (2026-11-23): к заметкам нужна запись экрана с iPhone (вложение
+в «App Review Information → Attachment»).
+
 ```
-Italingua works fully offline; no account or sign-in is needed.
-Exercise generation ("Fill in the blank" sentences, Reading texts, translation hints) uses the on-device
-Foundation Models framework and needs Apple Intelligence enabled on a supported device. Without it the app
-shows a notice and falls back to recalling the word from its translation (no generated sentence); lessons, grammar, vocabulary and
-flashcards work on any device.
-Voice answers (microphone + on-device SpeechTranscriber, Italian) are optional and can be turned off in Settings.
-Progress syncs through the user's private CloudKit database; nothing is sent to the developer.
+1. Screen recording: attached to this submission (recorded on iPhone, latest iOS). It starts at launch and shows the Today screen, the lesson list, a lesson with its grammar rule, Flashcards, Fill in the blank, Translate a phrase, Reading and Statistics. The app has no account registration, login, user-generated content or paid content inside the app (it is a paid-upfront app with no In-App Purchases).
+
+2. Purpose and audience: Italingua is an Italian course for beginners (CEFR A1–A2), aimed at adult self-learners, mainly speakers of Russian, English and Spanish (the interface is in these three languages). It solves the problem of learning Italian grammar and vocabulary in a structured way without a teacher or an internet connection: 40 lessons, 100 grammar topics explained in plain language and 1,900+ words with audio, plus spaced-repetition flashcards and exercises that check the learner's answers.
+
+3. How to use: no login, account or sample files are needed. Launch the app: the Today screen opens. Tap "Open lesson" on the Continue card, or open "All lessons" (top left on iPhone) and pick a lesson. In a lesson, open a grammar topic to read the rule and hear the examples; use the buttons at the bottom for Flashcards, Fill in the word, Translate a phrase and Reading. Statistics are in the toolbar (chart icon); Settings (theme, interface language, voice answers) are in the toolbar too. Voice answers in "Fill in the word" are optional and ask for microphone and speech-recognition permission on first use.
+
+4. External services: none. The app does not use any server, third-party SDK, analytics, ads, payment processor or external AI service. It uses only Apple frameworks on the device: Foundation Models (Apple Intelligence, on-device model) to write example sentences, reading texts and translation hints; Speech (on-device SpeechTranscriber, Italian) for optional voice answers; AVSpeechSynthesizer for audio; and the user's private iCloud database (CloudKit) to sync progress between the user's own devices. All course content (lessons, rules, vocabulary) is bundled in the app.
+
+5. Regional differences: the app works the same in all regions. The only difference comes from Apple Intelligence availability: on devices or in regions where Apple Intelligence is not available or not enabled, the app shows a notice and the generated exercises fall back to non-generated versions (recall the word from its translation; translation checked against the model answer). Lessons, grammar, vocabulary, flashcards and statistics work everywhere.
+
+6. Regulated industry / third-party material: not applicable. Italingua is a language-learning app; all course content (texts, rules, word lists, translations) was written by the developer, who owns the rights to it. No third-party copyrighted material is included.
+
+Additional notes:
+- Works fully offline; no account or sign-in is needed.
+- Progress syncs through the user's private CloudKit database; nothing is sent to the developer.
 ```
 
 ---
