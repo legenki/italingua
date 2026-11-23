@@ -14,3 +14,4 @@ build/
 build-tests/
 build-signed/
 build-archive/
+build-ios/

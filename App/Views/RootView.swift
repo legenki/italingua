@@ -1,6 +1,15 @@
 import SwiftData
 import SwiftUI
 
+#if DEBUG
+/// Screens the App Review tour opens that have no route of their own.
+enum DemoRoute: Hashable {
+    case grammar(String, Int)
+    case fillBlank(String)
+    case translate(String)
+}
+#endif
+
 struct RootView: View {
     @Query(sort: [SortDescriptor(\Lesson.level), SortDescriptor(\Lesson.order)])
     private var lessons: [Lesson]
@@ -96,6 +105,18 @@ struct RootView: View {
                     case .reading(let id): if let l = lesson(id) { ReadingView(lesson: l) }
                     }
                 }
+                #if DEBUG
+                .navigationDestination(for: DemoRoute.self) { route in
+                    switch route {
+                    case .grammar(let id, let index):
+                        if let l = lesson(id), l.sortedGrammar.indices.contains(index) {
+                            GrammarTopicView(lessonID: id, topic: l.sortedGrammar[index])
+                        }
+                    case .fillBlank(let id): if let l = lesson(id) { FillBlankView(lesson: l) }
+                    case .translate(let id): if let l = lesson(id) { TranslationView(lesson: l) }
+                    }
+                }
+                #endif
             }
             .toolbar {
                 // The 40-minute study session, in the middle of the top bar.
@@ -121,6 +142,7 @@ struct RootView: View {
                 #if os(macOS)
                 DemoSnapshot.scheduleIfRequested()
                 #endif
+                startDemoTour()
             }
             #endif
 
@@ -273,6 +295,52 @@ struct RootView: View {
             Task { @MainActor in detailPath = NavigationPath([SessionRoute.flashcards(id)]) }
         default: break
         }
+    }
+    #endif
+
+    #if DEBUG
+    /// App Review recording: `-demoTour` walks through the main screens on its
+    /// own (lesson, rule, the four exercises, statistics), then stops the Mac
+    /// recorder (`-recordVideo`).
+    private static var demoTourStarted = false
+
+    /// Once per launch and not tied to this view's task: on iPhone the task is
+    /// cancelled and restarted as the columns change.
+    private func startDemoTour() {
+        guard ProcessInfo.processInfo.arguments.contains("-demoTour"), !Self.demoTourStarted else { return }
+        Self.demoTourStarted = true
+        Task { @MainActor in await runDemoTour() }
+    }
+
+    private func runDemoTour() async {
+        guard let lesson = sections.flatMap(\.lessons).dropFirst(3).first else { return }
+        func pause(_ seconds: Double) async { try? await Task.sleep(for: .seconds(seconds)) }
+        func show(_ route: some Hashable, for seconds: Double) async {
+            detailPath = NavigationPath()
+            await pause(1.2)
+            detailPath.append(route)
+            await pause(seconds)
+        }
+        await pause(3)
+        selection = lesson.id
+        await pause(5)
+        await show(DemoRoute.grammar(lesson.id, 1), for: 7)
+        await show(SessionRoute.flashcards(lesson.id), for: 6)
+        await show(DemoRoute.fillBlank(lesson.id), for: 12)
+        await show(DemoRoute.translate(lesson.id), for: 8)
+        await show(SessionRoute.reading(lesson.id), for: 12)
+        detailPath = NavigationPath()
+        await pause(1.2)
+        selection = nil
+        compactColumn = .detail
+        await pause(2.5)
+        showStats = true
+        await pause(7)
+        showStats = false
+        await pause(2.5)
+        #if os(macOS)
+        DemoRecorder.stop()
+        #endif
     }
     #endif
 
